@@ -1,0 +1,189 @@
+<!-- Tooltip -->
+<link href="../../../assets/css/tooltip.css" rel="stylesheet" type="text/css" />
+<script src="js/tooltip.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../../../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../../assets/js/bootstrap-datepicker.js"></script>  
+
+<!--grid script-->
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+    $('#myTable').dataTable();
+  });
+</script> 
+<!--END grid script-->
+
+
+<div class="container">
+  <div class="row">
+
+<!--Start Left Panel-->
+    <div class="col-lg-3 profile-info">
+      <app-sidenavigation></app-sidenavigation>
+     
+    </div>
+
+  <!--End Left Panel-->
+
+
+    <!--Start Right Panel-->
+    <div class="col-lg-9 kyc-colm user-management">
+      <div class="kyc-section rewards-section reports-sectn">
+      <!--Calendar comes in below div-->
+      <ul class="nav nav-pills mb-3 nav-fill" id="pills-tab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Calender</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Time Table</a>
+        </li>
+</ul>
+        <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+          <br>	
+          <div id='calendar' >
+            <app-calendar></app-calendar>
+          </div>
+        </div>
+        <div class="tab-pane show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+          <br>	
+          <div class="table-responsive">
+              <table class="table table-bordered table-striped">
+                <thead class="">
+                  <tr>
+                    <th scope="col">Timing</th>
+                    <th scope="col">Monday</th>
+                    <th scope="col">Tuesday</th>
+                    <th scope="col">Wednesday</th>
+                    <th scope="col">Thursday</th>
+                    <th scope="col">Friday</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">10:00-11:00</th>
+                    <td>CO34007</td>
+                    <td>CO34002</td>
+                    <td>CO34008</td>
+                    <td>CO34005</td>
+                    <td>CO34007</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">11:00-12:00</th>
+                    <td>CO34002</td>
+                    <td>CO34005</td>
+                    <td>CO34007</td>
+                    <td>CO34008</td>
+                    <td>CO34007</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">12:00-1:00</th>
+                    <td></td>
+                    <td>EC34007</td>
+                    <td>EC34007</td>
+                    <td>EC34007</td>
+                    <td>EC34007</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1:00-2:00</th>
+
+                  </tr>
+                  <tr>
+                    <th scope="row">2:00-3:00</th>
+                    <td>CO34007</td>
+                    <td></td>
+                    <td>CO34008</td>
+                    <td>CO34005</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3:00-4:00</th>
+                    <td>CO34007</td>
+                    <td>CO34002</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4:00-5:00</th>
+                    <td>CO34007</td>
+                    <td>CO34002</td>
+                    <td>CO34008</td>
+                    <td>CO34005</td>
+                    <td>CO34007</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5:00-6:00</th>
+                    <td>CO34007</td>
+                    <td>CO34002</td>
+                    <td>CO34008</td>
+                    <td>CO34005</td>
+                    <td>CO34007</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="color:#1488CC;"><a href="#" style="float:right;"><i class="fa fa-download fa-fw"></i>Week time table</a></div>
+        </div>
+        
+        </div>
+
+    <!--End Right Panel-->
+
+  <!--Notification Panel starts-->
+  <div class="notifiactiion heading">
+  <br/>
+  <br/>
+    <h2>Notifications</h2>
+    <hr/>
+  </div>
+  <div>
+    <div class="alert alert-success row">
+      <h4 class="col-12">Mid Term-2 Time table</h4>
+      <p class="col"> Start date: 24/08/2017</p>
+      <div class="col">
+      <img class="download float-left" src="assets/images/download.png" alt=""/>
+      <a href="#"> download Time Table</a>
+      </div>
+      <div class="col">
+      <img class="download float-left" src="assets/images/download.png" alt=""/>
+      <a href="#"> download Sitting Arrangement</a>
+      </div>
+    </div>
+    <div class="alert alert-success row">
+      <h4 class="col-12">CO34002 Assignment #04</h4>
+      <p class="col-4"> Date of submission: 29/08/2017</p>
+      <div class="col-7">
+      <img class="download float-left" src="assets/images/download.png" alt=""/>
+      <a href="#"> download Assignment</a>
+      </div>
+    </div>
+    <div class="alert alert-success row">
+      <h4 class="col-12">Mid Term-1 Time table</h4>
+      <p class="col"> Start date: 24/08/2017</p>
+      <div class="col">
+      <img class="download float-left" src="assets/images/download.png" alt=""/>
+      <a href="#"> download Time Table</a>
+      </div>
+      <div class="col">
+      <img class="download float-left" src="assets/images/download.png" alt=""/>
+      <a href="#"> download Sitting Arrangement</a>
+      </div>
+    </div>
+  </div>
+  <!--Notification Panel Ends-->
+      </div>
+
+    </div>
+
+  <!--End Right Panel-->
+
+  </div>
+</div>

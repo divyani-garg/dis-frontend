@@ -1,0 +1,73 @@
+.span-text {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  .more {
+    text-decoration: none;
+    float: right;
+    color: #0085cc;
+  }
+
+  .more:hover {
+    text-decoration: none;
+    color: #f46404;
+  }
+
+  .contact-icon {
+    margin-left: 20px;
+  }
+
+  .navbar-left {
+    margin-left: 9%;
+
+  }
+
+  .navbar-padding>li {
+    padding-left: 35px;
+    padding-right: 20px;
+
+  }
+
+  .box {
+
+    background-color: #fff;
+    border: 1px solid #bfbfbf;
+    -webkit-box-shadow: -1px 3px 3px -3px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: -1px 3px 3px -3px rgba(0, 0, 0, 0.35);
+    box-shadow: -1px 3px 3px -3px rgba(0, 0, 0, 0.35);
+  }
+  a{
+    text-decoration: none;
+  }
+  .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
+    background-color: black;
+    color:yellow;
+    }
+  .subjectandFacultyBackground{
+    background:rgb(68, 67, 67);
+    padding: 3%;
+    color:white;
+    width : 100%;
+  }
+  .industrialVisitHeadingBackground{
+    background:rgb(68, 67, 67);
+    padding: 1%;
+    color:white;
+    width : 100%;
+  }  
+
+  
+  .heading{
+    color:#f46404;
+    padding-left:2%;
+  }
+  .table-padding{
+    padding-top:6%;
+  }
+  .modal-header{
+    background-color:rgb(4, 58, 87);
+    color:white;
+    margin:0%;
+    
+  }

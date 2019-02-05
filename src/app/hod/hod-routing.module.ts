@@ -12,7 +12,10 @@ import { DocumentsComponent } from './documents/documents.component';
 import { InfrastructureComponent } from './hod-infrastucture/infrastructure/infrastructure.component';
 import { ToDoComponent } from './to-do/to-do.component';
 import { ProfileComponent } from './profile/profile.component';
-import { MeetingsComponent } from './meetings/meetings.component';
+import { AboutModule } from '../about/about.module';
+import { AboutComponent } from '../about/about/about.component';
+import { HodInfrastuctureModule } from './hod-infrastucture/hod-infrastucture.module';
+import { HodInfrastructureComponent } from './hod-infrastucture/hod-infrastructure/hod-infrastructure.component';
 const routes: Routes = [
   { path: 'hod',
     component: HodComponent,
@@ -24,6 +27,11 @@ const routes: Routes = [
       {
         path: 'student',
         component: StudentComponent
+      },
+      {
+        path: 'hod_about',
+        component: AboutComponent,
+        loadChildren: () => AboutModule
       },
       {
         path: 'documents',
@@ -51,7 +59,8 @@ const routes: Routes = [
       },
       {
         path: 'infrastructure',
-        component: InfrastructureComponent
+        component: HodInfrastructureComponent,
+        loadChildren: ()=> HodInfrastuctureModule
       },
       {
         path: 'requests',
@@ -64,10 +73,6 @@ const routes: Routes = [
       {
         path: 'alerts',
         component: AlertsComponent
-      },
-      {
-        path: 'meetings',
-        component: MeetingsComponent
       }
     ]
   }

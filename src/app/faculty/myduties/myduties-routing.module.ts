@@ -11,10 +11,6 @@ const routes: Routes = [
     component : FacultyComponent,
     children : [
       {
-        path : '',
-        component : MydutiesComponent
-      },
-      {
         path  : 'my_duties',
         component : MydutiesComponent
       },
@@ -23,7 +19,7 @@ const routes: Routes = [
         component : ExpertlectureComponent
       },
       {
-        path :'profile',
+        path : 'profile',
         component : ProfileComponent
       }
     ]

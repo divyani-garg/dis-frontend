@@ -14,6 +14,7 @@ import { MiscellaneousModule } from 'src/app/miscellaneous/miscellaneous.module'
     HomeRoutingModule,
     MiscellaneousModule
   ],
-  declarations: [HomeComponent, NotificationComponent, FacultyhomeComponent,SidenavigationComponent]
+  declarations: [HomeComponent, NotificationComponent, FacultyhomeComponent,SidenavigationComponent],
+  exports: [ NotificationComponent, FacultyhomeComponent]
 })
 export class HomeModule { }

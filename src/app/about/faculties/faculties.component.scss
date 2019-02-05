@@ -1,0 +1,35 @@
+.span-text {
+  font-size: 16px;
+  margin-left: 8px;
+}
+.more {
+  text-decoration: none;
+  float: right;
+  color: #0085cc;
+}
+.more:hover {
+  text-decoration: none;
+  color: #f46404;
+}
+.contact-icon {
+  margin-left: 8px;
+}
+.box {
+  padding: 1%;
+  margin: 1%;
+  background-color: #fff;
+  border: 1px solid #bfbfbf;
+  -webkit-box-shadow: -1px 3px 3px -3px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: -1px 3px 3px -3px rgba(0, 0, 0, 0.35);
+  box-shadow: -1px 3px 3px -3px rgba(0, 0, 0, 0.35);
+}
+.center {
+  display: block;
+  margin-left: 28%;
+
+}
+.center-text{
+  margin-left:26%;
+}
+
+

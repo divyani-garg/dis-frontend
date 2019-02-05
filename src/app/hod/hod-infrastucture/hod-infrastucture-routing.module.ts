@@ -7,30 +7,19 @@ import { InfrastructureTimeTableComponent } from './infrastructure-time-table/in
 import { CentralInventoryComponent } from './central-inventory/central-inventory.component';
 
 const routes: Routes = [
-  { path: 'hod',
-    component: HodComponent,
-    children: [
-      {
-        path: 'infrastructure',
-        component: HodInfrastructureComponent,
-        children: [
           {
-            path: '',
-            component: InfrastructureComponent
-          },
-          {
-            path: 'timetable',
-            component: InfrastructureTimeTableComponent
-          },
-          {
-            path: 'Cinventory',
-            component: CentralInventoryComponent
-          }
-        ]
-      }
-    ]
-  }
-];
+                    path: '',
+                    component: InfrastructureComponent
+                  },
+                  {
+                    path: 'timetable',
+                    component: InfrastructureTimeTableComponent
+                  },
+                  {
+                    path: 'Cinventory',
+                    component: CentralInventoryComponent
+                  },
+                ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

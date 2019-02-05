@@ -7,16 +7,14 @@ import { PiechartComponent } from 'src/app/miscellaneous/piechart/piechart.compo
   styleUrls: ['./attendance.component.scss']
 })
 export class AttendanceComponent implements OnInit {
-  constructor() { }
+
+  constructor(public chart: PiechartComponent) { }
+
+
+  bar = [];
 
   ngOnInit() {
-  }
-
-  //bar = [];
-  //constructor(public chart: PiechartComponent) { }
-
-  //ngOnInit() {
-    //this.bar = this.chart.getPieChart('pieChart');
- // }
+    this.bar = this.chart.getPieChart('pieChart');
+ }
 
 }

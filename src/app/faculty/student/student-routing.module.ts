@@ -15,9 +15,9 @@ const routes: Routes = [
     component : FacultyComponent,
     children : [
       {
-        path :'student',
+        path : 'student',
         component : StudentComponent,
-        children:[
+        children: [
           {
             path : 'student_fourth_year_project',
             component : StudentFourthYearProjectComponent

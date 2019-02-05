@@ -15,268 +15,288 @@
 <div class="tab-content" id="myduties-expertlecture">
   <!--Expert Lecture start-->
   <div id='myduties-expertlecture-upcomingexpert' class="tab-pane active">
-    <div>
-      <button class="accordion"><strong>Upcoming Experts</strong></button>
-      <div class="panel">
-        <br>
-        <form>
-          <label>S.No : 03</label><br>
-          <div class="form-group">
+    <div class="row industrialVisitHeadingBackground ml-1">
+      <h6 class="col-9" >Upcoming Experts</h6>
+      <button type="button" class="col-3" style="padding: 0;
+      border: none;
+      background: none;color: white"
+        data-toggle="modal" data-target="#expertLecture">
+        Add Expert Lecture
+      </button>
+    </div>
 
+  </div>
+  <div class="modal fade" id="expertLecture" tabindex="-1" role="dialog" aria-labelledby="expertLectureLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="expertLectureLabel">Add Expert Lecture</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label>S.No : 03</label>
+          </div>
+          <div class="form-group">
             <label for="formGroupExampleInput">Expert Name : </label>
             <input type="text" class="form-control" id="formGroupExampleInput">
           </div>
           <div class="form-group">
-            <label for="date">Date : </label>
-            <input type="date">
+              <label for="date">Date : </label>
+              <input type="date" class="ml-2"><i class="fa fa-calendar fa-fw ml-2"></i>
+          </div>
+            <div class="form-group">
+              <label class="" for="">Venue</label>
+              <select class="form-control" id="">
+                <option>venue</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
           </div>
           <div class="form-group">
-            <label class="" for="">Venue</label>
-            <select class="form-control" id="">
-              <option>venue</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-
+              <label for="exampleFormControlTextarea1">Details : </label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
           <div class="form-group">
-            <label for="exampleFormControlTextarea1">Details : </label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
-          <label for="formGroupExampleInput2">Intended For : </label>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
-          <br>
-          <div class="row" style="margin-left:75%;">
-            <button type="reset" class="btn btn-secondary btn-2">Reset</button>
-            <button type="button" class="btn btn-primary btn-1">Notify All</button>
-
-          </div>
+            <label for="formGroupExampleInput2">Intended For : </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
+          </div>  
         </form>
-
-      </div>
-
-      <br>
-      <div class="table-responsive">
-        <table class="table table-striped">
-          <thead class="">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Expert Name</th>
-              <th scope="col">Topics</th>
-              <th scope="col">Date</th>
-              <th scope="col">For</th>
-              <th scope="col">Venue</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Sumit Upmanyu</td>
-              <td>Machine Learning</td>
-              <td>01/02/2018</td>
-              <td>3<sup>rd</sup> Year</td>
-              <td>LT-302</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Arpit Sahu</td>
-              <td>Data Structure</td>
-              <td>05/01/2019</td>
-              <td>2<sup>nd</sup> Year</td>
-              <td>LT-201</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Sumit Upmanyu</td>
-              <td>Machine Learning</td>
-              <td>01/02/2018</td>
-              <td>3<sup>rd</sup> Year</td>
-              <td>LT-302</td>
-            </tr>
-            <tr>
-              <th scope="row">4</th>
-              <td>Arpit Sahu</td>
-              <td>Data Structure</td>
-              <td>05/01/2019</td>
-              <td>2<sup>nd</sup> Year</td>
-              <td>LT-201</td>
-            </tr>
-            <tr>
-              <th scope="row">5</th>
-              <td>Sumit Upmanyu</td>
-              <td>Machine Learning</td>
-              <td>01/02/2018</td>
-              <td>3<sup>rd</sup> Year</td>
-              <td>LT-302</td>
-            </tr>
-            <tr>
-              <th scope="row">6</th>
-              <td>Arpit Sahu</td>
-              <td>Data Structure</td>
-              <td>05/01/2019</td>
-              <td>2<sup>nd</sup> Year</td>
-              <td>LT-201</td>
-            </tr>
-            <tr>
-              <th scope="row">7</th>
-              <td>Sumit Upmanyu</td>
-              <td>Machine Learning</td>
-              <td>01/02/2018</td>
-              <td>3<sup>rd</sup> Year</td>
-              <td>LT-302</td>
-            </tr>
-            <tr>
-              <th scope="row">8</th>
-              <td>Arpit Sahu</td>
-              <td>Data Structure</td>
-              <td>05/01/2019</td>
-              <td>2<sup>nd</sup> Year</td>
-              <td>LT-201</td>
-            </tr>
-
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <div id='myduties-expertlecture-pastexperts' class="tab-pane">
-    <div>
-      <button class="accordion"><strong>Past Experts</strong></button>
-      <div class="panel">
-
-      </div><br>
-      <div class="table-responsive">
-        <table class="table table-striped">
-          <thead class="">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">
-                Expert Name</th>
-              <th scope="col">Topics</th>
-              <th scope="col">Date</th>
-              <th scope="col">For</th>
-              <th scope="col">Venue</th>
-              <th scope="col">Student Attended</th>
-              <th scope="col">Issue Certificate</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td><img src='assets/images/person.png' class="expertimage">
-
-                Sumit Upmanyu</td>
-              <td>Machine Learning</td>
-              <td>01/02/2018</td>
-              <td>3<sup>rd</sup> Year</td>
-              <td>LT-302</td>
-              <td>100</td>
-              <td><a class="btn btn-primary">Issue Certificate</a></td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td><img src='assets/images/person.png' class="expertimage">
-
-                Sumit Upmanyu</td>
-              <td>Machine Learning</td>
-              <td>01/02/2018</td>
-              <td>3<sup>rd</sup> Year</td>
-              <td>LT-302</td>
-              <td>100</td>
-              <td><a class="btn btn-primary">Issue Certificate</a></td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td><img src='assets/images/person.png' class="expertimage">
-
-                Sumit Upmanyu</td>
-              <td>Machine Learning</td>
-              <td>01/02/2018</td>
-              <td>3<sup>rd</sup> Year</td>
-              <td>LT-302</td>
-              <td>100</td>
-              <td><a class="btn btn-primary">Issue Certificate</a></td>
-            </tr>
-            <tr>
-              <th scope="row">4</th>
-              <td><img src='assets/images/person.png' class="expertimage">
-
-                Sumit Upmanyu</td>
-              <td>Machine Learning</td>
-              <td>01/02/2018</td>
-              <td>3<sup>rd</sup> Year</td>
-              <td>LT-302</td>
-              <td>100</td>
-              <td><a class="btn btn-primary">Issue Certificate</a></td>
-            </tr>
-            <tr>
-              <th scope="row">5</th>
-              <td><img src='assets/images/person.png' class="expertimage">
-
-                Sumit Upmanyu</td>
-              <td>Machine Learning</td>
-              <td>01/02/2018</td>
-              <td>3<sup>rd</sup> Year</td>
-              <td>LT-302</td>
-              <td>100</td>
-              <td><a class="btn btn-primary">Issue Certificate</a></td>
-            </tr>
-            <tr>
-              <th scope="row">6</th>
-              <td><img src='assets/images/person.png' class="expertimage">
-
-                Sumit Upmanyu</td>
-              <td>Machine Learning</td>
-              <td>01/02/2018</td>
-              <td>3<sup>rd</sup> Year</td>
-              <td>LT-302</td>
-              <td>100</td>
-              <td><a class="btn btn-primary">Issue Certificate</a></td>
-            </tr>
-
-          </tbody>
-        </table>
-      </div>
-
-
-    </div>
-  </div>
-  <div id='myduties-expertlecture-invite' class="tab-pane">
-    <h5 class="industrialVisitHeadingBackground">Invitation Mall</h5>
-    <div class="row">
-      <div class="col-lg-12 kyc-colm user-management">
-        <div class="kyc-section rewards-section reports-sectn">
-          
-            <form>
-              <div class="row form-group">
-                <div class="col-lg-6">
-                <label> To :</label>
-                <input type="text" class="form-control" placeholder="enter email address..">
-                </div>
-                <div class="col-lg-6">
-                  <label> CC/BCC : </label>
-                  <input type="text" class="form-control">
-                </div>   
-               </div>
-               <div class="form-group">
-                 <label> Subject : </label>
-                 <input type="text" class="form-control" placeholder="enter subject..">
-               </div>
-               <div class="form-group">
-                  <textarea class="form-control"  placeholder="enter email..." rows="7"></textarea>
-                </div>  
-            
-                <button type="submit" class="btn btn-primary" style="width:100px;">Send</button><i class="fa fa-paperclip fa-lg" style="margin-left:3%;"aria-hidden="true"></i>
-
-                            </form>  
-          
+        </div>
+        <div class="modal-footer">
+          <button type="reset" class="btn btn-secondary" data-dismiss="modal">Reset</button>
+          <button type="button" class="btn btn-primary">Submit</button>
         </div>
       </div>
     </div>
   </div>
+  <br>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead class="">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Expert Name</th>
+          <th scope="col">Topics</th>
+          <th scope="col">Date</th>
+          <th scope="col">For</th>
+          <th scope="col">Venue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Sumit Upmanyu</td>
+          <td>Machine Learning</td>
+          <td>01/02/2018</td>
+          <td>3<sup>rd</sup> Year</td>
+          <td>LT-302</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Arpit Sahu</td>
+          <td>Data Structure</td>
+          <td>05/01/2019</td>
+          <td>2<sup>nd</sup> Year</td>
+          <td>LT-201</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Sumit Upmanyu</td>
+          <td>Machine Learning</td>
+          <td>01/02/2018</td>
+          <td>3<sup>rd</sup> Year</td>
+          <td>LT-302</td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>Arpit Sahu</td>
+          <td>Data Structure</td>
+          <td>05/01/2019</td>
+          <td>2<sup>nd</sup> Year</td>
+          <td>LT-201</td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td>Sumit Upmanyu</td>
+          <td>Machine Learning</td>
+          <td>01/02/2018</td>
+          <td>3<sup>rd</sup> Year</td>
+          <td>LT-302</td>
+        </tr>
+        <tr>
+          <th scope="row">6</th>
+          <td>Arpit Sahu</td>
+          <td>Data Structure</td>
+          <td>05/01/2019</td>
+          <td>2<sup>nd</sup> Year</td>
+          <td>LT-201</td>
+        </tr>
+        <tr>
+          <th scope="row">7</th>
+          <td>Sumit Upmanyu</td>
+          <td>Machine Learning</td>
+          <td>01/02/2018</td>
+          <td>3<sup>rd</sup> Year</td>
+          <td>LT-302</td>
+        </tr>
+        <tr>
+          <th scope="row">8</th>
+          <td>Arpit Sahu</td>
+          <td>Data Structure</td>
+          <td>05/01/2019</td>
+          <td>2<sup>nd</sup> Year</td>
+          <td>LT-201</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
 </div>
+<div id='myduties-expertlecture-pastexperts' class="tab-pane">
+  <div>
+    <button class="accordion"><strong>Past Experts</strong></button>
+    <div class="panel">
+
+    </div><br>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead class="">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">
+              Expert Name</th>
+            <th scope="col">Topics</th>
+            <th scope="col">Date</th>
+            <th scope="col">For</th>
+            <th scope="col">Venue</th>
+            <th scope="col">Student Attended</th>
+            <th scope="col">Issue Certificate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td><img src='assets/images/person.png' class="expertimage">
+
+              Sumit Upmanyu</td>
+            <td>Machine Learning</td>
+            <td>01/02/2018</td>
+            <td>3<sup>rd</sup> Year</td>
+            <td>LT-302</td>
+            <td>100</td>
+            <td><a class="btn btn-primary">Issue Certificate</a></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td><img src='assets/images/person.png' class="expertimage">
+
+              Sumit Upmanyu</td>
+            <td>Machine Learning</td>
+            <td>01/02/2018</td>
+            <td>3<sup>rd</sup> Year</td>
+            <td>LT-302</td>
+            <td>100</td>
+            <td><a class="btn btn-primary">Issue Certificate</a></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td><img src='assets/images/person.png' class="expertimage">
+
+              Sumit Upmanyu</td>
+            <td>Machine Learning</td>
+            <td>01/02/2018</td>
+            <td>3<sup>rd</sup> Year</td>
+            <td>LT-302</td>
+            <td>100</td>
+            <td><a class="btn btn-primary">Issue Certificate</a></td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td><img src='assets/images/person.png' class="expertimage">
+
+              Sumit Upmanyu</td>
+            <td>Machine Learning</td>
+            <td>01/02/2018</td>
+            <td>3<sup>rd</sup> Year</td>
+            <td>LT-302</td>
+            <td>100</td>
+            <td><a class="btn btn-primary">Issue Certificate</a></td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td><img src='assets/images/person.png' class="expertimage">
+
+              Sumit Upmanyu</td>
+            <td>Machine Learning</td>
+            <td>01/02/2018</td>
+            <td>3<sup>rd</sup> Year</td>
+            <td>LT-302</td>
+            <td>100</td>
+            <td><a class="btn btn-primary">Issue Certificate</a></td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td><img src='assets/images/person.png' class="expertimage">
+
+              Sumit Upmanyu</td>
+            <td>Machine Learning</td>
+            <td>01/02/2018</td>
+            <td>3<sup>rd</sup> Year</td>
+            <td>LT-302</td>
+            <td>100</td>
+            <td><a class="btn btn-primary">Issue Certificate</a></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+</div>
+<div id='myduties-expertlecture-invite' class="tab-pane">
+  <h5 class="industrialVisitHeadingBackground">Invitation Mall</h5>
+  <div class="row">
+    <div class="col-lg-12 kyc-colm user-management">
+      <div class="kyc-section rewards-section reports-sectn">
+
+        <form>
+          <div class="row form-group">
+            <div class="col-lg-6">
+              <label> To :</label>
+              <input type="text" class="form-control" placeholder="enter email address..">
+            </div>
+            <div class="col-lg-6">
+              <label> CC/BCC : </label>
+              <input type="text" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label> Subject : </label>
+            <input type="text" class="form-control" placeholder="enter subject..">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" placeholder="enter email..." rows="7"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100px;">Send</button><i class="fa fa-paperclip fa-lg"
+            style="margin-left:3%;" aria-hidden="true"></i>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!--script for accordian-->
 <script>

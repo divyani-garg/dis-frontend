@@ -1,0 +1,187 @@
+<div id="accordion" >
+  <div class="card" >
+      <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+          <h5>Add a Complaint
+          <div class="nav-item profile dropdown float-right">
+            <a class="nav-link" href="" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true" style="text-decoration:none;">
+                  <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu rounded-0 " aria-labelledby="navbarDropdownMenuLink2">
+                  <a class="dropdown-item collapsed" href="#" role="button" data-toggle="collapse" data-target="#cleanliness" aria-expanded="false" aria-controls="cleanliness" style="text-decoration:none;"><i class="fa fa-paint-brush fa-fw" aria-hidden="true"> Cleanliness</i></a>
+                  <a class="dropdown-item collapsed" href="#" role="button" data-toggle="collapse" data-target="#equipments" aria-expanded="false" aria-controls="equipments" style="text-decoration:none;"><i class="fa fa-desktop fa-fw" aria-hidden="true"> Lab Equipments</i></a>
+                  <a class="dropdown-item collapsed" href="#" role="button" data-toggle="collapse" data-target="#studentComplaint" aria-expanded="false" aria-controls="otherComplaints" style="text-decoration:none;"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Student
+              </a>
+                </div>
+              </div></h5>
+              </h5>
+          </div>
+    <div id="cleanliness" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+
+        <div>
+          <div class=" clean">
+            <form action="">
+              <div class="row">
+                <div class="form-group col-6">
+                  <label for="location">Location</label>
+                  <select id="leavetype" class="form-control">
+                    <option>PG Lab</option>
+                    <option>HES Lab</option>
+                    <option>CNDC Lab</option>
+                    <option>GCL Lab</option>
+                    <option>SE Lab</option>
+                    <option>AVLC</option>
+                    <option>LT 201</option>
+                    <option>LT 301</option>
+                  </select>
+                </div>
+                <div class="form-group col-6">
+                  <label for="level">Level of Dustiness</label>
+                  <select id="leavetype" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group form-check col-12">
+                <label for="details">Details</label>
+                <textarea class="form-control" rows="5" id="details"></textarea>
+              </div>
+              <div class="row">
+                <div class="col-9"></div>
+                <div class="col-3">
+                  <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                  <button type="submit" class="btn btn-danger">Cancel</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="equipments" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+
+        <div>
+          <div class="clean">
+            <form action="">
+              <div class="row">
+                <div class="form-group col-6">
+                  <label for="location">Location</label>
+                  <select id="leavetype" class="form-control">
+                    <option>PG Lab</option>
+                    <option>HES Lab</option>
+                    <option>CNDC Lab</option>
+                    <option>GCL Lab</option>
+                    <option>SE Lab</option>
+                    <option>AVLC</option>
+                    <option>LT 201</option>
+                    <option>LT 301</option>
+                  </select>
+                </div>
+                <div class="form-group col-6">
+                  <label for="level">Regarding</label>
+                  <select id="leavetype" class="form-control">
+                    <option>Furniture</option>
+                    <option>Monitor</option>
+                    <option>Keyboard</option>
+                    <option>Mouse</option>
+                    <option>Computer</option>
+                    <option>Air Conditioner</option>
+                    <option>Internet</option>
+                    <option>Others</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group form-check col-12">
+                <label for="details">Details</label>
+                <textarea class="form-control" rows="5" id="details"></textarea>
+              </div>
+              <div class="row">
+                <div class="col-9"></div>
+                <div class="col-3">
+                  <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                  <button type="submit" class="btn btn-danger">Cancel</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Student Complaint-->
+    <div id="studentComplaint" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+
+        <div>
+          <div class="clean">
+            <form action="">
+              <div class="row">
+                <div class="form-group col-12">
+
+                  <div>
+                    <label for="recipient-name" class="col-form-label">Complaint Id : SC01</label>
+                  </div>
+                  <div class="row">
+                  <div class="form-group col-lg-6">
+                    <label for="recipient-name" class="col-form-label">Student Roll No. :</label>
+                    <input class="form-control" id="message-text" placeholder="enter student roll no...">
+
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <label for="recipient-name" class="col-form-label">Student Name :</label>
+                    <input class="form-control" id="message-text" placeholder="enter student name...">
+
+                  </div>
+                  </div>
+                  <div class="row">
+                  <div class="form-group col-lg-6">
+                      <label for="recipient-name" class="col-form-label">Year :</label>
+                      <select class="form-control">
+                        <option>IInd</option>
+                        <option>IIIrd</option>
+                        <option>IVth</option>
+                      </select>
+                  </div>
+                  <div class="form-group col-lg-6">
+                      <label for="recipient-name" class="col-form-label">Sem :</label>
+                      <select class="form-control">
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                      </select>
+                  </div>  
+                </div>
+                  <div class="form-group">
+                    <label for="message-text" class="col-form-label">Complaint Description :</label>
+                    <textarea rows="5" class="form-control" id="message-text" placeholder="enter description..."></textarea>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col-9"></div>
+                <div class="col-3">
+                  <button type="submit" class="btn btn-primary mr-3">Submit</button>
+                  <button type="submit" class="btn btn-danger">Cancel</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--Student Complaint ends--->
+  
+  </div>
+</div>

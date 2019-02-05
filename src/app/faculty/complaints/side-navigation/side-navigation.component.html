@@ -1,0 +1,79 @@
+<div class="container">
+<div class="row">
+<div class="col-lg-3 kyc-colm user-management">
+      
+<div class="kyc-section rewards-section reports-sectn">
+  <div style="text-align-last: center;">
+    <a href=""><i class="fa fa-cart-plus icon" aria-hidden="true"></i></a>
+  </div>
+
+  <div style="text-align-last: center;">
+    <h5><a class="request-resources" href="#requestResource" data-toggle="modal" data-target="#requestResource"
+        data-whatever="@mdo">Request Resources</a></h5>
+  </div>
+</div>
+
+<div class=" profile-info top-buffer">
+  <div class="profile-content">
+    <div class="complaint-meter">
+      <h5 class="text-center">Complaint Meter</h5>
+    </div>
+    
+    <div class="txt-info three">
+      <div class="request-resources">
+        <h3 style="padding-right: 25%; padding-left: 25%">11</h3>
+        <h5><a class="complaint-rem" routerLink='remaining_complaints'>Complaint Remaining</a></h5>
+      </div>
+
+    </div>
+    <div class="txt-info">
+      <h3 style="color: #58c365;">12</h3>
+      <h5><a routerLink='resolved_complaints' style="color:#58c365">Resolved Complaints</a></h5>
+    </div>
+    <div class="txt-info one">
+      <h3>23</h3>
+      <h5 style="color:#0085cc"><a routerLink='total_complaints'>Total Complaints</a></h5>
+    </div>
+
+  </div>
+</div>
+</div>
+<div class="col-lg-9 kyc-colm user-management">
+  <div class="kyc-section rewards-section reports-sectn">
+
+<router-outlet></router-outlet>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="requestResource" tabindex="-1" role="dialog" aria-labelledby="requestResourceLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header modal-head">
+      <h5 class="modal-title " id="requestResourceLabel " style="color:white;">Request Resources</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="product-name" class="col-form-label">Product Name :</label>
+          <input class="form-control" placeholder="enter product name...">
+        </div>
+        <div>
+          <label for="reason">Description : </label>
+          <textarea class="form-control" placeholder="enter description..."
+            rows="5" id="reason"></textarea>
+        </div>  
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="reset" class="btn btn-secondary">Reset</button>
+      <button type="submit" class="btn btn-primary" data-dismiss="modal">Submit</button>
+    </div>
+
+  </div>
+</div>
+</div>

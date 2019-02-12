@@ -8,13 +8,21 @@ import { RemainingComplaintsComponent } from './remaining-complaints/remaining-c
 import { SideNavigationComponent } from './side-navigation/side-navigation.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
 import { AddacomplaintComponent } from './addacomplaint/addacomplaint.component';
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 
 @NgModule({
+  declarations: [TotalComplaintsComponent, ResolvedComplaintsComponent, RemainingComplaintsComponent, 
+    SideNavigationComponent, ComplaintsComponent, AddacomplaintComponent],
+
   imports: [
     CommonModule,
-    ComplaintsRoutingModule
+    ComplaintsRoutingModule,
+    ConfirmationPopoverModule.forRoot({
+      confirmButtonType: 'primary' // set defaults here
+    })
+
+
   ],
-  declarations: [TotalComplaintsComponent, ResolvedComplaintsComponent, RemainingComplaintsComponent, 
-    SideNavigationComponent, ComplaintsComponent, AddacomplaintComponent]
-})
+  bootstrap:[RemainingComplaintsComponent]
+  })
 export class ComplaintsModule { }

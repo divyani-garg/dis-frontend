@@ -114,7 +114,7 @@ button {
     border-radius: 30px;
     right: 21px;
     background: #59abff;
-    padding: 2px;
+        padding: 2px;
     width: 20px;
     height: 20px;
 }
@@ -154,8 +154,27 @@ button {
     box-shadow: -1px 3px 3px -3px rgba(0,0,0,0.35);
 }
 
+.syllabusDownload {
+	margin-top: 20px;
+    padding: 20px 5px;
+	padding-left: 20px;
+    background-color: #fff;
+    border: 1px solid #bfbfbf;
+    -webkit-box-shadow: -1px 3px 3px -3px rgba(0,0,0,0.35);
+    -moz-box-shadow: -1px 3px 3px -3px rgba(0,0,0,0.35);
+    box-shadow: -1px 3px 3px -3px rgba(0,0,0,0.35);
+}
 
-
+.otherDownload {
+	margin-top: 20px;
+    padding: 20px 5px;
+	padding-left: 20px;
+    background-color: #fff;
+    border: 1px solid #bfbfbf;
+    -webkit-box-shadow: -1px 3px 3px -3px rgba(0,0,0,0.35);
+    -moz-box-shadow: -1px 3px 3px -3px rgba(0,0,0,0.35);
+    box-shadow: -1px 3px 3px -3px rgba(0,0,0,0.35);
+}
 
 .index-pg .kyc-section {
     padding: 25px;
@@ -1608,7 +1627,7 @@ button {
     float: left;
 }
 .feeds-content .take-actn .btn {
-
+    float: right;
 }
 .feeds-content .points-count i {
     color: #17a2b8;

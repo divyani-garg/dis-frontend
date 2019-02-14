@@ -39,7 +39,8 @@ import { ResetPasswordComponent } from './authentication/reset-password/reset-pa
     HodRoutingModule,
     HodModule,
     FacultyModule,
-    StaffModule
+    StaffModule,
+    MiscellaneousModule
   ],
   providers: [],
   bootstrap: [AppComponent]

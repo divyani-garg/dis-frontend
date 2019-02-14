@@ -19,7 +19,7 @@ export class CalendarComponent implements OnInit {
             header: {
             left: 'prev,next today',
             center: 'title',
-            right: 'month,basicWeek,basicDay'
+            right: 'month,basicWeek,basicDay,list'
             },
             defaultDate: '2018-09-06',
             aspectRatio: 1,

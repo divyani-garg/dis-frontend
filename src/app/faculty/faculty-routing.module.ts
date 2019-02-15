@@ -36,7 +36,7 @@ const routes: Routes = [
       {
         path: 'infrastructure',
         component: InfrastructureComponent,
-        loadChildren: ()=> HodInfrastuctureModule
+        loadChildren: () => HodInfrastuctureModule
       },
       {
         path : 'attendance',

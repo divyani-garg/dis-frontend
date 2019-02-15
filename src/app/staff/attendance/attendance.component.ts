@@ -1,3 +1,4 @@
+import { PiechartComponent } from './../../miscellaneous/piechart/piechart.component';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AttendanceComponent implements OnInit {
 
-  constructor() { }
+  constructor(public chart: PiechartComponent) { }
+  bar = [];
 
   ngOnInit() {
-  }
+    this.bar = this.chart.getPieChart('pieChart');
+ }
 
 }

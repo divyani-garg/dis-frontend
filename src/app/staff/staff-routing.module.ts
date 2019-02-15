@@ -1,15 +1,21 @@
+import { HodInfrastuctureModule } from './../hod/hod-infrastucture/hod-infrastucture.module';
+import { AboutModule } from './../about/about.module';
+import { ComplaintsRoutingModule } from './../faculty/complaints/complaints-routing.module';
 import { AlertsComponent } from './alerts/alerts.component';
-import { AboutComponent } from './about/about.component';
+import { AboutComponent } from '../about/about/about.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { StaffComponent } from './staff/staff.component';
 import { AttendanceComponent } from './attendance/attendance.component';
-import { ComplaintsComponent } from '../student/complaints/complaints.component';
 import { DocumentsComponent } from './documents/documents.component';
-import { LabsComponent } from './labs/labs.component';
 import { ProfileComponent } from './profile/profile.component';
-import { StudentsComponent } from './students/students.component';
+import { StudentComponent } from './student/student/student.component';
+import { StudentRoutingModule } from '../faculty/student/student-routing.module';
+import { ComplaintsModule } from './complaints/complaints.module';
+import { ComplaintsComponent } from './complaints/complaints/complaints.component';
+import { InfrastructureComponent } from '../hod/hod-infrastucture/infrastructure/infrastructure.component';
+import { StudentModule } from './student/student.module';
 
 const routes: Routes = [
   {
@@ -21,12 +27,18 @@ const routes: Routes = [
           component: HomeComponent
         },
         {
+          path: 'staff_about',
+          component: AboutComponent,
+          loadChildren: () => AboutModule
+        },
+        {
           path: 'staff_home',
           component: HomeComponent
         },
         {
-          path: 'staff_about',
-          component: AboutComponent
+          path: 'staff_infrastructure',
+          component: InfrastructureComponent,
+          loadChildren: () => HodInfrastuctureModule
         },
         {
           path: 'staff_alerts',
@@ -37,16 +49,8 @@ const routes: Routes = [
           component: AttendanceComponent
         },
         {
-          path: 'staff_complaints',
-          component: ComplaintsComponent
-        },
-        {
           path: 'staff_documents',
           component: DocumentsComponent
-        },
-        {
-          path: 'staff_labs',
-          component: LabsComponent
         },
         {
           path: 'staff_profile',
@@ -54,14 +58,20 @@ const routes: Routes = [
         },
         {
           path: 'staff_students',
-          component: StudentsComponent
+          component: StudentComponent,
+          loadChildren: () => StudentModule
+        },
+        {
+          path : 'staff_complaints',
+          component : ComplaintsComponent,
+          loadChildren: () => ComplaintsModule
         }
     ]
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes), ComplaintsRoutingModule, StudentRoutingModule],
   exports: [RouterModule]
 })
 export class StaffRoutingModule { }

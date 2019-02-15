@@ -2,7 +2,7 @@
 /****** CSS Document *********/
 
 /****** Font Families Start ********/
-font-family: 'Titillium Web', sans-serif;
+font-family:  'Titillium Web', sans-serif;
 font-family: 'Quicksand', sans-serif;
 font-family: 'Abel', sans-serif;
 font-family: 'Maven Pro', sans-serif;
@@ -24,17 +24,22 @@ font-family: 'Nunito Sans', sans-serif;
 a{color:inherit;text-decoration:underline;}
 
 .bg {
-    /* The image used */
-    background-image: url("../images/bg6.jpg");
-    background-position: top center;
+     /* The image used */
+     background-image: url("../images/bg6.jpg");
+     /* Set rules to fill background */
+         min-height: 100%;
+         min-width: 100%;
 
-    /* Full height */
-    height: 100%;
+     /* Set up proportionate scaling */
+         width: 100%;
+         height: auto;
 
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+     /* Set up positioning */
+         position: fixed;
+         top: 0;
+         left: 0;
+     background-repeat: no-repeat;
+     background-size: cover;
 }
 body, html {
     margin:0;
@@ -65,7 +70,7 @@ button {
     color: #fff;
     background-color: #007bff;
 }
-.index-pg .navbar {
+.index-pg .navbar{
     /*background-color: #1d98c5! important;*/
 	background: #1488CC;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to top, #2B32B2, #1488CC);  /* Chrome 10-25, Safari 5.1-6 */
@@ -446,7 +451,7 @@ button {
     width:100%;
     margin: auto;
     max-width:525px;
-    min-height:870px;
+    min-height:920px;
     position:relative;
     box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }

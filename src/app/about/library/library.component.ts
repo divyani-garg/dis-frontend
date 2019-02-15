@@ -13,28 +13,19 @@ export class LibraryComponent implements OnInit {
   }
 
   getBooks() {
-    let bid = document.getElementById('books');
-    let tid = document.getElementById('thesis');
-    let rid = document.getElementById('researchpaper');
-    bid.style.display = 'block';
-    tid.style.display = 'none';
-    rid.style.display = 'none';
+    document.getElementById('books').style.display = 'block';
+    document.getElementById('thesis').style.display = 'none';
+    document.getElementById('researchpaper').style.display = 'none';
   }
   getThesis() {
-    let bid = document.getElementById('books');
-    let tid = document.getElementById('thesis');
-    let rid = document.getElementById('researchpaper');
-    bid.style.display = 'none';
-    tid.style.display = 'block';
-    rid.style.display = 'none';
+    document.getElementById('books').style.display = 'none';
+    document.getElementById('thesis').style.display = 'block';
+    document.getElementById('researchpaper').style.display = 'none';
   }
   getResearchpaper() {
-    let bid = document.getElementById('books');
-    let tid = document.getElementById('thesis');
-    let rid = document.getElementById('researchpaper');
-    bid.style.display = 'none';
-    tid.style.display = 'none';
-    rid.style.display = 'block';
+    document.getElementById('books').style.display = 'none';
+    document.getElementById('thesis').style.display = 'none';
+    document.getElementById('researchpaper').style.display = 'block';
   }
 
 }

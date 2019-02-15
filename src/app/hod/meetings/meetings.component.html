@@ -1,3 +1,41 @@
-<p>
-  meetings works!
-</p>
+
+<!--END grid script-->
+<div class="container">
+  <div class="row">
+
+<!--Start Left Panel-->
+    <div class="col-lg-3 profile-info">
+      <app-sidenavigation></app-sidenavigation>
+    </div>
+    <div class="col-lg-9 kyc-colm user-management kyc-section rewards-section reports-sectn">
+      <div class = "row">
+        <label class="control-label col-lg-2"  for="objective">Objective</label>
+        <input type="text" class="col-lg-8">
+      </div>
+      <br>
+        <div class ="col-lg-8 row" style="margin-left: 16%">
+        <div class="col-lg-6 kyc-section rewards-section reports-sectn" >
+        <h5>Select Faculty for meeting</h5>
+        <hr/>
+          <ol class="list-group">
+            <li class="list-item" *ngFor="let h of List1; let i=index">
+              <span class="col-9">{{h.id}} {{h.name}}</span> 
+             <i class="fa fa-plus-circle" style="opacity:0.5" aria-hidden="true" (click)="onItemAdded(h, i)"></i>
+            </li>
+          </ol>
+          </div>
+        <div class="col-lg-6 kyc-section rewards-section reports-sectn">
+            <h5>Selected Faculty for meeting</h5>
+            <hr>
+              <ol class="list-group">
+                <li class="list-item" *ngFor="let h of List2; let j=index2">
+                  <span class="col-9">{{h.id}} {{h.name}}</span>
+                   <i class="fa fa-times-circle" style="opacity:0.5" aria-hidden="true" (click)="onItemDeleted(h, j)"></i>
+                </li>
+              </ol>
+            </div>
+            <button class="float-right" style="margin-left:150px; margin-top:5px" type="submit">Submit</button>
+          </div>
+    </div>
+  </div>
+</div>

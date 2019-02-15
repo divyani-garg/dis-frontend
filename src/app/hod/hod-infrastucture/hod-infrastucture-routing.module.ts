@@ -18,7 +18,7 @@ const routes: Routes = [
                   {
                     path: 'Cinventory',
                     component: CentralInventoryComponent
-                  }
+                  },
                 ];
 
 @NgModule({

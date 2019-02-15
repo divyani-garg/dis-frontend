@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { CommonRoutingModule } from './common-routing.module';
 
@@ -8,6 +7,7 @@ import { CommonRoutingModule } from './common-routing.module';
     CommonModule,
     CommonRoutingModule
   ],
-  declarations: []
+  declarations: [],
+  exports: []
 })
 export class CommonModule { }

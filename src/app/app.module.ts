@@ -13,6 +13,7 @@ import { FacultyModule } from './faculty/faculty.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { HodRoutingModule } from './hod/hod-routing.module';
 import { HodModule } from './hod/hod.module';
+import { CommonModule} from './common/common.module'
 
 
 
@@ -40,7 +41,7 @@ import { ResetPasswordComponent } from './authentication/reset-password/reset-pa
     HodModule,
     FacultyModule,
     StaffModule,
-    MiscellaneousModule
+    MiscellaneousModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

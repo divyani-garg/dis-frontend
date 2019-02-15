@@ -70,7 +70,7 @@ button {
     color: #fff;
     background-color: #007bff;
 }
-.index-pg .navbar {
+.index-pg .navbar{
     /*background-color: #1d98c5! important;*/
 	background: #1488CC;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to top, #2B32B2, #1488CC);  /* Chrome 10-25, Safari 5.1-6 */

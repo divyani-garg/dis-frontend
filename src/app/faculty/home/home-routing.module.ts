@@ -18,6 +18,10 @@ const routes: Routes = [
         path: '',
         component: FacultyhomeComponent
       },
+      {
+        path: 'notification',
+        component: NotificationComponent
+      }
     ]
   },
   {

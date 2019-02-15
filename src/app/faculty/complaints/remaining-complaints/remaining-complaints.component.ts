@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+
 
 @Component({
   selector: 'app-remaining-complaints',
   templateUrl: './remaining-complaints.component.html',
-  styleUrls: ['./remaining-complaints.component.scss']
+  styleUrls: ['./remaining-complaints.component.scss'],
+
 })
 export class RemainingComplaintsComponent implements OnInit {
 
@@ -11,5 +13,9 @@ export class RemainingComplaintsComponent implements OnInit {
 
   ngOnInit() {
   }
+  public popoverTitle: string = 'Is complaint is resolved?';
+  public popoverMessage: string = 'Do you want to continue?';
+  public confirmClicked: boolean = false;
+  public cancelClicked: boolean = false;
 
 }

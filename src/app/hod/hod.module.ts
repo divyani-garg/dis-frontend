@@ -17,15 +17,17 @@ import { HodInfrastuctureModule } from './hod-infrastucture/hod-infrastucture.mo
 import { MiscellaneousModule } from '../miscellaneous/miscellaneous.module';
 import { ToDoComponent } from './to-do/to-do.component';
 import { ProfileComponent } from './profile/profile.component';
-import { MeetingsComponent } from './meetings/meetings.component';
 import { CalendarComponent } from '../miscellaneous/calendar/calendar.component';
+import { FooterModule } from './footer/footer.module';
+import { MeetingsComponent } from './meetings/meetings.component';
 
 @NgModule({
   imports: [
     CommonModule,
     HodRoutingModule,
     HodInfrastuctureModule,
-    MiscellaneousModule
+    MiscellaneousModule,
+    FooterModule
   ],
   declarations: [
      HomeComponent,

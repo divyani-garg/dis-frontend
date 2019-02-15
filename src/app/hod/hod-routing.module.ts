@@ -16,6 +16,10 @@ import { AboutModule } from '../about/about.module';
 import { AboutComponent } from '../about/about/about.component';
 import { HodInfrastuctureModule } from './hod-infrastucture/hod-infrastucture.module';
 import { HodInfrastructureComponent } from './hod-infrastucture/hod-infrastructure/hod-infrastructure.component';
+import { GalleryComponent } from './footer/gallery/gallery.component';
+import { FooterModule } from './footer/footer.module';
+import { MeetingsComponent } from './meetings/meetings.component';
+
 const routes: Routes = [
   { path: 'hod',
     component: HodComponent,
@@ -73,6 +77,14 @@ const routes: Routes = [
       {
         path: 'alerts',
         component: AlertsComponent
+      },
+      {
+        path: 'gallery',
+        component: GalleryComponent
+      },
+      {
+        path: 'meetings',
+        component: MeetingsComponent
       }
     ]
   }

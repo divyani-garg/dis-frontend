@@ -41,20 +41,26 @@
                   </div>
                   <select class="custom-select" id="inputGroupSelect01">
                     <option selected>Choose...</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option value="1">Somil Neema</option>
+                    <option value="2">Jyoti Tiwari</option>
+                    <option value="3">Ritambara Patidar</option>
                   </select>
-                  <div class="dropdown">
-                      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Category
-                      <span class="caret"></span></button>
-                      <ul class="dropdown-menu dropdown-menu-right">
-                        <li>A</li>
-                        <li>B</li>
-                        <li>C</li>
-                        
-                      </ul>
-                    </div>
+                  <!-- Example single danger button -->
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Category
+                    </button>
+                    <div class="dropdown-menu">
+                     <a class="dropdown-item" style="text-decoration:None" href="#">Student</a>
+                    <a class="dropdown-item" style="text-decoration:None"href="#">Time Table</a>
+                    <a class="dropdown-item" style="text-decoration:None" href="#">Exam Work</a>
+                    <a class="dropdown-item" style="text-decoration:None" href="#">Administration</a>
+                    <a class="dropdown-item" style="text-decoration:None" href="#">Resources</a>
+                    <a class="dropdown-item" style="text-decoration:None" href="#">Other Tasks</a>
+
+                   
+                   </div>
+                  </div>
                   
                     <button type="button" class="btn btn-light" data-toggle="modal" data-target=".my-modal">Assign Task</button>
                         
@@ -74,19 +80,23 @@
                               <form>
                                   <div class="form-group">
                                     <h6 class="heading">Select Faculty</h6>  
-                                      <select class="form-control" id="sel1">
-                                        <option>Somil Neema</option>
-                                        <option>Ritambara Patidar</option>
-                                        <option>Surendra Gupta</option>
-                                        <option>Jyoti Tiwari</option>
-                                      </select>
+                                      <select multiple class="form-control" id="sel2">
+                                      <option>Somil Neema</option>
+                                      <option>Rithambara Patidar</option>
+                                      <option>Jyoti Tiwari</option>
+                                      <option>Surendra Gupta</option>
+                                      <option>Vandan Tiwari</option>
+                                    </select>
                                     </div>
                                     <div class="form-group">
                                       <h6 class="heading">Category</h6>
                                       <select class="form-control input-lg" id="sel2">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
+                                        <option>Student</option>
+                                        <option>Time Table</option>
+                                        <option>Exam Work</option>
+                                        <option>Administration</option>
+                                        <option>Resources</option>
+                                        <option>Other Tasks</option>
                                       </select>
                                     </div>
                                     <div class="form-group">

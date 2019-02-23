@@ -8,11 +8,10 @@ import { AttendanceComponent } from './attendance/attendance.component';
 import { StudentComponent } from './student/student/student.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { AlertsComponent } from './alerts/alerts.component';
-import { ProfileComponent } from './profile/profile.component';
 import { StaffComponent } from './staff/staff.component';
 import { SidenavigationComponent } from './sidenavigation/sidenavigation.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { InfrastructureModule } from '../infrastructure/infrastructure.module';
+import { ConventionalModule } from '../conventional/conventional.module';
 
 @NgModule({
   imports: [
@@ -20,7 +19,7 @@ import { InfrastructureModule } from '../infrastructure/infrastructure.module';
     StaffRoutingModule,
     MiscellaneousModule,
     ComplaintsModule,
-    InfrastructureModule
+    ConventionalModule
   ],
   declarations: [
     HomeComponent,
@@ -28,7 +27,6 @@ import { InfrastructureModule } from '../infrastructure/infrastructure.module';
     StudentComponent,
     DocumentsComponent,
     AlertsComponent,
-    ProfileComponent,
     StaffComponent,
     SidenavigationComponent,
     NavigationComponent

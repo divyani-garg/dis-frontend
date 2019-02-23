@@ -24,10 +24,9 @@ import { MagazinemanagementComponent } from './magazinemanagement/magazinemanage
   imports: [
     CommonModule,
     MydutiesRoutingModule,
-
+  
   ],
-  declarations: [MydutiesComponent, NavigationComponent, ExpertlectureComponent, ProfileComponent,
-    // tslint:disable-next-line:max-line-length
+  declarations: [MydutiesComponent, NavigationComponent, ExpertlectureComponent, ProfileComponent, 
     WorkshopandconferenceComponent, TaskslistComponent, MarkattendanceComponent, ClassTTComponent, MidtermTTComponent, QuizTTComponent, PanelComponent, PracticalTTComponent, ProjectguideallotmentComponent, IndustrialvisitComponent, LibrarymanagementComponent, ComputerclubmanagementComponent, MagazinemanagementComponent]
 })
 export class MydutiesModule { }

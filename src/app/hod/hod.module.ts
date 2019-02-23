@@ -15,7 +15,6 @@ import { StudentComponent } from './student/student.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { MiscellaneousModule } from '../miscellaneous/miscellaneous.module';
 import { ToDoComponent } from './to-do/to-do.component';
-import { ProfileComponent } from './profile/profile.component';
 import { CalendarComponent } from '../miscellaneous/calendar/calendar.component';
 import { FooterModule } from './footer/footer.module';
 import { MeetingsComponent } from './meetings/meetings.component';
@@ -42,7 +41,6 @@ import { InfrastructureModule } from '../infrastructure/infrastructure.module';
      StudentComponent,
      DocumentsComponent,
      ToDoComponent,
-     ProfileComponent,
      MeetingsComponent],
      providers: [CalendarComponent],
      exports:[

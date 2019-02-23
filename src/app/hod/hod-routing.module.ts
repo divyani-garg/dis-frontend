@@ -10,7 +10,6 @@ import { AlertsComponent } from './alerts/alerts.component';
 import { StudentComponent } from './student/student.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { ToDoComponent } from './to-do/to-do.component';
-import { ProfileComponent } from './profile/profile.component';
 import { AboutModule } from '../about/about.module';
 import { AboutComponent } from '../about/about/about.component';
 import { GalleryComponent } from './footer/gallery/gallery.component';
@@ -47,10 +46,6 @@ const routes: Routes = [
       {
         path: 'to-do',
         component: ToDoComponent
-      },
-      {
-        path: 'profile',
-        component: ProfileComponent
       },
       {
         path: 'hod_tasks',

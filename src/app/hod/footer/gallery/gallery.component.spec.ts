@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HodInfrastructureComponent } from './hod-infrastructure.component';
+import { GalleryComponent } from './gallery.component';
 
-describe('HodInfrastructureComponent', () => {
-  let component: HodInfrastructureComponent;
-  let fixture: ComponentFixture<HodInfrastructureComponent>;
+describe('GalleryComponent', () => {
+  let component: GalleryComponent;
+  let fixture: ComponentFixture<GalleryComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HodInfrastructureComponent ]
+      declarations: [ GalleryComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HodInfrastructureComponent);
+    fixture = TestBed.createComponent(GalleryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

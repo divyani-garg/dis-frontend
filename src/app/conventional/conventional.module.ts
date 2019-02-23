@@ -4,7 +4,6 @@ import { ConventionalRoutingModule } from './conventional-routing.module';
 
 @NgModule({
   imports: [
-    CommonModule,
     ConventionalRoutingModule
   ],
   declarations: [],

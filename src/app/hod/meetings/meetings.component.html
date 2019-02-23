@@ -8,12 +8,31 @@
       <app-sidenavigation></app-sidenavigation>
     </div>
     <div class="col-lg-9 kyc-colm user-management kyc-section rewards-section reports-sectn">
-      <div class = "row">
-        <label class="control-label col-lg-2"  for="objective">Objective</label>
-        <input type="text" class="col-lg-8">
-      </div>
+      <div class="row"> 
+        <div class="col-lg-2">            
+        <label class="control-label col-sm-2" for="date">Objective:</label>
+          </div>
+          <div class="col-lg-10"> 
+          <input type="objective" class="form-control" id="dob" placeholder="Enter Objective:" name="objective">
+            </div>
+          </div>
+          <br>
+      <div class="row"> 
+        <div class="col-lg-2">            
+        <label class="control-label col-sm-2" for="date">Date:</label>
+          </div>
+          <div class="col-lg-4"> 
+          <input type="date" class="form-control" id="dob" placeholder="Enter Date:" name="date">
+            </div>
+            <div class="col-lg-1">            
+              <label class="control-label col-sm-2" for="date">Time:</label>
+                </div>
+                <div class="col-lg-5"> 
+                <input type="time" class="form-control" id="time" placeholder="Enter Time:" name="time">
+                  </div>
+          </div>
       <br>
-        <div class ="col-lg-8 row" style="margin-left: 16%">
+        <div class ="col-lg-10 row" style="margin-left: 16%">
         <div class="col-lg-6 kyc-section rewards-section reports-sectn" >
         <h5>Select Faculty for meeting</h5>
         <hr/>
@@ -35,6 +54,7 @@
               </ol>
             </div>
             <button class="float-right" style="margin-left:150px; margin-top:5px" type="submit">Submit</button>
+            <button class="float-right" style="margin-left:330px; margin-top:5px" type="primary">Reset</button>
           </div>
     </div>
   </div>

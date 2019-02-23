@@ -1,4 +1,3 @@
-import { HodInfrastuctureModule } from './../hod/hod-infrastucture/hod-infrastucture.module';
 import { PiechartComponent } from './../miscellaneous/piechart/piechart.component';
 import { AboutModule } from './../about/about.module';
 import { NgModule } from '@angular/core';
@@ -20,6 +19,7 @@ import { StudentRollListModule } from './student/student-roll-list/student-roll-
 import { DocumentsComponent } from './documents/documents.component';
 import { MiscellaneousModule } from 'src/app/miscellaneous/miscellaneous.module';
 import { FacultyProfileComponent } from './faculty-profile/faculty-profile.component';
+import { InfrastructureModule } from '../infrastructure/infrastructure.module';
 
 @NgModule({
   imports: [
@@ -32,7 +32,7 @@ import { FacultyProfileComponent } from './faculty-profile/faculty-profile.compo
     MydutiesModule,
     MiscellaneousModule,
     AboutModule,
-    HodInfrastuctureModule
+    InfrastructureModule
    ],
   declarations: [AttendanceComponent, AlertsComponent, NavigationComponent,
     FacultyComponent, PageNotFoundComponent, SidenavigationComponent, DocumentsComponent, FacultyProfileComponent

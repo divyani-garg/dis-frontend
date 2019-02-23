@@ -17,8 +17,8 @@ import { TimetableComponent } from './timetable/timetable.component';
 import { SidenavigationComponent } from './sidenavigation/sidenavigation.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { MiscellaneousModule } from '../miscellaneous/miscellaneous.module';
-import { HodInfrastuctureModule } from '../hod/hod-infrastucture/hod-infrastucture.module';
 import { BarchartComponent } from '../miscellaneous/barchart/barchart.component';
+import { InfrastructureModule } from '../infrastructure/infrastructure.module';
 
 
 @NgModule({
@@ -28,7 +28,7 @@ import { BarchartComponent } from '../miscellaneous/barchart/barchart.component'
     AboutModule,
     AboutRoutingModule,
     MiscellaneousModule,
-    HodInfrastuctureModule
+    InfrastructureModule
   ],
   declarations: [
     HomeComponent,

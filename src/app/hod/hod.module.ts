@@ -13,19 +13,19 @@ import { HodComponent } from './hod/hod.component';
 import { SidenavigationComponent } from './sidenavigation/sidenavigation.component';
 import { StudentComponent } from './student/student.component';
 import { DocumentsComponent } from './documents/documents.component';
-import { HodInfrastuctureModule } from './hod-infrastucture/hod-infrastucture.module';
 import { MiscellaneousModule } from '../miscellaneous/miscellaneous.module';
 import { ToDoComponent } from './to-do/to-do.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CalendarComponent } from '../miscellaneous/calendar/calendar.component';
 import { FooterModule } from './footer/footer.module';
 import { MeetingsComponent } from './meetings/meetings.component';
+import { InfrastructureModule } from '../infrastructure/infrastructure.module';
 
 @NgModule({
   imports: [
     CommonModule,
     HodRoutingModule,
-    HodInfrastuctureModule,
+    InfrastructureModule,
     MiscellaneousModule,
     FooterModule
   ],
@@ -39,7 +39,6 @@ import { MeetingsComponent } from './meetings/meetings.component';
      NavigationComponent, 
      HodComponent, 
      SidenavigationComponent,
-     
      StudentComponent,
      DocumentsComponent,
      ToDoComponent,

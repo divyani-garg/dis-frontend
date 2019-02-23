@@ -16,8 +16,8 @@ import { DocumentsComponent } from './documents/documents.component';
 import { AboutComponent } from '../about/about/about.component';
 import { AboutModule } from '../about/about.module';
 import { FacultyProfileComponent } from './faculty-profile/faculty-profile.component';
-import { InfrastructureComponent } from '../hod/hod-infrastucture/infrastructure/infrastructure.component';
-import { HodInfrastuctureModule } from '../hod/hod-infrastucture/hod-infrastucture.module';
+import { InfrastructureModule } from '../infrastructure/infrastructure.module';
+import { InfrastructureOutletComponent } from '../infrastructure/infrastructure-outlet/infrastructure-outlet.component';
 
 const routes: Routes = [
   {
@@ -35,8 +35,8 @@ const routes: Routes = [
       },
       {
         path: 'infrastructure',
-        component: InfrastructureComponent,
-        loadChildren: () => HodInfrastuctureModule
+        component: InfrastructureOutletComponent,
+        loadChildren: () => InfrastructureModule
       },
       {
         path : 'attendance',

@@ -12,13 +12,15 @@ import { ProfileComponent } from './profile/profile.component';
 import { StaffComponent } from './staff/staff.component';
 import { SidenavigationComponent } from './sidenavigation/sidenavigation.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { InfrastructureModule } from '../infrastructure/infrastructure.module';
 
 @NgModule({
   imports: [
     CommonModule,
     StaffRoutingModule,
     MiscellaneousModule,
-    ComplaintsModule
+    ComplaintsModule,
+    InfrastructureModule
   ],
   declarations: [
     HomeComponent,

@@ -16,7 +16,6 @@ import { DocumentsComponent } from './documents/documents.component';
 import { HodInfrastuctureModule } from './hod-infrastucture/hod-infrastucture.module';
 import { MiscellaneousModule } from '../miscellaneous/miscellaneous.module';
 import { ToDoComponent } from './to-do/to-do.component';
-import { ProfileComponent } from './profile/profile.component';
 import { CalendarComponent } from '../miscellaneous/calendar/calendar.component';
 import { FooterModule } from './footer/footer.module';
 import { MeetingsComponent } from './meetings/meetings.component';
@@ -43,7 +42,6 @@ import { MeetingsComponent } from './meetings/meetings.component';
      StudentComponent,
      DocumentsComponent,
      ToDoComponent,
-     ProfileComponent,
      MeetingsComponent],
      providers: [CalendarComponent],
      exports:[

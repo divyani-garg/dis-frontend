@@ -3,9 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MydutiesRoutingModule } from './myduties-routing.module';
 import { MydutiesComponent } from './myduties/myduties.component';
-import { NavigationComponent } from './navigation/navigation.component';
 import { ExpertlectureComponent } from './expertlecture/expertlecture.component';
-import { ProfileComponent } from './profile/profile.component';
 import { WorkshopandconferenceComponent } from './workshopandconference/workshopandconference.component';
 import { TaskslistComponent } from './taskslist/taskslist.component';
 import { MarkattendanceComponent } from './markattendance/markattendance.component';
@@ -19,6 +17,7 @@ import { IndustrialvisitComponent } from './industrialvisit/industrialvisit.comp
 import { LibrarymanagementComponent } from './librarymanagement/librarymanagement.component';
 import { ComputerclubmanagementComponent } from './computerclubmanagement/computerclubmanagement.component';
 import { MagazinemanagementComponent } from './magazinemanagement/magazinemanagement.component';
+import { NavigateComponent } from './navigate/navigate.component';
 
 @NgModule({
   imports: [
@@ -26,8 +25,16 @@ import { MagazinemanagementComponent } from './magazinemanagement/magazinemanage
     MydutiesRoutingModule,
 
   ],
-  declarations: [MydutiesComponent, NavigationComponent, ExpertlectureComponent, ProfileComponent,
-    // tslint:disable-next-line:max-line-length
-    WorkshopandconferenceComponent, TaskslistComponent, MarkattendanceComponent, ClassTTComponent, MidtermTTComponent, QuizTTComponent, PanelComponent, PracticalTTComponent, ProjectguideallotmentComponent, IndustrialvisitComponent, LibrarymanagementComponent, ComputerclubmanagementComponent, MagazinemanagementComponent]
+  declarations: [MydutiesComponent, ExpertlectureComponent,WorkshopandconferenceComponent, 
+    TaskslistComponent, MarkattendanceComponent, ClassTTComponent, MidtermTTComponent, QuizTTComponent, 
+    PanelComponent, PracticalTTComponent, ProjectguideallotmentComponent,
+     IndustrialvisitComponent, LibrarymanagementComponent, ComputerclubmanagementComponent, MagazinemanagementComponent, NavigateComponent],
+    exports:[
+      MydutiesComponent, ExpertlectureComponent,WorkshopandconferenceComponent, TaskslistComponent, 
+      MarkattendanceComponent, ClassTTComponent, MidtermTTComponent, QuizTTComponent, PanelComponent, PracticalTTComponent, 
+      ProjectguideallotmentComponent, IndustrialvisitComponent, LibrarymanagementComponent, ComputerclubmanagementComponent, 
+      MagazinemanagementComponent
+    ]
+    
 })
 export class MydutiesModule { }

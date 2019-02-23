@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import * as $ from 'jquery';
 
 @Component({
-  selector: 'app-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss']
+  selector: 'app-navigate',
+  templateUrl: './navigate.component.html',
+  styleUrls: ['./navigate.component.scss']
 })
-export class NavigationComponent implements OnInit {
+export class NavigateComponent implements OnInit {
 
   constructor() { }
 

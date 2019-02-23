@@ -15,12 +15,11 @@ import { StudentModule } from '../faculty/student/student.module';
 import { HomeModule } from './home/home.module';
 import { ComplaintsModule } from './complaints/complaints.module';
 import { SidenavigationComponent } from '../faculty/sidenavigation/sidenavigation.component';
-import { MydutiesModule } from './myduties/myduties.module';
 import { StudentRollListModule } from './student/student-roll-list/student-roll-list.module';
 import { DocumentsComponent } from './documents/documents.component';
 import { MiscellaneousModule } from 'src/app/miscellaneous/miscellaneous.module';
-import { FacultyProfileComponent } from './faculty-profile/faculty-profile.component';
-
+import { ConventionalModule } from '../conventional/conventional.module';
+import { MydutiesModule } from './../myduties/myduties.module';
 @NgModule({
   imports: [
     CommonModule,
@@ -29,14 +28,14 @@ import { FacultyProfileComponent } from './faculty-profile/faculty-profile.compo
     StudentModule,
     HomeModule,
     ComplaintsModule,
-    MydutiesModule,
     MiscellaneousModule,
     AboutModule,
-    HodInfrastuctureModule
+    HodInfrastuctureModule,
+    ConventionalModule,
+    MydutiesModule
    ],
   declarations: [AttendanceComponent, AlertsComponent, NavigationComponent,
-    FacultyComponent, PageNotFoundComponent, SidenavigationComponent, DocumentsComponent, FacultyProfileComponent
-    ],
+    FacultyComponent, PageNotFoundComponent, SidenavigationComponent, DocumentsComponent,    ],
   providers: [PiechartComponent]
 })
 export class FacultyModule { }

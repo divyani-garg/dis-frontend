@@ -1,6 +1,5 @@
 import { AboutModule } from './../about/about.module';
 import { AboutComponent } from './../about/about/about.component';
-import { ProfileComponent } from './profile/profile.component';
 import { StudentComponent } from './student/student.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule, Component } from '@angular/core';
@@ -14,6 +13,7 @@ import { TimetableComponent } from './timetable/timetable.component';
 import { InfrastructureComponent } from '../hod/hod-infrastucture/infrastructure/infrastructure.component';
 import { HodInfrastuctureModule } from '../hod/hod-infrastucture/hod-infrastucture.module';
 import { LoginComponent } from '../authentication/login/login.component';
+import { ConventionalModule } from '../conventional/conventional.module';
 
 const routes: Routes = [
   { path: 'student',
@@ -63,7 +63,7 @@ const routes: Routes = [
       },
       {
         path: 'student_profile',
-        component: ProfileComponent
+        loadChildren : () => ConventionalModule
       }
     ]
   }

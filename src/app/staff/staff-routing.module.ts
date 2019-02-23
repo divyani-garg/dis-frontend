@@ -9,13 +9,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { StaffComponent } from './staff/staff.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { DocumentsComponent } from './documents/documents.component';
-import { ProfileComponent } from './profile/profile.component';
 import { StudentComponent } from './student/student/student.component';
-import { StudentRoutingModule } from '../faculty/student/student-routing.module';
+import { StudentRoutingModule } from './student/student-routing.module';
 import { ComplaintsModule } from './complaints/complaints.module';
 import { ComplaintsComponent } from './complaints/complaints/complaints.component';
 import { InfrastructureComponent } from '../hod/hod-infrastucture/infrastructure/infrastructure.component';
 import { StudentModule } from './student/student.module';
+import { ConventionalModule } from '../conventional/conventional.module';
 
 const routes: Routes = [
   {
@@ -53,10 +53,6 @@ const routes: Routes = [
           component: DocumentsComponent
         },
         {
-          path: 'staff_profile',
-          component: ProfileComponent
-        },
-        {
           path: 'staff_students',
           component: StudentComponent,
           loadChildren: () => StudentModule
@@ -65,6 +61,10 @@ const routes: Routes = [
           path : 'staff_complaints',
           component : ComplaintsComponent,
           loadChildren: () => ComplaintsModule
+        },
+        {
+          path : 'staff_profile',
+          loadChildren : () => ConventionalModule
         }
     ]
   }

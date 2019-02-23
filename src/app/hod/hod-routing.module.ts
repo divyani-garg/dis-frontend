@@ -11,7 +11,6 @@ import { StudentComponent } from './student/student.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { InfrastructureComponent } from './hod-infrastucture/infrastructure/infrastructure.component';
 import { ToDoComponent } from './to-do/to-do.component';
-import { ProfileComponent } from './profile/profile.component';
 import { AboutModule } from '../about/about.module';
 import { AboutComponent } from '../about/about/about.component';
 import { HodInfrastuctureModule } from './hod-infrastucture/hod-infrastucture.module';
@@ -48,10 +47,6 @@ const routes: Routes = [
       {
         path: 'to-do',
         component: ToDoComponent
-      },
-      {
-        path: 'profile',
-        component: ProfileComponent
       },
       {
         path: 'hod_tasks',

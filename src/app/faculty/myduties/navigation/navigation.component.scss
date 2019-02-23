@@ -1,0 +1,103 @@
+  a{
+    text-decoration: none;
+  }
+//  .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
+//    background-color: black;
+//    color:yellow;
+//    }
+    .subjectandFacultyBackground{
+      background:rgb(170, 167, 167);
+      padding: 3%;
+      color:white;
+      width : 100%;
+    }
+    .industrialVisitHeadingBackground{
+      background:rgb(170, 167, 167);
+      padding: 1%;
+      color:white;
+      width : 100%;
+    }  
+  
+  
+  .heading{
+    color:#f46404;
+    padding-left:2%;
+  }
+  .table-padding{
+    padding-top:6%;
+  }
+  .modal-header{
+    background-color:rgb(4, 58, 87);
+    color:white;
+    margin:0%;
+    
+  }
+/* The side navigation menu */
+.sidenav {
+  height: 78%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: absolute; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 1%;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 15px; /* Place content 30px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  background-color:rgb(252, 249, 249);
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f0ebeb;
+  width:100%;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.selector.noshadow {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+  box-shadow: none;
+  border-right:1px solid rgb(133, 128, 128);
+  
+  border-radius: 2%;  
+}
+
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.sidenav {
+  right: 0;
+}
+.industrial-button{
+  padding: 0;
+  border: none;
+  background: none;
+  color: white;
+}

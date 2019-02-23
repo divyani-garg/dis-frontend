@@ -1,0 +1,307 @@
+  <!--panel starts-->
+  <ul class="nav nav-pills nav-fill" id='myduties-panel-pill' role="tablist"
+      aria-orientation="vertical">
+      <li class="nav-item">
+          <a class="nav-link active" data-toggle="pill" href="#myduties-theory"><i
+                  class="fa fa-calendar fa-fw" aria-hidden="true"></i> Theory</a>
+      </li>
+      <li class="nav-item ">
+          <a class="nav-link" data-toggle="pill" href="#myduties-practical"><i class="fa fa-industry fa-fw"
+                  aria-hidden="true"></i> Practical</a>
+      </li>
+  </ul>
+  <div class="tab-content" id="myduties-panel-pill">
+      <div id='myduties-theory' class="tab-pane active">
+          <br>
+          <div class="row" style="margin:1px;background:rgb(170, 167, 167);padding: 1%;color:white;">
+              <div class="col-lg-4">
+                  <h5>Faculty Allocation for Paper</h5>
+              </div>
+              <div class="col-lg-8">
+                  <div class="row">
+                      <div class="col-3 searchbox">
+                          <input class="form-control searchbox-width" type="search"
+                              placeholder="Search" aria-label="Search">
+                      </div>
+                      <a href="" class="col-3 text-center"><i class="fa fa-eye fa-fw"
+                              aria-hidden="true"></i> Preview List</a>
+                      <a href="#" class="col-4" data-toggle="modal" data-target="#makesubjectlist"
+                          data-whatever="@mdo"><i class="fa fa-tasks fa-fw"
+                              aria-hidden="true"></i>
+                          Mark Subject List</a>
+                      <button class="btn btn-primary col-2">Submit</button>
+                  </div>
+              </div>
+          </div>
+
+          <hr>
+          <!--allocation list starts-->
+          <!--Table head begins-->
+          <div class="row ml-1">
+              <div class="col-5">
+                  <h5 style="border-right:1px solid black;">Subject</h5>
+
+              </div>
+              <div class="col-3">
+                  <h5 style="border-right:1px solid black">Internal Examinor</h5>
+
+              </div>
+              <div class="col-3">
+                  <h5>External Examinor</h5>
+
+              </div>
+              <div class="col-1">
+                  <span></span>
+              </div>
+
+          </div>
+          <!--table head ends-->
+          <hr>
+          <div class="accordion" id="accordionExample">
+              <div class="card">
+                  <div class="card-header" id="headingOne">
+                      <div class="row">
+                          <h5 class="col-5">Data Structures (CO24007) </h5>
+                          <p class="col-3" style="background-color:yellow;opacity:0.8 ;">Mr.
+                              Surendra Gupta</p>
+                          <p class="col-3">Ms. Pooja Soni</p>
+                          <button class="col-1 btn btn-link" type="button"
+                              data-toggle="collapse" data-target="#collapseOne"
+                              aria-expanded="true" aria-controls="collapseOne">
+                              <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                          </button>
+                      </div>
+                  </div>
+
+                  <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                      data-parent="#accordionExample">
+                      <div class="card-body mb-3">
+                          <div class="row">
+                              <div class="col-4">
+                                  Data Structure (CO24007)
+                              </div>
+                              <div class="col-3">
+                                  <select class="form-control">
+                                      <option>
+                                          Mr. Surendra Gupta
+                                      </option>
+                                      <option>
+                                          Mr. Somil Neema
+                                      </option>
+                                      <option>
+                                          Mr. Rajiv Verma
+                                      </option>
+                                  </select>
+                              </div>
+                              <div class="col-3">
+                                  <select class="form-control">
+                                      <option>
+                                          Mr. Pooja Soni
+                                      </option>
+                                      <option>
+                                          Mr. Manish Neema
+                                      </option>
+                                      <option>
+                                          Mr. Rajiv Verma
+                                      </option>
+                                  </select>
+                              </div>
+                              <div class="col-2">
+                                  <button class="btn btn-primary float-right" href="#">Submit</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <br>
+              <div class="card">
+                  <div class="card-header" id="headingTwo">
+                      <div class="row">
+                          <h5 class="col-5">ADA (CO34004) </h5>
+                          <p class="col-3">Mr. Swarnim Soni</p>
+                          <p class="col-3" style="background-color:red;opacity:0.8 ;">Ms.
+                              Sheefali Agrawal</p>
+
+                          <button class="col-1 btn btn-link" type="button"
+                              data-toggle="collapse" data-target="#collapseTwo"
+                              aria-expanded="true" aria-controls="collapseTwo">
+                              <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                          </button>
+                      </div>
+                  </div>
+                  <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
+                      data-parent="#accordionExample">
+                      <div class="card-body mb-3">
+                          <div class="row">
+                              <div class="col-4">
+                                  ADA (CO34004)
+                              </div>
+                              <div class="col-3">
+                                  <select class="form-control">
+                                      <option>
+                                          Mr. Swarnim Soni
+                                      </option>
+                                      <option>
+                                          Mr. Somil Neema
+                                      </option>
+                                      <option>
+                                          Mr. Rajiv Verma
+                                      </option>
+                                  </select>
+                              </div>
+                              <div class="col-3">
+                                  <select class="form-control">
+                                      <option>
+                                          Ms. Sheefali Agrawal
+                                      </option>
+                                      <option>
+                                          Mr. Manish Neema
+                                      </option>
+                                      <option>
+                                          Mr. Rajiv Verma
+                                      </option>
+                                  </select>
+                              </div>
+                              <div class="col-2">
+                                  <button class="btn btn-primary float-right" href="#">Submit</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <br>
+              <div class="card">
+                  <div class="card-header" id="headingThree">
+                      <div class="row">
+                          <h5 class="col-5">Software Engineering (CO34007) </h5>
+                          <p class="col-3">Ms. Jyoti Tiwari</p>
+                          <p class="col-3">Ms. Preeti Khare</p>
+
+                          <button class="col-1 btn btn-link" type="button"
+                              data-toggle="collapse" data-target="#collapseThree"
+                              aria-expanded="true" aria-controls="collapseThree">
+                              <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                          </button>
+                      </div>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                      data-parent="#accordionExample">
+                      <div class="card-body">
+                          <div class="row">
+                              <div class="col-4">
+                                  Software Engineering (CO34007)
+                              </div>
+                              <div class="col-3">
+                                  <select class="form-control">
+                                      <option>
+                                          Ms. Jyoti Tiwari
+                                      </option>
+                                      <option>
+                                          Mr. Somil Neema
+                                      </option>
+                                      <option>
+                                          Mr. Rajiv Verma
+                                      </option>
+                                  </select>
+                              </div>
+                              <div class="col-3">
+                                  <select class="form-control">
+                                      <option>
+                                          Ms. Preeti Khare
+                                      </option>
+                                      <option>
+                                          Mr. Manish Neema
+                                      </option>
+                                      <option>
+                                          Mr. Rajiv Verma
+                                      </option>
+                                  </select>
+                              </div>
+                              <div class="col-2">
+                                  <button class="btn btn-primary float-right" href="#">Submit</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <br>
+          </div>
+
+          <button class="btn btn-primary float-right">Submit</button>
+          <!--Allocation list finishes-->
+          <!--modal starts-->
+          <div class="modal fade" id="makesubjectlist" tabindex="-1" role="dialog"
+              aria-labelledby="makesubjectlistLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="makesubjectlistLabel">Allocated
+                              List of Faculties</h5>
+                          <button type="button" class="close" data-dismiss="modal"
+                              aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                          <div class="row">
+                              <h5 class="col-lg-9">Theory Paper Allocation</h5>
+                              <div class="searchbox col-lg-3">
+                                  <input class="form-control searchbox-width" type="search"
+                                      placeholder="Search" aria-label="Search">
+                              </div>
+                          </div>
+                          <br>
+                          <div class="table-responsive">
+                              <table class="table table-striped table-bordered">
+                                  <thead>
+                                      <tr>
+                                          <th scope="col">S.No</th>
+                                          <th scope="col">Faculty Name</th>
+                                          <th scope="col">Subjects</th>
+                                          <th scope="col">Number of Subjects</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                          <th scope="row">1</th>
+                                          <td>Mr. Surendra Gupta</td>
+                                          <td>Data Structure(CO24007), AI(CO4001)</td>
+                                          <td>2</td>
+                                      </tr>
+                                      <tr>
+                                          <th scope="row">2</th>
+                                          <td>Ms. Pooja Soni</td>
+                                          <td>TOC(CO24005)</td>
+                                          <td>1</td>
+                                      </tr>
+                                      <tr>
+                                          <th scope="row">3</th>
+                                          <td>Mr. Swarnim Soni</td>
+                                          <td>ADA(CO34001)</td>
+                                          <td>1</td>
+                                      </tr>
+                                      <tr>
+                                          <th scope="row">4</th>
+                                          <td>Mr. Somil Neema</td>
+                                          <td>Computer Architecture(CO24004),
+                                              IWT(CO3001)</td>
+                                          <td>2</td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                      <div class="modal-footer">
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!--Modal Finishes-->
+      </div>
+      <div id='myduties-practical' class="tab-pane">
+          hii
+      </div>
+
+  </div>
+

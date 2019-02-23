@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
 
 import { FacultyRoutingModule } from './faculty-routing.module';
 import { AttendanceComponent } from './attendance/attendance.component';
-import { AlertsComponent } from './alerts/alerts.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FacultyComponent } from './faculty/faculty.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -34,7 +33,7 @@ import { MydutiesModule } from './../myduties/myduties.module';
     ConventionalModule,
     MydutiesModule
    ],
-  declarations: [AttendanceComponent, AlertsComponent, NavigationComponent,
+  declarations: [AttendanceComponent, NavigationComponent,
     FacultyComponent, PageNotFoundComponent, SidenavigationComponent, DocumentsComponent,    ],
   providers: [PiechartComponent]
 })

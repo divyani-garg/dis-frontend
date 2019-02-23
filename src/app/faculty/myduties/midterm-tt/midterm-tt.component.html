@@ -1,0 +1,553 @@
+  <div class="row">
+      <div class="col-lg-9">
+          <h4 class="heading">Mid Term Time Table</h4>
+      </div>
+      <div class="col-lg-3">
+          <button type="button" class="btn btn-primary mr-2" data-toggle="modal"
+              data-target="#midtermtimetablecreate" data-whatever="@mdo">Create New</button>
+          <button type="button" class="btn btn-secondary mr-2">Reset</button>
+          <button type="button" class="btn btn-success">Submit</button>
+
+
+
+          <div class="modal fade" id="midtermtimetablecreate" tabindex="-1" role="dialog"
+              aria-labelledby="midtermtimetablecreateLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="midtermtimetablecreateLabel">Create
+                              New Quiz</h5>
+                          <button type="button" class="close" data-dismiss="modal"
+                              aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                          <form>
+                              <div class="form-group row">
+                                  <div class="col-lg-6">
+                                      <label for="subjectCode" class="col-form-label">Subject
+                                          Code : </label>
+                                      <input type="text" class="form-control" id="subjectCode">
+                                  </div>
+                                  <div class="col-lg-6">
+                                      <label for="Subjectname" class="col-form-label">Subject
+                                          Name : </label>
+                                      <input type="text" class="form-control" id="Subjectname">
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                  <div class="col-lg-6">
+                                      <label for="date" class="col-form-label">Date
+                                          : </label>
+                                      <input type="date" class="form-control" id="date">
+                                  </div>
+                                  <div class="col-lg-6">
+                                      <label for="time" class="col-form-label">Time
+                                          : </label>
+                                      <input type="time" class="form-control" id="time">
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                  <div class="col-lg-4">
+                                      <label for="Facultyname" class="col-form-label">Faculty
+                                          Name : </label>
+                                      <input type="date" class="form-control" id="Facultyname">
+                                  </div>
+                                  <div class="col-lg-4">
+                                      <label for="lab" class="col-form-label">Selects
+                                          Labs : </label>
+                                      <select class="form-control" multiple>
+                                          <option>SE Lab</option>
+                                          <option>GCL Lab</option>
+                                          <option>HES Lab</option>
+                                          <option>CC & ML Lab</option>
+                                          <option>PG Lab</option>
+                                          <option>CNDC Lab</option>
+                                      </select>
+                                  </div>
+                                  <div class="col-lg-4">
+                                      <label for="Facultyname" class="col-form-label">TA
+                                          Name : </label>
+                                      <select class="form-control" multiple>
+                                          <option>Sumit Agrawal</option>
+                                          <option>Aman Agrawal</option>
+                                          <option>Srijan Jain</option>
+                                          <option>Somil Neema</option>
+                                      </select>
+                                  </div>
+                              </div>
+                          </form>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="reset" class="btn btn-secondary" data-dismiss="modal">Reset</button>
+                          <button type="button" class="btn btn-primary">Add</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </div>
+  <hr>
+  <div class="container">
+
+
+      <div class="row">
+          <div class="col-lg-12">
+              <ul class="nav nav-pills mb-3 nav-fill red" id='midterm-ugpg' role="tablist">
+                  <li class="nav-item">
+                      <a class="nav-link active" data-toggle="pill" href="#midterm-ug">Under
+                          Graduate</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#midterm-pg">Post
+                          Graduate</a>
+                  </li>
+
+              </ul>
+              <div class="tab-content" id='midterm-ugpg'>
+                  <!--midterm ug time table starts-->
+                  <div id='midterm-ug' class="tab-pane active">
+                      <!--Ug Pg tab start-->
+                      <br>
+                      <div class="table-responsive">
+                          <table class="table table-striped table-bordered">
+                              <thead class="industrialVisitHeadingBackground">
+                                  <tr>
+                                      <th scope="col">Date</th>
+                                      <th scope="col">Time</th>
+                                      <th scope="col">II</th>
+                                      <th scope="col">III</th>
+                                      <th scope="col">IV</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td rowspan="3" class="table-padding">
+                                          <i class="fa fa-calendar mr-2"></i><input
+                                              type="date">
+                                      </td>
+                                      <td>
+                                          <select>
+                                              <option>
+                                                  Time Slot
+                                              </option>
+                                          </select>
+                                      </td>
+                                      <td>CO24001</td>
+                                      <td>CO34002</td>
+                                      <td>CO4004</td>
+                                  </tr>
+                                  <tr>
+
+                                      <td>
+                                          <select>
+                                              <option>
+                                                  Time Slot
+                                              </option>
+                                          </select>
+                                      </td>
+                                      <td>CO24001</td>
+                                      <td>CO34002</td>
+                                      <td>CO4004</td>
+                                  </tr>
+                                  <tr>
+
+                                      <td>
+                                          <select>
+                                              <option>
+                                                  Time Slot
+                                              </option>
+                                          </select>
+                                      </td>
+                                      <td>CO24001</td>
+                                      <td>CO34002</td>
+                                      <td>CO4004</td>
+                                  </tr>
+
+                                  <tr>
+                                      <td rowspan="3" class="table-padding">
+                                          <i class="fa fa-calendar mr-2"></i><input
+                                              type="date">
+                                      </td>
+                                      <td>
+                                          <select>
+                                              <option>
+                                                  Time Slot
+                                              </option>
+                                          </select>
+                                      </td>
+                                      <td>CO24001</td>
+                                      <td>CO34002</td>
+                                      <td>CO4004</td>
+                                  </tr>
+                                  <tr>
+
+                                      <td>
+                                          <select>
+                                              <option>
+                                                  Time Slot
+                                              </option>
+                                          </select>
+                                      </td>
+                                      <td>CO24001</td>
+                                      <td>CO34002</td>
+                                      <td>CO4004</td>
+                                  </tr>
+                                  <tr>
+
+                                      <td>
+                                          <select>
+                                              <option>
+                                                  Time Slot
+                                              </option>
+                                          </select>
+                                      </td>
+                                      <td>CO24001</td>
+                                      <td>CO34002</td>
+                                      <td>CO4004</td>
+                                  </tr>
+
+
+                                  <tr>
+                                      <td rowspan="3" class="table-padding">
+                                          <i class="fa fa-calendar mr-2"></i><input
+                                              type="date">
+                                      </td>
+                                      <td>
+                                          <select>
+                                              <option>
+                                                  Time Slot
+                                              </option>
+                                          </select>
+                                      </td>
+                                      <td>CO24001</td>
+                                      <td>CO34002</td>
+                                      <td>CO4004</td>
+                                  </tr>
+                                  <tr>
+
+                                      <td>
+                                          <select>
+                                              <option>
+                                                  Time Slot
+                                              </option>
+                                          </select>
+                                      </td>
+                                      <td>CO24001</td>
+                                      <td>CO34002</td>
+                                      <td>CO4004</td>
+                                  </tr>
+                                  <tr>
+
+                                      <td>
+                                          <select>
+                                              <option>
+                                                  Time Slot
+                                              </option>
+                                          </select>
+                                      </td>
+                                      <td>CO24001</td>
+                                      <td>CO34002</td>
+                                      <td>CO4004</td>
+                                  </tr>
+
+
+
+                              </tbody>
+                          </table>
+                      </div>
+
+                  </div>
+                  <!--midterm ug time table finishes-->
+                  <!--midterm pg time table starts-->
+                  <div id='midterm-pg' class="tab-pane">
+                      <!--Ug Pg tab start-->
+                      <br>
+                      <div class="table-responsive">
+                          <table class="table table-striped table-bordered">
+                              <thead class="industrialVisitHeadingBackground">
+                                  <tr>
+                                      <th scope="col">Date</th>
+                                      <th scope="col">Time</th>
+                                      <th scope="col">I</th>
+                                      <th scope="col">II</th>
+
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td rowspan="3" class="table-padding">
+                                          <i class="fa fa-calendar mr-2"></i><input
+                                              type="date">
+                                      </td>
+                                      <td>
+                                          <select>
+                                              <option>
+                                                  Time Slot
+                                              </option>
+                                          </select>
+                                      </td>
+                                      <td>CO24001</td>
+                                      <td>CO34002</td>
+
+                                  </tr>
+                                  <tr>
+
+                                      <td>
+                                          <select>
+                                              <option>
+                                                  Time Slot
+                                              </option>
+                                          </select>
+                                      </td>
+                                      <td>CO24001</td>
+                                      <td>CO34002</td>
+
+                                  </tr>
+                                  <tr>
+
+                                      <td>
+                                          <select>
+                                              <option>
+                                                  Time Slot
+                                              </option>
+                                          </select>
+                                      </td>
+                                      <td>CO24001</td>
+                                      <td>CO34002</td>
+
+                                  </tr>
+
+                                  <tr>
+                                      <td rowspan="3" class="table-padding">
+                                          <i class="fa fa-calendar mr-2"></i><input
+                                              type="date">
+                                      </td>
+                                      <td>
+                                          <select>
+                                              <option>
+                                                  Time Slot
+                                              </option>
+                                          </select>
+                                      </td>
+                                      <td>CO24001</td>
+                                      <td>CO34002</td>
+
+                                  </tr>
+                                  <tr>
+
+                                      <td>
+                                          <select>
+                                              <option>
+                                                  Time Slot
+                                              </option>
+                                          </select>
+                                      </td>
+                                      <td>CO24001</td>
+                                      <td>CO34002</td>
+
+                                  </tr>
+                                  <tr>
+
+                                      <td>
+                                          <select>
+                                              <option>
+                                                  Time Slot
+                                              </option>
+                                          </select>
+                                      </td>
+                                      <td>CO24001</td>
+                                      <td>CO34002</td>
+
+                                  </tr>
+
+
+                                  <tr>
+                                      <td rowspan="3" class="table-padding">
+                                          <i class="fa fa-calendar mr-2"></i><input
+                                              type="date">
+                                      </td>
+                                      <td>
+                                          <select>
+                                              <option>
+                                                  Time Slot
+                                              </option>
+                                          </select>
+                                      </td>
+                                      <td>CO24001</td>
+                                      <td>CO34002</td>
+
+                                  </tr>
+                                  <tr>
+
+                                      <td>
+                                          <select>
+                                              <option>
+                                                  Time Slot
+                                              </option>
+                                          </select>
+                                      </td>
+                                      <td>CO24001</td>
+                                      <td>CO34002</td>
+
+                                  </tr>
+                                  <tr>
+
+                                      <td>
+                                          <select>
+                                              <option>
+                                                  Time Slot
+                                              </option>
+                                          </select>
+                                      </td>
+                                      <td>CO24001</td>
+                                      <td>CO34002</td>
+
+                                  </tr>
+
+
+
+                              </tbody>
+                          </table>
+                      </div>
+
+                  </div>
+                  <div class="float-right">
+                      <a style="color:#1488CC;" class="mr-3" href="#">
+                          <i class="fa fa-download fa-fw"></i>Time Table</a>
+                      <button type="button" class="btn btn-primary mr-3" data-toggle="modal"
+                          data-target=".seating_arrangement">Seating Arrangement</button>
+                      <button type="button" href="#" class="btn btn-danger mr-3">Delete</button>
+                      <!--We have to write typescript code for it  https://stackoverflow.com/questions/24750623/select-a-row-from-html-table-and-send-values-onclick-of-a-button-->
+                      <button type="button" href="#" class="btn btn-primary">Save</button>
+                  </div>
+              </div>
+              <br>
+              <br>
+              <!--Ug and pg pills ends-->
+
+
+              <!-- Large modal -->
+
+              <div class="modal fade seating_arrangement" tabindex="-1" role="dialog"
+                  aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="seating_arrangement">Seating
+                                  Arrangement</h5>
+                              <button type="button" class="close" data-dismiss="modal"
+                                  aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                              <div class="table-responsive">
+                                  <table class="table  table-bordered">
+                                      <thead class="industrialVisitHeadingBackground">
+                                          <tr>
+                                              <th scope="col">Year</th>
+                                              <th scope="col">Batch</th>
+                                              <th scope="col">Room</th>
+                                              <th scope="col">Roll List</th>
+
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr>
+                                              <td rowspan="2" class="table-padding">
+                                                  II
+                                              </td>
+                                              <td>
+                                                  B1
+                                              </td>
+                                              <td>
+                                                  <select class="form-control">
+                                                      <option>Room</option>
+                                                  </select>
+                                              </td>
+                                              <td><a href="#"><i class="fa fa-download fa-fw"></i>
+                                                      Download</a></td>
+
+                                          </tr>
+                                          <tr>
+                                              <td>B2</td>
+                                              <td>
+                                                  <select class="form-control">
+                                                      <option>Room</option>
+                                                  </select>
+                                              </td>
+                                              <td><a href="#"><i class="fa fa-download fa-fw"></i>
+                                                      Download</a></td>
+                                          </tr>
+                                          <tr>
+                                              <td rowspan="2" class="table-padding">
+                                                  III
+                                              </td>
+                                              <td>
+                                                  B1
+                                              </td>
+                                              <td>
+                                                  <select class="form-control">
+                                                      <option>Room</option>
+                                                  </select>
+                                              </td>
+                                              <td><a href="#"><i class="fa fa-download fa-fw"></i>
+                                                      Download</a></td>
+
+                                          </tr>
+                                          <tr>
+                                              <td>B2</td>
+                                              <td>
+                                                  <select class="form-control">
+                                                      <option>Room</option>
+                                                  </select>
+                                              </td>
+                                              <td><a href="#"><i class="fa fa-download fa-fw"></i>
+                                                      Download</a></td>
+                                          </tr>
+                                          <tr>
+                                              <td rowspan="2" class="table-padding">
+                                                  IV
+                                              </td>
+                                              <td>
+                                                  B1
+                                              </td>
+                                              <td>
+                                                  <select class="form-control">
+                                                      <option>Room</option>
+                                                  </select>
+                                              </td>
+                                              <td><a href="#"><i class="fa fa-download fa-fw"></i>
+                                                      Download</a></td>
+
+                                          </tr>
+                                          <tr>
+                                              <td>B2</td>
+                                              <td>
+                                                  <select class="form-control">
+                                                      <option>Room</option>
+                                                  </select>
+                                              </td>
+                                              <td><a href="#"><i class="fa fa-download fa-fw"></i>
+                                                      Download</a></td>
+                                          </tr>
+                                      </tbody>
+                                  </table>
+                              </div>
+
+                          </div>
+                          <div class="modal-footer float-right">
+                              <a href="#"><i class="fa fa-bookmark fa-fw"></i>Update</a>
+                              <a href="#"><i class="fa fa-download fa-fw"></i>Download
+                                  All</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+  </div>

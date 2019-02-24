@@ -25,7 +25,7 @@ export class SignUpComponent implements OnInit
     console.log(this.form);
 
     this.signupInfo = new SignUpInfo(
-      this.form.enrollmentID,
+      this.form.username,
       this.form.dob,
       this.form.email,
       this.form.password,

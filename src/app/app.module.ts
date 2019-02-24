@@ -1,3 +1,5 @@
+import { AuthenticationModule } from './authentication/authentication.module';
+import { AuthInterceptor, httpInterceptorProviders } from './authentication/auth-interceptor';
 import { StaffModule } from './staff/staff.module';
 import { StaffRoutingModule } from './staff/staff-routing.module';
 import { StudentRoutingModule } from './student/student-routing.module';
@@ -5,7 +7,7 @@ import { StudentModule } from './student/student.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,22 +16,12 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { HodRoutingModule } from './hod/hod-routing.module';
 import { HodModule } from './hod/hod.module';
 
-
-
-import { LoginComponent } from './authentication/login/login.component';
-import { SignUpComponent } from './authentication/sign-up/sign-up.component';
-import { ForgotPasswordComponent } from './authentication/forgot-password/forgot-password.component';
-import { ResetPasswordComponent } from './authentication/reset-password/reset-password.component';
-
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent,
-    SignUpComponent,
-    ForgotPasswordComponent,
-    ResetPasswordComponent,
+    AppComponent
     ],
   imports: [
+    AuthenticationModule,
     BrowserModule,
     AppRoutingModule,
     StudentModule,
@@ -42,7 +34,8 @@ import { ResetPasswordComponent } from './authentication/reset-password/reset-pa
     StaffModule,
     MiscellaneousModule
   ],
-  providers: [],
+  providers: [AuthInterceptor,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

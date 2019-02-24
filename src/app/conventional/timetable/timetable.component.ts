@@ -1,7 +1,6 @@
 import { SemesterSubjectsService } from './../../API_Service/SemesterSubjectsService';
+import { TimetableService } from './../../API_Service/timetable.service';
 import { Component, OnInit, Input } from '@angular/core';
-import { SemesterTimetable } from '../../Model/semester-timetable.model';
-import { TimetableService } from '../../API_Service/timetable.service';
 
 @Component({
   selector: 'app-timetable',
@@ -57,8 +56,6 @@ export class TimetableComponent implements OnInit {
     }
     var lecture_start = start_time;
     var lecture_end = start_time;
-    console.log(start_time);
-    console.log(end_time);
     while (lecture_start !== end_time) {
       lecture_end = this.addTimes(lecture_start, duration);
       this.timeslots.push([lecture_start, lecture_end]);
@@ -175,5 +172,4 @@ export class TimetableComponent implements OnInit {
     return (hh * 60 + mm);
   }
  }
-
 }

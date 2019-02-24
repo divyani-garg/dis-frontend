@@ -18,11 +18,11 @@
       <div class="sign-in-htm">
         <div class="group">
           <label for="user" class="label">Username</label>
-          <input id="user" type="text" class="input" [(ngModel)]="authentication.username" name="username">
+          <input id="user" type="text" class="input" [(ngModel)]="form.username" name="username">
         </div>
         <div class="group">
           <label for="pass" class="label">Password</label>
-          <input id="pass" type="password" class="input" data-type="password" [(ngModel)]="authentication.password" name="password">
+          <input id="pass" type="password" class="input" data-type="password" [(ngModel)]="form.password" name="password">
         </div>
         <div class="group chkbox">
           <input id="check" type="checkbox" class="check" checked>
@@ -30,7 +30,7 @@
             <span class="icon"></span> Remember me</label>
         </div>
         <div class="group">
-          <input type="submit" class="button login-button" value="Sign In" routerLink = {{user}}>
+          <input type="submit" class="button login-button" value="Sign In">
         </div>
         <div class="foot-lnk">
           <a href="/forgot-password">Forgot Password?</a> |

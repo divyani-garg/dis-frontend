@@ -21,7 +21,7 @@ import { FooterModule } from './footer/footer.module';
 import { MeetingsComponent } from './meetings/meetings.component';
 
 const routes: Routes = [
-  { path: 'hod',
+  { path: 'head',
     component: HodComponent,
     children: [
       {

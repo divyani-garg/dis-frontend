@@ -18,6 +18,10 @@ import { LibrarymanagementComponent } from './librarymanagement/librarymanagemen
 import { ComputerclubmanagementComponent } from './computerclubmanagement/computerclubmanagement.component';
 import { MagazinemanagementComponent } from './magazinemanagement/magazinemanagement.component';
 import { NavigateComponent } from './navigate/navigate.component';
+import { AssignTaskComponent } from './assign-task/assign-task.component';
+import { AllocatementorsComponent } from './allocatementors/allocatementors.component';
+import { MentorshipComponent } from './mentorship/mentorship.component';
+import { EditschemeComponent } from './editscheme/editscheme.component';
 
 @NgModule({
   imports: [
@@ -28,7 +32,7 @@ import { NavigateComponent } from './navigate/navigate.component';
   declarations: [MydutiesComponent, ExpertlectureComponent,WorkshopandconferenceComponent, 
     TaskslistComponent, MarkattendanceComponent, ClassTTComponent, MidtermTTComponent, QuizTTComponent, 
     PanelComponent, PracticalTTComponent, ProjectguideallotmentComponent,
-     IndustrialvisitComponent, LibrarymanagementComponent, ComputerclubmanagementComponent, MagazinemanagementComponent, NavigateComponent],
+     IndustrialvisitComponent, LibrarymanagementComponent, ComputerclubmanagementComponent, MagazinemanagementComponent, NavigateComponent, AssignTaskComponent, AllocatementorsComponent, MentorshipComponent, EditschemeComponent],
     exports:[
       MydutiesComponent, ExpertlectureComponent,WorkshopandconferenceComponent, TaskslistComponent, 
       MarkattendanceComponent, ClassTTComponent, MidtermTTComponent, QuizTTComponent, PanelComponent, PracticalTTComponent, 

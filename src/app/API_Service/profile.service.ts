@@ -13,4 +13,24 @@ export class ProfileService {
   getProfileInfo():Observable<any>{
     return this.http.get(`${this.baseUrl}/staffBasicProfile`);
   }
+
+  getWorkExperienceInfo():Observable<any>{
+    return this.http.get(`${this.baseUrl}/userWorkExperience`);
+  }
+
+  getUserQualificationInfo():Observable<any>{
+    return this.http.get(`${this.baseUrl}/userQualification`);
+  }
+
+  getUserResearchWorkInfo():Observable<any>{
+    return this.http.get(`${this.baseUrl}/userResearchWork`);
+  }
+
+  getUserInternshipInfo():Observable<any>{
+    return this.http.get(`${this.baseUrl}/userInternship`);
+  }
+
+  getUserProjectInfo():Observable<any>{
+    return this.http.get(`${this.baseUrl}/userProject`);
+  }
 }

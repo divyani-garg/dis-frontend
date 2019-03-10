@@ -14,11 +14,21 @@ export class ProfileComponent implements OnInit {
   @Input() userResearchWorkData: any;
   @Input() userInternshipData:any;
   @Input() userProjectData:any;
+  @Input() userCompetitiveExamData:any;
+  @Input() userCulturalActivityData:any;
+  @Input() userTechnicalActivityData:any;
+  @Input() userAddressData:any;
+  @Input() facultyStaffListData:any;
   userInternshipInfo:any[];
   userQualificationInfo:any[];
   workExperienceInfo:any[];
   userProjectInfo:any[];
+  userCompetitiveExamInfo:any[];
+  userCulturalActivityInfo:any[];
+  userTechnicalActivityInfo:any[];
   staffBasicProfile:any;
+  userAddressInfo:any[];
+  facultyStaffListInfo:any[];
   userId:string="196";
  
   userResearchWorkInfo:any[];
@@ -74,7 +84,46 @@ export class ProfileComponent implements OnInit {
          console.log(this.userInternshipInfo);
        }
      )
-      
+    
+    this.userCompetitiveExamData=this.profile.getUserCompetitiveExamInfo()
+    .subscribe(
+      data=>{
+        this.userCompetitiveExamInfo=data;
+        console.log(this.userCompetitiveExamInfo);
+      }
+    )
+     
+    this.userCulturalActivityData=this.profile.getUserCulturalActivityInfo()
+    .subscribe(
+      data=>{
+        this.userCulturalActivityInfo=data;
+        console.log(this.userCulturalActivityInfo);
+      }
+    )
+    
+    this.userTechnicalActivityData=this.profile.getUserTechnicalActivityInfo()
+    .subscribe(
+      data=>{
+        this.userTechnicalActivityInfo=data;
+        console.log(this.userTechnicalActivityInfo);
+      }
+    ) 
+
+    this.userAddressData=this.profile.getUserAddressInfo()
+    .subscribe(
+      data=>{
+        this.userAddressInfo=data;
+        console.log(this.userAddressInfo);
+      }
+    )
+
+    this.facultyStaffListData=this.profile.getFacultyStaffList()
+    .subscribe(
+      data=>{
+        this.facultyStaffListInfo=data;
+        console.log(this.facultyStaffListInfo);
+      }
+    )
   }
     checkAuthenticateUser(id):boolean
      {

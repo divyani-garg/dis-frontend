@@ -33,4 +33,24 @@ export class ProfileService {
   getUserProjectInfo():Observable<any>{
     return this.http.get(`${this.baseUrl}/userProject`);
   }
-}
+
+  getUserCompetitiveExamInfo():Observable<any>{
+    return this.http.get(`${this.baseUrl}/userCompetitiveExams`);
+  }
+
+  getUserCulturalActivityInfo():Observable<any>{
+    return this.http.get(`${this.baseUrl}/userCulturalActivityAchievements`);
+  }
+
+  getUserTechnicalActivityInfo():Observable<any>{
+    return this.http.get(`${this.baseUrl}/userTechnicalActivity`);
+  }
+
+  getUserAddressInfo():Observable<any>{
+    return this.http.get(`${this.baseUrl}/userAddress`);
+  }
+
+  getFacultyStaffList():Observable<any>{
+    return this.http.get(`${this.baseUrl}/facultyData`);
+  }
+ }

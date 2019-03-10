@@ -25,24 +25,27 @@
                 <p><b>{{staffBasicProfile?.currentDesignation}}<br />
                     DOB : {{staffBasicProfile?.dob}}<br />
                     Gender : {{staffBasicProfile?.gender}}<br />
-                    Nationality : </b></p>
+                    Blood Group : {{staffBasicProfile?.bloodGroup}} 
+                  </b></p>
               </div>
-              <div class="col-6">
+              <div class="col-9">
                 <p><b>
                     Email : {{staffBasicProfile?.email}}<br />
-                    Mobile No. : +91 {{staffBasicProfile?.mobileNo}}<br />
-                    Alternate Mobile No. : +91 {{staffBasicProfile?.alternateMobileNo}}<br />
-                    Specialization : {{staffBasicProfile?.areaOfSpecialization}}</b></p>
+                    Mobile Number : +91 {{staffBasicProfile?.mobileNo}}<br />
+                    Alternate Mobile Number : +91 {{staffBasicProfile?.alternateMobileNo}}<br />
+                    Specialization : {{staffBasicProfile?.areaOfSpecialization}}<br/>
+                    </b></p>
               </div>
-              <div class="col-3">
-                <p><b>Category : <br />
-                    Blood Group : {{staffBasicProfile?.bloodGroup}}</b></p>
-              </div>
+                  
               <div class="col-12">
-                <p>Present Address : {{staffBasicProfile?.presentAddress}}<br />
-                  {{staffBasicProfile?.permanentAddress}}<br />
-                  Father : {{staffBasicProfile?.fatherName}}<br />
-                  Mother : {{staffBasicProfile?.motherName}}</p>
+                <p>Father : {{staffBasicProfile?.fatherName}}<br />
+                  Mother : {{staffBasicProfile?.motherName}}<br/>
+                  <ng-container *ngFor="let val of userAddressInfo">
+                    Address : {{val.addressLine1}}, {{val.addressLine2}}, {{val.city}}, {{val.pincode}}, {{val.state}}, {{val.country}}
+
+                  </ng-container>
+                
+                </p>
               </div>
             </div>
             <div class="float-right">
@@ -81,7 +84,7 @@
                     </span></p>
                   <hr>
 
-                  <p class="dropdown-item" data-toggle="modal" data-target="#competetiveexam_modal">Competetive Exams
+                  <p class="dropdown-item" data-toggle="modal" data-target="#competetive_modal">Competetive Exams
                     <span class="float-right">
                       <i class="fa fa-plus-square" style="size: 25px;"></i>
                     </span></p>
@@ -93,12 +96,16 @@
                     </span></p>
                   <hr>
 
-                  <p class="dropdown-item" data-toggle="modal" data-target="#activities_modal">Activities/Achievements
+                  <p class="dropdown-item" data-toggle="modal" data-target="#culturalactivity_modal">Cultural Activities/Achievement
                     <span class="float-right">
                       <i class="fa fa-plus-square" style="size: 25px;"></i>
                     </span></p>
                   <hr>
-
+                  <p class="dropdown-item" data-toggle="modal" data-target="#technicalactivity_modal">Technical Activities/Achievements
+                      <span class="float-right">
+                        <i class="fa fa-plus-square" style="size: 25px;"></i>
+                      </span></p>
+                    <hr>  
                   <p class="dropdown-item" data-toggle="modal" data-target="#workshop_modal">Workshops/Seminars
                     <span class="float-right">
                       <i class="fa fa-plus-square" style="size: 25px;"></i>
@@ -671,55 +678,22 @@
       <div class="kyc-section rewards-section reports-sectn">
         <h3>Projects <a data-toggle="modal" data-target="#project_modal"><i class="fa fa-plus-square float-right"
               style="font-size: 30px;"></i></a></h3>
-        <div class="row">
+       <div *ngFor="let val of userProjectInfo">
+              <div class="row">
           <div class="col-1">
             <i class="fa fa-code text-center" style="font-size: 60px;"></i>
           </div>
           <div class="col-11">
-            <h5>Departmental Information System (DIS) <a data-toggle="modal" data-target="#project_modal"><i
+            <h5>{{val.title}} <a data-toggle="modal" [attr.data-target]="'#project' + val.id"><i
                   class="fa fa-pencil float-right" style="font-size: 30px;"></i></a></h5>
-            <p>July 2018 – Ongoing<br />Guide : Dr. Urjita Thakar<br />The main goal of the DIS is to automate the
-              process carried out in the organization with improved performance and realize the visions of paperless
-              work. We are attempting to improve our existing system that runs on pen and paper. <br />Other Creators :
-              Pavitra Malpani</p>
+            <p>{{val.from}} - {{val.to}}<br />Guide : {{val.guide}}<br />{{val.description}} <br />Other Creators :
+              {{val.otherCreators}} <br />My Role : {{val.role}}</p>
           </div>
         </div>
         <hr>
-        <div class="row">
-          <div class="col-1">
-            <i class="fa fa-code text-center" style="font-size: 60px;"></i>
-          </div>
-          <div class="col-11">
-            <h5>LEACH Protocol with Enhanced Network Lifetime in Wireless Sensor Network<a data-toggle="modal"
-                data-target="#project_modal"><i class="fa fa-pencil float-right" style="font-size: 30px;"></i></a></h5>
-            <p>May 2015 – May 2016<br />Guide : Mr. K. Anil Kumar<br />In this project, a modified algorithm for LEACH
-              protocol is proposed known as “LEACH with Enhanced Network Lifetime protocol (LEACH-ENL)
-              for clustered WSN” is aimed at prolonging the lifetime of the sensor networks by balancing the energy
-              consumption of the sensor nodes.<br />Other Creators : Kanak Soni, Vatika Goswami</p>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-1">
-            <i class="fa fa-code text-center" style="font-size: 60px;"></i>
-          </div>
-          <div class="col-11">
-            <h5>Business Card Manager through Optical Character Recognition<a data-toggle="modal"
-                data-target="#project_modal"><i class="fa fa-pencil float-right" style="font-size: 30px;"></i></a></h5>
-            <p>May 2014 – May 2015<br />Guide : Ms. Neha Jain<br />Business Card Manager powered with an advanced
-              version of OCR (Optical Character Recognition) technology, this software offers the best of business
-              card scanning. Business card manager has an intuitive combination of an easy-to-use interface and a
-              powerful search tool that allows finding information .<br />Other Creators : Kanak Soni, Vatika Goswami
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <br />
-
-      <!-- Modal -->
-      <div class="modal fade" id="project_modal" role="dialog">
-        <div class="modal-dialog">
+         <!-- Modal -->
+      <div class="modal fade" id="project{{val.id}}" role="dialog">
+        <div class="modal-dialog modal-lg">
 
           <!-- Modal content-->
           <div class="modal-content">
@@ -730,47 +704,40 @@
             <div class="modal-body">
               <form>
 
-                <div class="form-group col-lg">
+                <div class="form-group">
                   <label for="reason">Title<span class="necessary"> *</span></label>
-                  <input class="form-control" id="reason">
+                  <input class="form-control" id="reason" value="{{val.title}}">
                 </div>
-                <div class="form-group col-lg">
-                  <label for="reason">Guide<span class="necessary"> *</span></label>
-                  <input class="form-control" id="reason">
-                </div>
-                <div class="form-group col-lg">
-                  <label for="reason">Co Guide<span class="necessary"> *</span></label>
-                  <input class="form-control" id="reason">
-                </div>
-                <div class="form-group col-lg">
+                <div class="form-group">
                   <label for="reason">Description<span class="necessary"> *</span></label>
-                  <input class="form-control" id="reason">
+                  <textarea class="form-control" id="reason" row="5" value="{{val.description}}"></textarea>
                 </div>
-                <br />
-
-                <div class="form-group col-lg">
-                  <label for="reason">Area/ Subject/ Topic<span class="necessary"> *</span></label>
-                  <textarea class="form-control" id="reason"></textarea>
+                <div class="row">
+                <div class="form-group col-lg-4">
+                  <label for="reason">Guide<span class="necessary"> *</span></label>
+                  <input class="form-control" id="reason" value="{{val.guide}}">
                 </div>
-
-                <br />
+                <div class="form-group col-lg-4">
+                  <label for="reason">Other Creators<span class="necessary"> *</span></label>
+                  <input class="form-control" id="reason" value="{{val.otherCreators}}">
+                </div>
+                <div class="form-group col-lg-4">
+                  <label for="reason">My Role<span class="necessary"> *</span></label>
+                  <input class="form-control" id="CGPA" value="{{val.role}}">
+                </div>
+              </div>
                 <div class='row'>
                   <div class="col-lg-6">
                     <label for="From">From<span class="necessary"> *</span></label>
-                    <input type="date" name="Joining">
+                    <input type="date" name="Joining" class="form-control" value="{{val.from}}">
                   </div>
 
                   <div class="col-lg-6">
                     <label for="To">To<span class="necessary"> *</span></label>
-                    <input type="date" name="Passing">
+                    <input type="date" name="Passing" class="form-control" value="{{val.to}}">
                   </div>
                 </div>
-                <br />
-
-                <div class="form-group col-lg-6">
-                  <label for="reason">Co- Authors<span class="necessary"> *</span></label>
-                  <input class="form-control" id="CGPA">
-                </div>
+                
               </form>
             </div>
             <div class="modal-footer">
@@ -779,33 +746,89 @@
           </div>
         </div>
       </div>
+       
+       </div>
+          <!-- Modal -->
+          <div class="modal fade" id="project_modal" role="dialog">
+            <div class="modal-dialog modal-lg">
+    
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Projects</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <form>
+    
+                    <div class="form-group">
+                      <label for="reason">Title<span class="necessary"> *</span></label>
+                      <input class="form-control" id="reason">
+                    </div>
+                    <div class="form-group">
+                      <label for="reason">Description<span class="necessary"> *</span></label>
+                      <textarea class="form-control" id="reason" row="4"></textarea>
+                    </div>
+                    <div class="row">
+                    <div class="form-group col-lg-4">
+                      <label for="reason">Guide<span class="necessary"> *</span></label>
+                      <input class="form-control" id="reason">
+                    </div>
+                    <div class="form-group col-lg-4">
+                      <label for="reason">Other Creators<span class="necessary"> *</span></label>
+                      <input class="form-control" id="reason">
+                    </div>
+                    <div class="form-group col-lg-4">
+                      <label for="reason">Role<span class="necessary"> *</span></label>
+                      <input class="form-control" id="CGPA">
+                    </div>
+                  </div>
+                    <div class='row'>
+                      <div class="col-lg-6">
+                        <label for="From">From<span class="necessary"> *</span></label>
+                        <input type="date" name="Joining" class="form-control">
+                      </div>
+    
+                      <div class="col-lg-6">
+                        <label for="To">To<span class="necessary"> *</span></label>
+                        <input type="date" name="Passing" class="form-control">
+                      </div>
+                    </div>
+                    
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
 
       <br />
 
       <div class="kyc-section rewards-section reports-sectn">
-        <h3>Competetive Exams <a data-toggle="modal" data-target="#comp_exam_modal"><i
+        <h3>Competetive Exams <a data-toggle="modal" data-target="#competitive_modal"><i
               class="fa fa-plus-square float-right" style="font-size: 30px;"></i></a></h3>
-        <div class="row">
+        <div *ngFor="let val of userCompetitiveExamInfo">
+              <div class="row">
           <div class="col-1">
             <i class="fa fa-clipboard text-center" style="font-size: 60px;"></i>
           </div>
           <div class="col-11">
-            <h5>GATE (Graduate Aptitude Test in Engineering) <i class="fa fa-pencil float-right"
-                style="font-size: 30px;"></i></h5>
-            <p>Registration No. : VCYA57CSHI<br />Year : 2015</p>
-            <div class="row">
-              <p class="col-4">Score : 480</p>
-              <p class="col-4">Normalized marks : 33.44</p>
-              <p class="col-4">Rank : 9876</p>
-            </div>
-            <a href="#">view score card</a>
+            <h5>{{val.nameOfExam}} <a data-toggle="modal" [attr.data-target]="'#competitiveexam' + val.id"><i class="fa fa-pencil float-right"
+                style="font-size: 30px;"></i></a></h5>
+            <p>Registration No. : {{val.registrationNo}}<br />
+              Year : {{val.year}}<br />
+              Score : {{val.score}}<br />
+              <!--<p class="col-4">Normalized marks : 33.44</p>-->
+              Rank : {{val.rank}}</p>
+            <!--<a href="#">view score card</a>-->
           </div>
         </div>
-      </div>
-
-
-      <!-- Modal -->
-      <div class="modal fade" id="comp_exam_modal" role="dialog">
+           <!-- Modal -->
+      <div class="modal fade" id="competitiveexam{{val.id}}" role="dialog">
         <div class="modal-dialog">
 
           <!-- Modal content-->
@@ -816,50 +839,37 @@
             </div>
             <div class="modal-body">
               <form>
-                <div class="col-lg">
+                <div class="">
                   <label for="reason">Name of Exam<span class="necessary"> *</span></label>
-                  <select id="leavetype" class="form-control">
-                    <option>GRE</option>
-                    <option>GATE</option>
-                    <option>CAT</option>
-                  </select>
+                  <input type="text" class="form-control" value="{{val.nameOfExam}}">
                 </div>
 
-                <div class="form-group col-lg">
+                <div class="form-group">
                   <label for="reason">Registration No.<span class="necessary"> *</span></label>
-                  <input class="form-control" id="reason">
+                  <input class="form-control" id="reason" value="{{val.registrationNo}}">
                 </div>
-                <div class="col-lg">
+                <div class="form-group">
                   <label for="reason">Year of Exam<span class="necessary"> *</span></label>
-                  <select id="leavetype" class="form-control">
-                    <option>2018</option>
-                    <option>2017</option>
-                    <option>2016</option>
-                    <option>2015</option>
-                    <option>2014</option>
-                  </select>
+                  <input class="form-control" value="{{val.year}}" type="text">
                 </div>
-
-                <br />
                 <div class='row'>
-                  <div class="col-lg-6">
+                  <div class="form-group col-lg-6">
                     <label for="From">Score<span class="necessary"> *</span></label>
-                    <input type="form-control" id="reason">
+                    <input class="form-control" id="reason" value="{{val.score}}">
                   </div>
 
-                  <div class="col-lg-6">
+                  <div class="form-group col-lg-6">
                     <label for="To">All India Rank<span class="necessary"> *</span></label>
-                    <input type="form-control" id="reason">
+                    <input class="form-control" id="reason" value="{{val.rank}}">
                   </div>
                 </div>
                 <br />
 
-                <div class="form-group col-lg">
-                  <label for="reason">Upload Score Card<span class="necessary"> *</span></label>
-                  <i class="fa fa-file"></i>
+                <div class="form-group">
+                  <i class="fa fa-file fa-fw"></i><label for="reason">Upload Score Card<span class="necessary"> *</span></label>
+                  
                 </div>
-                <br />
-              </form>
+               </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
@@ -867,23 +877,76 @@
           </div>
         </div>
       </div>
-      <br />
+        </div>
+
+        <div class="modal fade" id="competitive_modal" role="dialog">
+          <div class="modal-dialog">
+  
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Competitive Exam</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="reason">Name of Exam<span class="necessary"> *</span></label>
+                    <input type="text" class="form-control">
+                  </div>
+  
+                  <div class="form-group">
+                    <label for="reason">Registration No.<span class="necessary"> *</span></label>
+                    <input class="form-control" id="reason" >
+                  </div>
+                  <div class="form-group">
+                    <label for="reason">Year of Exam<span class="necessary"> *</span></label>
+                    <input class="form-control" type="text">
+                  </div>
+                  <div class='row'>
+                    <div class="form-group col-lg-6">
+                      <label for="From">Score<span class="necessary"> *</span></label>
+                      <input class="form-control" id="reason">
+                    </div>
+  
+                    <div class="form-group col-lg-6">
+                      <label for="To">All India Rank<span class="necessary"> *</span></label>
+                      <input class="form-control" id="reason" >
+                    </div>
+                  </div>
+                  <br />
+  
+                  <div class="form-group">
+                    <i class="fa fa-file fa-fw"></i><label for="reason">Upload Score Card<span class="necessary"> *</span></label>
+                    
+                  </div>
+                 </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+
+     <br />
 
       <div class="kyc-section rewards-section reports-sectn">
         <h3>Placements <i class="fa fa-plus-square float-right" style="font-size: 30px;"></i></h3>
+       <div *ngFor="let val of userPlacementInfo">
         <div class="row">
           <div class="col-1">
             <i class="fa fa-suitcase text-center" style="font-size: 60px;"></i>
           </div>
           <div class="col-11">
-            <h5>Deloitte, Hyderabad (On Campus) <i class="fa fa-pencil float-right" style="font-size: 30px;"></i></h5>
+            <h5>Deloitte, Hyderabad (On Campus) <a data-toggle="modal" [attr.data-target]="'#placement' + val.id"> <i class="fa fa-pencil float-right" style="font-size: 30px;"></i></a></h5>
             <p>6.2 CTC<br />status</p>
           </div>
         </div>
-      </div>
-
-      <!-- Modal -->
-      <div class="modal fade" id="placement_modal" role="dialog">
+           <!-- Modal -->
+      <div class="modal fade" id="placement{{val.id}}" role="dialog">
         <div class="modal-dialog">
 
           <!-- Modal content-->
@@ -974,33 +1037,358 @@
         </div>
       </div>
 
+       </div>
+ <!-- Modal -->
+ <div class="modal fade" id="placement_modal" role="dialog">
+  <div class="modal-dialog">
 
-      <br />
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Internship</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form>
+
+          <div class="col-lg">
+            <label for="reason">Company Name<span class="necessary"> *</span></label>
+            <select id="leavetype" class="form-control">
+              <option>Delloite</option>
+              <option>GATE</option>
+              <option>CAT</option>
+            </select>
+          </div>
+          <div class="form-group col-lg">
+            <label for="reason">Company Address<span class="necessary"> *</span></label>
+            <input class="form-control" id="reason">
+          </div>
+          <br />
+
+          <label class="control-label col-lg" for="Type of leave">Location<span class="necessary">
+              *</span></label>
+          <div class="row">
+            <div class="col-lg-4">
+              <select id="leavetype" class="form-control">
+                <option>Country</option>
+                <option>India</option>
+                <option>USA</option>
+              </select>
+            </div>
+
+            <div class="col-lg-4">
+              <select id="leavetype" class="form-control">
+                <option>State</option>
+                <option>M.P.</option>
+                <option>New Delhi</option>
+              </select>
+            </div>
+
+            <div class="col-lg-4">
+              <select id="leavetype" class="form-control">
+                <option>City</option>
+                <option>Indore</option>
+                <option>New Delhi</option>
+              </select>
+            </div>
+
+          </div>
+          <br />
+
+          <div class="form-group col-lg">
+            <label for="reason">Area/ Subject/ Topic<span class="necessary"> *</span></label>
+            <input class="form-control" id="reason">
+          </div>
+
+          <br />
+          <div class='row'>
+            <div class="col-lg-6">
+              <label for="From">From<span class="necessary"> *</span></label>
+              <input type="date" name="Joining">
+            </div>
+
+            <div class="col-lg-6">
+              <label for="To">To<span class="necessary"> *</span></label>
+              <input type="date" name="Passing">
+            </div>
+          </div>
+          <br />
+
+
+          <div class="form-group col-lg">
+            <i class="fa fa-file"></i>
+          </div>
+          <br />
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      </div>
+    <br />
 
       <div class="kyc-section rewards-section reports-sectn">
-        <h3>Activities/Achievements <i class="fa fa-plus-square float-right" style="font-size: 30px;"></i></h3>
+        <h3>Cultural Activities<a data-toggle="modal" data-target="#culturalactivity_modal"> <i class="fa fa-plus-square float-right" style="font-size: 30px;"></i></a></h3>
+        <div *ngFor="let val of userCulturalActivityInfo">
         <div class="row">
           <div class="col-1">
             <i class="fa fa-trophy text-center" style="font-size: 60px;"></i>
           </div>
           <div class="col-11">
-            <h5>District Level Paper Presentation - Cultural <i class="fa fa-pencil float-right"
-                style="font-size: 30px;"></i></h5>
-            <p>12 May 2015, Indore<br />Participated<br /><a href="#">view certificate</a>></p>
+            <h5>{{val.nameOfActivity}} - {{val.type}}<a  data-toggle="modal" [attr.data-target]="'#culturalactivity' + val.id"> <i class="fa fa-pencil float-right"
+                style="font-size: 30px;"></i></a></h5>
+            <p>{{val.date}}, {{val.place}}<br />{{val.achivement}}<a href="#">view certificate</a></p>
           </div>
         </div>
         <hr>
-        <div class="row">
-          <div class="col-1">
-            <i class="fa fa-trophy text-center" style="font-size: 60px; "></i>
+        <div class="modal fade" id="culturalactivity{{val.id}}" role="dialog">
+          <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Cultural Activities</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
-          <div class="col-11">
-            <h5>Kho-Kho at House level - Sports <i class="fa fa-pencil float-right" style="font-size: 30px;"></i></h5>
-            <p>02 Sept 2010, Indore<br />Winer<br /><a href="#">view certificate</a>></p>
+          <div class="modal-body">
+            <form>
+                <div class="form-group">
+                    <label for="reason">Name of Activity<span class="necessary"> *</span></label>
+                    <input class="form-control" id="reason" value="{{val.nameOfActivity}}">
+                  </div>
+              <div class="row">
+              <div class="form-group col-lg-6">
+                <label for="reason">Type<span class="necessary"> *</span></label>
+                <input type="text" class="form-control" value="{{val.type}}">
+              </div>
+              <div class="form-group col-lg-6">
+                  <label for="To">Achivement<span class="necessary"> *</span></label>
+                  <input class="form-control" id="reason" value="{{val.achievement}}" >
+                </div>
+              
+              </div>
+              <div class="row">
+              <div class="form-group col-lg-6">
+                <label for="reason">Date<span class="necessary"> *</span></label>
+                <input class="form-control" type="date" value="{{val.date}}">
+              </div>
+              
+                <div class="form-group col-lg-6">
+                  <label for="From">Place<span class="necessary"> *</span></label>
+                  <input class="form-control" id="reason" value="{{val.place}}">
+                </div>
+              </div>
+               
+                
+              
+             </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
           </div>
         </div>
+        </div>
+        </div>
       </div>
+       <!--Empty Modal-->
+       <div class="modal fade" id="culturalactivity_modal" role="dialog">
+          <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Cultural Activities</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form>
+                <div class="form-group">
+                    <label for="reason">Name of Activity<span class="necessary"> *</span></label>
+                    <input class="form-control" id="reason" >
+                  </div>
+              <div class="row">
+              <div class="form-group col-lg-6">
+                <label for="reason">Type<span class="necessary"> *</span></label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group col-lg-6">
+                  <label for="To">Achivement<span class="necessary"> *</span></label>
+                  <input class="form-control" id="reason" >
+                </div>
+              
+              </div>
+              <div class="row">
+              <div class="form-group col-lg-6">
+                <label for="reason">Date<span class="necessary"> *</span></label>
+                <input class="form-control" type="date">
+              </div>
+              
+                <div class="form-group col-lg-6">
+                  <label for="From">Place<span class="necessary"> *</span></label>
+                  <input class="form-control" id="reason">
+                </div>
+              </div>
+               
+                
+              
+             </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
+          </div>
+        </div>
+        </div>
+        </div>
+      </div>
+
+      <br/>
+
+      <!--User Technical Activity-->
+      <div class="kyc-section rewards-section reports-sectn">
+          <h3>Technical Activities<a data-toggle="modal" data-target="#technicalactivity_modal"> <i class="fa fa-plus-square float-right" style="font-size: 30px;"></i></a></h3>
+          <div *ngFor="let val of userTechnicalActivityInfo">
+          <div class="row">
+            <div class="col-1">
+              <i class="fa fa-trophy text-center" style="font-size: 60px;"></i>
+            </div>
+            <div class="col-11">
+              <h5>{{val.subject}}<a  data-toggle="modal" [attr.data-target]="'#technicalactivity' + val.id"> <i class="fa fa-pencil float-right"
+                  style="font-size: 30px;"></i></a></h5>
+              <p>{{val.type}}<br />
+                Place - {{val.place}}<br/>
+                Attended / Organised - {{val.attendedOrganized}}<br/>
+                From : {{val.from}}  To : {{val.to}}<br/>
+                Name of Coordinator - {{val.nameOfCoordinator}}
+                </p>
+            </div>
+          </div>
+          <hr>
+          <div class="modal fade" id="technicalactivity{{val.id}}" role="dialog">
+            <div class="modal-dialog">
+           <!-- Modal content-->
+           <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Technical Activities</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <form>
+                  <div class="form-group">
+                      <label for="reason">Subject<span class="necessary"> *</span></label>
+                      <input class="form-control" id="reason" value="{{val.subject}}" row="2">
+                    </div>
+                <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="reason">Type<span class="necessary"> *</span></label>
+                  <input type="text" class="form-control" value="{{val.type}}">
+                </div>
+                <div class="form-group col-lg-6">
+                    <label for="To">Place<span class="necessary"> *</span></label>
+                    <input class="form-control" id="reason" value="{{val.place}}" >
+                  </div>
+                
+                </div>
+                <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="reason">Name of Coordinator<span class="necessary"> *</span></label>
+                  <input class="form-control" type="text" value="{{val.nameOfCoordinator}}">
+                </div>
+                
+                  <div class="form-group col-lg-6">
+                    <label for="From">Organised / Attended<span class="necessary"> *</span></label>
+                    <input class="form-control" id="reason" value="{{val.attendedOrganized}}">
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                      <label for="reason">From<span class="necessary"> *</span></label>
+                      <input class="form-control" type="date" value="{{val.from}}">
+                    </div>
+                    
+                      <div class="form-group col-lg-6">
+                        <label for="From">To<span class="necessary"> *</span></label>
+                        <input class="form-control" id="reason" value="{{val.to}}">
+                      </div>
+                    </div>
+                  
+                
+               </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
+            </div>
+          </div>
+          </div>
+          </div>
+        </div>
+         <!--Empty Modal-->
+         <div class="modal fade" id="technicalactivity_modal" role="dialog">
+            <div class="modal-dialog">
+           <!-- Modal content-->
+           <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Technical Activities</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <form>
+                  <div class="form-group">
+                      <label for="reason">Subject<span class="necessary"> *</span></label>
+                      <input class="form-control" id="reason" row="2">
+                    </div>
+                <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="reason">Type<span class="necessary"> *</span></label>
+                  <input type="text" class="form-control">
+                </div>
+                <div class="form-group col-lg-6">
+                    <label for="To">Place<span class="necessary"> *</span></label>
+                    <input class="form-control" id="reason">
+                  </div>
+                
+                </div>
+                <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="reason">Name of Coordinator<span class="necessary"> *</span></label>
+                  <input class="form-control" type="text">
+                </div>
+                
+                  <div class="form-group col-lg-6">
+                    <label for="From">Organised / Attended<span class="necessary"> *</span></label>
+                    <input class="form-control" id="reason">
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                      <label for="reason">From<span class="necessary"> *</span></label>
+                      <input class="form-control" type="date">
+                    </div>
+                    
+                      <div class="form-group col-lg-6">
+                        <label for="From">To<span class="necessary"> *</span></label>
+                        <input class="form-control" id="reason" type="date">
+                      </div>
+                    </div>
+                  
+                
+               </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
+            </div>
+          </div>
+          </div>
+          </div>
+        </div>
+   
+   <!--Col-lg-9 ended-->
     </div>
+    
 
 
     <!--End Left Panel-->
@@ -1009,133 +1397,32 @@
     <!--Start Right Panel-->
     <div class="col-lg-3 kyc-section rewards-section reports-sectn scroll-area" style="max-height: 1000px">
       <div class="position-static">
-        <h3>M.E. II Year <i class="fa fa-download float-right" style="font-size: 30px;"></i></h3>
+        <h3>Employees <i class="fa fa-download float-right" style="font-size: 30px;"></i></h3>
         <input class="form-control" type="text" placeholder="Search" aria-label="Search">
         <hr>
       </div>
       <div>
+        <div *ngFor="let val of facultyStaffListInfo">
         <div class="row">
-          <div class="col-4">
-            <div><img class="othersprofile" src="../../../assets/images/profile-pic_02.jpg" alt="" /></div>
+          <div class="col-3">
+            <div><img class="othersprofile" src="../../../assets/images/img_avatar3.png" alt="" /></div>
           </div>
-          <div class="col-8">
-            <h5>Pavitra Malpani</h5>
-            <p>0801CS17ME17<br />
-              malpanipavitra@gmail.com</p>
+          <div class="col-9">
+            <h6>{{val.name}} [{{val.nameAcronym}}]</h6>
+            <p>{{val.currentDesignation}}<br />
+              <i class="fa fa-envelope mr-1" aria-hidden="true"></i>{{val.email}}<br/>
+              <i class="fa fa-mobile mr-1" aria-hidden="true"></i>{{val.mobileNo}}
+            </p>
           </div>
 
         </div>
         <hr>
-        <div class="row">
-          <div class="col-4">
-            <div><img class="othersprofile" src="../../../assets/images/profile-pic_02.jpg" alt="" /></div>
-          </div>
-          <div class="col-8">
-            <h5>Pavitra Malpani</h5>
-            <p>0801CS17ME17<br />
-              malpanipavitra@gmail.com</p>
-          </div>
-
         </div>
-        <hr>
-        <div class="row">
-          <div class="col-4">
-            <div><img class="othersprofile" src="../../../assets/images/profile-pic_02.jpg" alt="" /></div>
-          </div>
-          <div class="col-8">
-            <h5>Pavitra Malpani</h5>
-            <p>0801CS17ME17<br />
-              malpanipavitra@gmail.com</p>
-          </div>
-
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-4">
-            <div><img class="othersprofile" src="../../../assets/images/profile-pic_02.jpg" alt="" /></div>
-          </div>
-          <div class="col-8">
-            <h5>Pavitra Malpani</h5>
-            <p>0801CS17ME17<br />
-              malpanipavitra@gmail.com</p>
-          </div>
-
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-4">
-            <div><img class="othersprofile" src="../../../assets/images/profile-pic_02.jpg" alt="" /></div>
-          </div>
-          <div class="col-8">
-            <h5>Pavitra Malpani</h5>
-            <p>0801CS17ME17<br />
-              malpanipavitra@gmail.com</p>
-          </div>
-
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-4">
-            <div><img class="othersprofile" src="../../../assets/images/profile-pic_02.jpg" alt="" /></div>
-          </div>
-          <div class="col-8">
-            <h5>Pavitra Malpani</h5>
-            <p>0801CS17ME17<br />
-              malpanipavitra@gmail.com</p>
-          </div>
-
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-4">
-            <div><img class="othersprofile" src="../../../assets/images/profile-pic_02.jpg" alt="" /></div>
-          </div>
-          <div class="col-8">
-            <h5>Pavitra Malpani</h5>
-            <p>0801CS17ME17<br />
-              malpanipavitra@gmail.com</p>
-          </div>
-
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-4">
-            <div><img class="othersprofile" src="../../../assets/images/profile-pic_02.jpg" alt="" /></div>
-          </div>
-          <div class="col-8">
-            <h5>Pavitra Malpani</h5>
-            <p>0801CS17ME17<br />
-              malpanipavitra@gmail.com</p>
-          </div>
-
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-4">
-            <div><img class="othersprofile" src="../../../assets/images/profile-pic_02.jpg" alt="" /></div>
-          </div>
-          <div class="col-8">
-            <h5>Pavitra Malpani</h5>
-            <p>0801CS17ME17<br />
-              malpanipavitra@gmail.com</p>
-          </div>
-
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-4">
-            <div><img class="othersprofile" src="../../../assets/images/profile-pic_02.jpg" alt="" /></div>
-          </div>
-          <div class="col-8">
-            <h5>Pavitra Malpani</h5>
-            <p>0801CS17ME17<br />
-              malpanipavitra@gmail.com</p>
-          </div>
-        </div>
-        <hr>
+       
       </div>
     </div>
   </div>
+</div>
 
 
   <!--End Right Panel-->

@@ -9,13 +9,15 @@ import { TimetableComponent } from './timetable/timetable.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { StudentComponent } from './student/student.component';
 import { DocumentsComponent } from './documents/documents.component';
-import { InfrastructureComponent } from './hod-infrastucture/infrastructure/infrastructure.component';
 import { ToDoComponent } from './to-do/to-do.component';
-import { ProfileComponent } from './profile/profile.component';
 import { AboutModule } from '../about/about.module';
 import { AboutComponent } from '../about/about/about.component';
-import { HodInfrastuctureModule } from './hod-infrastucture/hod-infrastucture.module';
-import { HodInfrastructureComponent } from './hod-infrastucture/hod-infrastructure/hod-infrastructure.component';
+import { GalleryComponent } from './footer/gallery/gallery.component';
+import { FooterModule } from './footer/footer.module';
+import { MeetingsComponent } from './meetings/meetings.component';
+import { InfrastructureOutletComponent } from '../infrastructure/infrastructure-outlet/infrastructure-outlet.component';
+import { InfrastructureModule } from '../infrastructure/infrastructure.module';
+
 const routes: Routes = [
   { path: 'hod',
     component: HodComponent,
@@ -46,10 +48,6 @@ const routes: Routes = [
         component: ToDoComponent
       },
       {
-        path: 'profile',
-        component: ProfileComponent
-      },
-      {
         path: 'hod_tasks',
         component: AdministrationComponent
       },
@@ -59,8 +57,8 @@ const routes: Routes = [
       },
       {
         path: 'infrastructure',
-        component: HodInfrastructureComponent,
-        loadChildren: ()=> HodInfrastuctureModule
+        component: InfrastructureOutletComponent,
+        loadChildren: ()=> InfrastructureModule
       },
       {
         path: 'requests',
@@ -73,6 +71,14 @@ const routes: Routes = [
       {
         path: 'alerts',
         component: AlertsComponent
+      },
+      {
+        path: 'gallery',
+        component: GalleryComponent
+      },
+      {
+        path: 'meetings',
+        component: MeetingsComponent
       }
     ]
   }

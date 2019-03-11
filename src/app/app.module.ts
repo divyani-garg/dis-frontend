@@ -20,6 +20,8 @@ import { LoginComponent } from './authentication/login/login.component';
 import { SignUpComponent } from './authentication/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './authentication/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './authentication/reset-password/reset-password.component';
+import { ConventionalModule } from './conventional/conventional.module';
+import { InfrastructureModule } from './infrastructure/infrastructure.module';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,10 @@ import { ResetPasswordComponent } from './authentication/reset-password/reset-pa
     HodRoutingModule,
     HodModule,
     FacultyModule,
-    StaffModule
+    StaffModule,
+    MiscellaneousModule,
+    ConventionalModule,
+    InfrastructureModule
   ],
   providers: [],
   bootstrap: [AppComponent]

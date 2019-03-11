@@ -11,14 +11,13 @@ import { GradesComponent } from './grades/grades.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { AssignmentsComponent } from './assignments/assignments.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
-import { ProfileComponent } from './profile/profile.component';
 import { StudentComponent } from './student/student.component';
 import { TimetableComponent } from './timetable/timetable.component';
 import { SidenavigationComponent } from './sidenavigation/sidenavigation.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { MiscellaneousModule } from '../miscellaneous/miscellaneous.module';
-import { HodInfrastuctureModule } from '../hod/hod-infrastucture/hod-infrastucture.module';
 import { BarchartComponent } from '../miscellaneous/barchart/barchart.component';
+import { InfrastructureModule } from '../infrastructure/infrastructure.module';
 
 
 @NgModule({
@@ -28,7 +27,7 @@ import { BarchartComponent } from '../miscellaneous/barchart/barchart.component'
     AboutModule,
     AboutRoutingModule,
     MiscellaneousModule,
-    HodInfrastuctureModule
+    InfrastructureModule
   ],
   declarations: [
     HomeComponent,
@@ -37,7 +36,6 @@ import { BarchartComponent } from '../miscellaneous/barchart/barchart.component'
     AlertsComponent,
     AssignmentsComponent,
     ComplaintsComponent,
-    ProfileComponent,
     StudentComponent,
     AttendanceComponent,
     TimetableComponent,

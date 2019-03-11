@@ -34,6 +34,12 @@ export class MeetingsComponent implements OnInit {
     this.List1.push(h);
     this.List2.splice(index2, 1);
   }
+  onAllItemAdded(){
+    this.List2.push(11);
+    this.List1.slice(11, 20);
+  }
+  
+  
 
   ngOnInit() {
   }

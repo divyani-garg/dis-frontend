@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { InfrastructureComponent } from './infrastructure/infrastructure.component';
-import { InfrastuctureTimetableComponent } from './infrastucture-timetable/infrastucture-timetable.component';
 import { CentralInventoryComponent } from './central-inventory/central-inventory.component';
+import { InfrastructureTimeTableComponent } from './infrastructure-time-table/infrastructure-time-table.component';
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'timetable',
-    component: InfrastuctureTimetableComponent
+    component: InfrastructureTimeTableComponent
   },
   {
     path: 'Cinventory',

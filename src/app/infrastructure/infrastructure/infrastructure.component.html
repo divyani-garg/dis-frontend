@@ -5,22 +5,19 @@
     $('#myTable').dataTable();
   });
 </script>
-<div class= "container">
-
-  
        <div class ="input-group mb-1">
-            <ul class="nav nav-pills nav-fill" id="pills-tab" role="tablist">
+            <ul class="nav nav-pills nav-fill col-lg-12" id="pills-tab" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link active"style="width:150px; margin-left:5px" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Labs</a>
+                  <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Labs</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link"style="width:150px; margin-left:5px" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Classrooms</a>
+                  <a class="nav-link"id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Classrooms</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="pills-frooms-tab" style="width:150px;margin-left:5px" data-toggle="pill" href="#pills-frooms" role="tab" aria-controls="pills-frooms" aria-selected="false">Faculty Rooms</a>
+                  <a class="nav-link" id="pills-frooms-tab" data-toggle="pill" href="#pills-frooms" role="tab" aria-controls="pills-frooms" aria-selected="false">Faculty Rooms</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="pills-contact-tab" style="width:150px;margin-left:5px" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Others</a>
+                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Others</a>
                   </li>
                 <li>
                     <button class="btn" style="width:200px;margin-left:5px" routerLink="Cinventory">Inventory</button>
@@ -253,84 +250,71 @@
                           <h4 id ="Classroom ">Classrooms</h4>
                           <hr>
                           <div class="row">
-                                  <div class="col-lg-4">
-                                    <div class="kyc-section rewards-section reports-sectn" style="background-color: rgb(208, 225, 245)">
-                                    <div class="inline-block">
-                                      <h3>LT201
-                                        <span class="nav-item dropdown float-right" style="text-decoration: none;">
-                                          <a class="nav-link" href="" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true" style="text-decoration:none; position: relative; bottom:10px; left: 20px;">
-                                            <i class="fa fa-arrow-right" routerLink="timetable" role="button" aria-hidden="true"> </i>
-                                          </a>
-                                          <div class="dropdown-menu rounded-0 " aria-labelledby="navbarDropdownMenuLink2" style="text-decoration: none;">
-                                              <a class="dropdown-item collapsed" routerLink="timetable" role="button" style="text-decoration:none;"><i class="fa fa-calendar" aria-hidden="true"> Time table</i></a>
-                                              <a class="dropdown-item collapsed" routerLink="timetable" role="button" style="text-decoration:none;"><i class="fa fa-info-circle" aria-hidden="true"> Information</i></a>
-                                              <a class="dropdown-item collapsed" routerLink="timetable" role="button" style="text-decoration:none;"><i class="fa fa-laptop" aria-hidden="true"> Information</i></a>
-                                            </div>
-                                        </span></h3>
-                                    </div>
-                                    <hr>
-                                    <div>
-                                      <p>Location: 2nd floor<br/>
-                                      Incharge: Mr. Sudhir Anvekar<br/>
-                                      Contact: 1234567890<br/>
-                                      Subjects: Operating Systems, DBMS, Computer Architecture<br/>
-                                      Operating Systems: CentOS, Ubuntu</p>
-                                    </div>
+                            <div class="col-lg-4 kyc-section rewards-section reports-sectn" style="background-color: rgb(208, 225, 245)">
+                              <div class="inline-block">
+                                <div class="row">
+                                  <h5 class="col-9">Software Engineering</h5>
+                                  <div class="col-2" style="text-decoration: none;">
+                                    <a class="nav-link" href="" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true" style="text-decoration:none; position: relative; bottom:10px; left: 20px;">
+                                      <i class="fa fa-arrow-right" routerLink="timetable" role="button" aria-hidden="true"> </i>
+                                    </a>
+                                  
+                                    </div> 
                                   </div>
-                                </div>
-
-                                <div class="col-lg-4">
-                                    <div class="kyc-section rewards-section reports-sectn" style="background-color: rgb(208, 225, 245)">
-                                    <div class="inline-block">
-                                      <h3>LT301
-                                        <span class="nav-item dropdown float-right" style="text-decoration: none;">
-                                          <a class="nav-link" href="" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true" style="text-decoration:none; position: relative; bottom:10px; left: 20px;">
-                                            <img src="assets/images/dotmenuimg.png" style="height: 40px; width: 40px;">
-                                          </a>
-                                          <div class="dropdown-menu rounded-0 " aria-labelledby="navbarDropdownMenuLink2" style="text-decoration: none;">
-                                              <a class="dropdown-item collapsed" routerLink="timetable" role="button" style="text-decoration:none;"><i class="fa fa-calendar" aria-hidden="true"> Time table</i></a>
-                                              <a class="dropdown-item collapsed" routerLink="timetable" role="button" style="text-decoration:none;"><i class="fa fa-info-circle" aria-hidden="true"> Information</i></a>
-                                              <a class="dropdown-item collapsed" routerLink="timetable" role="button" style="text-decoration:none;"><i class="fa fa-laptop" aria-hidden="true"> Information</i></a>
-                                            </div>
-                                        </span></h3>
-                                    </div>
-                                    <hr>
-                                    <div>
-                                      <p>Location: 2nd floor<br/>
-                                      Incharge: Mr. Sudhir Anvekar<br/>
-                                      Contact: 1234567890<br/>
-                                      Subjects: Operating Systems, DBMS, Computer Architecture<br/>
-                                      Operating Systems: CentOS, Ubuntu</p>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="col-lg-4">
-                                    <div class="kyc-section rewards-section reports-sectn" style="background-color: rgb(208, 225, 245)">
-                                    <div class="inline-block">
-                                      <h3>IP208
-                                        <span class="nav-item dropdown float-right" style="text-decoration: none;">
-                                          <a class="nav-link" href="" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true" style="text-decoration:none; position: relative; bottom:10px; left: 20px;">
-                                            <i class="fa fa-arrow-right" routerLink="timetable" role="button" aria-hidden="true"> </i>
-                                          </a>
-                                          <div class="dropdown-menu rounded-0 " aria-labelledby="navbarDropdownMenuLink2" style="text-decoration: none;">
-                                              <a class="dropdown-item collapsed" routerLink="timetable" role="button" style="text-decoration:none;"><i class="fa fa-calendar" aria-hidden="true"> Time table</i></a>
-                                              <a class="dropdown-item collapsed" routerLink="timetable" role="button" style="text-decoration:none;"><i class="fa fa-info-circle" aria-hidden="true"> Information</i></a>
-                                              <a class="dropdown-item collapsed" routerLink="timetable" role="button" style="text-decoration:none;"><i class="fa fa-laptop" aria-hidden="true"> Information</i></a>
-                                            </div>
-                                        </span></h3>
-                                    </div>
-                                    <hr>
-                                    <div>
-                                      <p>Location: 2nd floor<br/>
-                                      Incharge: Mr. Sudhir Anvekar<br/>
-                                      Contact: 1234567890<br/>
-                                      Subjects: Operating Systems, DBMS, Computer Architecture<br/>
-                                      Operating Systems: CentOS, Ubuntu</p>
-                                    </div>
-                                  </div>
-                                </div>
                               </div>
+                              <hr>
+                              <div>
+                                <p>Location: 2nd floor<br/>
+                                Incharge: Mr. Sudhir Anvekar<br/>
+                                Contact: 1234567890<br/>
+                                Subjects: Operating Systems, DBMS, Computer Architecture<br/>
+                                Operating Systems: CentOS, Ubuntu</p>
+                              </div>
+                          </div>
+                          <div class="col-lg-4 kyc-section rewards-section reports-sectn" style="background-color: rgb(208, 225, 245)">
+                            <div class="inline-block">
+                              <div class="row">
+                                <h5 class="col-9">Software Engineering</h5>
+                                <div class="col-2" style="text-decoration: none;">
+                                  <a class="nav-link" href="" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true" style="text-decoration:none; position: relative; bottom:10px; left: 20px;">
+                                    <i class="fa fa-arrow-right" routerLink="timetable" role="button" aria-hidden="true"> </i>
+                                  </a>
+                                
+                                  </div> 
+                                </div>
+                            </div>
+                            <hr>
+                            <div>
+                              <p>Location: 2nd floor<br/>
+                              Incharge: Mr. Sudhir Anvekar<br/>
+                              Contact: 1234567890<br/>
+                              Subjects: Operating Systems, DBMS, Computer Architecture<br/>
+                              Operating Systems: CentOS, Ubuntu</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 kyc-section rewards-section reports-sectn" style="background-color: rgb(208, 225, 245)">
+                          <div class="inline-block">
+                            <div class="row">
+                              <h5 class="col-9">Software Engineering</h5>
+                              <div class="col-2" style="text-decoration: none;">
+                                <a class="nav-link" href="" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true" style="text-decoration:none; position: relative; bottom:10px; left: 20px;">
+                                  <i class="fa fa-arrow-right" routerLink="timetable" role="button" aria-hidden="true"> </i>
+                                </a>
+                              
+                                </div> 
+                              </div>
+                          </div>
+                          <hr>
+                          <div>
+                            <p>Location: 2nd floor<br/>
+                            Incharge: Mr. Sudhir Anvekar<br/>
+                            Contact: 1234567890<br/>
+                            Subjects: Operating Systems, DBMS, Computer Architecture<br/>
+                            Operating Systems: CentOS, Ubuntu</p>
+                          </div>
+                      </div>
+                    </div>
 
                   </div>
                   <div class="tab-pane fade" id="pills-frooms" role="tabpanel" aria-labelledby="pills-frooms-tab">
@@ -339,114 +323,60 @@
                       <hr>
                       <div class="col-12">
                           <div class = "row">
-                            <div class="alert alert row col-lg-4" style="height:100px; margin-left: 4px;background-color: rgb(208, 225, 245)">
+                            <div class="alert row col-lg-4" style="height:100px; margin-left: 4px; background-color: rgb(208, 225, 245)">
                               <h5 class="col-12">Faculty Room 101</h5>
                               <hr/>
-                              <p class="col-6" style="font-size: 90%">Assigned To: 29/08/2017</p>
-                              <div class="col">
-                                <img class="download" src="assets/images/download.png" style= "height : 12px; width: 15px" alt=""/>
-                                <a href="#" style="font-size: 80%">  Assignment</a>
-                              </div>
+                              <p class="col-8" style="font-size: 90%">Assigned To: Urjita Thakar</p>
                             </div>
                             <hr>
-                            <div class="alert alert row col-lg-4" style="height:100px; margin-left: 4px;background-color: rgb(208, 225, 245)">
-                            <div class="alert alert-success row col-lg-4" style="height:100px; margin-left: 4px">
-                              <h5 class="col-12">Faculty Room 102</h5>
-                              <hr>
-                              <p class="col-6" style="font-size: 90%"> Date of submission: 29/08/2017</p>
-                              <hr>
-                              <div class="col">
-                                <img class="download" src="assets/images/download.png" style= "height : 12px; width: 15px" alt=""/>
-                                <a href="#" style="font-size: 80%">  Assignment</a>
-                              </div>
+                            <div class="alert row col-lg-4" style="height:100px; margin-left: 4px; background-color: rgb(208, 225, 245)">
+                              <h5 class="col-12">Faculty Room 101</h5>
+                              <hr/>
+                              <p class="col-8" style="font-size: 90%">Assigned To: Urjita Thakar</p>
                             </div>
                             <hr>
-                            <div class="alert alert row col-lg-4" style="height:100px; margin-left: 4px;background-color: rgb(208, 225, 245)">
-                              <h6 class="col-12">Faculty Room 103</h6>
-                              <p class="col-6" style="font-size: 90%"> Start Date: 22/03/2019
-                                
-                              </p>
-                              <div class="col">
-                                <span><img class="download" src="assets/images/download.png" style= "height : 12px; width: 15px" alt=""/>
-                              <a href="#" style="font-size: 80%">  TimeTable</a></span>
-                              <br>
-                              <img class="download" src="assets/images/download.png"style= "height : 12px; width: 15px" alt=""/>
-                              <a href="#" style="font-size: 80%"> Seating Plan</a>
-                              </div>
+                            <div class="alert row col-lg-4" style="height:100px; margin-left: 4px; background-color: rgb(208, 225, 245)">
+                              <h5 class="col-12">Faculty Room 101</h5>
+                              <hr/>
+                              <p class="col-8" style="font-size: 90%">Assigned To: Urjita Thakar</p>
                             </div>
                           </div>
                           <div class = "row">
-                          <div class="alert alert row col-lg-4" style="height:100px; margin-left: 4px;background-color: rgb(208, 225, 245)">
-                            <h6 class="col-12">Faculty Room 104</h6>
-                            <hr>
-                            <p class="col-6" style="font-size: 90%"> Date of submission: 29/08/2017</p>
-                            <hr>
-                            <div class="col">
-                              <img class="download" src="assets/images/download.png" style= "height : 12px; width: 15px" alt=""/>
-                              <a href="#" style="font-size: 80%">  Assignment</a>
+                            <div class="alert row col-lg-4" style="height:100px; margin-left: 4px; background-color: rgb(208, 225, 245)">
+                              <h5 class="col-12">Faculty Room 101</h5>
+                              <hr/>
+                              <p class="col-8" style="font-size: 90%">Assigned To: Urjita Thakar</p>
                             </div>
+                          <hr>
+                          <div class="alert row col-lg-4" style="height:100px; margin-left: 4px; background-color: rgb(208, 225, 245)">
+                            <h5 class="col-12">Faculty Room 101</h5>
+                            <hr/>
+                            <p class="col-8" style="font-size: 90%">Assigned To: Urjita Thakar</p>
                           </div>
                           <hr>
-                          <div class="alert alert row col-lg-4" style="height:100px; margin-left: 4px;background-color: rgb(208, 225, 245)">
-                            <h6 class="col-12">Faculty Room 105</h6>
-                            <hr>
-                            <p class="col-6" style="font-size: 70%"> Date of submission: 29/08/2017</p>
-                            <hr>
-                            <div class="col">
-                              <img class="download" src="assets/images/download.png" style= "height : 12px; width: 15px" alt=""/>
-                              <a href="#" style="font-size: 80%">  Assignment</a>
-                            </div>
-                          </div>
-                          <hr>
-                          <div class="alert alert row col-lg-4" style="height:100px; margin-left: 4px;background-color: rgb(208, 225, 245)">
-                            <h6 class="col-12">Faculty Room 107</h6>
-                            <p class="col-6" style="font-size: 70%"> Start Date: 22/03/2019
-                              
-                            </p>
-                            <div class="col">
-                              <span><img class="download" src="assets/images/download.png" style= "height : 12px; width: 15px" alt=""/>
-                            <a href="#" style="font-size: 80%">  TimeTable</a></span>
-                            <br>
-                            <img class="download" src="assets/images/download.png"style= "height : 12px; width: 15px" alt=""/>
-                            <a href="#" style="font-size: 80%"> Seating Plan</a>
-                            </div>
+                          <div class="alert row col-lg-4" style="height:100px; margin-left: 4px; background-color: rgb(208, 225, 245)">
+                            <h5 class="col-12">Faculty Room 101</h5>
+                            <hr/>
+                            <p class="col-8" style="font-size: 90%">Assigned To: Urjita Thakar</p>
                           </div>
                         </div>
                         <div class = "row">
-                          <div class="alert alert row col-lg-4" style="height:100px; margin-left: 4px;background-color: rgb(208, 225, 245)">
-                            <h6 class="col-12">Faculty Room 101</h6>
-                            <hr>
-                            <p class="col-6" style="font-size: 70%"> Date of submission: 29/08/2017</p>
-                            <hr>
-                            <div class="col">
-                              <img class="download" src="assets/images/download.png" style= "height : 12px; width: 15px" alt=""/>
-                              <a href="#" style="font-size: 80%">  Assignment</a>
-                            </div>
+                          <div class="alert row col-lg-4" style="height:100px; margin-left: 4px; background-color: rgb(208, 225, 245)">
+                            <h5 class="col-12">Faculty Room 101</h5>
+                            <hr/>
+                            <p class="col-8" style="font-size: 90%">Assigned To: Urjita Thakar</p>
                           </div>
                           <hr>
-                          <div class="alert alert row col-lg-4" style="height:100px; margin-left: 4px;background-color: rgb(208, 225, 245)">
-                            <h6 class="col-12">Faculty Room 101</h6>
-                            <hr>
-                            <p class="col-6" style="font-size: 70%"> Date of submission: 29/08/2017</p>
-                            <hr>
-                            <div class="col">
-                              <img class="download" src="assets/images/download.png" style= "height : 12px; width: 15px" alt=""/>
-                              <a href="#" style="font-size: 80%">  Assignment</a>
-                            </div>
+                          <div class="alert row col-lg-4" style="height:100px; margin-left: 4px; background-color: rgb(208, 225, 245)">
+                            <h5 class="col-12">Faculty Room 101</h5>
+                            <hr/>
+                            <p class="col-8" style="font-size: 90%">Assigned To: Urjita Thakar</p>
                           </div>
                           <hr>
-                          <div class="alert alert row col-lg-4" style="height:100px; margin-left: 4px;background-color: rgb(208, 225, 245)">
-                            <h6 class="col-12">Faculty Room 101</h6>
-                            <p class="col-6" style="font-size: 70%"> Start Date: 22/03/2019
-                              
-                            </p>
-                            <div class="col">
-                              <span><img class="download" src="assets/images/download.png" style= "height : 12px; width: 15px" alt=""/>
-                            <a href="#" style="font-size: 80%">  TimeTable</a></span>
-                            <br>
-                            <img class="download" src="assets/images/download.png"style= "height : 12px; width: 15px" alt=""/>
-                            <a href="#" style="font-size: 80%"> Seating Plan</a>
-                            </div>
+                          <div class="alert row col-lg-4" style="height:100px; margin-left: 4px; background-color: rgb(208, 225, 245)">
+                            <h5 class="col-12">Faculty Room 101</h5>
+                            <hr/>
+                            <p class="col-8" style="font-size: 90%">Assigned To: Urjita Thakar</p>
                           </div>
                         </div>
                         </div>
@@ -588,4 +518,4 @@
                           </div>
                         </div>
         </div>
-</div>
+      

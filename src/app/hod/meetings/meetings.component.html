@@ -36,7 +36,7 @@
             <div class="col-lg-12 kyc-colm user-management kyc-section rewards-section reports-sectn">
             
       <div class="row"> 
-        <div class="col-lg-2">            
+        <div class="col-lg-1.5">            
         <label class="control-label col-sm-2" for="date">Objective:</label>
           </div>
           <div class="col-lg-10"> 
@@ -45,23 +45,29 @@
           </div>
           <br>
       <div class="row"> 
-        <div class="col-lg-2">            
+        <div class="col-lg-1.5">            
         <label class="control-label col-sm-2" for="date">Date:</label>
           </div>
-          <div class="col-lg-4"> 
+          <div class="col-lg-3"> 
           <input type="date" class="form-control" id="dob" placeholder="Enter Date:" name="date">
             </div>
-            <div class="col-lg-1">            
+            <div class="col-lg-1.5">            
               <label class="control-label col-sm-2" for="date">Time:</label>
                 </div>
-                <div class="col-lg-5"> 
+                <div class="col-lg-3"> 
                 <input type="time" class="form-control" id="time" placeholder="Enter Time:" name="time">
                   </div>
+                  <div class="col-lg-1.5">            
+                    <label class="control-label col-sm-2" for="venue">Venue:</label>
+                      </div>
+                      <div class="col-lg-3"> 
+                      <input type="venue" class="form-control" id="time" placeholder="Enter Venue:" name="venue">
+                        </div>
           </div>
       <br>
-        <div class ="col-lg-10 row" style="margin-left: 16%">
+        <div class ="col-lg-12 row" >
         <div class="col-lg-6 kyc-section rewards-section reports-sectn" >
-        <h5>Select Faculty for meeting</h5>
+        <h5>Select Faculty for meeting<i class="fa fa-plus-circle" style="opacity:0.5;margin-left: 100px" aria-hidden="true" (click)="onAllItemAdded()"></i></h5>
         <hr/>
           <ol class="list-group">
             <li class="list-item" *ngFor="let h of List1; let i=index">
@@ -71,7 +77,7 @@
           </ol>
           </div>
         <div class="col-lg-6 kyc-section rewards-section reports-sectn">
-            <h5>Selected Faculty for meeting</h5>
+            <h5>Selected Faculty for meeting<i class="fa fa-times-circle" style="opacity:0.5;margin-left: 100px" aria-hidden="true"></i></h5>
             <hr>
               <ol class="list-group">
                 <li class="list-item" *ngFor="let h of List2; let j=index2">

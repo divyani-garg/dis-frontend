@@ -17,6 +17,7 @@ import { FooterModule } from './footer/footer.module';
 import { MeetingsComponent } from './meetings/meetings.component';
 import { InfrastructureOutletComponent } from '../infrastructure/infrastructure-outlet/infrastructure-outlet.component';
 import { InfrastructureModule } from '../infrastructure/infrastructure.module';
+import { Component } from 'fullcalendar';
 
 const routes: Routes = [
   { path: 'hod',
@@ -41,7 +42,7 @@ const routes: Routes = [
       },
       {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
       },
       {
         path: 'to-do',

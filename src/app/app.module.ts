@@ -4,7 +4,6 @@ import { StudentRoutingModule } from './student/student-routing.module';
 import { StudentModule } from './student/student.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,7 +13,9 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { HodRoutingModule } from './hod/hod-routing.module';
 import { HodModule } from './hod/hod.module';
 
-
+import { 
+  FormsModule, 
+ } from '@angular/forms';
 
 import { LoginComponent } from './authentication/login/login.component';
 import { SignUpComponent } from './authentication/sign-up/sign-up.component';
@@ -33,14 +34,15 @@ import { ResetPasswordComponent } from './authentication/reset-password/reset-pa
     BrowserModule,
     AppRoutingModule,
     StudentModule,
-    FormsModule,
     HttpClientModule,
     StudentRoutingModule,
     HodRoutingModule,
     HodModule,
     FacultyModule,
     StaffModule,
-    MiscellaneousModule
+    MiscellaneousModule,
+    FormsModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

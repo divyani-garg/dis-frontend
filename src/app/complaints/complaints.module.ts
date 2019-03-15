@@ -9,12 +9,16 @@ import { SideNavigationComponent } from './side-navigation/side-navigation.compo
 import { ComplaintsComponent } from './complaints/complaints.component';
 import { AddacomplaintComponent } from './addacomplaint/addacomplaint.component';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
+import { MyComplaintsComponent } from './my-complaints/my-complaints.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [TotalComplaintsComponent, ResolvedComplaintsComponent, RemainingComplaintsComponent,
-    SideNavigationComponent, ComplaintsComponent, AddacomplaintComponent],
+    SideNavigationComponent, ComplaintsComponent, AddacomplaintComponent, MyComplaintsComponent,
+   ],
 
   imports: [
+    FormsModule,
     CommonModule,
     ComplaintsRoutingModule,
     ConfirmationPopoverModule.forRoot({
@@ -23,6 +27,8 @@ import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 
 
   ],
+  exports:[TotalComplaintsComponent, ResolvedComplaintsComponent, RemainingComplaintsComponent,
+    SideNavigationComponent, ComplaintsComponent, AddacomplaintComponent],
   bootstrap:[RemainingComplaintsComponent]
   })
 export class ComplaintsModule { }

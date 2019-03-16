@@ -1,229 +1,45 @@
 <div class="kyc-section rewards-section reports-sectn">
     <div class="row">
-        <div class="col-lg-3 kyc-colm user-management">
-            <div class="kyc-section rewards-section reports-sectn">
-              <div class="row">
-                <div class="col-lg-12 profile-info">
-                  <div class="profile-icon center">
-                    <img src="./../../../assets/images/img_avatar2.png" alt="" />
-                  </div>
-                </div>
-                <div class="text-center center-text">  <!--text alignent issue-->
-                  <p>Dr. Sunil Jain<br>Professor,HOD</p>
+      <div class="col-lg-3 col-sm-6"  *ngFor = 'let f of fData'>
 
-                  <i class="fa fa-mobile fa-fw" aria-hidden="true"></i> 9876535671<br>
-                  <i class="far fa-envelope fa-fw"></i> abc@gmail.com
-                </div>
+        <div class="card hovercard">
+          <div class="cardheader">
+            <div class="dropleft">
+              <a href="#" id="dropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="true" style="text-decoration:none;margin-left: 85%;">
+                <i class="fa fa-ellipsis-v"></i>
+              </a>
+              <div class="dropdown-menu rounded-0 " aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" role="button" data-toggle="modal" data-target=".my-modal"
+                  aria-controls="cleanliness" style="text-decoration:none;">
+                  Time Table</a>
+                <a class="dropdown-item collapsed" href="hod/hod_tasks" role="button" data-toggle="collapse"
+                  style="text-decoration:none;">
+                  Assigned Tasks</a>
+                <a class="dropdown-item collapsed" href="#" role="button" data-toggle="modal" data-target=".my-modal2"
+                  aria-controls="equipments" style="text-decoration:none;">
+                  Assign New Tasks</a>
+                <a class="dropdown-item collapsed" href="#" role="button" data-toggle="modal" data-target=".my-modal2"
+                  aria-controls="equipments" style="text-decoration:none;">
+                  Profile</a>
               </div>
             </div>
 
           </div>
-          <div class="col-lg-3 kyc-colm user-management">
-              <div class="kyc-section rewards-section reports-sectn">
-                <div class="row">
-                  <div class="col-lg-12 profile-info">
-                    <div class="profile-icon center">
-                      <img src="./../../../assets/images/img_avatar3.png" alt="" />
-                    </div>
-                  </div>
-                  <div class="text-center center-text">  <!--text alignent issue-->
-                    <p>Dr. Sunil Jain<br>Professor,HOD</p>
-
-                    <i class="fa fa-mobile fa-fw" aria-hidden="true"></i> 9876535671<br>
-                    <i class="far fa-envelope fa-fw"></i> abc@gmail.com
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          <div class="col-lg-3 kyc-colm user-management">
-              <div class="kyc-section rewards-section reports-sectn">
-                <div class="row">
-                  <div class="col-lg-12 profile-info">
-                    <div class="profile-icon center">
-                      <img src="./../../../assets/images/img_avatar2.png" alt="" />
-                    </div>
-                  </div>
-                  <div class="text-center center-text">  <!--text alignent issue-->
-                    <p>Dr. Sunil Jain<br>Professor,HOD</p>
-
-                    <i class="fa fa-mobile fa-fw" aria-hidden="true"></i> 9876535671<br>
-                    <i class="far fa-envelope fa-fw"></i> abc@gmail.com
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            <div class="col-lg-3 kyc-colm user-management">
-                <div class="kyc-section rewards-section reports-sectn">
-                  <div class="row">
-                    <div class="col-lg-12 profile-info">
-                      <div class="profile-icon center">
-                        <img src="./../../../assets/images/img_avatar3.png" alt="" />
-                      </div>
-                    </div>
-                    <div class="text-center center-text">  <!--text alignent issue-->
-                      <p>Dr. Sunil Jain<br>Professor,HOD</p>
-
-                      <i class="fa fa-mobile fa-fw" aria-hidden="true"></i> 9876535671<br>
-                      <i class="far fa-envelope fa-fw"></i> abc@gmail.com
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-      </div>
-      <br>
-      <div class="row">
-          <div class="col-lg-3 kyc-colm user-management">
-            <div class="kyc-section rewards-section reports-sectn">
-              <div class="row">
-                <div class="col-lg-12 profile-info">
-                  <div class="profile-icon center">
-                    <img src="./../../../assets/images/img_avatar2.png" alt="" />
-                  </div>
-                </div>
-                <div class="text-center center-text">  <!--text alignent issue-->
-                  <p>Dr. Sunil Jain<br>Professor,HOD</p>
-
-                  <i class="fa fa-mobile fa-fw" aria-hidden="true"></i> 9876535671<br>
-                  <i class="far fa-envelope fa-fw"></i> abc@gmail.com
-                </div>
-              </div>
-            </div>
-
+          <div class="avatar">
+            <img alt="" src="../../../assets/images/img_avatar3.png">
           </div>
-          <div class="col-lg-3 kyc-colm user-management">
-              <div class="kyc-section rewards-section reports-sectn">
-                <div class="row">
-                  <div class="col-lg-12 profile-info">
-                    <div class="profile-icon center">
-                      <img src="./../../../assets/images/img_avatar3.png" alt="" />
-                    </div>
-                  </div>
-                  <div class="text-center center-text">  <!--text alignent issue-->
-                    <p>Dr. Sunil Jain<br>Professor,HOD</p>
-
-                    <i class="fa fa-mobile fa-fw" aria-hidden="true"></i> 9876535671<br>
-                    <i class="far fa-envelope fa-fw"></i> abc@gmail.com
-                  </div>
-                </div>
-              </div>
-
+          <div class="info">
+            <div class="title">
+              <a target="_blank" href="https://scripteden.com/">{{f.name}}</a>
             </div>
-            <div class="col-lg-3 kyc-colm user-management">
-                <div class="kyc-section rewards-section reports-sectn">
-                  <div class="row">
-                    <div class="col-lg-12 profile-info">
-                      <div class="profile-icon center">
-                        <img src="./../../../assets/images/img_avatar2.png" alt="" />
-                      </div>
-                    </div>
-                    <div class="text-center center-text">  <!--text alignent issue-->
-                      <p>Dr. Sunil Jain<br>Professor,HOD</p>
 
-                      <i class="fa fa-mobile fa-fw" aria-hidden="true"></i> 9876535671<br>
-                      <i class="far fa-envelope fa-fw"></i> abc@gmail.com
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              <div class="col-lg-3 kyc-colm user-management">
-                  <div class="kyc-section rewards-section reports-sectn">
-                    <div class="row">
-                      <div class="col-lg-12 profile-info">
-                        <div class="profile-icon center">
-                          <img src="./../../../assets/images/img_avatar3.png" alt="" />
-                        </div>
-                      </div>
-                      <div class="text-center center-text">  <!--text alignent issue-->
-                        <p>Dr. Sunil Jain<br>Professor,HOD</p>
-
-                        <i class="fa fa-mobile fa-fw" aria-hidden="true"></i> 9876535671<br>
-                        <i class="far fa-envelope fa-fw"></i> abc@gmail.com
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
+            <div class="desc"> {{f.currentDesignation}}</div>
+            <div class="desc"><i class="fa fa-mobile"></i> {{f.mobileNo}}</div>
+            <div class="desc"><i class="fa fa-mobile"></i> {{f.alternateMobileNo}}</div>
+            <div class="desc"><i class="fa fa-envelope"></i>{{f.email}}</div>
+          </div>
         </div>
-        <br>
-        <div class="row">
-            <div class="col-lg-3 kyc-colm user-management">
-              <div class="kyc-section rewards-section reports-sectn">
-                <div class="row">
-                  <div class="col-lg-12 profile-info">
-                    <div class="profile-icon center">
-                      <img src="./../../../assets/images/img_avatar2.png" alt="" />
-                    </div>
-                  </div>
-                  <div class="text-center center-text">  <!--text alignent issue-->
-                    <p>Dr. Sunil Jain<br>Professor,HOD</p>
-
-                    <i class="fa fa-mobile fa-fw" aria-hidden="true"></i> 9876535671<br>
-                    <i class="far fa-envelope fa-fw"></i> abc@gmail.com
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            <div class="col-lg-3 kyc-colm user-management">
-                <div class="kyc-section rewards-section reports-sectn">
-                  <div class="row">
-                    <div class="col-lg-12 profile-info">
-                      <div class="profile-icon center">
-                        <img src="./../../../assets/images/img_avatar3.png" alt="" />
-                      </div>
-                    </div>
-                    <div class="text-center center-text">  <!--text alignent issue-->
-                      <p>Dr. Sunil Jain<br>Professor,HOD</p>
-
-                      <i class="fa fa-mobile fa-fw" aria-hidden="true"></i> 9876535671<br>
-                      <i class="far fa-envelope fa-fw"></i> abc@gmail.com
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              <div class="col-lg-3 kyc-colm user-management">
-                  <div class="kyc-section rewards-section reports-sectn">
-                    <div class="row">
-                      <div class="col-lg-12 profile-info">
-                        <div class="profile-icon center">
-                          <img src="./../../../assets/images/img_avatar2.png" alt="" />
-                        </div>
-                      </div>
-                      <div class="text-center center-text">  <!--text alignent issue-->
-                        <p>Dr. Sunil Jain<br>Professor,HOD</p>
-
-                        <i class="fa fa-mobile fa-fw" aria-hidden="true"></i> 9876535671<br>
-                        <i class="far fa-envelope fa-fw"></i> abc@gmail.com
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-                <div class="col-lg-3 kyc-colm user-management">
-                    <div class="kyc-section rewards-section reports-sectn">
-                      <div class="row">
-                        <div class="col-lg-12 profile-info">
-                          <div class="profile-icon center">
-                            <img src="./../../../assets/images/img_avatar3.png" alt="" />
-                          </div>
-                        </div>
-                        <div class="text-center center-text">  <!--text alignent issue-->
-                          <p>Dr. Sunil Jain<br>Professor,HOD</p>
-
-                          <i class="fa fa-mobile fa-fw" aria-hidden="true"></i> 9876535671<br>
-                          <i class="far fa-envelope fa-fw"></i> abc@gmail.com
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-
-          </div>
-  </div>
+      </div>
+    </div>
+  

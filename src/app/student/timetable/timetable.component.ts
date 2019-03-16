@@ -1,6 +1,5 @@
 import { SemesterSubjectsService } from './../../API_Service/SemesterSubjectsService';
 import { Component, OnInit, Input } from '@angular/core';
-import { SemesterTimetable } from '../../Model/semester-timetable.model';
 import { TimetableService } from '../../API_Service/timetable.service';
 
 @Component({

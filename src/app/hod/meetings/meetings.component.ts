@@ -35,12 +35,14 @@ export class MeetingsComponent implements OnInit {
     this.List2.splice(index2, 1);
   }
   onAllItemAdded(){
-    this.List2.push(11);
-    this.List1.slice(11, 20);
+    this.List2.push.apply(this.List2, this.List1);
+    this.List1 = [];
   }
-  
-  
 
+  onAllItemDeleted(){
+    this.List1.push.apply(this.List1, this.List2);
+    this.List2 = [];
+  }
   ngOnInit() {
   }
 

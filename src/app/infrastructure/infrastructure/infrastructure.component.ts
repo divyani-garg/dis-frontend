@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { InfraService } from '../services/infra.service';
 import { Laboratory } from "../models/Laboratory";
-import { Observable } from 'rxjs';
 import { Others } from '../models/Others';
+import { FacultyRoom } from '../models/FacultyRoom';
 
 @Component({
   selector: 'app-infrastructure',
@@ -12,10 +12,12 @@ import { Others } from '../models/Others';
 export class InfrastructureComponent implements OnInit {
   labs: Laboratory = new Laboratory();
   others: Others = new Others();
+  facultyRooms: FacultyRoom = new FacultyRoom();
 
   constructor(private infraservice: InfraService) { 
     this.getallLabs();
     this.getallOthers();
+    this.getFacultyRooms();
   }
   
   getallLabs(): void {
@@ -25,6 +27,11 @@ export class InfrastructureComponent implements OnInit {
   getallOthers(): void {
     this.infraservice.getOtherInfra()
         .subscribe(data => this.others = data);
+  }
+
+  getFacultyRooms(): void{
+    this.infraservice.getFacultyRooms()
+      .subscribe(data =>this.facultyRooms = data);
   }
 
   ngOnInit() { 

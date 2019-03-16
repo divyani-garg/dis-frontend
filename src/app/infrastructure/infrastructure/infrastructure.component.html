@@ -136,72 +136,25 @@
       </div>
 
     </div>
+   
     <div class="tab-pane fade" id="pills-frooms" role="tabpanel" aria-labelledby="pills-frooms-tab">
-
       <h4 id="Classroom">Faculty Rooms</h4>
       <hr>
       <div class="col-12">
         <div class="row">
-          <div class="alert row col-lg-4" style="height:100px; margin-left: 4px; background-color: rgb(208, 225, 245)">
-            <h5 class="col-12">Faculty Room 101</h5>
+          <div class="col-lg-4 kyc-section rewards-section reports-sectn" *ngFor ='let f of facultyRooms' style="margin-bottom: 4px; background-color: rgb(208, 225, 245)">
+            <h5 class="col-10" >{{f.name}}</h5>
             <hr />
-            <p class="col-8" style="font-size: 90%">Assigned To: Urjita Thakar</p>
-          </div>
-          <hr>
-          <div class="alert row col-lg-4" style="height:100px; margin-left: 4px; background-color: rgb(208, 225, 245)">
-            <h5 class="col-12">Faculty Room 101</h5>
-            <hr />
-            <p class="col-8" style="font-size: 90%">Assigned To: Urjita Thakar</p>
-          </div>
-          <hr>
-          <div class="alert row col-lg-4" style="height:100px; margin-left: 4px; background-color: rgb(208, 225, 245)">
-            <h5 class="col-12">Faculty Room 101</h5>
-            <hr />
-            <p class="col-8" style="font-size: 90%">Assigned To: Urjita Thakar</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="alert row col-lg-4" style="height:100px; margin-left: 4px; background-color: rgb(208, 225, 245)">
-            <h5 class="col-12">Faculty Room 101</h5>
-            <hr />
-            <p class="col-8" style="font-size: 90%">Assigned To: Urjita Thakar</p>
-          </div>
-          <hr>
-          <div class="alert row col-lg-4" style="height:100px; margin-left: 4px; background-color: rgb(208, 225, 245)">
-            <h5 class="col-12">Faculty Room 101</h5>
-            <hr />
-            <p class="col-8" style="font-size: 90%">Assigned To: Urjita Thakar</p>
-          </div>
-          <hr>
-          <div class="alert row col-lg-4" style="height:100px; margin-left: 4px; background-color: rgb(208, 225, 245)">
-            <h5 class="col-12">Faculty Room 101</h5>
-            <hr />
-            <p class="col-8" style="font-size: 90%">Assigned To: Urjita Thakar</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="alert row col-lg-4" style="height:100px; margin-left: 4px; background-color: rgb(208, 225, 245)">
-            <h5 class="col-12">Faculty Room 101</h5>
-            <hr />
-            <p class="col-8" style="font-size: 90%">Assigned To: Urjita Thakar</p>
-          </div>
-          <hr>
-          <div class="alert row col-lg-4" style="height:100px; margin-left: 4px; background-color: rgb(208, 225, 245)">
-            <h5 class="col-12">Faculty Room 101</h5>
-            <hr />
-            <p class="col-8" style="font-size: 90%">Assigned To: Urjita Thakar</p>
-          </div>
-          <hr>
-          <div class="alert row col-lg-4" style="height:100px; margin-left: 4px; background-color: rgb(208, 225, 245)">
-            <h5 class="col-12">Faculty Room 101</h5>
-            <hr />
-            <p class="col-8" style="font-size: 90%">Assigned To: Urjita Thakar</p>
+            <p class="col-12"  style="font-size: 90%"> {{f.associatedTo }}<br>
+              Location : {{f.location}}
+            </p>
           </div>
         </div>
       </div>
     </div>
+   
+   
     <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-
       <h4>Others</h4>
       <hr>
       <div class="row">

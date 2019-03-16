@@ -19,4 +19,8 @@ export class InfraService {
   getOtherInfra(): Observable<any>{
     return this.http.get(`${this.baseUrl}listInfrastructure?type=other`)
   }
+
+  getFacultyRooms(): Observable<any>{
+    return this.http.get(`${this.baseUrl}getRooms`)
+  }
 }

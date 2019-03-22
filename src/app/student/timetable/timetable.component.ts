@@ -28,6 +28,7 @@ export class TimetableComponent implements OnInit {
     this.tt = this.timetable.getTimetable()
     .subscribe( data => {
     this.lec = data;
+    // list of days available
     // tslint:disable-next-line:max-line-length
     this.columnHeaders = [{day: 'Days', colspanValue: 1}, {day: 'Monday', colspanValue: 1}, {day: 'Tuesday', colspanValue: 1}, {day: 'Wednesday', colspanValue: 1}, {day: 'Thursday', colspanValue: 1}, {day: 'Friday', colspanValue: 1}];
     this.timeslots = [];
@@ -38,6 +39,7 @@ export class TimetableComponent implements OnInit {
     var got_duration = true;
     var duration = 1000;
     var calc_duration = 0;
+    var lunchstart;
     for (let a = 0; a < this.lec.length; a++) {
       if (this.lec[a].type === 'Lecture') {
         // tslint:disable-next-line:max-line-length
@@ -54,19 +56,28 @@ export class TimetableComponent implements OnInit {
       if (this.convertedTime(this.lec[a].to) > this.convertedTime(end_time)) {
         end_time = this.lec[a].to;
       }
+      if(this.lec[a].type === 'Lunch') {
+        lunchstart = this.lec[a].from;
+      }
     }
     var lecture_start = start_time;
     var lecture_end = start_time;
     console.log(start_time);
     console.log(end_time);
+    console.log(lunchstart);
     while (lecture_start !== end_time) {
-      lecture_end = this.addTimes(lecture_start, duration);
+      if(lecture_start === lunchstart) {
+        lecture_end = this.addTimes(lecture_start, 60);
+      }
+      else {
+        lecture_end = this.addTimes(lecture_start, duration);
+      }
       this.timeslots.push([lecture_start, lecture_end]);
       lecture_start = lecture_end;
     }
 
 
-    console.log(this.timeslots);
+    //console.log(this.timeslots);
     for (let i = 0; i < this.timeslots.length; i++) {
       this.dayschedule = [];
       for (let k = 0; k < this.columnHeaders.length; k++) {
@@ -95,7 +106,7 @@ export class TimetableComponent implements OnInit {
       }
       this.schedule.push(this.dayschedule);
     }
-    console.log(this.schedule);
+   // console.log(this.schedule);
     for (let i = 0; i < this.schedule.length; i++) {
       for (let j = 0; j < this.schedule[i].length; j++) {
         var check = 0;
@@ -116,7 +127,7 @@ export class TimetableComponent implements OnInit {
         }
       }
     }
-    console.log(this.schedule);
+   // console.log(this.schedule);
 
     });
 
@@ -152,6 +163,7 @@ export class TimetableComponent implements OnInit {
    return typeof val === 'string';
  }
 
+ // funstion to increase time by specified duration
  addTimes(time1, duration) {
   var hh = Number(time1.slice(0, 2));
   var mm = Number(time1.slice(3, 5));
@@ -166,6 +178,7 @@ export class TimetableComponent implements OnInit {
   return ((hh < 10) ? '0' + String(hh) : String(hh)) + ':' + ((mm === 0) ? '00' : String(mm)) + ':00';
  }
 
+ // function to convert time in minutes
  convertedTime(time) {
   var hh = Number(time.slice(0, 2));
   var mm = Number(time.slice(3, 5));

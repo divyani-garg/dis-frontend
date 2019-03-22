@@ -1,3 +1,4 @@
+import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reset-password.component.scss']
 })
 export class ResetPasswordComponent implements OnInit {
+  newPasswd: string;
 
-  constructor() { }
+  constructor(private authService: AuthService ) { }
 
   ngOnInit() {
   }
 
+  reset() {
+    console.log(this.newPasswd);
+    this.authService.resetPassword(this.newPasswd).subscribe(
+      response => {
+        console.log(response);
+      }
+    );
+  }
 }

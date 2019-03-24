@@ -1,5 +1,7 @@
+import { Router } from '@angular/router';
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
+import { ToastrManager } from 'ng6-toastr-notifications';
 
 @Component({
   selector: 'app-reset-password',
@@ -9,16 +11,28 @@ import { Component, OnInit } from '@angular/core';
 export class ResetPasswordComponent implements OnInit {
   newPasswd: string;
 
-  constructor(private authService: AuthService ) { }
+  constructor(private authService: AuthService, private router: Router, public toastr: ToastrManager) { }
 
   ngOnInit() {
   }
 
   reset() {
-    console.log(this.newPasswd);
     this.authService.resetPassword(this.newPasswd).subscribe(
+      // httpResponse handling
       response => {
-        console.log(response);
+        if(response.ok) {
+          this.router.navigate(['/']);
+          this.toastr.successToastr(response.body['message'], 'Success!');
+          console.log(response);
+        }
+      },
+      // httpErrorResponse handling
+      error => {
+        if(error.status === 400) {
+          this.router.navigate(['/forgot-password']);
+          this.toastr.errorToastr(error.error['message'], 'Oops!');
+          console.log(error);
+        }
       }
     );
   }

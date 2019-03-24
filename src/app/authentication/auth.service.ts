@@ -1,6 +1,6 @@
 import { AuthInterceptor } from './auth-interceptor';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders,HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders,HttpParams, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router'
 
@@ -9,7 +9,7 @@ import { AuthLoginInfo } from './login-info';
 import { SignUpInfo } from './signup-info';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
 
 @Injectable({providedIn: 'root'})
@@ -35,12 +35,13 @@ export class AuthService {
     return this.http.get(this.validateUrl, { responseType: 'text' });
   }
 
-  resetPassword(newPassword): Observable<string> {
+  // returns full http response
+  resetPassword(newPassword): Observable<HttpResponse<string>> {
     const reset_token = this.route.snapshot.queryParams['resetToken'];
     console.log(reset_token);
-    var info = {resetToken: reset_token, password: newPassword}
+    var info = {resetToken: reset_token, password: newPassword};
     console.log(info);
-    return this.http.post<string>(this.resetUrl,info, httpOptions);
-
+    // setting observe value as response to send full http response
+    return this.http.post<string>(this.resetUrl, info, { observe: 'response' });
   }
 }

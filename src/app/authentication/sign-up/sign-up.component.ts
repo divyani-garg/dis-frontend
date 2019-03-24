@@ -43,28 +43,5 @@ export class SignUpComponent implements OnInit {
         if (this.registerForm.invalid) {
             return;
         }
-
-        /*console.log(this.form);
-
-    this.signupInfo = new SignUpInfo(
-      this.form.username,
-      this.form.dob,
-      this.form.email,
-      this.form.password,
-      this.form.mobileNo);
-
-    this.authService.signUp(this.signupInfo).subscribe(
-      data => {
-        console.log(data);
-        this.isSignedUp = true;
-        this.isSignUpFailed = false;
-      },
-      error => {
-        console.log(error);
-        this.errorMessage = error.error.message;
-        this.isSignUpFailed = true;
-      }
-    );
-  }*/
       }
 }

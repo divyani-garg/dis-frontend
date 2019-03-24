@@ -28,7 +28,10 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   forgotPass(email: string) {
-    this.authService.forgetPassword(email);
+    this.authService.forgetPassword(email).subscribe(
+      data => {
+        console.log(data);
+      });
   }
 
   newStudent(): void {

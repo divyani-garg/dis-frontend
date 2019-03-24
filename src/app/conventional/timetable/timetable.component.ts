@@ -37,6 +37,7 @@ export class TimetableComponent implements OnInit {
     var got_duration = true;
     var duration = 1000;
     var calc_duration = 0;
+    var lunchstart;
     for (let a = 0; a < this.lec.length; a++) {
       if (this.lec[a].type === 'Lecture') {
         // tslint:disable-next-line:max-line-length
@@ -53,11 +54,20 @@ export class TimetableComponent implements OnInit {
       if (this.convertedTime(this.lec[a].to) > this.convertedTime(end_time)) {
         end_time = this.lec[a].to;
       }
+      if(this.lec[a].type === 'Lunch') {
+        lunchstart = this.lec[a].from;
+        console.log(lunchstart);
+      }
     }
     var lecture_start = start_time;
     var lecture_end = start_time;
     while (lecture_start !== end_time) {
-      lecture_end = this.addTimes(lecture_start, duration);
+      if(lecture_start === lunchstart) {
+        lecture_end = this.addTimes(lecture_start, 60);
+      }
+      else {
+        lecture_end = this.addTimes(lecture_start, duration);
+      }
       this.timeslots.push([lecture_start, lecture_end]);
       lecture_start = lecture_end;
     }

@@ -1,3 +1,4 @@
+import { PasswordValidation } from './password-validation';
 import { SignUpInfo } from './../signup-info';
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -26,7 +27,11 @@ export class SignUpComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       date: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(6), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')]],
-      phoneNo: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]]
+      phoneNo: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+      // tslint:disable-next-line:max-line-length
+      confirm_password: ['', [Validators.required]]
+    }, {
+      validator: PasswordValidation.MatchPassword // to check if password matches
     });
 
   }

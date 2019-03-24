@@ -40,7 +40,8 @@ export class AuthService {
     // const indata = {'email': email};
     return this.http.post<HttpResponse<string>>(this.forgetPasswordUrl + '?email=' + email, httpOptions);
   }
-    // returns full http response
+
+  // returns full http response
   resetPassword(newPassword): Observable<HttpResponse<string>> {
     const reset_token = this.route.snapshot.queryParams['resetToken'];
     console.log(reset_token);

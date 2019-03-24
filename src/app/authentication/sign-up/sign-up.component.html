@@ -20,7 +20,7 @@
             <label for="user" class="label">Username
               <span class="mandatory">*</span>
             </label>
-            <input id="user" type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && formCtl.username.errors }" />
+            <input id="user" type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.username.errors }" />
             <div *ngIf="submitted && formCtl.username.errors" class="invalid-feedback">
               <div *ngIf="formCtl.username.errors.required">Username is required</div>
             </div>
@@ -45,7 +45,7 @@
           <input id="cpass" type="password" formControlName="confirm_password" class="form-control" data-type="password" [ngClass]="{ 'is-invalid': submitted && formCtl.confirm_password.errors }" />
           <div *ngIf=" submitted && formCtl.confirm_password.errors" class="invalid-feedback">
               <div *ngIf="formCtl.confirm_password.errors.required">Password is required</div>
-              <div *ngIf="formCtl.confirm_password.errors.pattern">Passwords must have match!</div>
+              <div *ngIf="formCtl.confirm_password.errors.MatchPassword">Password does not match</div>
           </div>
         </div>
         

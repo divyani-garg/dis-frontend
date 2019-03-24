@@ -1,6 +1,6 @@
 import { AuthInterceptor } from './auth-interceptor';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { JwtResponse } from './jwt-response';
@@ -17,6 +17,7 @@ export class AuthService {
   private loginUrl = 'http://localhost:8080/dis/signin';
   private signupUrl = 'http://localhost:8080/dis/signup';
   private validateUrl = 'http://localhost:8080/dis/getUserType';
+  private forgetPasswordUrl = 'localhost:8080/dis/forgotPassword';
 
   constructor(private http: HttpClient, private interceptor: AuthInterceptor) {
   }
@@ -31,5 +32,12 @@ export class AuthService {
 
   validateUser(): Observable<string> {
     return this.http.get(this.validateUrl, { responseType: 'text' });
+  }
+
+  forgetPassword(email: string): Observable<string> {
+    console.log('Here');
+    console.log(email);
+    const indata = {'email': email};
+    return this.http.post<string>(this.forgetPasswordUrl, indata, httpOptions);
   }
 }

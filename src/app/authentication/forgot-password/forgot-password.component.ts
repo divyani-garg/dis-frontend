@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from '../../Model/student.model';
 import { StudentService } from '../../API_Service/student.service';
+import { AuthService } from '../auth.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-forgot-password',
@@ -9,12 +11,24 @@ import { StudentService } from '../../API_Service/student.service';
 })
 export class ForgotPasswordComponent implements OnInit {
 
+  forgetForm: FormGroup;
   student: Student = new Student();
   submitted = false;
 
-  constructor(private studentService: StudentService) { }
+  constructor(private studentService: StudentService, private authService: AuthService, private formBuider: FormBuilder) { }
 
   ngOnInit() {
+    this.forgetForm = this.formBuider.group({
+      email: ['', [Validators.required, Validators.email]],
+    });
+  }
+
+  get formCtl() {
+    return this.forgetForm.controls;
+  }
+
+  forgotPass(email: string) {
+    this.authService.forgetPassword(email);
   }
 
   newStudent(): void {
@@ -22,14 +36,13 @@ export class ForgotPasswordComponent implements OnInit {
     this.student = new Student();
   }
 
-  save() {
-    this.studentService.forgotPassword(this.student)
-      .subscribe(data => console.log(data), error => console.log(error));
-    this.student = new Student();
-  }
 
   onSubmit() {
     this.submitted = true;
-    this.save();
+    if (this.forgetForm.invalid) {
+      return;
+  }
+  console.log(this.student.email);
+    this.forgotPass(this.student.email);
   }
 }

@@ -1,7 +1,9 @@
+import { PasswordValidation } from './../sign-up/password-validation';
 import { Router } from '@angular/router';
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { ToastrManager } from 'ng6-toastr-notifications';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reset-password',
@@ -10,11 +12,22 @@ import { ToastrManager } from 'ng6-toastr-notifications';
 })
 export class ResetPasswordComponent implements OnInit {
   newPasswd: string;
+  resetForm: FormGroup;
 
-  constructor(private authService: AuthService, private router: Router, public toastr: ToastrManager) { }
+  constructor(private authService: AuthService, private router: Router, public toastr: ToastrManager, private formBuider: FormBuilder) { }
 
   ngOnInit() {
-  }
+    this.resetForm = this.formBuider.group({
+    password: ['', [Validators.required, Validators.minLength(6), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')]],
+    confirm_password: ['', [Validators.required]]
+  },{
+    validator: PasswordValidation.MatchPassword // to check if password matches
+  });
+}
+
+get formCtl() {
+  return this.resetForm.controls;
+}
 
   reset() {
     this.authService.resetPassword(this.newPasswd).subscribe(
@@ -35,5 +48,9 @@ export class ResetPasswordComponent implements OnInit {
         }
       }
     );
+    // stop here if form is invalid
+    if (this.resetForm.invalid) {
+      return;
+  }
   }
 }

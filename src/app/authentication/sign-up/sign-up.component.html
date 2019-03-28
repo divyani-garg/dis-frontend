@@ -20,7 +20,7 @@
             <label for="user" class="label">Username
               <span class="mandatory">*</span>
             </label>
-            <input id="user" type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.username.errors }" />
+            <input id="user" type="text" [(ngModel)]="form.username" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.username.errors }" />
             <div *ngIf="submitted && formCtl.username.errors" class="invalid-feedback">
               <div *ngIf="formCtl.username.errors.required">Username is required</div>
             </div>
@@ -30,7 +30,7 @@
             <label for="pass" class="label">Password
               <span class="mandatory">*</span>
             </label>
-             <input id="pass" type="password" formControlName="password"  class="form-control" data-type="password" [ngClass]="{ 'is-invalid': submitted && formCtl.password.errors }" />
+             <input id="pass" type="password" [(ngModel)]="form.password" formControlName="password"  class="form-control" data-type="password" [ngClass]="{ 'is-invalid': submitted && formCtl.password.errors }" />
              <div *ngIf=" submitted && formCtl.password.errors" class="invalid-feedback">
                 <div *ngIf="formCtl.password.errors.required">Password is required</div>
                 <div *ngIf="formCtl.password.errors.pattern">Password must have at least one uppercase letter, one lowercase letter and one number</div>
@@ -53,7 +53,7 @@
           <label for="email" class="label">Email Address
             <span class="mandatory">*</span>
           </label>
-          <input id="email" type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && formCtl.email.errors }" />
+          <input id="email" type="email" [(ngModel)]="form.email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && formCtl.email.errors }" />
           <div *ngIf="submitted && formCtl.email.errors" class="invalid-feedback">
             <div *ngIf="formCtl.email.errors.required">Email is required</div>
             <div *ngIf="formCtl.email.errors.email">Email must be a valid email address</div>
@@ -66,7 +66,7 @@
           <label for="mobile" class="label">Mobile No.
             <span class="mandatory">*</span>
           </label>
-          <input id="mobile" type="text" formControlName="phoneNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && formCtl.phoneNo.errors }" />
+          <input id="mobile" type="text" [(ngModel)]="form.mobileNo" formControlName="phoneNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && formCtl.phoneNo.errors }" />
           <div *ngIf=" submitted && formCtl.phoneNo.errors" class="invalid-feedback">
             <div *ngIf="formCtl.phoneNo.errors.required">Phone Number is required</div>
             <div *ngIf="formCtl.phoneNo.errors.minlength || formCtl.phoneNo.errors.maxlength">Phone Number must be at 10 digit long</div>
@@ -77,7 +77,7 @@
           <label for="date" class="label">Date of Birth
             <span class="mandatory">*</span>
           </label>
-          <input id ="date" type="date" formControlName="date" class="form-control" [ngClass]="{ 'is-invalid': submitted && formCtl.date.errors }" />
+          <input id ="date" type="date" [(ngModel)]="form.dob" formControlName="date" class="form-control" [ngClass]="{ 'is-invalid': submitted && formCtl.date.errors }" />
           <div *ngIf=" submitted && formCtl.date.errors" class="invalid-feedback">
             <div *ngIf="formCtl.date.errors.required">Date of Birth is required</div>
           </div>

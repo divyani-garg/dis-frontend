@@ -1,3 +1,4 @@
+import { ToastrManager } from 'ng6-toastr-notifications';
 import { Component, OnInit } from '@angular/core';
 
 import { AuthService } from '../auth.service';
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   private loginInfo: AuthLoginInfo;
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router) { }
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router, public toastr: ToastrManager) { }
 
   ngOnInit() {
     if (this.tokenStorage.getToken()) {
@@ -47,11 +48,13 @@ export class LoginComponent implements OnInit {
         this.getValidated();
       },
       error => {
+        if(error.status === 400) {
+        //this.router.navigate(['/forgot-password']);
+        this.toastr.errorToastr(error.error['message'], 'Alert!');
         console.log(error);
-        this.errorMessage = error.error.message;
         this.isLoginFailed = true;
       }
-    );
+      });
   }
 
   getValidated() {

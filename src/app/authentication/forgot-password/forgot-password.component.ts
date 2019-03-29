@@ -3,6 +3,8 @@ import { Student } from '../../Model/student.model';
 import { StudentService } from '../../API_Service/student.service';
 import { AuthService } from '../auth.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrManager } from 'ng6-toastr-notifications';
 
 @Component({
   selector: 'app-forgot-password',
@@ -15,7 +17,8 @@ export class ForgotPasswordComponent implements OnInit {
   student: Student = new Student();
   submitted = false;
 
-  constructor(private studentService: StudentService, private authService: AuthService, private formBuider: FormBuilder) { }
+  // tslint:disable-next-line:max-line-length
+  constructor(private router: Router, public toastr: ToastrManager,private studentService: StudentService, private authService: AuthService, private formBuider: FormBuilder) { }
 
   ngOnInit() {
     this.forgetForm = this.formBuider.group({
@@ -29,8 +32,21 @@ export class ForgotPasswordComponent implements OnInit {
 
   forgotPass(email: string) {
     this.authService.forgetPassword(email).subscribe(
-      data => {
-        console.log(data);
+      response => {
+
+        if(response.ok) {
+          //this.router.navigate(['/']);
+          this.toastr.successToastr(response.body['message'], 'Success!');
+          console.log(response);
+        }
+      },
+      // httpErrorResponse handling
+      error => {
+        if(error.status === 400) {
+          //this.router.navigate(['/forgot-password']);
+          this.toastr.errorToastr(error.error['message'], 'Oops!');
+          console.log(error);
+        }
       });
   }
 

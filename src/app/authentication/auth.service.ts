@@ -19,6 +19,7 @@ export class AuthService {
   private signupUrl = 'http://localhost:8080/dis/signup';
   private validateUrl = 'http://localhost:8080/dis/getUserType';
   private forgetPasswordUrl = 'http://localhost:8080/dis/forgotPassword';
+  private activateAccountUrl = 'http://localhost:8080/dis/preActivation';
   private resetUrl = 'http://localhost:8080/dis/processResetPassword';
 
   constructor(private http: HttpClient, private interceptor: AuthInterceptor, private route: ActivatedRoute) {
@@ -28,8 +29,8 @@ export class AuthService {
     return this.http.post<JwtResponse>(this.loginUrl, credentials, httpOptions);
   }
 
-  signUp(info: SignUpInfo): Observable<string> {
-    return this.http.post<string>(this.signupUrl, info, httpOptions);
+  signUp(info: SignUpInfo): Observable<HttpResponse<string>> {
+    return this.http.post<string>(this.signupUrl, info,{ observe: 'response' });
   }
 
   validateUser(): Observable<string> {
@@ -38,7 +39,12 @@ export class AuthService {
 
   forgetPassword(email: string): Observable<HttpResponse<string>> {
     // const indata = {'email': email};
-    return this.http.post<HttpResponse<string>>(this.forgetPasswordUrl + '?email=' + email, httpOptions);
+    return this.http.post<string>(this.forgetPasswordUrl + '?email=' + email, null,{ observe: 'response' });
+  }
+
+  activateAccount(email: string): Observable<HttpResponse<string>> {
+    // const indata = {'email': email};
+    return this.http.post<string>(this.activateAccountUrl + '?email=' + email, null ,{ observe: 'response' });
   }
 
   // returns full http response

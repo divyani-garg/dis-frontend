@@ -1,3 +1,4 @@
+import { ActivateAccountComponent } from './authentication/activate-account/activate-account.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { StudentRoutingModule } from './student/student-routing.module';
@@ -13,6 +14,9 @@ import { HodRoutingModule } from './hod/hod-routing.module';
 const routes: Routes = [
   { path: 'forgot-password',
      component: ForgotPasswordComponent
+  },
+  { path: 'activate-account',
+     component: ActivateAccountComponent
   },
   { path: 'reset-password',
      component: ResetPasswordComponent

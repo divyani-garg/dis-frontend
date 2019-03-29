@@ -1,3 +1,4 @@
+import { ToastrManager } from 'ng6-toastr-notifications';
 import { PasswordValidation } from './password-validation';
 import { SignUpInfo } from './../signup-info';
 import { AuthService } from './../auth.service';
@@ -19,7 +20,7 @@ export class SignUpComponent implements OnInit {
   isSignUpFailed = false;
   errorMessage = '';
 
-  constructor(private authService: AuthService, private formBuider: FormBuilder) { }
+  constructor(private authService: AuthService, private formBuider: FormBuilder, public toastr: ToastrManager) { }
 
   ngOnInit() {
     this.registerForm = this.formBuider.group({
@@ -51,15 +52,20 @@ export class SignUpComponent implements OnInit {
 
       this.authService.signUp(this.signupInfo).subscribe(
         data => {
+          if(data.ok) {
           console.log(data);
           this.isSignedUp = true;
           this.isSignUpFailed = false;
+          this.toastr.successToastr(data.body['message'], 'Success!');
+          }
         },
         error => {
+          if(error.status === 400) {
+          this.toastr.errorToastr(error.error['message'], 'Alert!');
           console.log(error);
-          this.errorMessage = error.error.message;
           this.isSignUpFailed = true;
         }
+      }
       );
 
     this.submitted = true;

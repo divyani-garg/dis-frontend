@@ -9,11 +9,11 @@ import { ComplaintsComponent } from './complaints/complaints.component';
 import { AssignmentsComponent } from './assignments/assignments.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { AttendanceComponent } from './attendance/attendance.component';
-import { TimetableComponent } from './timetable/timetable.component';
 import { InfrastructureComponent } from '../hod/hod-infrastucture/infrastructure/infrastructure.component';
 import { HodInfrastuctureModule } from '../hod/hod-infrastucture/hod-infrastucture.module';
 import { LoginComponent } from '../authentication/login/login.component';
 import { ConventionalModule } from '../conventional/conventional.module';
+import { ComplaintsModule } from '../complaints/complaints.module';
 
 const routes: Routes = [
   { path: 'student',
@@ -43,15 +43,16 @@ const routes: Routes = [
       },
       {
         path: 'student_timetable',
-        component: TimetableComponent
+        loadChildren: () => ConventionalModule
       },
       {
         path: 'student_grades',
         component: GradesComponent,
       },
       {
-        path: 'student_complaints',
-        component: ComplaintsComponent
+        path : 'student_complaints',
+        component:ComplaintsComponent,
+        loadChildren:()=> ComplaintsModule
       },
       {
         path: 'student_assignments',

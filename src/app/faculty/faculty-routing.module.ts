@@ -16,6 +16,7 @@ import { MydutiesModule } from '../myduties/myduties.module';
 import { MydutiesComponent } from '../myduties/myduties/myduties.component';
 import { ComplaintsComponent } from '../complaints/complaints/complaints.component';
 import { ComplaintsModule } from '../complaints/complaints.module';
+import { ProfileComponent } from '../conventional/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,7 @@ const routes: Routes = [
       
       {
         path : 'profile',
+        component : ProfileComponent,
         loadChildren: () => ConventionalModule 
       },
       {

@@ -1,3 +1,4 @@
+import { ConventionalModule } from './../conventional/conventional.module';
 import { AboutRoutingModule } from './../about/about-routing.module';
 import { AboutModule } from './../about/about.module';
 import { CalendarComponent } from './../miscellaneous/calendar/calendar.component';
@@ -12,12 +13,12 @@ import { AlertsComponent } from './alerts/alerts.component';
 import { AssignmentsComponent } from './assignments/assignments.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
 import { StudentComponent } from './student/student.component';
-import { TimetableComponent } from './timetable/timetable.component';
 import { SidenavigationComponent } from './sidenavigation/sidenavigation.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { MiscellaneousModule } from '../miscellaneous/miscellaneous.module';
 import { HodInfrastuctureModule } from '../hod/hod-infrastucture/hod-infrastucture.module';
 import { BarchartComponent } from '../miscellaneous/barchart/barchart.component';
+import { ComplaintsModule } from '../complaints/complaints.module';
 
 
 @NgModule({
@@ -27,7 +28,9 @@ import { BarchartComponent } from '../miscellaneous/barchart/barchart.component'
     AboutModule,
     AboutRoutingModule,
     MiscellaneousModule,
-    HodInfrastuctureModule
+    HodInfrastuctureModule,
+    ConventionalModule,
+    ComplaintsModule
   ],
   declarations: [
     HomeComponent,
@@ -38,7 +41,6 @@ import { BarchartComponent } from '../miscellaneous/barchart/barchart.component'
     ComplaintsComponent,
     StudentComponent,
     AttendanceComponent,
-    TimetableComponent,
     SidenavigationComponent
   ],
   providers: [BarchartComponent],

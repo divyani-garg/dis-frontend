@@ -18,9 +18,13 @@ import { HodInfrastructureComponent } from './hod-infrastucture/hod-infrastructu
 import { GalleryComponent } from './footer/gallery/gallery.component';
 import { FooterModule } from './footer/footer.module';
 import { MeetingsComponent } from './meetings/meetings.component';
+import { ProfileComponent } from '../conventional/profile/profile.component';
+import { ConventionalModule } from '../conventional/conventional.module';
+import { ComplaintsComponent } from '../complaints/complaints/complaints.component';
+import { ComplaintsModule } from '../complaints/complaints.module';
 
 const routes: Routes = [
-  { path: 'hod',
+  { path: 'head',
     component: HodComponent,
     children: [
       {
@@ -70,17 +74,23 @@ const routes: Routes = [
         component: TimetableComponent
       },
       {
-        path: 'alerts',
-        component: AlertsComponent
-      },
-      {
         path: 'gallery',
         component: GalleryComponent
       },
       {
         path: 'meetings',
         component: MeetingsComponent
-      }
+      },
+      {
+        path :'alerts',
+        component:ComplaintsComponent,
+        loadChildren:()=> ComplaintsModule
+      },
+      {
+        path : 'profile',
+        component : ProfileComponent,
+        loadChildren: () => ConventionalModule 
+      },
     ]
   }
 ];

@@ -1,7 +1,6 @@
 import { SemesterSubjectsService } from './../../API_Service/SemesterSubjectsService';
+import { TimetableService } from './../../API_Service/timetable.service';
 import { Component, OnInit, Input } from '@angular/core';
-import { SemesterTimetable } from '../../Model/semester-timetable.model';
-import { TimetableService } from '../../API_Service/timetable.service';
 
 @Component({
   selector: 'app-timetable',
@@ -29,8 +28,7 @@ export class TimetableComponent implements OnInit {
     .subscribe( data => {
     this.lec = data;
     // tslint:disable-next-line:max-line-length
-    this.columnHeaders = [{day: 'Days', colspanValue: 1}, {day: 'Monday', colspanValue: 1}, {day: 'Tuesday', colspanValue: 1}, 
-    {day: 'Wednesday', colspanValue: 1}, {day: 'Thursday', colspanValue: 1}, {day: 'Friday', colspanValue: 1}];
+    this.columnHeaders = [{day: 'Days', colspanValue: 1}, {day: 'Monday', colspanValue: 1}, {day: 'Tuesday', colspanValue: 1}, {day: 'Wednesday', colspanValue: 1}, {day: 'Thursday', colspanValue: 1}, {day: 'Friday', colspanValue: 1}];
     this.timeslots = [];
     console.log(data);
     this.schedule = [];
@@ -58,8 +56,6 @@ export class TimetableComponent implements OnInit {
     }
     var lecture_start = start_time;
     var lecture_end = start_time;
-    console.log(start_time);
-    console.log(end_time);
     while (lecture_start !== end_time) {
       lecture_end = this.addTimes(lecture_start, duration);
       this.timeslots.push([lecture_start, lecture_end]);
@@ -176,5 +172,4 @@ export class TimetableComponent implements OnInit {
     return (hh * 60 + mm);
   }
  }
-
 }

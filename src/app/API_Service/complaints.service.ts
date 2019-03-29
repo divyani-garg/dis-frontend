@@ -1,6 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { HttpHeaders } from '@angular/common/http';
+import { AddACleanlinessComplaint } from '../complaints/complaints_cleanliness';
+import { AddOtherComplaint } from '../complaints/complaints_other';
+import { AuthInterceptor } from '../authentication/auth-interceptor';
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+};
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +15,8 @@ import { Observable } from 'rxjs';
 export class ComplaintsService {
 
   private baseUrl="http://localhost:8083";
-  constructor(private http: HttpClient) { }
+  private postUrl="http://localhost:8080/dis/administration/addCleanlinessComplaint";
+  constructor(private http: HttpClient,private interceptor: AuthInterceptor) { }
 
   getRemainingCleanlinessComplaint():Observable<any>{
     return this.http.get(`${this.baseUrl}/getRemainingCleanlinessComplaints`);
@@ -144,8 +152,26 @@ export class ComplaintsService {
     return this.http.get(`${this.baseUrl}/getMyStudentComplaints`);
   }
 
-  public AddACleanlinessComplaint(AddACleanlinessComplaint : Object):Observable<any>{
-    return this.http.post(`${this.baseUrl}/addCleanlinessComplaint`,AddACleanlinessComplaint,{ responseType : 'text'});
+  addACleanlinessComplaint(info : AddACleanlinessComplaint):Observable<HttpResponse<string>>{
+    return this.http.post<string>("http://localhost:8080/dis/administration/addCleanlinessComplaint",info,{observe: 'response'});
   }
-
+  // addOtherComplaint(info : AddOtherComplaint):Observable<any>{
+  //   return this.http.post("http://localhost:8080/dis/administration/addOtherComplaint",info,httpOptions);
+  // }
+  addOtherComplaint (info : AddOtherComplaint): Observable<AddOtherComplaint> {
+    return this.http.post<AddOtherComplaint>('http://localhost:8080/dis/administration/addOtherComplaint', info, httpOptions)
+  }
+  //get complaints counts
+  getRemainingComplaintCount():Observable<any>{
+    return this.http.get(`${this.baseUrl}/getRemainingComplaintsCount`);
+  }
+  getResolvedComplaintCount():Observable<any>{
+    return this.http.get(`${this.baseUrl}/getResolvedComplaintsCount`);
+  }
+  getTotalComplaintCount():Observable<any>{
+    return this.http.get(`${this.baseUrl}/getTotalComplaintsCount`);
+  }
+  getMyComplaintCount():Observable<any>{
+    return this.http.get(`${this.baseUrl}/getMyComplaintsCount`);
+  }
 }

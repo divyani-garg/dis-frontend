@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Authentication } from '../../Model/authentication.model';
-import { AuthenticationService } from '../../API_Service/authentication.service';
+
+import { AuthService } from '../auth.service';
+import { TokenStorageService } from '../token-storage.service';
+import { AuthLoginInfo } from '../login-info';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,36 +11,54 @@ import { AuthenticationService } from '../../API_Service/authentication.service'
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  form: any = {};
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
+  private loginInfo: AuthLoginInfo;
 
-  user: String;
-  authentication: Authentication = new Authentication();
-  submitted = false;
-  userType = String;
-  constructor(private authenticationService: AuthenticationService) { }
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router) { }
 
   ngOnInit() {
-  }
-
-  newStudent(): void{
-    this.submitted = false;
-    this.authentication = new Authentication();
-  }
-
-  login(){
-    console.log(this.authentication.username);
-    this.authenticationService.login(this.authentication)
-    .subscribe(
-      data => this.redirect(data), error => console.log(error));
-    this.authentication = new Authentication();
-  }
-
-  redirect(userType) {
-    this.user = userType;
-    console.log(this.user);
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+      this.roles = this.tokenStorage.getAuthorities();
+      this.getValidated();
+    }
   }
 
   onSubmit() {
-    this.submitted = true;
-    this.login();
+    console.log(this.form);
+
+    this.loginInfo = new AuthLoginInfo(
+      this.form.username,
+      this.form.password);
+
+    this.authService.attemptAuth(this.loginInfo).subscribe(
+      data => {
+        console.log(data);
+        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveAuthorities(data.authorities);
+
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.roles = this.tokenStorage.getAuthorities();
+        this.getValidated();
+      },
+      error => {
+        console.log(error);
+        this.errorMessage = error.error.message;
+        this.isLoginFailed = true;
+      }
+    );
+  }
+
+  getValidated() {
+    this.authService.validateUser().subscribe(
+      tempData => {
+        this.router.navigateByUrl('/' + tempData);
+      }
+    );
   }
 }

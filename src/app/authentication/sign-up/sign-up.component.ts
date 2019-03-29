@@ -1,3 +1,5 @@
+import { SignUpInfo } from './../signup-info';
+import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Authentication } from '../../Model/authentication.model';
 import { AuthenticationService } from '../../API_Service/authentication.service';
@@ -9,28 +11,37 @@ import { AuthenticationService } from '../../API_Service/authentication.service'
 })
 export class SignUpComponent implements OnInit
 {
-  auth: Authentication = new Authentication();
-  submitted = false;
+  form: any = {};
+  signupInfo: SignUpInfo;
+  isSignedUp = false;
+  isSignUpFailed = false;
+  errorMessage = '';
 
-  constructor(private authService: AuthenticationService) { }
+  constructor(private authService: AuthService) { }
 
-  ngOnInit() {
-  }
-
-  newauth(): void {
-    this.submitted = false;
-    this.auth = new Authentication();
-  }
-
-  save() {
-    this.authService.signup(this.auth)
-      .subscribe(data => console.log(data), error => console.log(error));
-    this.auth = new Authentication();
-  }
+  ngOnInit() { }
 
   onSubmit() {
-    this.submitted = true;
-    this.save();
-  }
+    console.log(this.form);
 
+    this.signupInfo = new SignUpInfo(
+      this.form.username,
+      this.form.dob,
+      this.form.email,
+      this.form.password,
+      this.form.mobileNo);
+console.log(this.signupInfo);
+    this.authService.signUp(this.signupInfo).subscribe(
+      data => {
+        console.log(data);
+        this.isSignedUp = true;
+        this.isSignUpFailed = false;
+      },
+      error => {
+        console.log(error);
+        this.errorMessage = error.error.message;
+        this.isSignUpFailed = true;
+      }
+    );
+  }
 }

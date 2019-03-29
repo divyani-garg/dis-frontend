@@ -25,6 +25,7 @@
     "angular-confirmation-popover": "^4.2.0",
     "chart.js": "^2.7.3",
     "core-js": "^2.6.4",
+    "cors": "^2.8.5",
     "datatables.net": "^1.10.19",
     "fullcalendar": "^3.10.0",
     "g": "^2.0.1",

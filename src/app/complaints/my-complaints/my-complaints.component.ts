@@ -7,6 +7,15 @@ import { ComplaintsService } from 'src/app/API_Service/complaints.service';
   styleUrls: ['./my-complaints.component.scss']
 })
 export class MyComplaintsComponent implements OnInit {
+  cleanliness: boolean;
+  le: boolean;
+  cwn: boolean;
+  ecc: boolean;
+  other: boolean;
+  faculty: boolean;
+  stu: boolean;
+  emrs: boolean;
+  telephone: boolean;
   @Input() cleanlinessMyComplaintsData:any;
   @Input() leMyComplaintsData:any; 
   @Input() otherMyComplaintsData:any;
@@ -21,7 +30,15 @@ export class MyComplaintsComponent implements OnInit {
 
   ngOnInit() {
 
-    
+    this.cleanliness = true;
+    this.le = true;
+    this.cwn = true;
+    this.ecc = true;
+    this.other = true;
+    this.faculty = true;
+    this.stu = true;
+    this.emrs = true;
+    this.telephone = true;
     this.cleanlinessMyComplaintsData=this.complaints.getMyCleanlinessComplaint()
   .subscribe(
     data=>{
@@ -64,4 +81,114 @@ export class MyComplaintsComponent implements OnInit {
 
  
   }
+  showAll() {
+    this.cleanliness = true;
+    this.le = true;
+    this.cwn = true;
+    this.ecc = true;
+    this.other = true;
+    this.faculty = true;
+    this.stu = true;
+    this.emrs = true;
+    this.telephone = true;
+    }
+ showOther() {
+    this.cleanliness = false;
+    this.le = false;
+    this.cwn = false;
+    this.ecc = false;
+    this.other = true;
+    this.faculty = false;
+    this.stu = false;
+    this.emrs = false;
+    this.telephone = false;
+  }
+  showStudent() {
+    this.cleanliness = false;
+    this.le = false;
+    this.cwn = false;
+    this.ecc = false;
+    this.other = false;
+    this.faculty = false;
+    this.stu = true;
+    this.emrs = false;
+    this.telephone = false;
+  }
+  showCleanliness() {
+    this.cleanliness = true;
+    this.le = false;
+    this.cwn = false;
+    this.ecc = false;
+    this.other = false;
+    this.faculty = false;
+    this.stu = false;
+    this.emrs = false;
+    this.telephone = false;
+  }
+  showLe() {
+    this.cleanliness = false;
+    this.le = true;
+    this.cwn = false;
+    this.ecc = false;
+    this.other = false;
+    this.faculty = false;
+    this.stu = false;
+    this.emrs = false;
+    this.telephone = false;
+  }
+  showCwn() {
+    this.cleanliness = false;
+    this.le = false;
+    this.cwn = true;
+    this.ecc = false;
+    this.other = false;
+    this.faculty = false;
+    this.stu = false;
+    this.emrs = false;
+    this.telephone = false;
+  }
+  showEcc() {
+    this.cleanliness = false;
+    this.le = false;
+    this.cwn = false;
+    this.ecc = true;
+    this.other = false;
+    this.faculty = false;
+    this.stu = false;
+    this.emrs = false;
+    this.telephone = false;
+  }
+  showFaculty() {
+    this.cleanliness = false;
+    this.le = false;
+    this.cwn = false;
+    this.ecc = false;
+    this.other = false;
+    this.faculty = true;
+    this.stu = false;
+    this.emrs = false;
+    this.telephone = false;
+  }
+  showEmrs() {
+    this.cleanliness = false;
+    this.le = false;
+    this.cwn = false;
+    this.ecc = false;
+    this.other = false;
+    this.faculty = false;
+    this.stu = false;
+    this.emrs = true;
+    this.telephone = false;
+  }
+  showTelephone() {
+    this.cleanliness = false;
+    this.le = false;
+    this.cwn = false;
+    this.ecc = false;
+    this.other = false;
+    this.faculty = false;
+    this.stu = false;
+    this.emrs = false;
+    this.telephone = true;
+   }
 }

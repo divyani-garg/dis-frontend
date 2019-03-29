@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ComplaintsService } from 'src/app/API_Service/complaints.service';
 import { AddACleanlinessComplaint } from '../complaints_cleanliness';
+import { AddOtherComplaint } from '../complaints_other';
 
 @Component({
   selector: 'app-addacomplaint',
@@ -10,7 +11,9 @@ import { AddACleanlinessComplaint } from '../complaints_cleanliness';
 export class AddacomplaintComponent implements OnInit {
 
   form:any={};
-  addACleanlinessComplaint: AddACleanlinessComplaint;
+  other:any={};
+  info: AddACleanlinessComplaint;
+  otherComplaint : AddOtherComplaint;
   constructor(private complaints:ComplaintsService) { }
   
 
@@ -18,17 +21,39 @@ export class AddacomplaintComponent implements OnInit {
   }
   onSubmit(){
     console.log(this.form);
-    this.addACleanlinessComplaint=new AddACleanlinessComplaint(
-      this.form.location,this.form.levelOfDustness,this.form.detail
+    this.info=new AddACleanlinessComplaint(
+      this.form.location,this.form.levelOfDust,this.form.details
     );
-    this.complaints.AddACleanlinessComplaint(this.addACleanlinessComplaint).subscribe(
+    console.log(this.info);
+    this.complaints.addACleanlinessComplaint(this.info).subscribe(
       data=>{
         console.log(data);
-
+        document.getElementById("status").innerHTML="Your Complaint is Successfully Registered!!";
+        
       },
       error=>{
-        console.log(error+" Error Come");
+        document.getElementById("status").innerHTML="Error while registering your complaint!!";
       }
     );
   }
-}
+
+  onOtherSubmit(){
+    console.log(this.other);
+    this.otherComplaint=new AddOtherComplaint(
+     this.other.details
+    );
+    console.log(this.otherComplaint);
+    this.complaints.addOtherComplaint(this.otherComplaint).subscribe(
+      data=>{
+        console.log(data);
+        document.getElementById("status").innerHTML="Your Complaint is Successfully Registered!!";
+        
+      },
+      error=>{
+        console.log(error);
+        document.getElementById("status").innerHTML="Error while registering your complaint!!";
+      }
+    );
+  }
+
+  }

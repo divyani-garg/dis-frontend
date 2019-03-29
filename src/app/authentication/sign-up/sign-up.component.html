@@ -17,45 +17,45 @@
 
         <div class="sign-up-htm">
           <div class="group">
-            <label for="user" class="label">Enrollment Id
+            <label for="user" class="label">Username
               <span class="mandatory">*</span>
             </label>
-            <input id="user" type="text" class="input" [(ngModel)]="auth.username" name="username">
+            <input id="user" type="text" class="input" [(ngModel)]="form.username" name="username">
           </div>
           <div class="group">
             <label for="pass" class="label">Password
               <span class="mandatory">*</span>
             </label>
-            <input id="pass" type="password" class="input" data-type="password" [(ngModel)]="auth.password" name="password">
-          </div>      
+            <input id="pass" type="password" class="input" data-type="password" [(ngModel)]="form.password" name="password">
+          </div>
           <div class="group">
             <label for="cpass" class="label">Re-enter Password
               <span class="mandatory">*</span>
             </label>
-            <input id="cpass" type="password" class="input" data-type="password" [(ngModel)]="auth.cPassword" name="cPassword">
-          </div>      
+            <input id="cpass" type="password" class="input" data-type="password" [(ngModel)]="form.cPassword" name="cPassword">
+          </div>
           <div class="group">
             <label for="mobile" class="label">Mobile No.
               <span class="mandatory">*</span>
             </label>
-            <input id="mobile" type="text" class="input" [(ngModel)]="auth.mobileNo" name="mobileNo">
-          </div>        
+            <input id="mobile" type="text" class="input" [(ngModel)]="form.mobileNo" name="mobileNo">
+          </div>
           <div class="group">
             <label for="email" class="label">Email Address
               <span class="mandatory">*</span>
             </label>
-            <input id="email" type="email" class="input" [(ngModel)]="auth.email" name="email">
+            <input id="email" type="email" class="input" [(ngModel)]="form.email" name="email">
             <!--<div ng-messages="form.email.$error">
               <p ng-message="minlength">Password should have at least 6 characters.</p>
               <p ng-message="maxlength">Password should have at most 12 characters.</p>
               <p ng-message="required">Providing a password is mandatory.</p>
             </div>-->
-          </div>          
+          </div>
           <div class="group">
-              <label for="date" class="label">Date of Birth 
-                <span class="mandatory">*</span> 
+              <label for="date" class="label">Date of Birth
+                <span class="mandatory">*</span>
               </label>
-              <input id ="date" type="date" class="input" name="dob" [(ngModel)]="auth.dob">
+              <input id ="date" type="date" class="input" name="dob" [(ngModel)]="form.dob">
             </div>
           <div class="group">
             <input type="submit" class="button login-button" value="Sign Up">

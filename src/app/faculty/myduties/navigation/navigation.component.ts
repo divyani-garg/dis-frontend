@@ -11,7 +11,7 @@ export class NavigationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  this.openNav();
+  this.openNav()
   this.closeNav();
   }
   /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */

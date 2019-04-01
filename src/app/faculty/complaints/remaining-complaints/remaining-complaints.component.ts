@@ -5,7 +5,6 @@ import { Component, OnInit} from '@angular/core';
   selector: 'app-remaining-complaints',
   templateUrl: './remaining-complaints.component.html',
   styleUrls: ['./remaining-complaints.component.scss'],
-
 })
 export class RemainingComplaintsComponent implements OnInit {
 
@@ -17,5 +16,4 @@ export class RemainingComplaintsComponent implements OnInit {
   public popoverMessage: string = 'Do you want to continue?';
   public confirmClicked: boolean = false;
   public cancelClicked: boolean = false;
-
 }

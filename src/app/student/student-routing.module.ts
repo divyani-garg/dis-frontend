@@ -1,7 +1,8 @@
+import { ProfileComponent } from './../conventional/profile/profile.component';
+import { TimetableComponent } from './../conventional/timetable/timetable.component';
 import { ConventionalModule } from './../conventional/conventional.module';
 import { AboutModule } from './../about/about.module';
 import { AboutComponent } from './../about/about/about.component';
-import { ProfileComponent } from './profile/profile.component';
 import { StudentComponent } from './student/student.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule, Component } from '@angular/core';
@@ -11,9 +12,9 @@ import { ComplaintsComponent } from './complaints/complaints.component';
 import { AssignmentsComponent } from './assignments/assignments.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { AttendanceComponent } from './attendance/attendance.component';
-import { InfrastructureComponent } from '../hod/hod-infrastucture/infrastructure/infrastructure.component';
-import { HodInfrastuctureModule } from '../hod/hod-infrastucture/hod-infrastucture.module';
 import { LoginComponent } from '../authentication/login/login.component';
+import { InfrastructureModule } from '../infrastructure/infrastructure.module';
+import { InfrastructureOutletComponent } from '../infrastructure/infrastructure-outlet/infrastructure-outlet.component';
 
 const routes: Routes = [
   { path: 'student',
@@ -34,8 +35,8 @@ const routes: Routes = [
       },
       {
         path: 'student_infrastructure',
-        component: InfrastructureComponent,
-        loadChildren: () => HodInfrastuctureModule
+        component: InfrastructureOutletComponent,
+        loadChildren: () => InfrastructureModule
       },
       {
         path: 'student_attendance',
@@ -43,7 +44,7 @@ const routes: Routes = [
       },
       {
         path: 'student_timetable',
-        loadChildren: () => ConventionalModule
+        component: TimetableComponent
       },
       {
         path: 'student_grades',

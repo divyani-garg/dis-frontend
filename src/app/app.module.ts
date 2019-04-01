@@ -17,6 +17,8 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { HodRoutingModule } from './hod/hod-routing.module';
 import { HodModule } from './hod/hod.module';
 import { ToastrModule } from 'ng6-toastr-notifications';
+import { ConventionalModule } from './conventional/conventional.module';
+import { InfrastructureModule } from './infrastructure/infrastructure.module';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { ToastrModule } from 'ng6-toastr-notifications';
     FacultyModule,
     StaffModule,
     MiscellaneousModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    ConventionalModule,
+    InfrastructureModule
   ],
   providers: [AuthInterceptor,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],

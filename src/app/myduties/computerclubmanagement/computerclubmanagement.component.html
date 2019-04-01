@@ -1,0 +1,302 @@
+  <ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item">
+          <a class="nav-link active" id="pills-events-tab" data-toggle="pill" href="#pills-events"
+              role="tab" aria-controls="pills-home" aria-selected="true">Events</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" id="pills-team-tab" data-toggle="pill" href="#pills-team"
+              role="tab" aria-controls="pills-profile" aria-selected="false">Team</a>
+      </li>
+      <!-- <li class="nav-item">
+  <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+</li> -->
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-events" role="tabpanel"
+          aria-labelledby="pills-events-tab">
+          <div class="row float-right"> <a href="#exampleModal" data-toggle="modal"
+                  class="float-right" data-target="#exampleModal" data-whatever="@mdo"><i
+                      class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>Add
+                  Event</a></div>
+          <div class="container">
+              <div class="alert alert-success row  pl-3">
+                  <h4 class="col-12 heading">Event #1: Tech Talk</h4>
+                  <div class="row">
+                      <p class="col-10 text-dark" style="padding-left:3%;">
+                          Description :
+                          Expert lecture on "Micro Architecture" was organized in the
+                          Month of june by Sudarshan Verma, Director of technology
+                          ADVANZ101 Business pvt. ltd.</p>
+                      <p class="col-2 text-dark" style="text-align: right;"> Date:
+                          14/06/2017<br />Organised
+                          by: Srijan Jain<br /></p>
+                  </div>
+              </div>
+              <div class="alert alert-success row">
+                  <h4 class="col-12 heading">Event #2:Guest Session</h4>
+
+                  <div class="row">
+                      <p class="col-10 text-dark" style="padding-left:3%;">Description
+                          :
+                          Expert lecture on "Case Study of a IT project" was
+                          organized in
+                          the Month of July by S.H. Abbas Mehdi, Director, Software
+                          Technology Parks Of India, Govt. Of India</p>
+                      <p class="col-2 text-dark" style="text-align: right;"> Date:
+                          15/07/2017<br />Organised
+                          by: Devender Singh<br /></p>
+                  </div>
+              </div>
+              <div class="alert alert-success row">
+                  <h4 class="col-12 heading">Event #3 : Coding event</h4>
+
+                  <div class="row">
+                      <p class="col-10 text-dark" style="padding-left:3%;">Description
+                          :
+                          City Level coding hackethon was organised. 100+ student
+                          shows
+                          up in the event. </p>
+                      <p class="col-2 text-dark" style="text-align: right;"> Date:
+                          12/08/2017<br />Organised
+                          by: Vidhan Jhawar<br /></p>
+                  </div>
+              </div>
+              <div class="alert alert-success row">
+                  <h4 class="col-12 heading">Event #4 : All about Programming</h4>
+
+                  <div class="row">
+                      <p class="col-10 text-dark" style="padding-left:3%;">Description
+                          :Expert lecture on "Programming complexity" was organized
+                          in
+                          the Month of September by Shashank Vaishnav, Director,
+                          Wittyfeed </p>
+                      <p class="col-2 text-dark" style="text-align: right;"> Date:
+                          13/09/2017<br />Organised
+                          by: Vishal Singhal<br /></p>
+                  </div>
+              </div>
+          </div>
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+              aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header model-head">
+                          <h5 class="modal-title " id="exampleModalLabel" style="color:white;">Add
+                              Event</h5>
+                          <button type="button" class="close" data-dismiss="modal"
+                              aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                          <form>
+                              <div>
+                                  <label for="recipient-name" class="col-form-label">Event
+                                      Name : </label>
+                                  <input class="form-control" type="text" placeholder="enter name...">
+                              </div>
+                              <div>
+                                  <label for="user-id" class="col-form-label">Event
+                                      Id :
+                                  </label>
+                                  <input class="form-control" type="text" placeholder="enter id...">
+                              </div>
+                              <div>
+                                  <label for="Designation" class="col-form-label">Organised
+                                      By : </label>
+                                  <input class="form-control" type="text" placeholder="organised by">
+                              </div>
+                              <div class="form-group">
+                                  <label for="article" class="col-form-label">Discription:</label>
+                                  <textarea class="form-control" id="message-text"
+                                      placeholder="enter description..."></textarea>
+                                  <a href="" class="float-right anchor"><i class="fa fa-upload fa-fw"
+                                          aria-hidden="true"></i>Upload</a>
+                              </div>
+
+                          </form>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary"
+                              data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary" data-dismiss="modal">Save
+                              changes</button>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="tab-pane fade" id="pills-team" role="tabpanel" aria-labelledby="pills-team-tab">
+          <div class="row">
+              <div class="col-lg-3 col-sm-6">
+
+                  <div class="card hovercard">
+                      <div class="cardheader">
+
+                      </div>
+                      <div class="avatar">
+                          <img alt="" src="../../../assets/images/img_avatar3.png">
+                      </div>
+                      <div class="info">
+                          <div class="title">
+                              <a target="_blank" href="https://scripteden.com/">Somil
+                                  Neema</a>
+                          </div>
+
+                          <div class="desc">Today : <i>Present</i></div>
+                          <div class="desc"><i class="fa fa-mobile"></i> 7987000000</div>
+                          <div class="desc"><i class="fa fa-envelope"></i>
+                              devender.singh@gmail.com</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                  <div class="card hovercard">
+                      <div class="cardheader">
+
+                      </div>
+                      <div class="avatar">
+                          <img alt="" src="../../../assets/images/img_avatar3.png">
+                      </div>
+                      <div class="info">
+                          <div class="title">
+                              <a target="_blank" href="https://scripteden.com/">Somil
+                                  Neema</a>
+                          </div>
+                          <div class="desc">Today : <i>Present</i></div>
+                          <div class="desc"><i class="fa fa-mobile"></i> 7987000000</div>
+                          <div class="desc"><i class="fa fa-envelope"></i>
+                              devender.singh@gmail.com</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                  <div class="card hovercard">
+                      <div class="cardheader">
+
+                      </div>
+                      <div class="avatar">
+                          <img alt="" src="../../../assets/images/img_avatar3.png">
+                      </div>
+                      <div class="info">
+                          <div class="title">
+                              <a target="_blank" href="https://scripteden.com/">Somil
+                                  Neema</a>
+                          </div>
+                          <div class="desc">Today : <i>Present</i></div>
+                          <div class="desc"><i class="fa fa-mobile"></i> 7987000000</div>
+                          <div class="desc"><i class="fa fa-envelope"></i>
+                              devender.singh@gmail.com</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+
+                  <div class="card hovercard">
+                      <div class="cardheader">
+
+                      </div>
+                      <div class="avatar">
+                          <img alt="" src="../../../assets/images/img_avatar3.png">
+
+                      </div>
+                      <div class="info">
+                          <div class="title">
+                              <a target="_blank" href="https://scripteden.com/">Somil
+                                  Neema</a>
+                          </div>
+                          <div class="desc">Today : <i>Present</i></div>
+                          <div class="desc"><i class="fa fa-mobile"></i> 7987000000</div>
+                          <div class="desc"><i class="fa fa-envelope"></i>
+                              devender.singh@gmail.com</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+
+                  <div class="card hovercard">
+                      <div class="cardheader">
+
+                      </div>
+                      <div class="avatar">
+                          <img alt="" src="../../../assets/images/img_avatar3.png">
+                      </div>
+                      <div class="info">
+                          <div class="title">
+                              <a target="_blank" href="https://scripteden.com/">Somil
+                                  Neema</a>
+                          </div>
+                          <div class="desc">Today : <i>Present</i></div>
+                          <div class="desc"><i class="fa fa-mobile"></i> 7987000000</div>
+                          <div class="desc"><i class="fa fa-envelope"></i>
+                              devender.singh@gmail.com</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                  <div class="card hovercard">
+                      <div class="cardheader">
+
+                      </div>
+                      <div class="avatar">
+                          <img alt="" src="../../../assets/images/img_avatar3.png">
+                      </div>
+                      <div class="info">
+                          <div class="title">
+                              <a target="_blank" href="https://scripteden.com/">Somil
+                                  Neema</a>
+                          </div>
+                          <div class="desc">Today : <i>Present</i></div>
+                          <div class="desc"><i class="fa fa-mobile"></i> 7987000000</div>
+                          <div class="desc"><i class="fa fa-envelope"></i>
+                              devender.singh@gmail.com</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                  <div class="card hovercard">
+                      <div class="cardheader">
+
+                      </div>
+                      <div class="avatar">
+                          <img alt="" src="../../../assets/images/img_avatar3.png">
+                      </div>
+                      <div class="info">
+                          <div class="title">
+                              <a target="_blank" href="https://scripteden.com/">Somil
+                                  Neema</a>
+                          </div>
+                          <div class="desc">Today : <i>Present</i></div>
+                          <div class="desc"><i class="fa fa-mobile"></i> 7987000000</div>
+                          <div class="desc"><i class="fa fa-envelope"></i>
+                              devender.singh@gmail.com</div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-lg-3 col-sm-6">
+
+                  <div class="card hovercard">
+                      <div class="cardheader">
+                      </div>
+                      <div class="avatar">
+                          <img alt="" src="../../../assets/images/img_avatar3.png">
+                      </div>
+                      <div class="info">
+                          <div class="title">
+                              <a target="_blank" href="https://scripteden.com/">Somil
+                                  Neema</a>
+                          </div>
+                          <div class="desc">Today : <i>Present</i></div>
+                          <div class="desc"><i class="fa fa-mobile"></i> 7987000000</div>
+                          <div class="desc"><i class="fa fa-envelope"></i>
+                              devender.singh@gmail.com</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div> -->
+
+  </div>

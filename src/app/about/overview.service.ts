@@ -5,13 +5,13 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class TimetableService {
+export class OverviewService {
 
-  private baseUrl = 'http://localhost:8080/dis/academics';
+  url = 'http://localhost:8080/dis/administration/getOverviewDetails';
 
   constructor(private http: HttpClient) { }
 
-  getTimetable(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/timetable/student`);
+  getOverview(): Observable<any> {
+    return this.http.get(this.url);
   }
 }

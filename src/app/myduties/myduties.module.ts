@@ -22,6 +22,9 @@ import { AssignTaskComponent } from './assign-task/assign-task.component';
 import { AllocatementorsComponent } from './allocatementors/allocatementors.component';
 import { MentorshipComponent } from './mentorship/mentorship.component';
 import { EditschemeComponent } from './editscheme/editscheme.component';
+import { MeScholarshipComponent } from './me-scholarship/me-scholarship.component';
+import { OverviewEditingComponent } from './overview-editing/overview-editing.component';
+import { ReportGenerationComponent } from './report-generation/report-generation.component';
 
 @NgModule({
   imports: [
@@ -32,7 +35,7 @@ import { EditschemeComponent } from './editscheme/editscheme.component';
   declarations: [MydutiesComponent, ExpertlectureComponent,WorkshopandconferenceComponent, 
     TaskslistComponent, MarkattendanceComponent, ClassTTComponent, MidtermTTComponent, QuizTTComponent, 
     PanelComponent, PracticalTTComponent, ProjectguideallotmentComponent,
-     IndustrialvisitComponent, LibrarymanagementComponent, ComputerclubmanagementComponent, MagazinemanagementComponent, NavigateComponent, AssignTaskComponent, AllocatementorsComponent, MentorshipComponent, EditschemeComponent],
+     IndustrialvisitComponent, LibrarymanagementComponent, ComputerclubmanagementComponent, MagazinemanagementComponent, NavigateComponent, AssignTaskComponent, AllocatementorsComponent, MentorshipComponent, EditschemeComponent, MeScholarshipComponent, OverviewEditingComponent, ReportGenerationComponent],
     exports:[
       MydutiesComponent, ExpertlectureComponent,WorkshopandconferenceComponent, TaskslistComponent, 
       MarkattendanceComponent, ClassTTComponent, MidtermTTComponent, QuizTTComponent, PanelComponent, PracticalTTComponent, 

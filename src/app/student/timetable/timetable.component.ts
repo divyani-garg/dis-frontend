@@ -29,7 +29,8 @@ export class TimetableComponent implements OnInit {
     this.lec = data;
     // list of days available
     // tslint:disable-next-line:max-line-length
-    this.columnHeaders = [{day: 'Days', colspanValue: 1}, {day: 'Monday', colspanValue: 1}, {day: 'Tuesday', colspanValue: 1}, {day: 'Wednesday', colspanValue: 1}, {day: 'Thursday', colspanValue: 1}, {day: 'Friday', colspanValue: 1}];
+    this.columnHeaders = [{day: 'Days', colspanValue: 1}, {day: 'Monday', colspanValue: 1}, {day: 'Tuesday', colspanValue: 1}, 
+    {day: 'Wednesday', colspanValue: 1}, {day: 'Thursday', colspanValue: 1}, {day: 'Friday', colspanValue: 1}];
     this.timeslots = [];
     console.log(data);
     this.schedule = [];

@@ -1,7 +1,6 @@
 import { AuthenticationModule } from './authentication/authentication.module';
 import { AuthInterceptor, httpInterceptorProviders } from './authentication/auth-interceptor';
 import { StaffModule } from './staff/staff.module';
-import { StaffRoutingModule } from './staff/staff-routing.module';
 import { StudentRoutingModule } from './student/student-routing.module';
 import { StudentModule } from './student/student.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -30,7 +29,6 @@ import { InfrastructureModule } from './infrastructure/infrastructure.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     StudentModule,
-    FormsModule,
     HttpClientModule,
     StudentRoutingModule,
     HodRoutingModule,
@@ -40,7 +38,8 @@ import { InfrastructureModule } from './infrastructure/infrastructure.module';
     MiscellaneousModule,
     ToastrModule.forRoot(),
     ConventionalModule,
-    InfrastructureModule
+    InfrastructureModule,
+    FormsModule,
   ],
   providers: [AuthInterceptor,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],

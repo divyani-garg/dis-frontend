@@ -1,0 +1,177 @@
+<div class="row">
+  <div class="col-lg-6 heading"><h3>Complaints Remaining</h3></div>
+  <div class="col-lg-6 row">
+  <ul class="searchbox float-left col-7">
+    <li class="">
+      <input class="form-control mr-sm-2 searchbox-width" type="search" placeholder="Search" aria-label="Search">
+      <i class="fa fa-search" style="position: absolute;top:11px;" aria-hidden="true"></i>
+    </li>
+  </ul>
+  <div class="dropdown col-5">
+    <button class="add-complaint" style="padding: 0;border: none; background: none;"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fa fa-filter fa-fw icon" aria-hidden="true"></i>Filter</button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" > Datewise</a>
+        <a class="dropdown-item" href="#"> Hardware</a>
+        <a class="dropdown-item" href ='#'> Software</a>
+        <a class="dropdown-item" href ='#'> Resources</a>
+        <a class="dropdown-item" href ='#'> Others</a>
+    </div>
+  </div>
+
+ <!-- <i class="col-1 fa fa-file icon fa-fw" style=" padding-top:1%" aria-hidden="true"></i><Download list of all complaints-->
+</div>
+</div>
+<br>
+<div class="row">
+    <div  class="col-lg-12" >
+    <app-addacomplaint></app-addacomplaint>
+    </div>
+    </div>
+  <br>
+<!--Notification Panel starts-->
+<!--
+  Popover button
+    <button class="btn btn-success col-2"
+         mwlConfirmationPopover
+         [popoverTitle]="popoverTitle"
+         [popoverMessage]="popoverMessage"
+         placement="top"
+         (confirm)="confirmClicked = true"
+         (cancel)="cancelClicked = true">
+         Resolved </button>
+-->
+
+<div>
+    <div *ngFor="let val of cleanlinessRemainingComplaintsInfo">
+        <div class="alert alert-danger row">
+         <h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
+         <h6 class="col-3"  style="text-align: right;" >Status : {{val.status}}</h6> 
+        <p class="col-8"> Date and Time : {{val.createdDate}}<br/>Location : {{val.location}}<br/>
+            Description : {{val.details}}<br/>
+          Level of Dust : {{val.levelOfDust}}</p>
+          <!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
+          <p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);" aria-hidden="true"></i></p>
+        </div>
+    </div>
+
+    <div *ngFor="let val of leRemainingComplaintsInfo">
+      <div class="alert alert-danger row">
+       <h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
+       <h6 class="col-3"  style="text-align: right;" >Status : {{val.status}}</h6> 
+      <p class="col-8"> Date and Time : {{val.createdDate}}<br/>
+        System No. : {{val.systemNo}}<br/>
+        Lab : {{val.lab}}<br/>
+          Description : {{val.details}}<br/>
+        </p>
+        <!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
+        <p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);" aria-hidden="true"></i></p>
+      </div>
+  </div>
+
+  <div *ngFor="let val of cwnRemainingComplaintsInfo">
+    <div class="alert alert-danger row">
+     <h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
+     <h6 class="col-3"  style="text-align: right;" >Status : {{val.status}}</h6> 
+    <p class="col-8"> Date and Time : {{val.createdDate}}<br/>
+      Location : {{val.location}}<br/>
+        Description : {{val.details}}<br/>
+        Form Id : {{val.formId}}<br/>
+      </p>
+      <!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
+      <p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);" aria-hidden="true"></i></p>
+    </div>
+</div>
+
+<div *ngFor="let val of eccwRemainingComplaintsInfo">
+  <div class="alert alert-danger row">
+   <h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
+   <h6 class="col-3"  style="text-align: right;" >Status : {{val.status}}</h6> 
+  <p class="col-8"> Date and Time : {{val.createdDate}}<br/>
+    Location : {{val.location}}<br/>
+      Description : {{val.details}}<br/>
+      Form Id : {{val.formId}}<br/>
+    </p>
+    <!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
+    <p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);" aria-hidden="true"></i></p>
+  </div>
+</div>
+
+<div *ngFor="let val of otherRemainingComplaintsInfo">
+  <div class="alert alert-danger row">
+   <h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
+   <h6 class="col-3"  style="text-align: right;" >Status : {{val.status}}</h6> 
+  <p class="col-8"> Date and Time : {{val.createdDate}}<br/>
+      Description : {{val.details}}<br/>
+      Assigned To : {{val.assignedTo}}<br/>
+    </p>
+    <!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
+    <p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);" aria-hidden="true"></i></p>
+  </div>
+</div>
+
+<div *ngFor="let val of facultyRemainingComplaintsInfo">
+  <div class="alert alert-danger row">
+   <h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
+   <h6 class="col-3"  style="text-align: right;" >Status : {{val.status}}</h6> 
+  <p class="col-8"> Date and Time : {{val.createdDate}}<br/>
+      Description : {{val.details}}<br/>
+      Faculty Name : {{val.facultyName}}<br/>
+      Date of Resolution : {{val.dateOfResolution}}
+    </p>
+    <!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
+    <p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);" aria-hidden="true"></i></p>
+  </div>
+</div>
+
+<div *ngFor="let val of stuRemainingComplaintsInfo">
+  <div class="alert alert-danger row">
+   <h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
+   <h6 class="col-3"  style="text-align: right;" >Status : {{val.status}}</h6> 
+  <p class="col-8"> Date and Time : {{val.createdDate}}<br/>
+      Description : {{val.details}}<br/>
+      Student Name : {{val.studentName}}<br/>
+      Student Roll No. : {{val.studentRollNo}}<br/>
+      Student Year : {{val.year}}<br/>
+      Date of Resolution : {{val.dateOfResolution}}<br/>
+      <b>Remark : {{val.remarks}}</b>
+    </p>
+    <!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
+    <p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);" aria-hidden="true"></i></p>
+  </div>
+</div>
+
+<div *ngFor="let val of telephoneRemainingComplaintsInfo">
+  <div class="alert alert-danger row">
+   <h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
+   <h6 class="col-3"  style="text-align: right;" >Status : {{val.status}}</h6> 
+  <p class="col-8"> Date and Time : {{val.createdDate}}<br/>
+      Description : {{val.details}}<br/>
+     Location : {{val.location}}<br/>
+     Extension No. : {{val.extension_no}}<br/>
+      Date of Resolution : {{val.dateOfResolution}}<br/>
+      <b>Remark : {{val.remarks}}</b>
+    </p>
+    <!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
+    <p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);" aria-hidden="true"></i></p>
+  </div>
+</div>
+
+<div *ngFor="let val of emrsRemainingComplaintsInfo">
+  <div class="alert alert-danger row">
+   <h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
+   <h6 class="col-3"  style="text-align: right;" >Status : {{val.status}}</h6> 
+  <p class="col-8"> Date and Time : {{val.createdDate}}<br/>
+      Description : {{val.details}}<br/>
+      Location : {{val.location}}<br/>
+      Date of Resolution : {{val.dateOfResolution}}<br/>
+      Form Id : {{val.formId}}<br/>
+      <b>Remark : {{val.remarks}}</b>
+      </p>
+    <!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
+    <p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);" aria-hidden="true"></i></p>
+  </div>
+</div>
+
+</div>
+<!--Notification Panel Ends-->

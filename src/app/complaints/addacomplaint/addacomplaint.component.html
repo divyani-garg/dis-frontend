@@ -25,36 +25,21 @@
       <div class="card-body">
 
         <div>
-          <div class=" clean">
-            <form action="">
+          <div class="clean">
+            <form (ngSubmit)="onSubmit()">
               <div class="row">
                 <div class="form-group col-6">
                   <label for="location">Location</label>
-                  <select id="leavetype" class="form-control">
-                    <option>PG Lab</option>
-                    <option>HES Lab</option>
-                    <option>CNDC Lab</option>
-                    <option>GCL Lab</option>
-                    <option>SE Lab</option>
-                    <option>AVLC</option>
-                    <option>LT 201</option>
-                    <option>LT 301</option>
-                  </select>
+                  <input class="form-control" type="text" name="location" [(ngModel)]="form.location">                
                 </div>
                 <div class="form-group col-6">
-                  <label for="level">Level of Dustiness</label>
-                  <select id="leavetype" class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
+                  <label for="levelOfDustiness">Level of Dustiness</label>
+                  <input name="levelOfDustiness" [(ngModel)]="form.levelOfDustiness" class="form-control">
                 </div>
               </div>
               <div class="form-group form-check col-12">
-                <label for="details">Details</label>
-                <textarea class="form-control" rows="5" id="details"></textarea>
+                <label for="detail">Details</label>
+                <textarea class="form-control" rows="5" name="detail" [(ngModel)]="form.detail"></textarea>
               </div>
               <div class="row">
                 <div class="col-9"></div>

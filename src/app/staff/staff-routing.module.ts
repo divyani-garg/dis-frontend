@@ -1,5 +1,4 @@
 import { AboutModule } from './../about/about.module';
-import { ComplaintsRoutingModule } from './../faculty/complaints/complaints-routing.module';
 import { AlertsComponent } from './alerts/alerts.component';
 import { AboutComponent } from '../about/about/about.component';
 import { HomeComponent } from './home/home.component';
@@ -71,7 +70,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes), ComplaintsRoutingModule, StudentRoutingModule],
+  imports: [RouterModule.forChild(routes), StudentRoutingModule],
   exports: [RouterModule]
 })
 export class StaffRoutingModule { }

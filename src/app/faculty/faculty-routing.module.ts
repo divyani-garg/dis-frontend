@@ -1,4 +1,3 @@
-import { HomeModule } from './home/home.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FacultyComponent } from './faculty/faculty.component';
@@ -6,18 +5,17 @@ import { AttendanceComponent } from './attendance/attendance.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { StudentRoutingModule } from './student/student-routing.module';
-import { ComplaintsRoutingModule } from './complaints/complaints-routing.module';
 import { HomeRoutingModule } from './home/home-routing.module';
 import { DocumentsComponent } from './documents/documents.component';
 import { AboutComponent } from '../about/about/about.component';
 import { AboutModule } from '../about/about.module';
-import { ProfileComponent } from '../conventional/profile/profile.component';
 import { ConventionalModule } from '../conventional/conventional.module';
 import { MydutiesModule } from '../myduties/myduties.module';
 import { MydutiesComponent } from '../myduties/myduties/myduties.component';
-import { HomeComponent } from './home/home/home.component';
 import { InfrastructureModule } from '../infrastructure/infrastructure.module';
 import { InfrastructureOutletComponent } from '../infrastructure/infrastructure-outlet/infrastructure-outlet.component';
+import { ComplaintsComponent } from '../complaints/complaints/complaints.component';
+import { ComplaintsModule } from '../complaints/complaints.module';
 
 const routes: Routes = [
   {
@@ -57,6 +55,11 @@ const routes: Routes = [
         loadChildren:()=> MydutiesModule
       },
       {
+        path : 'complaints',
+        component:ComplaintsComponent,
+        loadChildren:()=> ComplaintsModule
+      },
+      {
         path : '**',
         component : PageNotFoundComponent
       },
@@ -66,7 +69,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes), HomeRoutingModule, StudentRoutingModule,
-    ComplaintsRoutingModule],
+   ],
   exports: [RouterModule]
 })
 export class FacultyRoutingModule { }

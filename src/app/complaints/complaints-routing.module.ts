@@ -1,21 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FacultyComponent } from '../faculty/faculty.component';
-import { ComplaintsComponent } from './complaints/complaints.component';
 import { RemainingComplaintsComponent } from './remaining-complaints/remaining-complaints.component';
 import { TotalComplaintsComponent } from './total-complaints/total-complaints.component';
 import { ResolvedComplaintsComponent } from './resolved-complaints/resolved-complaints.component';
 import { SideNavigationComponent } from './side-navigation/side-navigation.component';
+import { MyComplaintsComponent } from './my-complaints/my-complaints.component';
 
 const routes: Routes = [
-  {
-    path : 'faculty',
-    component : FacultyComponent,
-    children  : [
-      {
-        path : 'complaints',
-        component : ComplaintsComponent,
-        children : [
+  
+      
           {
             path : '',
             component : RemainingComplaintsComponent
@@ -35,11 +28,15 @@ const routes: Routes = [
           {
             path : 'side_navigation',
             component : SideNavigationComponent
+          },
+          {
+            path : 'mycomplaints',
+            component : MyComplaintsComponent
           }
-        ]
-      }
-    ]
-  }
+        
+      
+    
+  
 ];
 
 @NgModule({

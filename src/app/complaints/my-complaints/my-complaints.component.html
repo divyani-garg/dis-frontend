@@ -1,0 +1,105 @@
+<div class="row">
+  <div class="col-lg-6 heading"><h3>My Complaints</h3></div>
+  <div class="col-lg-6 row">
+  <ul class="searchbox float-left col-7">
+    <li class="">
+      <input class="form-control mr-sm-2 searchbox-width" type="search" placeholder="Search" aria-label="Search">
+      <i class="fa fa-search" style="position: absolute;top:11px;" aria-hidden="true"></i>
+    </li>
+  </ul>
+  <a href="#" class="nav-link add-complaint nav-item profile dropdown col-5"  style="padding-top:1%;"
+  id="filter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<i class="fa fa-filter fa-fw icon" aria-hidden="true"></i>Filter
+      <div class="dropdown-menu rounded-0" aria-labelledby="filter">
+        <a class="dropdown-item" > Datewise</a>
+        <a class="dropdown-item" href="#"> Hardware</a>
+        <a class="dropdown-item" href ='#'> Software</a>
+        <a class="dropdown-item" href ='#'> Resources</a>
+        <a class="dropdown-item" href ='#'> Others</a>
+      </div>
+  </a>
+ <!-- <i class="col-1 fa fa-file icon fa-fw" style=" padding-top:1%" aria-hidden="true"></i><Download list of all complaints-->
+</div>
+</div>
+
+<br>
+<div class="row">
+    <div  class="col-lg-12" >
+    <app-addacomplaint></app-addacomplaint>
+    </div>
+    </div>
+  <br>
+<!--Notification Panel starts-->
+<div>
+  <div *ngFor="let val of cleanlinessMyComplaintsInfo">
+    <div [ngClass]="(val.status=='Resolved')?'alert alert-success row':'alert alert-danger row'">
+     <h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
+     <h6 class="col-3"  style="text-align: right;" >Status : {{val.status}}</h6> 
+    <p class="col-8"> Date and Time : {{val.createdDate}}<br/>Location : {{val.location}}<br/>
+        Description : {{val.details}}<br/>
+      Level of Dust : {{val.levelOfDust}}</p>
+      <!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
+      <p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);" aria-hidden="true"></i></p>
+    </div>
+</div>
+
+<div *ngFor="let val of leMyComplaintsInfo">
+  <div [ngClass]="(val.status=='Resolved')?'alert alert-success row':'alert alert-danger row'">
+   <h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
+   <h6 class="col-3"  style="text-align: right;" >Status : {{val.status}}</h6> 
+  <p class="col-8"> Date and Time : {{val.createdDate}}<br/>
+    System No. : {{val.systemNo}}<br/>
+    Lab : {{val.lab}}<br/>
+      Description : {{val.details}}<br/>
+    </p>
+    <!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
+    <p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);" aria-hidden="true"></i></p>
+  </div>
+</div>
+
+<div *ngFor="let val of otherMyComplaintsInfo">
+<div [ngClass]="(val.status=='Resolved')?'alert alert-success row':'alert alert-danger row'">
+<h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
+<h6 class="col-3"  style="text-align: right;" >Status : {{val.status}}</h6> 
+<p class="col-8"> Date and Time : {{val.createdDate}}<br/>
+  Description : {{val.details}}<br/>
+  Assigned To : {{val.assignedTo}}<br/>
+</p>
+<!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
+<p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);" aria-hidden="true"></i></p>
+</div>
+</div>
+
+<div *ngFor="let val of facultyMyComplaintsInfo">
+<div [ngClass]="(val.status=='Resolved')?'alert alert-success row':'alert alert-danger row'">
+<h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
+<h6 class="col-3"  style="text-align: right;" >Status : {{val.status}}</h6> 
+<p class="col-8"> Date and Time : {{val.createdDate}}<br/>
+  Description : {{val.details}}<br/>
+  Faculty Name : {{val.facultyName}}<br/>
+  Date of Resolution : {{val.dateOfResolution}}
+</p>
+<!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
+<p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);" aria-hidden="true"></i></p>
+</div>
+</div>
+
+<div *ngFor="let val of stuMyComplaintsInfo">
+<div [ngClass]="(val.status=='Resolved')?'alert alert-success row':'alert alert-danger row'">
+<h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
+<h6 class="col-3"  style="text-align: right;" >Status : {{val.status}}</h6> 
+<p class="col-8"> Date and Time : {{val.createdDate}}<br/>
+  Description : {{val.details}}<br/>
+  Student Name : {{val.studentName}}<br/>
+  Student Roll No. : {{val.studentRollNo}}<br/>
+  Student Year : {{val.year}}<br/>
+  Date of Resolution : {{val.dateOfResolution}}<br/>
+  <b>Remark : {{val.remarks}}</b>
+</p>
+<!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
+<p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);" aria-hidden="true"></i></p>
+</div>
+</div>
+
+  </div>
+<!--Notification Panel Ends-->

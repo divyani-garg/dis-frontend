@@ -9,6 +9,7 @@ import { Laboratory } from '../models/Laboratory';
 export class InfraService {
 
   private baseUrl = 'http://localhost:8084/';
+  lab: Laboratory;
 
   constructor(private http: HttpClient) { }
 
@@ -23,4 +24,14 @@ export class InfraService {
   getFacultyRooms(): Observable<any>{
     return this.http.get(`${this.baseUrl}getRooms`)
   }
+
+  setInfraName(lab: Laboratory): void{
+    console.log(lab);
+    this.lab = lab;
+  }
+
+  getInfraName(): Laboratory{
+    return this.lab;
+  }
+
 }

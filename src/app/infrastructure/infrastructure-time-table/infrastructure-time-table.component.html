@@ -1,6 +1,67 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{lab.name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="infraName">Edit Name</label>
+            <input type="text" class="form-control" id="{{lab.name}}" placeholder="{{lab.name}}">
+          </div>
+          <div class="form-group">
+            <label for="location">Edit Location</label>
+            <div class="row pl-3">
+              <select class="form-control col-6" id="location">
+                <option>First Floor</option>
+                <option>Second Floor</option>
+                <option>Enter New Location</option>
+              </select>
+              <input type="text" class="form-control" id="location" style="width:220px; margin-left: 4px" disabled="true"
+                placeholder="Enter new Location">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="incharge">Change Incharge</label>
+            <input type="text" class="form-control" list="suggestions" id="Incharge" placeholder="{{lab.incharge}}">
+            <datalist id="suggestions">
+              <option *ngFor="let f of fData">{{f.name}}</option>
+            </datalist>
+          </div>
+          <div class="form-group">
+            <label for="associateIncharge">Change Associate Incharge</label>
+            <input type="text" class="form-control" list="suggestions2" id="associateIncharge" placeholder="{{lab.associateIncharge}}">
+            <datalist id="suggestions2">
+              <option *ngFor="let f of fData">{{f.name}}</option>
+            </datalist>
+          </div>
+          <div class="form-group">
+            <label for="staff">change Staff</label>
+            <input type="text" class="form-control" list="suggestions1" id="staff" placeholder="{{lab.staff}}">
+            <datalist id="suggestions1">
+              <option *ngFor="let s of sData">{{s.name}}</option>
+            </datalist>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <nav class="navbar navbar-dark bg-light">
-  <span class="navbar-brand mb-0 h1">PG-LAB</span>
+  <span class="navbar-brand mb-0 h1">{{lab.name}}</span>
+  <div class=" row float-right">
+  <a class="nav-link" style="color: ghostwhite"> <i class="fa fa-edit fa-2x"  data-toggle="modal" data-target="#exampleModal"></i></a>
   <a class="nav-link" routerLink="../" style="color: ghostwhite">Back</a>
+</div>
 </nav>
 
 <div class="container kyc-section rewards-section reports-sect">

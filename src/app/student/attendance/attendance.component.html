@@ -12,7 +12,7 @@
         <div>
           <h3 class="heading"><a (click)="showChart()" style="cursor: pointer;">Attendance</a><span class="nav-item dropdown float-right" style="text-decoration: none;">
                   <button class="leaveButton" (click)="showLeaves()" data-toggle="tooltip" title="Leave application status"><i class="fa fa-clock-o " aria-hidden="true" ></i></button>
-                  <button class="leaveButton" (click)="openNav()" data-toggle="tooltip" title="Apply for leave"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                  <button class="leaveButton" data-toggle="modal" data-target="#leaveModal"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
             </span></h3>
           <hr/>
           <div class="row">
@@ -87,47 +87,28 @@
 
 
             <div id="applyforleave" class="sidenavbar">
-              <div class="modal-header">
-                <h5 class="modal-title" id="heading">Apply for Leave</h5>
-                <a (click)="closeNav()" style="cursor: pointer;">
-                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
+              <h5 class="modal-title" id="exampleModalLabel">{{currentSubject}}</h5>
 
-              <div class="modal-body">
-                <form class="row">
-                  <div class="col-lg-12 subheads">
-                    <label class="control-label" for="Type of leave">Leave Type</label>
+                <div class="table-responsive">
+                        <table class="table table-bordered table-striped "  id="myTable">
+                          <thead>
+                            <tr>
+                              <td>Date</td>
+                              <td>Time</td>
+                              <td>Status</td>
+                            </tr>
+                          </thead>
 
-                      <select id="leavetype" class="form-control">
-                        <option>Medical</option>
-                        <option>Sports</option>
-                        <option>Other</option>
-                      </select>
-                  </div>
-
-                  <div class="col-lg-12" style="margin-top: 20px;">
-                    <div class="row">
-                      <div class="col-lg-6 subheads">
-                        <label for="From">From </label><br/>
-                        <input type="date" name="From">
+                          <tbody>
+                            <tr *ngFor="let value of subjectAttendance">
+                              <td>{{value.classDate| date: 'dd-MM-yyyy'}}</td>
+                              <td>{{value.from}} - {{value.to}}</td>
+                              <td *ngIf="value.attendance-value.lectureCount===0">Present</td>
+                              <td *ngIf="value.attendance-value.lectureCount!==0">Absent</td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
-                      <div class="col-lg-5 subheads">
-                        <label for="To">To </label><br/>
-                        <input type="date" name="To">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group col-lg-12 subheads" style="margin-top: 20px;">
-                    <label for="reason">Reason*</label>
-                    <textarea class="form-control" rows="5" id="reason"></textarea>
-                  </div>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="reset" class="btn btn-primary">Reset</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
             </div>
 
           </div>
@@ -146,130 +127,51 @@
   <!-- Use any element to open the sidenav -->
 
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="leaveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">CO34002-Theory of Computation</h5>
-        </div>
-        <div class="modal-body">
-          <form>
-        <h4 class="text-primary">Attendance</h4>
-              <div class="inner-div">
-          <div class="table-responsive">
-                  <table class="table table-bordered table-striped "  id="myTable">
-                    <thead>
-                      <tr>
-              <td>Date</td>
-                        <td>Time</td>
-                        <td>Status</td>
-                        <td>Faculty Name</td>
-                      </tr>
-                    </thead>
+          <div class="modal-header">
+              <h5 class="modal-title" id="heading">Apply for Leave</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
 
-                    <tbody>
-                      <tr>
-                        <td>01-05-2108</td>
-              <td>10:00-11:00</td>
-                        <td>Present</td>
-                        <td>Rithambara Patidar</td>
-                      </tr>
+            <div class="modal-body">
+              <form class="row">
+                <div class="col-lg-12 subheads">
+                  <label class="control-label" for="Type of leave">Leave Type</label>
 
-             <tr>
-
-                        <td>03-05-2108</td>
-              <td>11:00-12:00</td>
-                        <td>Absent</td>
-                        <td>Rithambara Patidar</td>
-                      </tr>
-
-             <tr>
-                        <td>04-05-2108</td>
-              <td>10:00-11:00</td>
-                        <td>Present</td>
-                        <td>Rithambara Patidar</td>
-                      </tr>
-
-             <tr>
-                        <td>05-05-2108</td>
-              <td>11:00-12:00</td>
-                        <td>Present</td>
-                        <td>Rithambara Patidar</td>
-                      </tr>
-
-             <tr>
-                        <td>07-05-2108</td>
-              <td>10:00-11:00</td>
-                        <td>Present</td>
-                        <td>Rithambara Patidar</td>
-                      </tr>
-
-             <tr>
-                        <td>08-05-2108</td>
-              <td>10:00-11:00</td>
-                        <td>Present</td>
-                        <td>Rithambara Patidar</td>
-                      </tr>
-
-             <tr>
-                        <td>10-05-2108</td>
-              <td>11:00-11:00</td>
-                        <td>Present</td>
-                        <td>Rithambara Patidar</td>
-                      </tr>
-
-             <tr>
-                        <td>11-05-2108</td>
-              <td>10:00-11:00</td>
-                        <td>Absent</td>
-                        <td>Rithambara Patidar</td>
-                      </tr>
-
-             <tr>
-                        <td>12-05-2108</td>
-              <td>10:00-11:00</td>
-                        <td>Absent</td>
-                        <td>Rithambara Patidar</td>
-                      </tr>
-
-             <tr>
-                        <td>13-05-2108</td>
-              <td>10:00-11:00</td>
-                        <td>Present</td>
-                        <td>Rithambara Patidar</td>
-                      </tr>
-
-                     <tr>
-                        <td>14-05-2108</td>
-              <td>10:00-11:00</td>
-                        <td>Present</td>
-                        <td>Rithambara Patidar</td>
-                      </tr>
-
-            <tr>
-                        <td>15-05-2108</td>
-              <td>11:00-11:00</td>
-                        <td>Absent</td>
-                        <td>Rithambara Patidar</td>
-                      </tr>
-
-                    </tbody>
-                  </table>
+                    <select id="leavetype" class="form-control">
+                      <option>Medical</option>
+                      <option>Sports</option>
+                      <option>Other</option>
+                    </select>
                 </div>
-              </div>
-            </form>
-        </div>
-        <div class="modal-footer">
-        </div>
+
+                <div class="col-lg-12" style="margin-top: 20px;">
+                  <div class="row">
+                    <div class="col-lg-6 subheads">
+                      <label for="From">From </label><br/>
+                      <input type="date" name="From">
+                    </div>
+                    <div class="col-lg-6 subheads">
+                      <label for="To">To </label><br/>
+                      <input type="date" name="To">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group col-lg-12 subheads" style="margin-top: 20px;">
+                  <label for="reason">Reason*</label>
+                  <textarea class="form-control" rows="5" id="reason"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="reset" class="btn btn-primary">Reset</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
       </div>
     </div>
   </div>
 
-
-
-  <!--Check leave modal-->
-  <!-- Modal -->
-  <div class="modal fade" id="checkLeaveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-    </div>
-  </div>

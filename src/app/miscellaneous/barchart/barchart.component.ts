@@ -13,25 +13,35 @@ export class BarchartComponent implements OnInit {
   ngOnInit() {
   }
 
-  getBarChart(idname) {
+  getBarChart(idname, labelValues, dataValues, chartFunction) {
+
+    const backColor = [];
+    for (let i = 0; i < dataValues.length; i++) {
+      if(dataValues[i] >= 75) {
+          backColor.push('green');
+      } else if (dataValues[i] < 60) {
+          backColor.push('red');
+      } else {
+        backColor.push('#ffcc00');
+      }
+    }
+
     return new Chart(idname, {
       type: 'bar',
       data: {
-        labels: ['CO34002', 'CO34005-T', 'CO34005-P', 'CO34007-T', 'CO34007-P', 'CO34008-T', 'CO34008-P', 'EC34013-T', 'EC34013-P'],
+        labels: labelValues,
         datasets: [{
           label: '% present',
-          data: [42, 62, 54, 33, 76, 66, 93, 71, 52],
-          backgroundColor: [
-            'red', '#ffcc00', 'red', 'red', 'green', '#ffcc00', 'green', '#ffcc00', 'red'
-        ],
-        borderColor: ['red', '#ffcc00', 'red', 'red', 'green', '#ffcc00', 'green', '#ffcc00', 'red'],
+          data: dataValues,
+          backgroundColor: backColor,
+        borderColor: backColor,
         borderWidth: 1
         }]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
-
+        onClick: chartFunction,
         title: {
           text: 'Attendance till current date',
           display: true
@@ -42,7 +52,13 @@ export class BarchartComponent implements OnInit {
               beginAtZero: true,
               stepSize: 10,
               max: 100,
-              font: 'bold'
+              font: 'bold',
+              autoSkip: false
+            }
+          }],
+          xAxes: [{
+            ticks: {
+              autoSkip: false
             }
           }]
         }

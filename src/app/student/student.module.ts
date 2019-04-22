@@ -1,3 +1,4 @@
+import { TimetableComponent } from './timetable/timetable.component';
 import { ConventionalModule } from './../conventional/conventional.module';
 import { AboutRoutingModule } from './../about/about-routing.module';
 import { AboutModule } from './../about/about.module';
@@ -18,6 +19,7 @@ import { AttendanceComponent } from './attendance/attendance.component';
 import { MiscellaneousModule } from '../miscellaneous/miscellaneous.module';
 import { BarchartComponent } from '../miscellaneous/barchart/barchart.component';
 import { InfrastructureModule } from '../infrastructure/infrastructure.module';
+import { MatTableModule, MatPaginatorModule, MatButtonModule } from '@angular/material';
 
 
 @NgModule({
@@ -25,10 +27,13 @@ import { InfrastructureModule } from '../infrastructure/infrastructure.module';
     CommonModule,
     StudentRoutingModule,
     AboutModule,
+    MatTableModule,
     AboutRoutingModule,
     MiscellaneousModule,
     ConventionalModule,
-    InfrastructureModule
+    InfrastructureModule,
+    MatPaginatorModule,
+    MatButtonModule
   ],
   declarations: [
     HomeComponent,
@@ -39,7 +44,8 @@ import { InfrastructureModule } from '../infrastructure/infrastructure.module';
     ComplaintsComponent,
     StudentComponent,
     AttendanceComponent,
-    SidenavigationComponent
+    SidenavigationComponent,
+    TimetableComponent
   ],
   providers: [BarchartComponent],
   exports: [NavigationComponent]

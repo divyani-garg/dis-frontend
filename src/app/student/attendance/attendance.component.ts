@@ -1,6 +1,7 @@
 import { StudentAttendanceService } from './../student-attendance.service';
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { BarchartComponent } from './../../miscellaneous/barchart/barchart.component';
+import {MatPaginator, MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-attendance',
@@ -14,6 +15,10 @@ export class AttendanceComponent implements OnInit {
   currentSubject: any;
   tableWidget: any;
   dataTable: any;
+  displayedColumns: string[];
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  dataSource: any;
 
   constructor(public chart: BarchartComponent, public attendanceHandler: StudentAttendanceService) { }
 
@@ -59,24 +64,27 @@ export class AttendanceComponent implements OnInit {
   displaySubjectAttendance(subjectCode) {
       this.attendanceHandler.getSubjectwiseAttendance(subjectCode).subscribe(data => {
         console.log(data);
+        this.displayedColumns = ['Date', 'Time', 'Status'];
         this.subjectAttendance = data;
+        this.dataSource = new MatTableDataSource(this.subjectAttendance);
+        this.dataSource.paginator = this.paginator;
         this.openNav();
       })
   }
 
   openNav() {
-    document.getElementById('applyforleave').style.width = '250px';
-    document.getElementById('main').className = 'col-lg-7';
-    document.getElementById('leaveinfo').className = 'col-lg-7';
-    document.getElementById('applyforleave').className = 'col-lg-5 sidenavbar';
+    document.getElementById('leaveDetails').style.width = 'auto';
+    document.getElementById('leaveDetails').style.display = 'block';
+    document.getElementById('main').className = 'col-lg-6';
+    document.getElementById('leaveDetails').className = 'col-lg-6 sidenavbar';
   }
 
   /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
  closeNav() {
-    document.getElementById('applyforleave').style.width = '0';
-    document.getElementById('applyforleave').className = 'col-lg-0 sidenavbar';
+    document.getElementById('leaveDetails').style.width = '0';
+    document.getElementById('leaveDetails').className = 'col-lg-0 sidenavbar';
+    document.getElementById('leaveDetails').style.display = 'none';
     document.getElementById('main').className = 'col-lg-12';
-    document.getElementById('leaveinfo').className = 'col-lg-12';
   }
 
   showLeaves() {

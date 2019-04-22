@@ -1,6 +1,5 @@
 import { ProfileComponent } from './../conventional/profile/profile.component';
-import { TimetableComponent } from './../conventional/timetable/timetable.component';
-import { ConventionalModule } from './../conventional/conventional.module';
+import { TimetableComponent } from './timetable/timetable.component';
 import { AboutModule } from './../about/about.module';
 import { AboutComponent } from './../about/about/about.component';
 import { StudentComponent } from './student/student.component';

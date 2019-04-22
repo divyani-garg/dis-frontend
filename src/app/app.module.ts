@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FacultyModule } from './faculty/faculty.module';
@@ -39,7 +40,7 @@ import { InfrastructureModule } from './infrastructure/infrastructure.module';
     ToastrModule.forRoot(),
     ConventionalModule,
     InfrastructureModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [AuthInterceptor,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],

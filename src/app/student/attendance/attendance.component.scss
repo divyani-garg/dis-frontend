@@ -10,12 +10,11 @@
   z-index: 1; /* Stay on top */
   top: 0;
   right: 0;
- /*background-image: linear-gradient(rgb(176, 204, 247), rgb(230, 243, 253), rgb(186, 210, 247));*/
-  //background-image: linear-gradient(rgb(177, 181, 187), rgb(230, 243, 253), rgb(177, 181, 187));
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
+  display: none;
+  padding-top: 20px; /* Place content 60px from the top */
   max-height: 600px;
 }
+
 
 .sidenavbar ::after {
   height: 100%;
@@ -64,5 +63,43 @@
     color: white; /* White text */
     cursor: pointer; /* Mouse pointer on hover */
 }
+
+.tableentry {
+  overflow: auto;
+  height: 500px;
+}
+
+mat-cell {
+  text-align: left;
+  font-size: 15px;
+  margin: auto;
+  height: 20px;
+}
+
+mat-paginator{
+  margin-top: 10px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+mat-table {
+  width: 100%;
+}
+
+mat-header-row {
+  background-color: #e6e6e6;
+  font-weight: bold;
+}
+
+.kyc-section {
+  max-height: 800px;
+}
+
+#exampleModalLabel {
+  padding-bottom: 2px;
+  font-weight: bold;
+}
+
 
 

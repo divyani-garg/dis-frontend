@@ -5,7 +5,7 @@ import { StudentRoutingModule } from './student/student-routing.module';
 import { StudentModule } from './student/student.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -32,6 +32,7 @@ import { HodModule } from './hod/hod.module';
     StaffModule,
     MiscellaneousModule,
     FormsModule,
+    ReactiveFormsModule
    
   ],
   providers: [AuthInterceptor,

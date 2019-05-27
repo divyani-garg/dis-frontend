@@ -7,6 +7,11 @@ import { ComplaintsService } from 'src/app/API_Service/complaints.service';
   styleUrls: ['./total-complaints.component.scss']
 })
 export class TotalComplaintsComponent implements OnInit {
+  userType : string = localStorage.getItem('userType');
+  student : boolean;
+  staff : boolean;
+  isFaculty : boolean;
+  hod : boolean;
   cleanliness: boolean;
   le: boolean;
   cwn: boolean;
@@ -38,6 +43,11 @@ export class TotalComplaintsComponent implements OnInit {
 
   ngOnInit() {
 
+    this.student=false;
+    this.staff=false;
+    this.isFaculty=false;
+    this.hod=false;
+
     this.cleanliness = true;
     this.le = true;
     this.cwn = true;
@@ -47,6 +57,21 @@ export class TotalComplaintsComponent implements OnInit {
     this.stu = true;
     this.emrs = true;
     this.telephone = true;
+
+    if( this.userType === "student")
+    {
+      this.student = true;
+    }
+    if( this.userType === "staff"){
+      this.staff = true;
+    }
+    if( this.userType === "head"){
+      this.hod = true;
+    }
+    if(this.userType === "faculty")
+    {
+      this.isFaculty = true;
+    }
     this.cleanlinessTotalComplaintsData=this.complaints.getTotalCleanlinessComplaint()
   .subscribe(
     data=>{

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ComplaintsService } from 'src/app/API_Service/complaints.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-side-navigation',
@@ -11,9 +12,35 @@ export class SideNavigationComponent implements OnInit {
   resolved:any;
   total:any;
   my:any;
-  constructor(private complaints:ComplaintsService) { }
+  completionMessage : string;
+  showConfirmation : boolean;
+  resourceFormGroup : FormGroup;
+  complaintPermissions: any;
+  locations: any;
+  userType : string = localStorage.getItem('userType');
+  constructor(private complaints:ComplaintsService,private fb : FormBuilder) { }
 
   ngOnInit() {
+    this.showConfirmation = false;
+    // this.complaints.getLocation()
+    // .subscribe(
+    //   data => {
+    //     this.locations = data;
+    //     console.log(this.locations);
+    //   }
+    // )
+
+    this.complaints.getPermissions()
+    .subscribe(
+      data => {
+        this.complaintPermissions = data;
+        console.log(this.complaintPermissions);
+      }
+    )
+    this.resourceFormGroup = this.fb.group({
+      resource : ['',Validators.required],
+      details : ['',Validators.required]
+    })
    this.complaints.getRemainingComplaintCount()
    .subscribe(
     data=>{
@@ -45,5 +72,24 @@ export class SideNavigationComponent implements OnInit {
       console.log(this.my);
     }
    ); 
+  }
+  getResource(details):void{
+    console.log(details);
+    this.complaints.addFacultyResource(details)
+    .subscribe(
+      data => {
+        console.log(data);
+        this.showConfirmation = true;
+        this.completionMessage = data.message + '!';
+      },
+      error =>{
+        console.log(error);
+        this.showConfirmation = true;
+        this.completionMessage = "Error has Occurred. Try after some time!!"
+      }
+    )
+  }
+  requestResourceForm():void{
+    this.showConfirmation = false;
   }
 }

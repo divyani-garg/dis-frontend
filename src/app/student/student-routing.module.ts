@@ -5,15 +5,15 @@ import { HomeComponent } from './home/home.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { GradesComponent } from './grades/grades.component';
-import { ComplaintsComponent } from './complaints/complaints.component';
 import { AssignmentsComponent } from './assignments/assignments.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { InfrastructureComponent } from '../hod/hod-infrastucture/infrastructure/infrastructure.component';
 import { HodInfrastuctureModule } from '../hod/hod-infrastucture/hod-infrastucture.module';
-import { LoginComponent } from '../authentication/login/login.component';
 import { ConventionalModule } from '../conventional/conventional.module';
+import { ProfileComponent } from '../conventional/profile/profile.component';
 import { ComplaintsModule } from '../complaints/complaints.module';
+import { ComplaintsComponent } from '../complaints/complaints/complaints.component';
 
 const routes: Routes = [
   { path: 'student',
@@ -51,8 +51,7 @@ const routes: Routes = [
       },
       {
         path : 'student_complaints',
-        component:ComplaintsComponent,
-        loadChildren:()=> ComplaintsModule
+        loadChildren : '../complaints/complaints.module#ComplaintsModule'  
       },
       {
         path: 'student_assignments',
@@ -64,6 +63,7 @@ const routes: Routes = [
       },
       {
         path: 'student_profile',
+        component : ProfileComponent,
         loadChildren : () => ConventionalModule
       }
     ]

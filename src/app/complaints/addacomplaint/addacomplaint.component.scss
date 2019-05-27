@@ -153,4 +153,26 @@ left: auto;
     display: none;
 }
 
-
+.required-text{
+  color: #ed0221;
+  font-size: 12px;
+}
+.btnDesign{
+  border-radius: 5%;
+  outline: none;
+  width:100px;
+}
+.confirmationMessage{
+  padding : 1% 2% 1% 2%;
+  background-color: black;
+  color:grey;
+  border-radius: 2%;
+  transition : 0.3s;
+  font-size:14px;
+  
+}
+a.disabled {
+  color: gray;
+  cursor: not-allowed;
+  text-decoration: underline;
+}

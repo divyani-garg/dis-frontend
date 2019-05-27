@@ -8,6 +8,11 @@ import { ComplaintsService } from 'src/app/API_Service/complaints.service';
   styleUrls: ['./remaining-complaints.component.scss'],
 })
 export class RemainingComplaintsComponent implements OnInit {
+  userType : string = localStorage.getItem('userType');
+  student : boolean;
+  staff : boolean;
+  isFaculty : boolean;
+  hod : boolean;
   count:number=0;
   cleanliness: boolean;
   le: boolean;
@@ -40,6 +45,11 @@ export class RemainingComplaintsComponent implements OnInit {
 
   ngOnInit() {
 
+    this.student=false;
+    this.staff=false;
+    this.isFaculty=false;
+    this.hod=false;
+
     this.cleanliness = true;
     this.le = true;
     this.cwn = true;
@@ -50,17 +60,27 @@ export class RemainingComplaintsComponent implements OnInit {
     this.emrs = true;
     this.telephone = true;
 
+    if( this.userType === "student")
+    {
+      this.student = true;
+    }
+    if( this.userType === "staff"){
+      this.staff = true;
+    }
+    if( this.userType === "head"){
+      this.hod = true;
+    }
+    if(this.userType === "faculty")
+    {
+      this.isFaculty = true;
+    }
+ 
     this.cleanlinessRemainingComplaintsData = this.complaints.getRemainingCleanlinessComplaint()
       .subscribe(
         data => {
           this.cleanlinessRemainingComplaintsInfo = data;
           console.log(this.cleanlinessRemainingComplaintsInfo);
-          if(this.cleanlinessRemainingComplaintsInfo!=null)
-          {
-            this.getCleanlinessLength(this.cleanlinessRemainingComplaintsInfo.length);
-        
-          }  
-          }
+        }
       )
 
     this.leRemainingComplaintsData = this.complaints.getRemainingLEComplaints()
@@ -68,7 +88,6 @@ export class RemainingComplaintsComponent implements OnInit {
         data => {
           this.leRemainingComplaintsInfo = data;
           console.log(this.leRemainingComplaintsInfo);
-          this.getLeLength(this.leRemainingComplaintsInfo.length);
         }
       )
 
@@ -77,7 +96,6 @@ export class RemainingComplaintsComponent implements OnInit {
         data => {
           this.cwnRemainingComplaintsInfo = data;
           console.log(this.cwnRemainingComplaintsInfo);
-          this.getCwnLength(this.cwnRemainingComplaintsInfo.length);
         }
       )
 
@@ -86,7 +104,6 @@ export class RemainingComplaintsComponent implements OnInit {
         data => {
           this.eccwRemainingComplaintsInfo = data;
           console.log(this.eccwRemainingComplaintsInfo);
-          this.getEccLength(this.eccwRemainingComplaintsInfo.length);
         }
       )
 
@@ -95,7 +112,6 @@ export class RemainingComplaintsComponent implements OnInit {
         data => {
           this.otherRemainingComplaintsInfo = data;
           console.log(this.otherRemainingComplaintsInfo);
-          this.getOtherLength(this.otherRemainingComplaintsInfo.length);
         }
       )
 
@@ -104,7 +120,6 @@ export class RemainingComplaintsComponent implements OnInit {
         data => {
           this.facultyRemainingComplaintsInfo = data;
           console.log(this.facultyRemainingComplaintsInfo);
-          this.getFacultyLength(this.facultyRemainingComplaintsInfo.length);
         }
       )
 
@@ -113,7 +128,6 @@ export class RemainingComplaintsComponent implements OnInit {
         data => {
           this.stuRemainingComplaintsInfo = data;
           console.log(this.stuRemainingComplaintsInfo);
-          this.getStudentLength(this.stuRemainingComplaintsInfo.length);
         }
       )
 
@@ -122,7 +136,6 @@ export class RemainingComplaintsComponent implements OnInit {
         data => {
           this.emrsRemainingComplaintsInfo = data;
           console.log(this.emrsRemainingComplaintsInfo);
-          this.getEmrsLength(this.emrsRemainingComplaintsInfo.length);
         }
       )
 
@@ -131,40 +144,10 @@ export class RemainingComplaintsComponent implements OnInit {
         data => {
           this.telephoneRemainingComplaintsInfo = data;
           console.log(this.telephoneRemainingComplaintsInfo);
-          this.getTelephoneLength(this.telephoneRemainingComplaintsInfo.length);
         }
       )
   }
 
-  getCleanlinessLength(len:number){
-    this.count=this.count+len;
-    console.log(this.count);
-  }
-  getLeLength(len:number){
-    this.count+=len;
-  }
-  getCwnLength(len:number){
-    this.count+=len;
-  }
-  getEccLength(len:number){
-    this.count+=len;
-  }
-  getOtherLength(len:number){
-    this.count+=len;
-  }
-  getFacultyLength(len:number){
-    this.count+=len;
-  }
-  getStudentLength(len:number){
-    this.count+=len;
-  }
-  getEmrsLength(len:number){
-    this.count+=len;
-  }
-  getTelephoneLength(len:number){
-    this.count+=len;
-    console.log(this.count);
-  }
   showAll() {
     this.cleanliness = true;
     this.le = true;

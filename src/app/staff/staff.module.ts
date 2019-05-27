@@ -18,7 +18,7 @@ import { ConventionalModule } from '../conventional/conventional.module';
     CommonModule,
     StaffRoutingModule,
     MiscellaneousModule,
-    ComplaintsModule,
+   // ComplaintsModule,
     ConventionalModule
   ],
   declarations: [

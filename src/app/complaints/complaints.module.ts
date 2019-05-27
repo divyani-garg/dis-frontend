@@ -10,7 +10,7 @@ import { ComplaintsComponent } from './complaints/complaints.component';
 import { AddacomplaintComponent } from './addacomplaint/addacomplaint.component';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 import { MyComplaintsComponent } from './my-complaints/my-complaints.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [TotalComplaintsComponent, ResolvedComplaintsComponent, RemainingComplaintsComponent,
@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     FormsModule,
     CommonModule,
+    ReactiveFormsModule,
     ComplaintsRoutingModule,
     ConfirmationPopoverModule.forRoot({
       confirmButtonType: 'primary' // set defaults here

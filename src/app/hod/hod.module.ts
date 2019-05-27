@@ -20,7 +20,6 @@ import { CalendarComponent } from '../miscellaneous/calendar/calendar.component'
 import { FooterModule } from './footer/footer.module';
 import { MeetingsComponent } from './meetings/meetings.component';
 import { ConventionalModule } from '../conventional/conventional.module';
-import { ComplaintsModule } from '../complaints/complaints.module';
 
 @NgModule({
   imports: [
@@ -30,8 +29,7 @@ import { ComplaintsModule } from '../complaints/complaints.module';
     MiscellaneousModule,
     FooterModule,
     ConventionalModule,
-    ComplaintsModule
-  ],
+    ],
   declarations: [
      HomeComponent,
      AdministrationComponent, 

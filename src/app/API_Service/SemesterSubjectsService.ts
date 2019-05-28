@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SemesterSubjectsService {
 
-  private baseUrl = 'http://localhost:8082/student';
+  private baseUrl = 'http://localhost:8080/dis/academics';
 
   subjects: Observable<any>;
   subjectsArray: any[];

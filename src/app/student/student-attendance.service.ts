@@ -1,3 +1,4 @@
+import { LeaveForm } from './leaveform';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -17,5 +18,13 @@ export class StudentAttendanceService {
 
   getSubjectwiseAttendance(subjectCode): Observable<any> {
     return this.http.get(`${this.url}/studentAttendance/${subjectCode}`);
+  }
+
+  getLeaveRecord(): Observable<any> {
+    return this.http.get(`${this.url}/studentLeaveAccount`);
+  }
+
+  applyForLeave(application: LeaveForm): Observable<any> {
+    return this.http.post<string>(`${this.url}/studentLeaveApplication`, application,{ observe: 'response' });
   }
 }

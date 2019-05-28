@@ -1,5 +1,6 @@
+import { LeaveForm } from './../leaveform';
 import { StudentAttendanceService } from './../student-attendance.service';
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit,ViewChild, ElementRef } from '@angular/core';
 import { BarchartComponent } from './../../miscellaneous/barchart/barchart.component';
 import {MatPaginator, MatTableDataSource} from '@angular/material';
 
@@ -16,6 +17,15 @@ export class AttendanceComponent implements OnInit {
   tableWidget: any;
   dataTable: any;
   displayedColumns: string[];
+  leaveApplication: any;
+  options = [
+    { name: 'Medical', value: 1 },
+    { name: 'Sports', value: 2 },
+    { name: 'other', value: 3 }
+  ];
+  @ViewChild('closeBtn') closeBtn: ElementRef;
+
+  form: any = {};
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   dataSource: any;
@@ -70,6 +80,22 @@ export class AttendanceComponent implements OnInit {
         this.dataSource.paginator = this.paginator;
         this.openNav();
       })
+  }
+
+  displayLeaveRecord() {
+    this.attendanceHandler.getLeaveRecord().subscribe(data => {
+      console.log(data);
+    })
+  }
+
+  onSubmit() {
+    console.log(this.form.details);
+    this.leaveApplication = new LeaveForm(this.form.to,this.form.from,this.form.subject,this.form.details);
+    console.log(this.leaveApplication);
+    this.attendanceHandler.applyForLeave(this.leaveApplication).subscribe(data => {
+      console.log(data);
+      this.closeBtn.nativeElement.click();
+    });
   }
 
   openNav() {

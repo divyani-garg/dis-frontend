@@ -20,6 +20,7 @@ import { MiscellaneousModule } from '../miscellaneous/miscellaneous.module';
 import { BarchartComponent } from '../miscellaneous/barchart/barchart.component';
 import { InfrastructureModule } from '../infrastructure/infrastructure.module';
 import { MatTableModule, MatPaginatorModule, MatButtonModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { MatTableModule, MatPaginatorModule, MatButtonModule } from '@angular/ma
     ConventionalModule,
     InfrastructureModule,
     MatPaginatorModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   declarations: [
     HomeComponent,

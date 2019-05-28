@@ -24,6 +24,10 @@ const routes: Routes = [
         component: HomeComponent
       },
       {
+        path: 'student_home',
+        component: HomeComponent
+      },
+      {
         path: 'student_about',
         component: AboutComponent,
         loadChildren: () => AboutModule

@@ -1,8 +1,9 @@
+import { TokenStorageService } from './token-storage.service';
 import { AuthInterceptor } from './auth-interceptor';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { JwtResponse } from './jwt-response';
 import { AuthLoginInfo } from './login-info';
@@ -22,7 +23,8 @@ export class AuthService {
   private activateAccountUrl = 'http://localhost:8080/dis/preActivation';
   private resetUrl = 'http://localhost:8080/dis/processResetPassword';
 
-  constructor(private http: HttpClient, private interceptor: AuthInterceptor, private route: ActivatedRoute) {
+  // tslint:disable-next-line:max-line-length
+  constructor(private http: HttpClient, private interceptor: AuthInterceptor, private route: ActivatedRoute, private tokenStorageHandler: TokenStorageService, private router: Router) {
   }
 
   attemptAuth(credentials: AuthLoginInfo): Observable<JwtResponse> {
@@ -55,5 +57,10 @@ export class AuthService {
     console.log(info);
     // setting observe value as response to send full http response
     return this.http.post<string>(this.resetUrl, info, { observe: 'response' });
+  }
+
+  logOut() {
+    this.tokenStorageHandler.signOut();
+    this.router.navigate(['/']);
   }
 }

@@ -1,5 +1,5 @@
 .top-buffer {
-    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .icon {
@@ -128,4 +128,14 @@ left: auto;
     margin:0%;
     
   }
-  
+  .required-text{
+    color: #ed0221;
+    font-size: 12px;
+  }
+  .confirmationMessage{
+    padding : 1% 2% 1% 2%;
+    background-color: black;
+    color:grey;
+    border-radius: 2%;
+    transition : 0.3s;
+  }

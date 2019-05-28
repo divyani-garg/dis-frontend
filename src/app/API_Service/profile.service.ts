@@ -8,12 +8,18 @@ import { HttpClient } from '@angular/common/http';
 export class ProfileService {
 
   
-  private baseUrl="http://localhost:8081";
+  private baseUrl="http://localhost:8080/dis/user";
   constructor(private http: HttpClient) { }
+  getUserType(id):Observable<any>{
+    return this.http.get('http://localhost:8080/dis/getUserType?id='+id);
+  }
   getProfileInfo():Observable<any>{
     return this.http.get(`${this.baseUrl}/staffBasicProfile`);
   }
 
+  getStudentProfileInfo():Observable<any>{
+    return this.http.get(`${this.baseUrl}/studentBasicProfile`);
+  }
   getWorkExperienceInfo():Observable<any>{
     return this.http.get(`${this.baseUrl}/userWorkExperience`);
   }

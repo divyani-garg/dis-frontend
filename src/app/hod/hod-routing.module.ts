@@ -6,23 +6,17 @@ import { AdministrationComponent } from './administration/administration.compone
 import { FacultyComponent } from './faculty/faculty.component';
 import { RequestsComponent } from './requests/requests.component';
 import { TimetableComponent } from './timetable/timetable.component';
-import { AlertsComponent } from './alerts/alerts.component';
 import { StudentComponent } from './student/student.component';
 import { DocumentsComponent } from './documents/documents.component';
-import { InfrastructureComponent } from './hod-infrastucture/infrastructure/infrastructure.component';
 import { ToDoComponent } from './to-do/to-do.component';
 import { AboutModule } from '../about/about.module';
 import { AboutComponent } from '../about/about/about.component';
 import { HodInfrastuctureModule } from './hod-infrastucture/hod-infrastucture.module';
 import { HodInfrastructureComponent } from './hod-infrastucture/hod-infrastructure/hod-infrastructure.component';
 import { GalleryComponent } from './footer/gallery/gallery.component';
-import { FooterModule } from './footer/footer.module';
 import { MeetingsComponent } from './meetings/meetings.component';
 import { ProfileComponent } from '../conventional/profile/profile.component';
 import { ConventionalModule } from '../conventional/conventional.module';
-import { ComplaintsComponent } from '../complaints/complaints/complaints.component';
-import { ComplaintsModule } from '../complaints/complaints.module';
-
 const routes: Routes = [
   { path: 'head',
     component: HodComponent,
@@ -82,9 +76,9 @@ const routes: Routes = [
         component: MeetingsComponent
       },
       {
-        path :'alerts',
-        component:ComplaintsComponent,
-        loadChildren:()=> ComplaintsModule
+        path :'complaints',
+        //component:ComplaintsComponent,
+        loadChildren : '../complaints/complaints.module#ComplaintsModule'
       },
       {
         path : 'profile',

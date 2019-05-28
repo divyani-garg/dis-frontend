@@ -30,7 +30,7 @@ import { ComplaintsModule } from '../complaints/complaints.module';
     MiscellaneousModule,
     HodInfrastuctureModule,
     ConventionalModule,
-    ComplaintsModule
+   // ComplaintsModule
   ],
   declarations: [
     HomeComponent,

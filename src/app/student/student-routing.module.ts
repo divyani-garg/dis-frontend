@@ -8,12 +8,11 @@ import { GradesComponent } from './grades/grades.component';
 import { AssignmentsComponent } from './assignments/assignments.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { AttendanceComponent } from './attendance/attendance.component';
-import { InfrastructureComponent } from '../hod/hod-infrastucture/infrastructure/infrastructure.component';
-import { HodInfrastuctureModule } from '../hod/hod-infrastucture/hod-infrastucture.module';
-import { ConventionalModule } from '../conventional/conventional.module';
+import { LoginComponent } from '../authentication/login/login.component';
+import { InfrastructureModule } from '../infrastructure/infrastructure.module';
+import { InfrastructureOutletComponent } from '../infrastructure/infrastructure-outlet/infrastructure-outlet.component';
 import { ProfileComponent } from '../conventional/profile/profile.component';
-import { ComplaintsModule } from '../complaints/complaints.module';
-import { ComplaintsComponent } from '../complaints/complaints/complaints.component';
+import { TimetableComponent } from '../conventional/timetable/timetable.component';
 
 const routes: Routes = [
   { path: 'student',
@@ -24,18 +23,14 @@ const routes: Routes = [
         component: HomeComponent
       },
       {
-        path: 'student_home',
-        component: HomeComponent
-      },
-      {
         path: 'student_about',
         component: AboutComponent,
         loadChildren: () => AboutModule
       },
       {
         path: 'student_infrastructure',
-        component: InfrastructureComponent,
-        loadChildren: () => HodInfrastuctureModule
+        component: InfrastructureOutletComponent,
+        loadChildren: () => InfrastructureModule
       },
       {
         path: 'student_attendance',
@@ -43,7 +38,7 @@ const routes: Routes = [
       },
       {
         path: 'student_timetable',
-        loadChildren: () => ConventionalModule
+        component: TimetableComponent
       },
       {
         path: 'student_grades',
@@ -63,8 +58,7 @@ const routes: Routes = [
       },
       {
         path: 'student_profile',
-        component : ProfileComponent,
-        loadChildren : () => ConventionalModule
+        component: ProfileComponent
       }
     ]
   }

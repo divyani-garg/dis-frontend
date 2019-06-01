@@ -16,9 +16,8 @@ import { StudentComponent } from './student/student.component';
 import { SidenavigationComponent } from './sidenavigation/sidenavigation.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { MiscellaneousModule } from '../miscellaneous/miscellaneous.module';
-import { HodInfrastuctureModule } from '../hod/hod-infrastucture/hod-infrastucture.module';
 import { BarchartComponent } from '../miscellaneous/barchart/barchart.component';
-import { ComplaintsModule } from '../complaints/complaints.module';
+import { InfrastructureModule } from '../infrastructure/infrastructure.module';
 
 
 @NgModule({
@@ -28,9 +27,8 @@ import { ComplaintsModule } from '../complaints/complaints.module';
     AboutModule,
     AboutRoutingModule,
     MiscellaneousModule,
-    HodInfrastuctureModule,
     ConventionalModule,
-   // ComplaintsModule
+    InfrastructureModule
   ],
   declarations: [
     HomeComponent,

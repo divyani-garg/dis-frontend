@@ -1,3 +1,4 @@
+import { EmployeeService } from './../employee.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StaffComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private employeeHandler: EmployeeService) { }
+  staffList: any;
+  staffMembers: any[];
   ngOnInit() {
+    this.staffList = this.employeeHandler.getStaffDetails().subscribe(data => {
+      this.staffMembers = data;
+      console.log(this.staffMembers);
+    });
   }
-
 }

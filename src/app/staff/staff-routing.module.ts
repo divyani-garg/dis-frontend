@@ -1,4 +1,3 @@
-import { HodInfrastuctureModule } from './../hod/hod-infrastucture/hod-infrastucture.module';
 import { AboutModule } from './../about/about.module';
 import { AlertsComponent } from './alerts/alerts.component';
 import { AboutComponent } from '../about/about/about.component';
@@ -12,9 +11,10 @@ import { StudentComponent } from './student/student/student.component';
 import { StudentRoutingModule } from './student/student-routing.module';
 import { ComplaintsModule } from './complaints/complaints.module';
 import { ComplaintsComponent } from './complaints/complaints/complaints.component';
-import { InfrastructureComponent } from '../hod/hod-infrastucture/infrastructure/infrastructure.component';
 import { StudentModule } from './student/student.module';
 import { ConventionalModule } from '../conventional/conventional.module';
+import { InfrastructureModule } from '../infrastructure/infrastructure.module';
+import { InfrastructureOutletComponent } from '../infrastructure/infrastructure-outlet/infrastructure-outlet.component';
 
 const routes: Routes = [
   {
@@ -36,8 +36,8 @@ const routes: Routes = [
         },
         {
           path: 'staff_infrastructure',
-          component: InfrastructureComponent,
-          loadChildren: () => HodInfrastuctureModule
+          component: InfrastructureOutletComponent,
+          loadChildren: () => InfrastructureModule
         },
         {
           path: 'staff_alerts',

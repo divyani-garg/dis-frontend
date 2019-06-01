@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class TimetableService {
 
-  private baseUrl = 'http://localhost:8082';
+  private baseUrl = 'http://localhost:8080/dis/academics';
 
   constructor(private http: HttpClient) { }
 

@@ -84,20 +84,7 @@
               <a class="nav-link" routerLink='complaints'><i class="fa fa-question-circle" aria-hidden="true"></i>
                 Complaints </a>
             </li>
-            <li class="nav-item noti dropdown">
-              <a class="nav-link dropdown-toggle" routerLink='alerts' id="navbarDropdownMenuLink2" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-bell" aria-hidden="true"></i><span>06</span> Alerts
-              </a>
-              <div class="dropdown-menu rounded-0" aria-labelledby="navbarDropdownMenuLink2">
-                <p class="msg-title">You have 06 Alerts</p>
-                <a class="dropdown-item" href="#">Project report <p>To report on work done or a plan for work to be
-                    done...</p></a>
-                <a class="dropdown-item" href="#">Case study (report) <p>Examine a situation...</p></a>
-                <a class="dropdown-item viewall" routerLink='alerts'>View All <i class="fa fa-long-arrow-right"
-                    aria-hidden="true"></i></a>
-              </div>
-            </li>
+            
             <li class="nav-item profile dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false" routerLink='profile'>
@@ -107,7 +94,7 @@
                 <a class="dropdown-item" routerLink='profile'><i class="fa fa-user" aria-hidden="true"></i>
                   Profile</a>
                 <a class="dropdown-item" href="#"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
-                <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                <a class="dropdown-item"  (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
               </div>
             </li>
           </ul>

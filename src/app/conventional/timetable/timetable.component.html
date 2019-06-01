@@ -51,20 +51,22 @@
           <tr *ngFor = "let timeslot of schedule">
             <ng-container *ngFor= "let lectures of timeslot" style="position: relative;">
               <td style="position: relative ;" *ngIf="lectures.length===0" [attr.colspan] = "2*(columnHeaders[timeslot.indexOf(lectures)].colspanValue)"></td>
+              <ng-container *ngIf="lectures.length !==0">
               <ng-container *ngFor= "let lecture of lectures">
                 <ng-container *ngIf = "lecture!==null">
                   <td *ngIf = "isString(lecture)" colspan="2">
                     {{lecture}}
                   </td>
 
-                  <td style="position: relative;" *ngIf = "isObject(lecture)" [attr.colspan] = "2*(columnHeaders[timeslot.indexOf(lectures)].colspanValue)/lectures.length" [attr.rowspan] = "lecture.type === 'Lab'? 2 : 1">
+                  <td style="position: relative;" *ngIf = "isObject(lecture)" [attr.colspan] = "2*(columnHeaders[timeslot.indexOf(lectures)].colspanValue)/lectures.length" [attr.rowspan] = "(convertedTime(lecture.to) - convertedTime(lecture.from))/duration">
                     {{lecture?.subjectCode}}<br/>
                     {{lecture?.batch}}<br/>
                     {{lecture?.location}}
-
                   </td>
+
                 </ng-container>
               </ng-container>
+            </ng-container>
             </ng-container>
           </tr>
         </tbody>

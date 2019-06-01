@@ -12,14 +12,13 @@ export class StudentService {
 
   constructor(private http: HttpClient) { }
 
-  public login(Student: Object): Observable<Object>{
+  public login(Student: Object): Observable<Object> {
     return this.http.post(`${this.baseUrl}` + `/login`, Student);
   }
 
-  public signup(Student: Object): Observable<Object>{
+  public signup(Student: Object): Observable<Object> {
     return this.http.post(`${this.baseUrl}` + `/signup`, Student);
   }
-  
   public forgotPassword(Student: Object): Observable<Object> {
      return this.http.post(`${this.baseUrl}` + `/forgot-password`, Student);
   }

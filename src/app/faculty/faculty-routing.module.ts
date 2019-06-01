@@ -9,11 +9,11 @@ import { HomeRoutingModule } from './home/home-routing.module';
 import { DocumentsComponent } from './documents/documents.component';
 import { AboutComponent } from '../about/about/about.component';
 import { AboutModule } from '../about/about.module';
-import { InfrastructureComponent } from '../hod/hod-infrastucture/infrastructure/infrastructure.component';
-import { HodInfrastuctureModule } from '../hod/hod-infrastucture/hod-infrastucture.module';
 import { ConventionalModule } from '../conventional/conventional.module';
 import { MydutiesModule } from '../myduties/myduties.module';
 import { MydutiesComponent } from '../myduties/myduties/myduties.component';
+import { InfrastructureModule } from '../infrastructure/infrastructure.module';
+import { InfrastructureOutletComponent } from '../infrastructure/infrastructure-outlet/infrastructure-outlet.component';
 import { ComplaintsComponent } from '../complaints/complaints/complaints.component';
 import { ComplaintsModule } from '../complaints/complaints.module';
 import { ProfileComponent } from '../conventional/profile/profile.component';
@@ -30,8 +30,8 @@ const routes: Routes = [
       },
       {
         path: 'infrastructure',
-        component: InfrastructureComponent,
-        loadChildren: () => HodInfrastuctureModule
+        component: InfrastructureOutletComponent,
+        loadChildren: () => InfrastructureModule
       },
       {
         path : 'attendance',

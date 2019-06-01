@@ -19,7 +19,7 @@ export class TimetableComponent implements OnInit {
   slots: any[];
   lectures: any[];
   timeslots: any[];
-
+  duration: any;
   mySubjects: any[];
 
   constructor(private timetable: TimetableService, private semSubjects: SemesterSubjectsService) { }
@@ -37,6 +37,7 @@ export class TimetableComponent implements OnInit {
     var got_duration = true;
     var duration = 1000;
     var calc_duration = 0;
+    var lunchstart;
     for (let a = 0; a < this.lec.length; a++) {
       if (this.lec[a].type === 'Lecture') {
         // tslint:disable-next-line:max-line-length
@@ -53,11 +54,21 @@ export class TimetableComponent implements OnInit {
       if (this.convertedTime(this.lec[a].to) > this.convertedTime(end_time)) {
         end_time = this.lec[a].to;
       }
+      if(this.lec[a].type === 'Lunch') {
+        lunchstart = this.lec[a].from;
+        console.log(lunchstart);
+      }
     }
+    this.duration = duration;
     var lecture_start = start_time;
     var lecture_end = start_time;
     while (lecture_start !== end_time) {
-      lecture_end = this.addTimes(lecture_start, duration);
+      if(lecture_start === lunchstart) {
+        lecture_end = this.addTimes(lecture_start, 60);
+      }
+      else {
+        lecture_end = this.addTimes(lecture_start, duration);
+      }
       this.timeslots.push([lecture_start, lecture_end]);
       lecture_start = lecture_end;
     }
@@ -94,17 +105,19 @@ export class TimetableComponent implements OnInit {
     }
     console.log(this.schedule);
     for (let i = 0; i < this.schedule.length; i++) {
-      for (let j = 0; j < this.schedule[i].length; j++) {
+      for (let j = 1; j < this.schedule[i].length; j++) {
         var check = 0;
         for (let k = 0; k < this.schedule[i][j].length; k++) {
-          if ( this.schedule[i][j][k] !== null && this.schedule[i][j][k].type === 'Lab') {
+          // tslint:disable-next-line:max-line-length
+          if ( this.schedule[i][j][k] !== null && this.schedule[i][j][k].length !== 0  && this.schedule[i][j][k].from !== lunchstart && (this.convertedTime(this.schedule[i][j][k].to)-this.convertedTime(this.schedule[i][j][k].from))/this.duration > 1) {
             check = 1;
             break;
           }
         }
         if (check === 1) {
           for (let k = 0; k < this.schedule[i][j].length; k++) {
-            if ( this.schedule[i][j][k] !== null && this.schedule[i][j][k].type === 'Lab') {
+            // tslint:disable-next-line:max-line-length
+            if ( this.schedule[i][j][k] !== null && this.schedule[i][j][k].length !== 0 && this.schedule[i][j][k].from !== lunchstart  && (this.convertedTime(this.schedule[i][j][k].to)-this.convertedTime(this.schedule[i][j][k].from))/this.duration > 1) {
               this.schedule[i + 1][j].push(null);
             } else {
               this.schedule[i + 1][j].push([]);

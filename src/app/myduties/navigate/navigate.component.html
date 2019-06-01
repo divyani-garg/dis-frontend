@@ -10,6 +10,8 @@
                   <div class="nav nav-tabs" id='myduties-pills-tabs' role="tablist">
                       <a class="nav-link active" data-toggle="pill" href="#myduties-markattendance"><i class="fa fa-check fa-fw"
                               aria-hidden="true"></i> Mark Attendance</a>
+                      <a class="nav-link" data-toggle="pill" href="#myduties-assigntask"><i class="fa fa-check fa-fw"
+                                aria-hidden="true"></i> Assign New Task</a>
                       <a class="nav-link" data-toggle="pill" href="#myduties-classtimetable"><i class="fa fa-calendar fa-fw"
                               aria-hidden="true"></i> Class Time Table</a>
                       <a class="nav-link" data-toggle="pill" href="#myduties-midtermtimetable"><i class="fa fa-calendar fa-fw"
@@ -36,6 +38,18 @@
                               aria-hidden="true"></i> Workshop and Conference </a>
                       <a class="nav-link" data-toggle="pill" href="#myduties-panel"><i class="fa fa-graduation-cap fa-fw"
                               aria-hidden="true"></i> Panel </a>
+                      <a class="nav-link" data-toggle="pill" href="#myduties-allocatementors"><i class="fa fa-graduation-cap fa-fw"
+                                aria-hidden="true"></i> Allocate Mentors </a>
+                      <a class="nav-link" data-toggle="pill" href="#myduties-mentorship"><i class="fa fa-graduation-cap fa-fw"
+                                    aria-hidden="true"></i> Mentorship </a>
+                      <a class="nav-link" data-toggle="pill" href="#myduties-editscheme"><i class="fa fa-graduation-cap fa-fw"
+                                        aria-hidden="true"></i> Edit Scheme and Syllabus </a>
+                      <a class="nav-link" data-toggle="pill" href="#myduties-mescholarship"><i class="fa fa-graduation-cap fa-fw"
+                                aria-hidden="true"></i> ME Scholarship </a>
+                      <a class="nav-link" data-toggle="pill" href="#myduties-overview-editing"><i class="fa fa-graduation-cap fa-fw"
+                                    aria-hidden="true"></i>Overview Editing </a>
+                      <a class="nav-link" data-toggle="pill" href="#myduties-report-generation"><i class="fa fa-graduation-cap fa-fw"
+                                        aria-hidden="true"></i>Report Generation </a>
               </div>
           </div>
               <div id="main">
@@ -45,6 +59,9 @@
                           <!--Tab Panes start-->
                           <div class="tab-content" id="myduties-pills-tabs">
                               <!--Class time table start-->
+                              <div id='myduties-assigntask' class="tab-pane">
+                                    <app-assign-task></app-assign-task>
+                              </div>
                               <div id='myduties-classtimetable' class="tab-pane">
                                   <app-class-tt></app-class-tt>
                               </div>
@@ -92,6 +109,24 @@
                               <div id='myduties-taskslist' class="tab-pane">
                                   <app-taskslist></app-taskslist>
                               </div>
+                              <div id='myduties-allocatementors' class="tab-pane">
+                                    <app-allocatementors></app-allocatementors>
+                                </div>
+                                <div id='myduties-mentorship' class="tab-pane">
+                                        <app-mentorship></app-mentorship>
+                                    </div>
+                                <div id='myduties-editscheme' class="tab-pane">
+                                        <app-editscheme></app-editscheme>
+                                </div>
+                                <div id='myduties-mescholarship' class="tab-pane">
+                                    <app-me-scholarship></app-me-scholarship>
+                                </div>
+                                <div id='myduties-overview-editing' class="tab-pane">
+                                    <app-overview-editing></app-overview-editing>
+                                </div>
+                                <div id='myduties-report-generation' class="tab-pane">
+                                    <app-report-generation></app-report-generation>
+                                </div>
                               <!--tasklist Finish-->
 
                           </div>

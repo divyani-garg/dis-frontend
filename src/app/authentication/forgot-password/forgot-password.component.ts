@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from '../../Model/student.model';
 import { StudentService } from '../../API_Service/student.service';
+import { AuthService } from '../auth.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrManager } from 'ng6-toastr-notifications';
 
 @Component({
   selector: 'app-forgot-password',
@@ -9,12 +13,41 @@ import { StudentService } from '../../API_Service/student.service';
 })
 export class ForgotPasswordComponent implements OnInit {
 
+  forgetForm: FormGroup;
   student: Student = new Student();
   submitted = false;
 
-  constructor(private studentService: StudentService) { }
+  // tslint:disable-next-line:max-line-length
+  constructor(private router: Router, public toastr: ToastrManager,private studentService: StudentService, private authService: AuthService, private formBuider: FormBuilder) { }
 
   ngOnInit() {
+    this.forgetForm = this.formBuider.group({
+      email: ['', [Validators.required, Validators.email]],
+    });
+  }
+
+  get formCtl() {
+    return this.forgetForm.controls;
+  }
+
+  forgotPass(email: string) {
+    this.authService.forgetPassword(email).subscribe(
+      response => {
+
+        if(response.ok) {
+          //this.router.navigate(['/']);
+          this.toastr.successToastr(response.body['message'], 'Success!');
+          console.log(response);
+        }
+      },
+      // httpErrorResponse handling
+      error => {
+        if(error.status === 400) {
+          //this.router.navigate(['/forgot-password']);
+          this.toastr.errorToastr(error.error['message'], 'Oops!');
+          console.log(error);
+        }
+      });
   }
 
   newStudent(): void {
@@ -22,14 +55,13 @@ export class ForgotPasswordComponent implements OnInit {
     this.student = new Student();
   }
 
-  save() {
-    this.studentService.forgotPassword(this.student)
-      .subscribe(data => console.log(data), error => console.log(error));
-    this.student = new Student();
-  }
 
   onSubmit() {
     this.submitted = true;
-    this.save();
+    if (this.forgetForm.invalid) {
+      return;
+  }
+  console.log(this.student.email);
+    this.forgotPass(this.student.email);
   }
 }

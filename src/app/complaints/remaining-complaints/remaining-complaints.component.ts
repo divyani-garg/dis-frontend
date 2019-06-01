@@ -59,6 +59,11 @@ export class RemainingComplaintsComponent implements OnInit {
     this.isFaculty=false;
     this.hod=false;
 
+    this.student=false;
+    this.staff=false;
+    this.isFaculty=false;
+    this.hod=false;
+
     this.cleanliness = true;
     this.le = true;
     this.cwn = true;

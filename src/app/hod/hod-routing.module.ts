@@ -13,11 +13,9 @@ import { ToDoComponent } from './to-do/to-do.component';
 import { AboutModule } from '../about/about.module';
 import { AboutComponent } from '../about/about/about.component';
 import { GalleryComponent } from './footer/gallery/gallery.component';
-import { FooterModule } from './footer/footer.module';
 import { MeetingsComponent } from './meetings/meetings.component';
 import { InfrastructureOutletComponent } from '../infrastructure/infrastructure-outlet/infrastructure-outlet.component';
 import { InfrastructureModule } from '../infrastructure/infrastructure.module';
-import { Component } from 'fullcalendar';
 
 const routes: Routes = [
   { path: 'head',

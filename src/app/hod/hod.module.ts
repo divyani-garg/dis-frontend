@@ -10,7 +10,7 @@ import { RequestsComponent } from './requests/requests.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { HodComponent } from './hod/hod.component';
-import { SidenavigationComponent } from './sidenavigation/sidenavigation.component';
+
 import { StudentComponent } from './student/student.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { MiscellaneousModule } from '../miscellaneous/miscellaneous.module';
@@ -19,6 +19,7 @@ import { CalendarComponent } from '../miscellaneous/calendar/calendar.component'
 import { FooterModule } from './footer/footer.module';
 import { MeetingsComponent } from './meetings/meetings.component';
 import { InfrastructureModule } from '../infrastructure/infrastructure.module';
+import { ConventionalModule } from '../conventional/conventional.module';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { InfrastructureModule } from '../infrastructure/infrastructure.module';
     HodRoutingModule,
     InfrastructureModule,
     MiscellaneousModule,
-    FooterModule
+    FooterModule,
+    ConventionalModule
   ],
   declarations: [
      HomeComponent,
@@ -37,7 +39,6 @@ import { InfrastructureModule } from '../infrastructure/infrastructure.module';
      AlertsComponent, 
      NavigationComponent, 
      HodComponent, 
-     SidenavigationComponent,
      StudentComponent,
      DocumentsComponent,
      ToDoComponent,

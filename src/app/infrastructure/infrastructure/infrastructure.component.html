@@ -17,21 +17,21 @@
         <form>
           <div class="form-group">
             <label for="InfraTypes">Infrastructure Type</label>
-            <select class="form-control" id="InfraTypes">
-              <option>Laboratory</option>
-              <option>Classroom</option>
-              <option>Facultyroom</option>
-              <option>Others</option>
+            <select class="form-control" id="InfraTypes" [(ngModel)]="model.infraType"  name="infraType">
+              <option >Laboratory</option>
+              <option >Classroom</option>
+              <option >Facultyroom</option>
+              <option >Others</option>
             </select>
           </div>
           <div class="form-group">
             <label for="infraName">Name</label>
-            <input type="text" class="form-control" id="infraName">
+            <input type="text" class="form-control" id="infraName" required  [(ngModel)]="model.name" name="name">
           </div>
           <div class="form-group">
             <label for="location">Location</label>
             <div class="row pl-3">
-              <select class="form-control col-6" id="location">
+              <select class="form-control col-6" id="location" [(ngModel)]="model.location" name="location">
                 <option>First Floor</option>
                 <option>Second Floor</option>
                 <option>Enter New Location</option>
@@ -41,31 +41,42 @@
             </div>
           </div>
           <div class="form-group">
+            <label for="infraName">Area</label>
+            <input type="text" class="form-control" id="area" required  [(ngModel)]="model.area" name="area">
+          </div>
+          <div class="form-group">
             <label for="incharge">Incharge</label>
-            <input type="text" class="form-control" list="suggestions" id="Incharge">
+            <input type="text" class="form-control" list="suggestions" id="Incharge" [(ngModel)]="model.incharge" name="incharge" >
             <datalist id="suggestions"   style="overflow-y:absolute;height:100px;">
-              <option *ngFor="let f of fData">{{f.name}}</option>
+              <option *ngFor="let f of fData" [value] ="f.id">{{f.name}}</option>
             </datalist>
           </div>
           <div class="form-group">
             <label for="associateIncharge">Associate Incharge</label>
-            <input type="text" class="form-control" list="suggestions2" id="associateIncharge">
+            <input type="text" class="form-control" list="suggestions2" id="associateIncharge" [(ngModel)]="model.associateIncharge" name="associateIncharge">
             <datalist id="suggestions2">
-              <option *ngFor="let f of fData">{{f.name}}</option>
+              <option *ngFor="let f of fData" [value] ="f.id">{{f.name}}</option>
             </datalist>
           </div>
           <div class="form-group">
             <label for="staff">Staff</label>
-            <input type="text" class="form-control" list="suggestions1" id="staff">
+            <input type="text" class="form-control" list="suggestions1" id="staff"  [(ngModel)]="model.staff" name="staff" >
             <datalist id="suggestions1" style="height:180px">
-              <option *ngFor="let s of sData">{{s.name}}</option>
+              <option *ngFor="let s of sData" [value] ="s.id">{{s.name}}</option>
+            </datalist>
+          </div>
+          <div class="form-group">
+            <label for="staff">Attendent</label>
+            <input type="text" class="form-control" list="suggestions1" id="attendent"  [(ngModel)]="model.attendent" name="attendent" >
+            <datalist id="suggestions1" style="height:180px">
+              <option *ngFor="let s of sData" [value] ="s.id">{{s.name}}</option>
             </datalist>
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onSubmit()">Submit</button>
       </div>
     </div>
   </div>
@@ -78,7 +89,7 @@
         aria-selected="true">Labs</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile"
+      <a class="nav-link" id="pills-classrooms-tab" data-toggle="pill" href="#pills-classrooms" role="tab" aria-controls="pills-classrooms"
         aria-selected="false">Classrooms</a>
     </li>
     <li class="nav-item">
@@ -134,11 +145,21 @@
 
       </div>
     </div>
-    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <div class="tab-pane fade" id="pills-classrooms" role="tabpanel" aria-labelledby="pills-classrooms-tab">
 
       <h4 id="Classroom ">Classrooms</h4>
       <hr>
-
+      <div class="col-12">
+        <div class="row">
+          <div class="col-lg-4 kyc-section rewards-section reports-sectn" *ngFor='let c of classroomData' style="margin-bottom: 4px; background-color: rgb(208, 225, 245)">
+            <h5 class="col-10">{{c.name}}</h5>
+            <hr />
+            <p class="col-12" style="font-size: 90%">Area : {{c.area }}<br>
+              Location : {{c.location}}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="tab-pane fade" id="pills-frooms" role="tabpanel" aria-labelledby="pills-frooms-tab">

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FacultyDataService {
-  private baseUrl='http://localhost:8081/'
+  private baseUrl='http://localhost:8080/dis/user/'
 
   constructor(private http: HttpClient) 
   { }

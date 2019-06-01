@@ -5,6 +5,8 @@ import { Others } from '../models/Others';
 import { FacultyRoom } from '../models/FacultyRoom';
 import { facultyData } from 'src/app/Model/facultyData';
 import { FacultyDataService } from 'src/app/hod/faculty/faculty-data.service';
+import { Classroom } from '../models/Classroom';
+import { AddInfrastructure } from '../models/AddInfrastructure';
 
 @Component({
   selector: 'app-infrastructure',
@@ -12,18 +14,21 @@ import { FacultyDataService } from 'src/app/hod/faculty/faculty-data.service';
   styleUrls: ['./infrastructure.component.scss']
 })
 export class InfrastructureComponent implements OnInit {
-  labs: Laboratory = new Laboratory();
-  others: Others = new Others();
-  facultyRooms: FacultyRoom = new FacultyRoom();
-  lab: Laboratory = new Laboratory();
-  fData : facultyData=new facultyData();
-  sData : facultyData=new facultyData();
+  labs: Laboratory[] = [];
+  others : Others[] = [];
+  facultyRooms: FacultyRoom[] = [];
+  fData : facultyData []=[];
+  sData : facultyData []=[];
+  classroomData : Classroom [] = [];
+  model: AddInfrastructure = new AddInfrastructure();
+
   constructor(private infraservice: InfraService, private faculty_service: FacultyDataService) { 
-    this.getallLabs();
+    // this.getallLabs();
     this.getallOthers();
-    this.getFacultyRooms();
-    this.getFacultyData();
-    this.getStaffData();
+    // this.getFacultyRooms();
+    // this.getFacultyData();
+    // this.getStaffData();
+    // this.getClassrooms();
   }
   
   getallLabs(): void {
@@ -43,12 +48,16 @@ export class InfrastructureComponent implements OnInit {
   infraName(l: Laboratory): void{
     this.infraservice.setInfraName(l);
   }
-
   
   getFacultyData(): void{
     this.faculty_service.getFacultyData()
       .subscribe(data => this.fData=data);
       console.log(this.fData);
+  }
+
+  getClassrooms(): void{
+    this.infraservice.getClassrooms()
+      .subscribe( data => this.classroomData = data);
   }
   
   getStaffData(): void{
@@ -57,7 +66,14 @@ export class InfrastructureComponent implements OnInit {
       console.log(this.sData);
   }
 
+  onSubmit(): void{
+    console.log(this.model);
+    this.infraservice.addInfrastructure(this.model);
+  }
+
+
   ngOnInit() { 
+   
   }
 
 }

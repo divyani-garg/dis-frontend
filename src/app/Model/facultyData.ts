@@ -1,4 +1,5 @@
 export class facultyData{
+        id: number;
         name : string;
         nameAcronym: string;
         profilePicture: string;

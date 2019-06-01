@@ -9,9 +9,9 @@ import { StudentComponent } from './student/student/student.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { StaffComponent } from './staff/staff.component';
-import { SidenavigationComponent } from './sidenavigation/sidenavigation.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ConventionalModule } from '../conventional/conventional.module';
+import { SideNavigationComponent } from '../complaints/side-navigation/side-navigation.component';
 
 @NgModule({
   imports: [
@@ -19,7 +19,7 @@ import { ConventionalModule } from '../conventional/conventional.module';
     StaffRoutingModule,
     MiscellaneousModule,
     ComplaintsModule,
-    ConventionalModule
+    ConventionalModule,
   ],
   declarations: [
     HomeComponent,
@@ -28,7 +28,6 @@ import { ConventionalModule } from '../conventional/conventional.module';
     DocumentsComponent,
     AlertsComponent,
     StaffComponent,
-    SidenavigationComponent,
     NavigationComponent
   ],
     providers: []

@@ -11,13 +11,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { StudentRoutingModule } from './student/student-routing.module';
 import { StudentModule } from '../faculty/student/student.module';
 import { HomeModule } from './home/home.module';
-import { SidenavigationComponent } from '../faculty/sidenavigation/sidenavigation.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { MiscellaneousModule } from 'src/app/miscellaneous/miscellaneous.module';
 import { ConventionalModule } from '../conventional/conventional.module';
 import { MydutiesModule } from './../myduties/myduties.module';
 import { InfrastructureModule } from '../infrastructure/infrastructure.module';
 import { ComplaintsModule } from '../complaints/complaints.module';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -33,7 +33,7 @@ import { ComplaintsModule } from '../complaints/complaints.module';
     ComplaintsModule
    ],
   declarations: [AttendanceComponent, NavigationComponent,
-    FacultyComponent, PageNotFoundComponent, SidenavigationComponent, DocumentsComponent,    ],
+    FacultyComponent, PageNotFoundComponent, DocumentsComponent    ],
   providers: [PiechartComponent]
 })
 export class FacultyModule { }

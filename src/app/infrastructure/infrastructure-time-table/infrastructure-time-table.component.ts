@@ -11,6 +11,8 @@ import { FacultyDataService } from 'src/app/hod/faculty/faculty-data.service';
 })
 export class InfrastructureTimeTableComponent implements OnInit {
 
+  
+
   fData : facultyData=new facultyData();
   sData : facultyData=new facultyData();
   lab : Laboratory = new Laboratory; 

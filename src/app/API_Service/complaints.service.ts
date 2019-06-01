@@ -211,4 +211,8 @@ export class ComplaintsService {
   addFacultyResource(info : any):Observable<any>{
     return this.http.post('http://localhost:8080/dis/administration/addFacultyResourceRequest',info,httpOptions);
   }
+
+  editComplaints(info : any):Observable<any>{
+    return this.http.put(`${this.baseUrl}/editComplaint`,info,httpOptions);
+  }
 }

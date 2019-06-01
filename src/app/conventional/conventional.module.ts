@@ -5,6 +5,7 @@ import { ConventionalRoutingModule } from './conventional-routing.module';
 import { TimetableComponent } from './timetable/timetable.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { ProfileService } from '../API_Service/profile.service';
 
 @NgModule({
   imports: [
@@ -14,8 +15,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   declarations: [ProfileComponent,TimetableComponent],
-  exports:[ProfileComponent,TimetableComponent]
-  
+  exports:[ProfileComponent,TimetableComponent],
+  providers : [ProfileService]
   
 })
 export class ConventionalModule { }

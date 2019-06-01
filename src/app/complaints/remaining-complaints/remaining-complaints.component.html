@@ -40,8 +40,14 @@
               <a class="dropdown-item" class="filter-links" (click)="showAll()">
                 <i class="fa fa-file-text fa-fw" aria-hidden="true"></i>All
               </a><br />
+              <a class="dropdown-item" class="filter-links" href='#' (click)="showStudent()">
+                <i class="fa fa-user fa-fw" aria-hidden="true"></i> Student
+              </a><br />
               <a class="dropdown-item" class="filter-links" href='#' (click)="showOther()">
                 <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Other
+              </a><br />
+              <a class="dropdown-item" class="filter-links" href='#' (click)="showFaculty()">
+                <i class="fa fa-users fa-fw" aria-hidden="true"></i> Faculty
               </a><br />
               <a class="dropdown-item" class="filter-links" href='#' (click)="showCleanliness()">
                 <i class="fa fa-paint-brush fa-fw" aria-hidden="true"></i> Cleanliness
@@ -59,27 +65,10 @@
                 <i class="fa fa-phone fa-fw" aria-hidden="true"></i> Telephone
               </a><br />
               <a class="dropdown-item" class="filter-links" href='#' (click)="showEcc()">
-                <i class="fa fa-file-o fa-fw" aria-hidden="true"></i> ECC
+                <i class="fa fa-file-o fa-fw" aria-hidden="true"></i> ECCW
               </a>
             </ng-container>
             <ng-container *ngIf="isFaculty">
-              <a class="dropdown-item" class="filter-links" (click)="showAll()">
-                <i class="fa fa-file-text fa-fw" aria-hidden="true"></i>All
-              </a><br />
-              <a class="dropdown-item" class="filter-links" href='#' (click)="showOther()">
-                <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Other
-              </a><br />
-              <a class="dropdown-item" class="filter-links" href='#' (click)="showCleanliness()">
-                <i class="fa fa-paint-brush fa-fw" aria-hidden="true"></i> Cleanliness
-              </a><br />
-              <a class="dropdown-item" class="filter-links" href='#' (click)="showLe()">
-                <i class="fa fa-desktop fa-fw" aria-hidden="true"></i> Lab Equipments
-              </a><br />
-              <a class="dropdown-item" class="filter-links" href='#' (click)="showStudent()">
-                <i class="fa fa-user fa-fw" aria-hidden="true"></i> Student
-              </a><br />
-            </ng-container>
-            <ng-container *ngIf="hod">
               <a class="dropdown-item" class="filter-links" (click)="showAll()">
                 <i class="fa fa-file-text fa-fw" aria-hidden="true"></i>All
               </a><br />
@@ -108,8 +97,23 @@
                 <i class="fa fa-phone fa-fw" aria-hidden="true"></i> Telephone
               </a><br />
               <a class="dropdown-item" class="filter-links" href='#' (click)="showEcc()">
-                <i class="fa fa-file-o fa-fw" aria-hidden="true"></i> ECC
+                <i class="fa fa-file-o fa-fw" aria-hidden="true"></i> ECCW
               </a>
+            </ng-container>
+            <ng-container *ngIf="hod">
+              <a class="dropdown-item" class="filter-links" (click)="showAll()">
+                <i class="fa fa-file-text fa-fw" aria-hidden="true"></i>All
+              </a><br />
+              <a class="dropdown-item" class="filter-links" href='#' (click)="showStudent()">
+                <i class="fa fa-user fa-fw" aria-hidden="true"></i> Student
+              </a><br />
+              <a class="dropdown-item" class="filter-links" href='#' (click)="showOther()">
+                <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Other
+              </a><br />
+              <a class="dropdown-item" class="filter-links" href='#' (click)="showFaculty()">
+                <i class="fa fa-users fa-fw" aria-hidden="true"></i> Faculty
+              </a><br />
+             
             </ng-container>
 
 
@@ -140,7 +144,7 @@
 <div style="padding-left:12px;padding-right:12px">
 
   <div *ngIf="cleanliness">
-    <div *ngFor="let val of cleanlinessRemainingComplaintsInfo">
+    <div *ngFor="let val of cleanlinessRemainingComplaintsInfo; let i = index">
 
       <div class="alert alert-danger row">
         <h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
@@ -151,61 +155,18 @@
         <!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
 
         <h5 class="col-4 " style="text-align: right;"> <a data-toggle="modal"
-            [attr.data-target]="'#cleanliness' + val.id">
-            <i class="fa fa-pencil float-right" style="font-size: 30px;"></i></a>
-        </h5>
+          [attr.data-target]="'#editcomplaint'" (click)="editComplaint(i,val.type,val.remarks,val.status,val.id)">
+          <i class="fa fa-pencil float-right" style="font-size: 30px;"></i></a></h5>
 
       </div>
 
-      <!-- Modal -->
-      <div class="modal fade" id="cleanliness{{val.id}}" role="dialog">
-        <div class="modal-dialog">
-
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Cleanliness Complaint</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="form-group">
-                  <label for="reason">Complaint Id<span class="necessary"> *</span></label>
-                  <input class="form-control" id="reason" value={{val.type}}{{val.id}}>
-                </div>
-                <div class="form-group">
-                  <label for="companyorcollege">Status<span class="necessary"> *</span></label>
-                  <input class="form-control" id="companyorcollege" value={{val.status}}>
-                </div>
-                <div class="form-group">
-
-                  <label class="control-label" for="location">Location<span class="necessary"> *</span></label>
-                  <input type="text" class="form-control" value={{val.location}} id="location" />
-                </div>
-                <div class="form-group">
-
-                  <label class="control-label" for="location">Level of Dust<span class="necessary"> *</span></label>
-                  <input type="text" class="form-control" value={{val.levelOfDust}} id="location" />
-                </div>
-                <div class="form-group">
-
-                  <label class="control-label" for="location">Details<span class="necessary"> *</span></label>
-                  <input type="text" class="form-control" value={{val.details}} id="location" />
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
-            </div>
-          </div>
-        </div>
-      </div>
+     
 
     </div>
   </div>
 
   <div *ngIf="le">
-    <div *ngFor="let val of leRemainingComplaintsInfo">
+    <div *ngFor="let val of leRemainingComplaintsInfo; let i = index">
       <div class="alert alert-danger row">
         <h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
         <h6 class="col-3" style="text-align: right;">Status : {{val.status}}</h6>
@@ -215,13 +176,14 @@
           Description : {{val.details}}<br />
         </p>
         <!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
-        <p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);"
-            aria-hidden="true"></i></p>
+        <h5 class="col-4 " style="text-align: right;"> <a data-toggle="modal"
+          [attr.data-target]="'#editcomplaint'" (click)="editComplaint(i,val.type,val.remarks,val.status,val.id)">
+          <i class="fa fa-pencil float-right" style="font-size: 30px;"></i></a></h5>
       </div>
     </div>
   </div>
   <div *ngIf="cwn">
-    <div *ngFor="let val of cwnRemainingComplaintsInfo">
+    <div *ngFor="let val of cwnRemainingComplaintsInfo; let i = index">
       <div class="alert alert-danger row">
         <h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
         <h6 class="col-3" style="text-align: right;">Status : {{val.status}}</h6>
@@ -231,13 +193,14 @@
           Form Id : {{val.formId}}<br />
         </p>
         <!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
-        <p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);"
-            aria-hidden="true"></i></p>
+        <h5 class="col-4 " style="text-align: right;"> <a data-toggle="modal"
+          [attr.data-target]="'#editcomplaint'" (click)="editComplaint(i,val.type,val.remarks,val.status,val.id)">
+          <i class="fa fa-pencil float-right" style="font-size: 30px;"></i></a></h5>
       </div>
     </div>
   </div>
   <div *ngIf="ecc">
-    <div *ngFor="let val of eccwRemainingComplaintsInfo">
+    <div *ngFor="let val of eccwRemainingComplaintsInfo; let i = index">
       <div class="alert alert-danger row">
         <h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
         <h6 class="col-3" style="text-align: right;">Status : {{val.status}}</h6>
@@ -247,13 +210,14 @@
           Form Id : {{val.formId}}<br />
         </p>
         <!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
-        <p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);"
-            aria-hidden="true"></i></p>
+        <h5 class="col-4 " style="text-align: right;"> <a data-toggle="modal"
+          [attr.data-target]="'#editcomplaint'" (click)="editComplaint(i,val.type,val.remarks,val.status,val.id)">
+          <i class="fa fa-pencil float-right" style="font-size: 30px;"></i></a></h5>
       </div>
     </div>
   </div>
   <div *ngIf="other">
-    <div *ngFor="let val of otherRemainingComplaintsInfo">
+    <div *ngFor="let val of otherRemainingComplaintsInfo; let i = index">
       <div class="alert alert-danger row">
         <h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
         <h6 class="col-3" style="text-align: right;">Status : {{val.status}}</h6>
@@ -262,14 +226,15 @@
           Assigned To : {{val.assignedTo}}<br />
         </p>
         <!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
-        <p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);"
-            aria-hidden="true"></i></p>
+        <h5 class="col-4 " style="text-align: right;"> <a data-toggle="modal"
+          [attr.data-target]="'#editothercomplaint'" (click)="editOtherComplaint(i,val.type,val.remarks,val.status,val.id, val.assignedTo)">
+          <i class="fa fa-pencil float-right" style="font-size: 30px;"></i></a></h5>
       </div>
     </div>
   </div>
 
   <div *ngIf="faculty">
-    <div *ngFor="let val of facultyRemainingComplaintsInfo">
+    <div *ngFor="let val of facultyRemainingComplaintsInfo; let i = index">
       <div class="alert alert-danger row">
         <h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
         <h6 class="col-3" style="text-align: right;">Status : {{val.status}}</h6>
@@ -279,13 +244,18 @@
           Date of Resolution : {{val.dateOfResolution}}
         </p>
         <!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
-        <p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);"
-            aria-hidden="true"></i></p>
+       
+          <h5 class="col-4 " style="text-align: right;"> <a data-toggle="modal"
+            [attr.data-target]="'#editcomplaint'" (click)="editComplaint(i,val.type,val.remarks,val.status,val.id)">
+            <i class="fa fa-pencil float-right" style="font-size: 30px;"></i></a></h5>
+      
+
+        
       </div>
     </div>
   </div>
   <div *ngIf="stu">
-    <div *ngFor="let val of stuRemainingComplaintsInfo">
+    <div *ngFor="let val of stuRemainingComplaintsInfo; let i = index">
       <div class="alert alert-danger row">
         <h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
         <h6 class="col-3" style="text-align: right;">Status : {{val.status}}</h6>
@@ -298,13 +268,14 @@
           <b>Remark : {{val.remarks}}</b>
         </p>
         <!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
-        <p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);"
-            aria-hidden="true"></i></p>
+        <h5 class="col-4 " style="text-align: right;"> <a data-toggle="modal"
+          [attr.data-target]="'#editcomplaint'" (click)="editComplaint(i,val.type,val.remarks,val.status,val.id)">
+          <i class="fa fa-pencil float-right" style="font-size: 30px;"></i></a></h5>
       </div>
     </div>
   </div>
   <div *ngIf="telephone">
-    <div *ngFor="let val of telephoneRemainingComplaintsInfo">
+    <div *ngFor="let val of telephoneRemainingComplaintsInfo; let i = index">
       <div class="alert alert-danger row">
         <h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
         <h6 class="col-3" style="text-align: right;">Status : {{val.status}}</h6>
@@ -316,13 +287,14 @@
           <b>Remark : {{val.remarks}}</b>
         </p>
         <!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
-        <p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);"
-            aria-hidden="true"></i></p>
+        <h5 class="col-4 " style="text-align: right;"> <a data-toggle="modal"
+          [attr.data-target]="'#editcomplaint'" (click)="editComplaint(i,val.type,val.remarks,val.status,val.id)">
+          <i class="fa fa-pencil float-right" style="font-size: 30px;"></i></a></h5>
       </div>
     </div>
   </div>
   <div *ngIf="emrs">
-    <div *ngFor="let val of emrsRemainingComplaintsInfo">
+    <div *ngFor="let val of emrsRemainingComplaintsInfo; let i = index">
       <div class="alert alert-danger row">
         <h4 class="col-9">Complaint : {{val.type}}{{val.id}}</h4>
         <h6 class="col-3" style="text-align: right;">Status : {{val.status}}</h6>
@@ -334,10 +306,88 @@
           <b>Remark : {{val.remarks}}</b>
         </p>
         <!--  Assigned to : Mr XYZ <br/>Work in progress<br/>	-->
-        <p class="col-4 " style="text-align: right;"><i class="fa fa-cogs fa-lg col-6" style="color:rgb(37, 37, 2);"
-            aria-hidden="true"></i></p>
+        <h5 class="col-4 " style="text-align: right;"> <a data-toggle="modal"
+          [attr.data-target]="'#editcomplaint'" (click)="editComplaint(i,val.type,val.remarks,val.status,val.id)">
+          <i class="fa fa-pencil float-right" style="font-size: 30px;"></i></a></h5>
       </div>
     </div>
   </div>
 </div>
 <!--Notification Panel Ends-->
+
+ <!-- Modal -->
+ <div class="modal fade" id="editcomplaint" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Complaint</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="updateComplaint(editComplaintForm)" #editComplaintForm="ngForm">
+         
+          <div class="form-group">
+            <label>Status</label>
+            <input class="form-control" type="text" name="status" ngModel>
+          </div>
+          <div class="form-group">
+            <label>Remarks</label>
+            <input type="text" class="form-control" name="remarks" ngModel>
+          </div>
+          <ng-container *ngIf="showConfirmation">
+            <div class="form-group">
+              <div class="d-flex justify-content-center">
+                <span class="confirmationMessage">{{completionMessage}}</span>
+              </div>
+            </div>
+            </ng-container>
+        <div class="d-flex justify-content-center mt-3">
+          <button type="reset" class="btn btn-danger mr-3 btnWidth">Reset</button>
+          <button type="submit" class="btn btn-success btnWidth">Update</button>
+        </div>
+        </form>
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="editothercomplaint" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Complaint</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="updateOtherComplaint(editOtherComplaintForm)" #editOtherComplaintForm="ngForm">
+         
+          <div class="form-group">
+            <label>Status</label>
+            <input class="form-control" type="text" name="status" ngModel>
+          </div>
+          <div class="form-group">
+            <label>Remarks</label>
+            <input type="text" class="form-control" name="remarks" ngModel>
+          </div>
+          <div class="form-group">
+            <label>Assigned to</label>
+            <input type="text" class="form-control" name="assignedTo" ngModel>
+          </div>
+          <ng-container *ngIf="showConfirmation">
+            <div class="form-group">
+              <div class="d-flex justify-content-center">
+                <span class="confirmationMessage">{{completionMessage}}</span>
+              </div>
+            </div>
+            </ng-container>
+        <div class="d-flex justify-content-center mt-3">
+          <button type="reset" class="btn btn-danger mr-3 btnWidth">Reset</button>
+          <button type="submit" class="btn btn-success btnWidth">Update</button>
+        </div>
+        </form>
+      </div>
+     
+    </div>
+  </div>
+</div>

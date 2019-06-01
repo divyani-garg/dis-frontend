@@ -40,8 +40,14 @@
                 <a class="dropdown-item" class="filter-links" (click)="showAll()">
                   <i class="fa fa-file-text fa-fw" aria-hidden="true"></i>All
                 </a><br />
+                <a class="dropdown-item" class="filter-links" href='#' (click)="showStudent()">
+                  <i class="fa fa-user fa-fw" aria-hidden="true"></i> Student
+                </a><br />
                 <a class="dropdown-item" class="filter-links" href='#' (click)="showOther()">
                   <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Other
+                </a><br />
+                <a class="dropdown-item" class="filter-links" href='#' (click)="showFaculty()">
+                  <i class="fa fa-users fa-fw" aria-hidden="true"></i> Faculty
                 </a><br />
                 <a class="dropdown-item" class="filter-links" href='#' (click)="showCleanliness()">
                   <i class="fa fa-paint-brush fa-fw" aria-hidden="true"></i> Cleanliness
@@ -59,27 +65,10 @@
                   <i class="fa fa-phone fa-fw" aria-hidden="true"></i> Telephone
                 </a><br />
                 <a class="dropdown-item" class="filter-links" href='#' (click)="showEcc()">
-                  <i class="fa fa-file-o fa-fw" aria-hidden="true"></i> ECC
+                  <i class="fa fa-file-o fa-fw" aria-hidden="true"></i> ECCW
                 </a>
               </ng-container>
               <ng-container *ngIf="isFaculty">
-                <a class="dropdown-item" class="filter-links" (click)="showAll()">
-                  <i class="fa fa-file-text fa-fw" aria-hidden="true"></i>All
-                </a><br />
-                <a class="dropdown-item" class="filter-links" href='#' (click)="showOther()">
-                  <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Other
-                </a><br />
-                <a class="dropdown-item" class="filter-links" href='#' (click)="showCleanliness()">
-                  <i class="fa fa-paint-brush fa-fw" aria-hidden="true"></i> Cleanliness
-                </a><br />
-                <a class="dropdown-item" class="filter-links" href='#' (click)="showLe()">
-                  <i class="fa fa-desktop fa-fw" aria-hidden="true"></i> Lab Equipments
-                </a><br />
-                <a class="dropdown-item" class="filter-links" href='#' (click)="showStudent()">
-                  <i class="fa fa-user fa-fw" aria-hidden="true"></i> Student
-                </a><br />
-              </ng-container>
-              <ng-container *ngIf="hod">
                 <a class="dropdown-item" class="filter-links" (click)="showAll()">
                   <i class="fa fa-file-text fa-fw" aria-hidden="true"></i>All
                 </a><br />
@@ -108,8 +97,23 @@
                   <i class="fa fa-phone fa-fw" aria-hidden="true"></i> Telephone
                 </a><br />
                 <a class="dropdown-item" class="filter-links" href='#' (click)="showEcc()">
-                  <i class="fa fa-file-o fa-fw" aria-hidden="true"></i> ECC
+                  <i class="fa fa-file-o fa-fw" aria-hidden="true"></i> ECCW
                 </a>
+              </ng-container>
+              <ng-container *ngIf="hod">
+                <a class="dropdown-item" class="filter-links" (click)="showAll()">
+                  <i class="fa fa-file-text fa-fw" aria-hidden="true"></i>All
+                </a><br />
+                <a class="dropdown-item" class="filter-links" href='#' (click)="showStudent()">
+                  <i class="fa fa-user fa-fw" aria-hidden="true"></i> Student
+                </a><br />
+                <a class="dropdown-item" class="filter-links" href='#' (click)="showOther()">
+                  <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Other
+                </a><br />
+                <a class="dropdown-item" class="filter-links" href='#' (click)="showFaculty()">
+                  <i class="fa fa-users fa-fw" aria-hidden="true"></i> Faculty
+                </a><br />
+               
               </ng-container>
   
   

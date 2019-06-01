@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { ComplaintsService } from 'src/app/API_Service/complaints.service';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -9,6 +10,8 @@ import { ComplaintsService } from 'src/app/API_Service/complaints.service';
 })
 export class RemainingComplaintsComponent implements OnInit {
   userType : string = localStorage.getItem('userType');
+  @ViewChild('editComplaintForm') editComplaintForm : NgForm;
+  @ViewChild('editOtherComplaintForm') editOtherComplaintForm : NgForm;
   student : boolean;
   staff : boolean;
   isFaculty : boolean;
@@ -41,10 +44,16 @@ export class RemainingComplaintsComponent implements OnInit {
   stuRemainingComplaintsInfo: any[];
   emrsRemainingComplaintsInfo: any[];
   telephoneRemainingComplaintsInfo: any[];
+
+  selectedIndex : number;
+  currentId : number;
+  seletedType: string;
+  completionMessage: string;
+  showConfirmation: boolean;
   constructor(private complaints: ComplaintsService) { }
 
   ngOnInit() {
-
+    this.showConfirmation = false;
     this.student=false;
     this.staff=false;
     this.isFaculty=false;
@@ -262,4 +271,65 @@ export class RemainingComplaintsComponent implements OnInit {
   // public popoverMessage: string = 'Do you want to continue?';
   // public confirmClicked: boolean = false;
   // public cancelClicked: boolean = false;
+  editComplaint(i : number, type : string, remarks : string, status : string, Id : number):void{
+    console.log(i);
+    console.log(type);
+    this.selectedIndex = i;
+    this.currentId = Id;
+    this.seletedType = type;
+    this.showConfirmation=false;
+    this.editComplaintForm.setValue({
+      'status' : status,
+      'remarks' : remarks
+    })
+  }
+  updateComplaint(f : NgForm){
+    let data = f.value;
+    console.log(this.currentId);
+    if(this.currentId){
+      data["id"] = this.currentId;
+      data["type"]=this.seletedType;
+    }
+    console.log(data);
+    this.complaints.editComplaints(data)
+    .subscribe(
+      data =>{
+        console.log(data);
+        this.completionMessage = data.message + '!';
+        this.showConfirmation = true;
+      }
+    )
+  }
+  editOtherComplaint(i : number, type : string, remarks : string, status : string, Id : number, assignedTo : string):void{
+    console.log(i);
+    console.log(type);
+    this.selectedIndex = i;
+    this.currentId = Id;
+    this.seletedType = type;
+    this.showConfirmation=false;
+    this.editOtherComplaintForm.setValue({
+      'status' : status,
+      'remarks' : remarks,
+      'assignedTo' : assignedTo
+    })
+  }
+  updateOtherComplaint(f : NgForm){
+    let data = f.value;
+    console.log(this.currentId);
+    if(this.currentId!=undefined && this.seletedType!=undefined){
+      data["id"] = this.currentId;
+      data["type"]=this.seletedType;
+    }
+    console.log(data);
+    this.complaints.editComplaints(data)
+    .subscribe(
+      data =>{
+        console.log(data);
+        this.completionMessage = data.message + '!';
+      }
+    )
+  }
+  resetConfirmationMessage():void{
+    this.showConfirmation = true;
+  }
 }

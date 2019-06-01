@@ -1,24 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+};
 @Injectable({
   providedIn: 'root'
 })
+
 export class ProfileService {
 
   
   private baseUrl="http://localhost:8080/dis/user";
   constructor(private http: HttpClient) { }
-  getUserType(id):Observable<any>{
-    return this.http.get('http://localhost:8080/dis/getUserType?id='+id);
-  }
+ 
   getProfileInfo():Observable<any>{
     return this.http.get(`${this.baseUrl}/staffBasicProfile`);
   }
 
   getStudentProfileInfo():Observable<any>{
-    return this.http.get(`${this.baseUrl}/studentBasicProfile`);
+    return this.http.get("http://localhost:8080/dis/user/studentBasicProfile");
   }
   getWorkExperienceInfo():Observable<any>{
     return this.http.get(`${this.baseUrl}/userWorkExperience`);
@@ -48,8 +49,8 @@ export class ProfileService {
     return this.http.get(`${this.baseUrl}/userCulturalActivityAchievements`);
   }
 
-  getUserTechnicalActivityInfo():Observable<any>{
-    return this.http.get(`${this.baseUrl}/userTechnicalActivity`);
+  getUserTechnicalActivityInfo(id:number):Observable<any>{
+    return this.http.get('http://localhost:8080/dis/user/userTechnicalActivity?id='+id);
   }
 
   getUserAddressInfo():Observable<any>{
@@ -58,5 +59,13 @@ export class ProfileService {
 
   getFacultyStaffList():Observable<any>{
     return this.http.get(`${this.baseUrl}/facultyData`);
+  }
+
+  //add service
+  editStaffProfile(info : any):Observable<any>{
+    return this.http.put(`${this.baseUrl}/editStaffBasicProfile`,info,httpOptions);
+  }
+  editUserAddress(info : any):Observable<any>{
+    return this.http.put(`${this.baseUrl}/editUserAddress`,info,httpOptions);
   }
  }

@@ -142,8 +142,23 @@
     background-color:rgb(4, 58, 87);
     color:white;
     margin:0%;
-
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 .necessary{
     color: red;
+}
+.btn{
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.btnWidth{
+  width:100px;
+}
+.btn-success{
+  background-color: #1ba94c;
+  color: white;
+}
+.alert-danger{
+  background-color: #f8d7da;
+    border-color: #f5c6cb;
 }

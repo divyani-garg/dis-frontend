@@ -46,7 +46,8 @@ import { InfrastructureModule } from '../infrastructure/infrastructure.module';
      MeetingsComponent],
      providers: [CalendarComponent],
      exports:[
-       NavigationComponent
+      
+       StudentComponent
      ]
  
 })

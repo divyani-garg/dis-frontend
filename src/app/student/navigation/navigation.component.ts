@@ -16,4 +16,5 @@ export class NavigationComponent implements OnInit {
     window.sessionStorage.clear();
     this.router.navigate(['/login']);
   }
+ 
 }

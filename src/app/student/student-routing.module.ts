@@ -13,6 +13,7 @@ import { InfrastructureModule } from '../infrastructure/infrastructure.module';
 import { InfrastructureOutletComponent } from '../infrastructure/infrastructure-outlet/infrastructure-outlet.component';
 import { ProfileComponent } from '../conventional/profile/profile.component';
 import { TimetableComponent } from '../conventional/timetable/timetable.component';
+import { MyComplaintsComponent } from '../complaints/my-complaints/my-complaints.component';
 
 const routes: Routes = [
   { path: 'student',
@@ -59,7 +60,8 @@ const routes: Routes = [
       {
         path: 'student_profile',
         component: ProfileComponent
-      }
+      },
+     
     ]
   }
 ];

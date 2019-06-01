@@ -10,30 +10,30 @@ import { StudentRollListComponent } from './student-roll-list/student-roll-list/
 import { StudentRollListRoutingModule } from './student-roll-list/student-roll-list-routing.module';
 
 const routes: Routes = [
-  {
-    path : 'faculty',
-    component : FacultyComponent,
-    children : [
-      {
-        path : 'student',
-        component : StudentComponent,
-        children: [
-          {
-            path : 'student_fourth_year_project',
-            component : StudentFourthYearProjectComponent
-          },
-          {
-            path : 'me_project_details',
-            component : MeProjectDetailsComponent
-          },
-          {
-            path  : 'me_schlorship_details',
-            component : MeSchlorshipDetailsComponent
-          }
-        ]
-      }
-    ]
-    }
+  // {
+  //   path : 'faculty',
+  //   component : FacultyComponent,
+  //   children : [
+  //     // {
+  //     //   path : 'student',
+  //     //   component : StudentComponent,
+  //     //   children: [
+  //     //     {
+  //     //       path : 'student_fourth_year_project',
+  //     //       component : StudentFourthYearProjectComponent
+  //     //     },
+  //     //     {
+  //     //       path : 'me_project_details',
+  //     //       component : MeProjectDetailsComponent
+  //     //     },
+  //     //     {
+  //     //       path  : 'me_schlorship_details',
+  //     //       component : MeSchlorshipDetailsComponent
+  //     //     }
+  //     //   ]
+  //     // }
+  //   ]
+  //   }
   ];
 @NgModule({
   imports: [RouterModule.forChild(routes),StudentRollListRoutingModule],

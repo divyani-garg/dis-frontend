@@ -14,9 +14,9 @@ import { MydutiesModule } from '../myduties/myduties.module';
 import { MydutiesComponent } from '../myduties/myduties/myduties.component';
 import { InfrastructureModule } from '../infrastructure/infrastructure.module';
 import { InfrastructureOutletComponent } from '../infrastructure/infrastructure-outlet/infrastructure-outlet.component';
-import { ComplaintsComponent } from '../complaints/complaints/complaints.component';
-import { ComplaintsModule } from '../complaints/complaints.module';
 import { ProfileComponent } from '../conventional/profile/profile.component';
+import { StudentComponent } from '../hod/student/student.component';
+import { HodModule } from '../hod/hod.module';
 
 const routes: Routes = [
   {
@@ -64,6 +64,11 @@ const routes: Routes = [
         path : '**',
         component : PageNotFoundComponent
       },
+      {
+        path : 'student',
+        component : StudentComponent,
+        loadChildren:()  => HodModule
+      }
      ]
   }
 ];

@@ -5,7 +5,14 @@ import { TotalComplaintsComponent } from './total-complaints/total-complaints.co
 import { ResolvedComplaintsComponent } from './resolved-complaints/resolved-complaints.component';
 import { SideNavigationComponent } from './side-navigation/side-navigation.component';
 import { MyComplaintsComponent } from './my-complaints/my-complaints.component';
-
+var route : string = 'remaining_complaints';
+if(localStorage.getItem('userType') === 'student'){
+  route = 'mycomplaints'
+ }
+ else{
+   route = 'remaining_complaints'
+ }
+//student can see only mycomplaints we need to put authgurad for other complaints
 const routes: Routes = [
   {
             path : '',
@@ -13,7 +20,8 @@ const routes: Routes = [
             children : [
               {
                 path : '',
-                component : RemainingComplaintsComponent
+                redirectTo : route,
+                pathMatch : 'full'
               },
               {
                 path : 'remaining_complaints',
@@ -40,4 +48,6 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ComplaintsRoutingModule { }
+export class ComplaintsRoutingModule { 
+
+}

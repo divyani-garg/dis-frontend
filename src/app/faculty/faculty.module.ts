@@ -18,6 +18,7 @@ import { ConventionalModule } from '../conventional/conventional.module';
 import { MydutiesModule } from './../myduties/myduties.module';
 import { InfrastructureModule } from '../infrastructure/infrastructure.module';
 import { ComplaintsModule } from '../complaints/complaints.module';
+import { HodModule } from '../hod/hod.module';
 @NgModule({
   imports: [
     CommonModule,
@@ -30,6 +31,7 @@ import { ComplaintsModule } from '../complaints/complaints.module';
     InfrastructureModule,
     ConventionalModule,
     MydutiesModule,
+    HodModule
    // ComplaintsModule
    ],
   declarations: [AttendanceComponent, NavigationComponent,

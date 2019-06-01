@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
+import { Urls } from '../urls/urls';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'})
 };
@@ -10,7 +11,9 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ComplaintsService {
-
+  urls = new Urls();
+  private mainUrl = this.urls.mainurl;
+  // private baseUrl = mainurl+'/dis/administrationn'
   private baseUrl="http://localhost:8080/dis/administration";
   constructor(private http: HttpClient) { }
 

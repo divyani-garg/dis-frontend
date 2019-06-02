@@ -26,6 +26,7 @@ export class TimetableComponent implements OnInit {
   ngOnInit() {
     this.tt = this.timetable.getTimetable()
     .subscribe( data => {
+      console.log(data)
     this.lec = data;
     // tslint:disable-next-line:max-line-length
     this.columnHeaders = [{day: 'Days', colspanValue: 1}, {day: 'Monday', colspanValue: 1}, {day: 'Tuesday', colspanValue: 1}, {day: 'Wednesday', colspanValue: 1}, {day: 'Thursday', colspanValue: 1}, {day: 'Friday', colspanValue: 1}];

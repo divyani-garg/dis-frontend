@@ -3,6 +3,7 @@ import { ComplaintsService } from 'src/app/API_Service/complaints.service';
 import { AddOtherComplaint } from '../complaints_other';
 import { AddAFacultyComplaint } from '../complaints_faculty';
 import { FormGroup, Validators, FormBuilder, FormArray } from '@angular/forms';
+import { ToastrManager } from 'ng6-toastr-notifications';
 
 @Component({
   selector: 'app-addacomplaint',
@@ -18,7 +19,7 @@ export class AddacomplaintComponent implements OnInit {
   faculty : boolean;
   hod : boolean;
  
-   constructor(private fb: FormBuilder, private complaints: ComplaintsService) {
+   constructor(private fb: FormBuilder, private complaints: ComplaintsService, private toastr : ToastrManager) {
   }
 
   cleanlinessForm: FormGroup;
@@ -31,7 +32,7 @@ export class AddacomplaintComponent implements OnInit {
   emrsForm: FormGroup;
   telephoneForm: FormGroup;
 
-  completionMessage: string;
+  completionMessage: string="Error has Occurred. Try after some time!!";
   showConfirmation: boolean;
   errorMessage: string = "Error has Occurred. Try after some time!!";
 
@@ -220,13 +221,10 @@ export class AddacomplaintComponent implements OnInit {
     .subscribe(
       data => {
         console.log(data);
-        this.completionMessage = data.message + '!';
-        this.showConfirmation = true;
+        this.toastr.successToastr(data.message, 'Success!');
       },
-      error => {
-        console.log(error);
-        this.completionMessage = this.errorMessage;
-        this.showConfirmation = true;
+      error =>{
+        this.toastr.errorToastr(this.completionMessage, 'Alert!')
       }
     )
   }
@@ -236,13 +234,10 @@ export class AddacomplaintComponent implements OnInit {
     .subscribe(
       data => {
         console.log(data);
-        this.completionMessage = data.message + '!';
-        this.showConfirmation = true;
+        this.toastr.successToastr(data.message, 'Success!');
       },
-      error => {
-        console.log(error);
-        this.completionMessage = this.errorMessage;
-        this.showConfirmation = true;
+      error =>{
+        this.toastr.errorToastr(this.completionMessage, 'Alert!')
       }
     )
   }
@@ -252,16 +247,12 @@ export class AddacomplaintComponent implements OnInit {
     .subscribe(
       data => {
         console.log(data);
-        this.completionMessage = data.message + '!';
-        this.showConfirmation = true;
+        this.toastr.successToastr(data.message, 'Success!');
       },
-      error => {
-        console.log(error);
-        this.completionMessage = this.errorMessage;
-        this.showConfirmation = true;
+      error =>{
+        this.toastr.errorToastr(this.completionMessage, 'Alert!')
       }
     )
-  
   }
   onOtherSubmit(details) {
    console.log(details.otherFields[0]);
@@ -269,13 +260,10 @@ export class AddacomplaintComponent implements OnInit {
     .subscribe(
       data => {
         console.log(data);
-        this.completionMessage = data.message + '!';
-        this.showConfirmation = true;
+        this.toastr.successToastr(data.message, 'Success!');
       },
-      error => {
-        console.log(error);
-        this.completionMessage = this.errorMessage;
-        this.showConfirmation = true;
+      error =>{
+        this.toastr.errorToastr(this.completionMessage, 'Alert!')
       }
     )
   }
@@ -285,15 +273,12 @@ export class AddacomplaintComponent implements OnInit {
     .subscribe(
       data => {
         console.log(data);
-        this.completionMessage = data.message + '!';
-        this.showConfirmation = true;
+        this.toastr.successToastr(data.message, 'Success!');
       },
-      error => {
-        console.log(error);
-        this.completionMessage = error.error.message;
-        this.showConfirmation = true;
+      error =>{
+        this.toastr.errorToastr(this.completionMessage, 'Alert!')
       }
-    ) 
+    )
   }
   onCwnSubmit(details) {
     console.log(details.cwnFields);
@@ -301,13 +286,10 @@ export class AddacomplaintComponent implements OnInit {
       .subscribe(
         data => {
           console.log(data);
-          this.completionMessage = data.message + '!';
-          this.showConfirmation = true;
+          this.toastr.successToastr(data.message, 'Success!');
         },
-        error => {
-          console.log(error);
-          this.completionMessage = this.errorMessage;
-          this.showConfirmation = true;
+        error =>{
+          this.toastr.errorToastr(this.completionMessage, 'Alert!')
         }
       )
   }
@@ -317,13 +299,10 @@ export class AddacomplaintComponent implements OnInit {
     .subscribe(
       data => {
         console.log(data);
-        this.completionMessage = data.message + '!';
-        this.showConfirmation = true;
+        this.toastr.successToastr(data.message, 'Success!');
       },
-      error => {
-        console.log(error.message);
-        this.completionMessage = error.message + '!';
-        this.showConfirmation = true;
+      error =>{
+        this.toastr.errorToastr(this.completionMessage, 'Alert!')
       }
     )
   }
@@ -333,13 +312,10 @@ export class AddacomplaintComponent implements OnInit {
     .subscribe(
       data => {
         console.log(data);
-        this.completionMessage = data.message + '!';
-        this.showConfirmation = true;
+        this.toastr.successToastr(data.message, 'Success!');
       },
-      error => {
-        console.log(error);
-        this.completionMessage = this.errorMessage + '!';
-        this.showConfirmation = true;
+      error =>{
+        this.toastr.errorToastr(this.completionMessage, 'Alert!')
       }
     )
   }
@@ -349,13 +325,10 @@ export class AddacomplaintComponent implements OnInit {
     .subscribe(
       data => {
         console.log(data);
-        this.completionMessage = data.message + '!';
-        this.showConfirmation = true;
+        this.toastr.successToastr(data.message, 'Success!');
       },
-      error => {
-        console.log(error);
-        this.completionMessage = this.errorMessage + '!';
-        this.showConfirmation = true;
+      error =>{
+        this.toastr.errorToastr(this.completionMessage, 'Alert!')
       }
     )
   }

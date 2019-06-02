@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { ProfileService } from 'src/app/API_Service/profile.service';
-import { FormControl, FormBuilder, FormGroup, FormArray, NgForm } from '@angular/forms'
+import { FormControl, FormBuilder, FormGroup, FormArray, NgForm } from '@angular/forms';
+import { ToastrManager } from 'ng6-toastr-notifications';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -55,8 +56,9 @@ export class ProfileComponent implements OnInit {
 
   completionMessage: string = "Error has Occurred. Try after some time!!";
   showConfirmation: boolean;
+  staffListInfo: any;
   
-  constructor(private profile: ProfileService, private fb: FormBuilder) {
+  constructor(private profile: ProfileService, private fb: FormBuilder, private toastr : ToastrManager) {
 
   }
 
@@ -64,12 +66,10 @@ export class ProfileComponent implements OnInit {
     this.student = false;
     this.staff = false;
     this.showConfirmation = false;
-    if (this.userAddressInfo) {
-
-    }
+   
     if (this.userType != 'student') {
       this.staff = true;
-      this.profile.getProfileInfo()
+      this.profile.getProfileInfo('','')
         .subscribe(
           data => {
             this.staffBasicProfile = data;
@@ -98,7 +98,7 @@ export class ProfileComponent implements OnInit {
     }
     if (this.userType === 'student') {
       this.student = true;
-      this.profile.getStudentProfileInfo()
+      this.profile.getStudentProfileInfo('','')
         .subscribe(
           data => {
             this.studentProfile = data;
@@ -122,7 +122,7 @@ export class ProfileComponent implements OnInit {
           }
         )
 
-      this.profile.getUserInternshipInfo()
+      this.profile.getUserInternshipInfo('')
         .subscribe(
           data => {
             this.userInternshipInfo = data;
@@ -130,7 +130,7 @@ export class ProfileComponent implements OnInit {
           }
         )
 
-      this.profile.getUserProjectInfo()
+      this.profile.getUserProjectInfo('')
         .subscribe(
           data => {
             this.userProjectInfo = data;
@@ -143,7 +143,7 @@ export class ProfileComponent implements OnInit {
 
 
 
-    this.profile.getWorkExperienceInfo()
+    this.profile.getWorkExperienceInfo('')
       .subscribe(
         data => {
           this.workExperienceInfo = data;
@@ -152,14 +152,14 @@ export class ProfileComponent implements OnInit {
       )
 
 
-    this.profile.getUserQualificationInfo()
+    this.profile.getUserQualificationInfo('')
       .subscribe(
         data => {
           this.userQualificationInfo = data;
           console.log(this.userQualificationInfo);
         }
       )
-    this.profile.getUserResearchWorkInfo()
+    this.profile.getUserResearchWorkInfo('')
       .subscribe(
         data => {
           this.userResearchWorkInfo = data;
@@ -169,7 +169,7 @@ export class ProfileComponent implements OnInit {
 
 
 
-    this.profile.getUserCompetitiveExamInfo()
+    this.profile.getUserCompetitiveExamInfo('')
       .subscribe(
         data => {
           this.userCompetitiveExamInfo = data;
@@ -177,7 +177,7 @@ export class ProfileComponent implements OnInit {
         }
       )
 
-    this.profile.getUserCulturalActivityInfo()
+    this.profile.getUserCulturalActivityInfo('')
       .subscribe(
         data => {
           this.userCulturalActivityInfo = data;
@@ -185,7 +185,7 @@ export class ProfileComponent implements OnInit {
         }
       )
 
-    this.profile.getUserTechnicalActivityInfo(null)
+    this.profile.getUserTechnicalActivityInfo('')
       .subscribe(
         data => {
           this.userTechnicalActivityInfo = data;
@@ -193,7 +193,7 @@ export class ProfileComponent implements OnInit {
         }
       )
 
-    this.profile.getUserAddressInfo()
+    this.profile.getUserAddressInfo('')
       .subscribe(
         data => {
           this.userAddressInfo = data;
@@ -228,7 +228,21 @@ export class ProfileComponent implements OnInit {
           console.log(this.facultyStaffListInfo);
         }
       )
+
+      this.profile.getStaffList()
+      .subscribe(
+        data => {
+          this.staffListInfo = data;
+          console.log(this.staffListInfo);
+        }, error => {
+          if(error.status === 500) {
+          this.toastr.errorToastr(error.error['message'], 'Alert!');
+          console.log(error);
+         
+        }
+        });
   }
+  
   updateStaffBasicProfileData(details): void {
     if (this.staffBasicProfile) {
       details["userId"] = this.staffBasicProfile.userId;
@@ -238,8 +252,10 @@ export class ProfileComponent implements OnInit {
     .subscribe(
       data => {
         console.log(data);
-        this.completionMessage = data.message;
-        this.showConfirmation = true;
+        this.toastr.successToastr(data.message, 'Success!');
+      },
+      error =>{
+        this.toastr.errorToastr(this.completionMessage, 'Alert!')
       }
     )
   }
@@ -248,6 +264,16 @@ export class ProfileComponent implements OnInit {
       details["userId"] = this.studentProfile.userId;
     }
     console.log(details);
+    this.profile.editStudentProfile(details)
+    .subscribe(
+      data => {
+        console.log(data);
+        this.toastr.successToastr(data.message, 'Success!');
+      },
+      error =>{
+        this.toastr.errorToastr(this.completionMessage, 'Alert!')
+      }
+    )
   }
 
 
@@ -282,6 +308,17 @@ export class ProfileComponent implements OnInit {
       data["userId"] = userId
     }
     console.log(data);
+    this.profile.editWorkExperience(data)
+    .subscribe(
+      data => {
+        console.log(data);
+        this.toastr.successToastr(data.message, 'Success!');
+      },
+      error =>{
+        this.toastr.errorToastr(this.completionMessage, 'Alert!')
+        console.log(error)
+      }
+    )
   }
 
   //education methods
@@ -312,6 +349,16 @@ export class ProfileComponent implements OnInit {
       data["userId"] = userId
     }
     console.log(data);
+    this.profile.editEducation(data)
+    .subscribe(
+      data => {
+        console.log(data);
+        this.toastr.successToastr(data.message, 'Success!');
+      },
+      error =>{
+        this.toastr.errorToastr(this.completionMessage, 'Alert!')
+      }
+    )
   }
 
   //research work methods
@@ -345,6 +392,16 @@ export class ProfileComponent implements OnInit {
       data["userId"] = userId
     }
     console.log(data);
+    this.profile.editPublication(data)
+    .subscribe(
+      data => {
+        console.log(data);
+        this.toastr.successToastr(data.message, 'Success!');
+      },
+      error =>{
+        this.toastr.errorToastr(this.completionMessage, 'Alert!')
+      }
+    )
   }
 
   fillCulturalActivityData(i: number) {
@@ -370,6 +427,16 @@ export class ProfileComponent implements OnInit {
       data["userId"] = this.userCulturalActivityInfo[this.selectedIndex].userId;
     }
     console.log(data);
+    this.profile.editCultural(data)
+    .subscribe(
+      data => {
+        console.log(data);
+        this.toastr.successToastr(data.message, 'Success!');
+      },
+      error =>{
+        this.toastr.errorToastr(this.completionMessage, 'Alert!')
+      }
+    )
   }
 
   fillTechnicalActivityData(i: number): void {
@@ -393,6 +460,16 @@ export class ProfileComponent implements OnInit {
       data["userId"] = this.userCulturalActivityInfo[this.selectedIndex].userId;
     }
     console.log(data);
+    this.profile.editTechnical(data)
+    .subscribe(
+      data => {
+        console.log(data);
+        this.toastr.successToastr(data.message, 'Success!');
+      },
+      error =>{
+        this.toastr.errorToastr(this.completionMessage, 'Alert!')
+      }
+    )
   }
   resetTechnicalActivity(): void {
     this.technicalActivityForm.reset();
@@ -417,6 +494,16 @@ export class ProfileComponent implements OnInit {
       data["userId"] = this.userCompetitiveExamInfo[this.selectedIndex].userId;
     }
     console.log(data);
+    this.profile.editCompetitive(data)
+    .subscribe(
+      data => {
+        console.log(data);
+        this.toastr.successToastr(data.message, 'Success!');
+      },
+      error =>{
+        this.toastr.errorToastr(this.completionMessage, 'Alert!')
+      }
+    )
   }
   resetCompetetiveExam(): void {
     this.competitiveExamForm.reset();
@@ -442,6 +529,16 @@ export class ProfileComponent implements OnInit {
       data["userId"] = this.userProjectInfo[this.selectedIndex].userId;
     }
     console.log(data);
+    this.profile.editProjects(data)
+    .subscribe(
+      data => {
+        console.log(data);
+        this.toastr.successToastr(data.message, 'Success!');
+      },
+      error =>{
+        this.toastr.errorToastr(this.completionMessage, 'Alert!')
+      }
+    )
   }
   resetProjectForm(): void {
     this.projectForm.reset();
@@ -467,6 +564,16 @@ export class ProfileComponent implements OnInit {
       data["userId"] = this.userInternshipInfo[this.selectedIndex].userId;
     }
     console.log(data);
+    this.profile.editInternship(data)
+    .subscribe(
+      data => {
+        console.log(data);
+        this.toastr.successToastr(data.message, 'Success!');
+      },
+      error =>{
+        this.toastr.errorToastr(this.completionMessage, 'Alert!')
+      }
+    )
   }
   resetInternshipForm(): void {
     this.internshipForm.reset();
@@ -489,23 +596,137 @@ export class ProfileComponent implements OnInit {
       }
       
     }
-    this.profile.editUserAddress(detail)
+    this.profile.editUserAddress(data)
     .subscribe(
       data => {
-        this.completionMessage = data.message;
-        this.showConfirmation =true;
+        console.log(data);
+        this.toastr.successToastr(data.message, 'Success!');
+      },
+      error =>{
+        this.toastr.errorToastr(this.completionMessage, 'Alert!')
       }
     )
   }
 
-  loadProfile(i : number):void{
-    this.profile.getUserTechnicalActivityInfo(14)
+  loadProfile(userId : number,userType : string ):void{
+    this.profile.getUserTechnicalActivityInfo(userId)
       .subscribe(
         data => {
           this.userTechnicalActivityInfo = data;
           console.log(this.userTechnicalActivityInfo);
         }
       )
+
+      if (userType != 'student') {
+        this.staff = true;
+        this.profile.getProfileInfo(userId,userType)
+          .subscribe(
+            data => {
+              this.staffBasicProfile = data;
+              console.log(this.staffBasicProfile);
+              this.editStaffBasicProfileFormGroup = this.fb.group({
+                mobileNo: [''],
+                alternateMobileNo: [''],
+                bloodGroup: [''],
+                dob: [''],
+                areaOfSpecialization: [''],
+                fatherName: [''],
+                motherName: [''],
+              })
+              if (this.staffBasicProfile != undefined) {
+                this.mobileNo = this.staffBasicProfile.mobileNo;
+                this.alternateMobileNo = this.staffBasicProfile.alternateMobileNo;
+                this.bloodGroup = this.staffBasicProfile.bloodGroup;
+                this.dob = this.staffBasicProfile.dob;
+                this.areaOfSpecialization = this.staffBasicProfile.areaOfSpecialization;
+                this.fatherName = this.staffBasicProfile.fatherName;
+                this.motherName = this.staffBasicProfile.motherName;
+              }
+            },
+          )
+  
+      }
+      
+
+    this.profile.getWorkExperienceInfo(userId)
+    .subscribe(
+      data => {
+        this.workExperienceInfo = data;
+        console.log(this.workExperienceInfo);
+      }
+    )
+
+
+  this.profile.getUserQualificationInfo(userId)
+    .subscribe(
+      data => {
+        this.userQualificationInfo = data;
+        console.log(this.userQualificationInfo);
+      }
+    )
+  this.profile.getUserResearchWorkInfo(userId)
+    .subscribe(
+      data => {
+        this.userResearchWorkInfo = data;
+        console.log(this.userResearchWorkInfo);
+      }
+    )
+
+
+
+  this.profile.getUserCompetitiveExamInfo(userId)
+    .subscribe(
+      data => {
+        this.userCompetitiveExamInfo = data;
+        console.log(this.userCompetitiveExamInfo);
+      }
+    )
+
+  this.profile.getUserCulturalActivityInfo(userId)
+    .subscribe(
+      data => {
+        this.userCulturalActivityInfo = data;
+        console.log(this.userCulturalActivityInfo);
+      }
+    )
+
+  this.profile.getUserTechnicalActivityInfo(userId)
+    .subscribe(
+      data => {
+        this.userTechnicalActivityInfo = data;
+        console.log(this.userTechnicalActivityInfo);
+      }
+    )
+
+  this.profile.getUserAddressInfo(userId)
+    .subscribe(
+      data => {
+        this.userAddressInfo = data;
+        console.log(this.userAddressInfo);
+        let addresses = new FormArray([]);
+        if (this.userAddressInfo != undefined) {
+          for (let address of this.userAddressInfo) {
+            addresses.push(
+              new FormGroup({
+                'addressLine1': new FormControl(address.addressLine1),
+                'addressLine2': new FormControl(address.addressLine2),
+                'city': new FormControl(address.city),
+                'country': new FormControl(address.country),
+                'state': new FormControl(address.state),
+                'pincode': new FormControl(address.pincode),
+                'type': new FormControl(address.type)
+              })
+            )
+          }
+          this.addressFormGroup = new FormGroup({
+            'addresses': addresses
+          })
+
+        }
+      }
+    )
+
+  
   }
 
   resetConfirmationMessge(): void {

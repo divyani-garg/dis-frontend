@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { ComplaintsService } from 'src/app/API_Service/complaints.service';
 import { NgForm } from '@angular/forms';
+import { ToastrManager } from 'ng6-toastr-notifications';
 
 
 @Component({
@@ -48,9 +49,9 @@ export class RemainingComplaintsComponent implements OnInit {
   selectedIndex : number;
   currentId : number;
   seletedType: string;
-  completionMessage: string;
+  completionMessage: string="Error has Occurred. Try after some time!!";;
   showConfirmation: boolean;
-  constructor(private complaints: ComplaintsService) { }
+  constructor(private complaints: ComplaintsService, private toastr : ToastrManager) { }
 
   ngOnInit() {
     this.showConfirmation = false;
@@ -298,10 +299,12 @@ export class RemainingComplaintsComponent implements OnInit {
     console.log(data);
     this.complaints.editComplaints(data)
     .subscribe(
-      data =>{
+      data => {
         console.log(data);
-        this.completionMessage = data.message + '!';
-        this.showConfirmation = true;
+        this.toastr.successToastr(data.message, 'Success!');
+      },
+      error =>{
+        this.toastr.errorToastr(this.completionMessage, 'Alert!')
       }
     )
   }
@@ -328,9 +331,12 @@ export class RemainingComplaintsComponent implements OnInit {
     console.log(data);
     this.complaints.editComplaints(data)
     .subscribe(
-      data =>{
+      data => {
         console.log(data);
-        this.completionMessage = data.message + '!';
+        this.toastr.successToastr(data.message, 'Success!');
+      },
+      error =>{
+        this.toastr.errorToastr(this.completionMessage, 'Alert!')
       }
     )
   }

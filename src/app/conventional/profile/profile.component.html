@@ -153,43 +153,43 @@
                       </span></p>
                     <hr>
 
-                    <p class="dropdown-item" data-toggle="modal" data-target="#internship_modal">Internships
+                    <p class="dropdown-item" data-toggle="modal" data-target="#internship">Internships
                       <span class="float-right">
                         <i class="fa fa-plus-square" style="size: 25px;"></i>
                       </span></p>
                     <hr>
 
-                    <p class="dropdown-item" data-toggle="modal" data-target="#project_modal">Projects
+                    <p class="dropdown-item" data-toggle="modal" data-target="#project">Projects
                       <span class="float-right">
                         <i class="fa fa-plus-square" style="size: 25px;"></i>
                       </span></p>
                     <hr>
 
-                    <p class="dropdown-item" data-toggle="modal" data-target="#competetive_modal">Competetive Exams
+                    <p class="dropdown-item" data-toggle="modal" data-target="#competetive">Competetive Exams
                       <span class="float-right">
                         <i class="fa fa-plus-square" style="size: 25px;"></i>
                       </span></p>
                     <hr>
 
-                    <p class="dropdown-item" data-toggle="modal" data-target="#placement_modal">Placements
+                    <p class="dropdown-item" data-toggle="modal" data-target="#placement">Placements
                       <span class="float-right">
                         <i class="fa fa-plus-square" style="size: 25px;"></i>
                       </span></p>
                     <hr>
 
-                    <p class="dropdown-item" data-toggle="modal" data-target="#culturalactivity_modal">Cultural
+                    <p class="dropdown-item" data-toggle="modal" data-target="#culturalactivity">Cultural
                       Activities/Achievement
                       <span class="float-right">
                         <i class="fa fa-plus-square" style="size: 25px;"></i>
                       </span></p>
                     <hr>
-                    <p class="dropdown-item" data-toggle="modal" data-target="#technicalactivity_modal">Technical
+                    <p class="dropdown-item" data-toggle="modal" data-target="#technicalactivity">Technical
                       Activities/Achievements
                       <span class="float-right">
                         <i class="fa fa-plus-square" style="size: 25px;"></i>
                       </span></p>
                     <hr>
-                    <p class="dropdown-item" data-toggle="modal" data-target="#workshop_modal">Workshops/Seminars
+                    <p class="dropdown-item" data-toggle="modal" data-target="#workshop">Workshops/Seminars
                       <span class="float-right">
                         <i class="fa fa-plus-square" style="size: 25px;"></i>
                       </span></p>
@@ -1381,7 +1381,11 @@
     <!--Start Right Panel-->
     <div class="col-lg-3 kyc-section rewards-section reports-sectn scroll-area" style="max-height: 1000px">
       <div class="position-static">
-        <h3>Employees <i class="fa fa-download float-right" style="font-size: 30px;"></i></h3>
+          <div class="d-flex justify-content-between">
+          <i class="fa fa-arrow-left facultyName" (click)="loadProfile('','')" style="font-size: 20px" aria-hidden="true"></i>
+          <h4>Employees </h4>
+          <i class="fa fa-download" aria-hidden="true" style="font-size: 20px"></i>
+        </div>
         <input class="form-control" type="text" placeholder="Search" aria-label="Search">
         <hr>
       </div>
@@ -1392,7 +1396,23 @@
               <div><img class="othersprofile" src="../../../assets/images/img_avatar3.png" alt="" /></div>
             </div>
             <div class="col-9">
-              <h6><a (click)="loadProfile(val.id)">{{val.name}} [{{val.nameAcronym}}]</a></h6>
+              <h6 class="facultyName" (click)="loadProfile(val.userId,val.userType)">{{val.name}} [{{val.nameAcronym}}]</h6>
+              <p style="font-size:13px;">{{val.currentDesignation}}<br />
+                <i class="fa fa-envelope mr-1" aria-hidden="true"></i>{{val.email}}<br />
+                <i class="fa fa-mobile mr-1" aria-hidden="true"></i>{{val.mobileNo}}
+              </p>
+            </div>
+
+          </div>
+          <hr>
+        </div>
+        <div *ngFor="let val of staffListInfo; let i = index">
+          <div class="row">
+            <div class="col-3">
+              <div><img class="othersprofile" src="../../../assets/images/img_avatar2.png" alt="" /></div>
+            </div>
+            <div class="col-9">
+              <h6><a  (click)="loadProfile(val.userId,val.userType)">{{val.name}} [{{val.nameAcronym}}]</a></h6>
               <p style="font-size:13px;">{{val.currentDesignation}}<br />
                 <i class="fa fa-envelope mr-1" aria-hidden="true"></i>{{val.email}}<br />
                 <i class="fa fa-mobile mr-1" aria-hidden="true"></i>{{val.mobileNo}}

@@ -1,24 +1,27 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-3 kyc-colm user-management">
-      <ng-container *ngIf=" userType == 'faculty' || userType == 'staff'">
-      <div class="kyc-section rewards-section reports-sectn top-buffer">
-        <div style="text-align-last: center;">
-          <a href=""><i class="fa fa-cart-plus icon" aria-hidden="true"></i></a>
-        </div>
-
-        <div style="text-align-last: center;">
-          <h5><a class="request-resources" href="#requestResource" data-toggle="modal" data-target="#requestResource"
-              data-whatever="@mdo">Request Resources</a></h5>
-        </div>
-      </div>
-    </ng-container>
-    <div class="complaint-meter">
+    
+    <!-- <div class="complaint-meter">
         <h5 class="text-center">Complaint Meter</h5>
-      </div>
+      </div> -->
+      <ng-container *ngIf=" userType == 'faculty' || userType == 'staff'">
+        <div class="kyc-section rewards-section reports-sectn top-buffer">
+          <div style="text-align-last: center;">
+            <a class="request-resources" style="font-size:40px;"><i class="fa fa-cart-plus icon" aria-hidden="true"></i></a>
+          </div>
+  
+          <div style="text-align-last: center;">
+            <h5><a class="request-resources" href="#requestResource" data-toggle="modal" data-target="#requestResource"
+                data-whatever="@mdo">Request Resources</a></h5>
+          </div>
+        </div>
+      </ng-container>
       <div class=" profile-info">
         <div class="profile-content">
-         
+          <div class="text-center">
+            <img src="../../../assets/images/meter.png" style="width: 50%;height:50%;">
+          </div>
           <ng-container *ngIf="userType != 'student'">
           <div class="txt-info three">
             <div class="request-resources">
@@ -44,6 +47,7 @@
         </ng-container>
         </div>
       </div>
+     
     </div>
     <div class="col-lg-9 kyc-colm user-management">
       <div class="kyc-section rewards-section reports-sectn">

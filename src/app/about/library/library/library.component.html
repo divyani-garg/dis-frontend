@@ -19,19 +19,19 @@
             <li style="cursor: pointer;">
               <div class="kyc-section rewards-section reports-sectn row" style="max-height: 100px; max-width: 250px; margin-bottom: 10px;" (click)="getBooks()">
                 <div class="col-lg-6">
-                  <a><img src="../../../assets/images/books.png" style="width: 35px; height: 35px;" ></a>
-                  <p style="font-size: small">Books</p>
+                  <a routerLink="books"><img src="../../../assets/images/books.png" style="width: 35px; height: 35px;" ></a>
+                  <p style="font-size: small" routerLink="books">Books</p>
                 </div>
                 <div class="col-lg-6" style="margin: auto 0px;">
-                  <h3>3145</h3>
+                  <h3>{{length}}</h3>
                 </div>
               </div>
             </li>
             <li style="cursor: pointer;">
               <div class="kyc-section rewards-section reports-sectn row" style="max-height: 100px; max-width: 250px; margin-bottom: 10px;" (click)="getThesis()">
                 <div class="col-lg-6">
-                  <a><img src="../../../assets//images/thesis.png" style="width: 35px; height: 35px; " ></a>
-                  <p style="font-size: small">Thesis</p>
+                  <a routerLink="thesis"><img src="../../../assets//images/thesis.png" style="width: 35px; height: 35px; " ></a>
+                  <p style="font-size: small" routerLink="thesis">Thesis</p>
                 </div>
                 <div class="col-lg-6" style="margin: auto 0px;">
                   <h3>545</h3>
@@ -41,8 +41,8 @@
             <li style="cursor: pointer;">
               <div class="kyc-section rewards-section reports-sectn row" style="max-height: 100px; max-width: 250px; margin-bottom: 10px;" (click)="getResearchpaper()">
                 <div class="col-lg-6 float-left">
-                  <a><img src="../../../assets/images/researchpaper.png" style="width: 35px; height: 35px; "></a>
-                  <p style="font-size: small">Research<br/>Papers</p>
+                  <a routerLink="researchpaper"><img src="../../../assets/images/researchpaper.png" style="width: 35px; height: 35px; "></a>
+                  <p routerLink="researchpaper" style="font-size: small">Research<br/>Papers</p>
                 </div>
                 <div class="col-lg-6" style="margin: auto 0px;">
                   <h3>605</h3>
@@ -51,9 +51,9 @@
             </li>
         </ul>
       </div>
-      <div class="col-lg-9 table-responsive card" id="thesis" style="display: none;" >
-
-          <table class="table table-striped">
+      <div class="col-lg-9">
+        <router-outlet></router-outlet>
+          <!-- <table class="table table-striped">
               <thead>
                 <tr>
                   <th scope="col">Thesis Id</th>
@@ -245,7 +245,7 @@
                 </tr>
               </tbody>
             </table>
-            </div>
+            </div> -->
       </div>
 
     </div>

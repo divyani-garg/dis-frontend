@@ -6,7 +6,7 @@ import { BookComponent } from './book/book.component';
 import { ThesisComponent } from './thesis/thesis.component';
 import { ResearchpaperComponent } from './researchpaper/researchpaper.component';
 import { LibraryComponent } from './library/library.component';
-import { MatTableModule, MatPaginatorModule } from '@angular/material';
+import { MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   imports: [
@@ -14,8 +14,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LibraryRoutingModule,
     MatTableModule,
     MatPaginatorModule,
-    FormsModule
+    FormsModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
-  declarations: [LibraryComponent,BookComponent, ThesisComponent, ResearchpaperComponent]
+  declarations: [LibraryComponent,BookComponent, ThesisComponent, ResearchpaperComponent],
+  exports : [MatSortModule]
 })
 export class LibraryModule { }

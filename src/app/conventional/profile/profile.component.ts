@@ -31,7 +31,7 @@ export class ProfileComponent implements OnInit {
   userAddressInfo: any[];
   facultyStaffListInfo: any[];
   userResearchWorkInfo: any[];
-
+  loading : boolean;
   studentProfile: any;
   staffBasicProfile: any;
 
@@ -609,6 +609,7 @@ export class ProfileComponent implements OnInit {
   }
 
   loadProfile(userId : number,userType : string ):void{
+    this.loading = true;
     this.profile.getUserTechnicalActivityInfo(userId)
       .subscribe(
         data => {
@@ -701,6 +702,7 @@ export class ProfileComponent implements OnInit {
   this.profile.getUserAddressInfo(userId)
     .subscribe(
       data => {
+        this.loading = false;
         this.userAddressInfo = data;
         console.log(this.userAddressInfo);
         let addresses = new FormArray([]);

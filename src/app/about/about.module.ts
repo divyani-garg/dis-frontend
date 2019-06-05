@@ -9,12 +9,14 @@ import { StaffComponent } from './staff/staff.component';
 import { ComputerclubComponent } from './computerclub/computerclub.component';
 import { AboutComponent } from './about/about.component';
 import { AboutNavigationComponent } from './about-navigation/about-navigation.component';
+import { MatTableModule, MatSortModule } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     AboutRoutingModule,
-    
+    MatTableModule,
+    MatSortModule
   ],
   declarations: [OverviewComponent,  MagazineComponent, FacultiesComponent, StaffComponent, ComputerclubComponent, AboutComponent, AboutNavigationComponent],
   exports: [OverviewComponent,  MagazineComponent, FacultiesComponent, StaffComponent, ComputerclubComponent, AboutComponent, AboutNavigationComponent]

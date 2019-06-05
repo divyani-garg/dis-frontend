@@ -18,6 +18,7 @@ import { HodModule } from './hod/hod.module';
 import { ToastrModule } from 'ng6-toastr-notifications';
 import { ConventionalModule } from './conventional/conventional.module';
 import { InfrastructureModule } from './infrastructure/infrastructure.module';
+import { MatTableModule, MatSortModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,8 @@ import { InfrastructureModule } from './infrastructure/infrastructure.module';
     ConventionalModule,
     InfrastructureModule,
     FormsModule,
+    MatTableModule,
+    MatSortModule
   ],
   providers: [AuthInterceptor,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],

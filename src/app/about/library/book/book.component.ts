@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { LibraryService } from 'src/app/API_Service/library.service';
 import { MatPaginator } from '@angular/material';
-import { TableDataSource } from '../Tabledatasource';
 import { NgForm } from '@angular/forms';
 import { ToastrManager } from 'ng6-toastr-notifications';
 
@@ -17,16 +16,13 @@ export class BookComponent implements OnInit {
   constructor(private library : LibraryService, private toastr :  ToastrManager) { }
   @ViewChild(MatPaginator) paginator : MatPaginator;
   @ViewChild('bookForm') bookForm : NgForm;
-  dataSource : TableDataSource;
-  f
-  ngOnInit() {
+    ngOnInit() {
     this.library.getBooksCount()
     .subscribe(
       data =>{
         this.length = data;
       }
     )
-    this.dataSource = new TableDataSource(this.paginator,this.library);
     }
   
   displayedColumns: string[] = ['No.', 'Book name', 'Author', 'Status'];

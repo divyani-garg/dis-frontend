@@ -8,6 +8,7 @@ import { LibraryService } from 'src/app/API_Service/library.service';
 })
 export class LibraryComponent implements OnInit {
   length: any;
+  thesisLength: any;
 
   constructor(private library  : LibraryService) { }
 
@@ -18,6 +19,12 @@ export class LibraryComponent implements OnInit {
         this.length = data;
       }
     )
+    // this.library.getThesisCount()
+    // .subscribe(
+    //   data =>{
+    //     this.thesisLength = data;
+    //   }
+    // )
   }
 
   

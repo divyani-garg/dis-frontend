@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
+  loading : boolean;
   private loginInfo: AuthLoginInfo;
 
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router, public toastr: ToastrManager) { }
@@ -31,13 +32,14 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     console.log(this.form);
-
+    this.loading = true;
     this.loginInfo = new AuthLoginInfo(
       this.form.username,
       this.form.password);
 
     this.authService.attemptAuth(this.loginInfo).subscribe(
       data => {
+        this.loading = false;
         console.log(data);
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveAuthorities(data.authorities);

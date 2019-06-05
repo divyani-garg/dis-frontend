@@ -1,6 +1,8 @@
 <div class="container">
   <div class="row">
-
+    <div class="loading-indicator">
+      <mat-spinner style="margin:0 auto;" mode="indeterminate" *ngIf="loading"></mat-spinner>
+    </div>
     <!--Start Left Panel-->
     <div class="col-lg-9 kyc-colm user-management">
       <!--Staff Profile begin-->
@@ -121,7 +123,7 @@
                             </ng-container>
                         <div class="d-flex justify-content-center mt-3">
                           <button type="reset" class="btn btn-danger mr-3 btnWidth">Reset</button>
-                          <button type="submit" class="btn btn-success btnWidth">Update</button>
+                          <button type="submit" class="btn btn-success btnWidth"  data-dismiss="modal">Update</button>
                         </div>
                       </form>
                     </div>
@@ -266,7 +268,7 @@
                         </ng-container>
                     <div class="form-group d-flex justify-content-center mt-3">
                       <button type='reset' class="btn btn-secondary mr-4 btnWidth">Reset</button>
-                      <button type="submit" class="btn btn-primary">Update Data</button>
+                      <button type="submit" class="btn btn-primary"  data-dismiss="modal">Update Data</button>
 
                     </div>
                   </form>
@@ -466,7 +468,7 @@
 
                     <div class="form-group d-flex justify-content-center mt-3">
                       <button type='reset' class="btn btn-secondary mr-4 btnWidth">Reset</button>
-                      <button type="submit" class="btn btn-primary">Update Data</button>
+                      <button type="submit" class="btn btn-primary"  data-dismiss="modal">Update Data</button>
 
                     </div>
                   </form>
@@ -557,7 +559,7 @@
                 </div>
                 <div class="d-flex justify-content-center mt-3">
                   <button type="reset" class="btn btn-danger mr-3 btnWidth">Reset</button>
-                  <button type="submit" class="btn btn-success btnWidth">Update</button>
+                  <button type="submit" class="btn btn-success btnWidth"  data-dismiss="modal">Update</button>
                 </div>
               </form>
             </div>
@@ -634,7 +636,7 @@
 
                 <div class="d-flex justify-content-center mt-3">
                   <button type="reset" class="btn btn-danger mr-3 btnWidth">Reset</button>
-                  <button type="submit" class="btn btn-success btnWidth">Update</button>
+                  <button type="submit" class="btn btn-success btnWidth"  data-dismiss="modal">Update</button>
                 </div>
               </form>
             </div>
@@ -768,7 +770,7 @@
                 </div>
                 <div class="d-flex justify-content-center mt-3">
                   <button type="reset" class="btn btn-danger mr-3 btnWidth">Reset</button>
-                  <button type="submit" class="btn btn-success btnWidth">Update</button>
+                  <button type="submit" class="btn btn-success btnWidth"  data-dismiss="modal">Update</button>
                 </div>
               </form>
             </div>
@@ -844,7 +846,7 @@
                   </div>
                   <div class="d-flex justify-content-center mt-3">
                     <button type="reset" class="btn btn-danger mr-3 btnWidth">Reset</button>
-                    <button type="submit" class="btn btn-success btnWidth">Update</button>
+                    <button type="submit" class="btn btn-success btnWidth"  data-dismiss="modal">Update</button>
                   </div>
                 </form>
               </div>
@@ -921,7 +923,7 @@
                   </div>
                   <div class="d-flex justify-content-center mt-3">
                     <button type="reset" class="btn btn-danger mr-3 btnWidth">Reset</button>
-                    <button type="submit" class="btn btn-success btnWidth">Update</button>
+                    <button type="submit" class="btn btn-success btnWidth"  data-dismiss="modal">Update</button>
                   </div>
                 </form>
               </div>
@@ -993,7 +995,7 @@
                   </div>
                   <div class="d-flex justify-content-center mt-3">
                     <button type="reset" class="btn btn-danger mr-3 btnWidth">Reset</button>
-                    <button type="submit" class="btn btn-success btnWidth">Update</button>
+                    <button type="submit" class="btn btn-success btnWidth" data-dismiss="modal">Update</button>
                   </div>
                 </form>
               </div>
@@ -1270,7 +1272,7 @@
                   </div>
                   <div class="d-flex justify-content-center mt-3">
                     <button type="reset" class="btn btn-danger mr-3 btnWidth">Reset</button>
-                    <button type="submit" class="btn btn-success btnWidth">Update</button>
+                    <button type="submit" class="btn btn-success btnWidth"  data-dismiss="modal">Update</button>
                   </div>
                 </form>
               </div>
@@ -1362,7 +1364,7 @@
                   </div>
                   <div class="d-flex justify-content-center mt-3">
                     <button type="reset" class="btn btn-danger mr-3 btnWidth">Reset</button>
-                    <button type="submit" class="btn btn-success btnWidth">Update</button>
+                    <button type="submit" class="btn btn-success btnWidth" data-dismiss="modal">Update</button>
                   </div>
                 </form>
               </div>
@@ -1382,7 +1384,7 @@
     <div class="col-lg-3 kyc-section rewards-section reports-sectn scroll-area" style="max-height: 1000px">
       <div class="position-static">
           <div class="d-flex justify-content-between">
-          <i class="fa fa-arrow-left facultyName" (click)="loadProfile('','')" style="font-size: 20px" aria-hidden="true"></i>
+          <i class="fa fa-arrow-left facultyName" (click)="loadProfile('','')"  style="font-size: 20px" aria-hidden="true"></i>
           <h4>Employees </h4>
           <i class="fa fa-download" aria-hidden="true" style="font-size: 20px"></i>
         </div>
@@ -1396,7 +1398,7 @@
               <div><img class="othersprofile" src="../../../assets/images/img_avatar3.png" alt="" /></div>
             </div>
             <div class="col-9">
-              <h6 class="facultyName" (click)="loadProfile(val.userId,val.userType)">{{val.name}} [{{val.nameAcronym}}]</h6>
+              <a class="facultyName" style="cursor: pointer;" (click)="loadProfile(val.userId,val.userType)" >{{val.name}} [{{val.nameAcronym}}]</a>
               <p style="font-size:13px;">{{val.currentDesignation}}<br />
                 <i class="fa fa-envelope mr-1" aria-hidden="true"></i>{{val.email}}<br />
                 <i class="fa fa-mobile mr-1" aria-hidden="true"></i>{{val.mobileNo}}

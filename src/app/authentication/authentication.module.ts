@@ -9,6 +9,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ActivateAccountComponent } from './activate-account/activate-account.component';
+import { MatProgressSpinnerModule } from '@angular/material';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ActivateAccountComponent } from './activate-account/activate-account.co
     FormsModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatProgressSpinnerModule
   ],
   declarations: [
     LoginComponent,

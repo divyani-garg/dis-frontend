@@ -5,13 +5,15 @@ import { TimetableComponent } from './timetable/timetable.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ConventionalOutletComponent } from './conventional-outlet/conventional-outlet.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatProgressSpinnerModule } from '@angular/material';
 
 @NgModule({
   imports: [
     ConventionalRoutingModule,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatProgressSpinnerModule
   ],
   declarations: [TimetableComponent, ProfileComponent, ConventionalOutletComponent],
   exports:[TimetableComponent, ProfileComponent]

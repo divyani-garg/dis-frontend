@@ -20,4 +20,16 @@ export class LibraryService {
   addBookDetails(info):Observable<any>{
     return this.http.post(`${this.baseUrl}/addBook`, info)
   }
+  getThesis():Observable<any>{
+    return this.http.get('http://localhost:8080/dis/user/showResearchPaper')
+  }
+  getThesisCount():Observable<any>{
+    return this.http.get(`${this.baseUrl}/getThesisBECount`);
+  }
+  editThesisDetails(info):Observable<any>{
+    return this.http.put(`${this.baseUrl}/addThesisBE`,info);
+  }
+  addThesisDetails(info):Observable<any>{
+    return this.http.post(`${this.baseUrl}/editThesisBE`, info)
+  }
 }

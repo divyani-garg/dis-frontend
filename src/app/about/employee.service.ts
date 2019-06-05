@@ -12,10 +12,10 @@ export class EmployeeService {
   constructor(private http: HttpClient) { }
 
   getFacultyDetails(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/facultyBrief`);
+    return this.http.get(`${this.baseUrl}/facultyData`);
   }
 
   getStaffDetails(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/staffBrief`);
+    return this.http.get(`${this.baseUrl}/staffData`);
   }
 }

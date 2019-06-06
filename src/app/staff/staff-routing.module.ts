@@ -58,8 +58,7 @@ const routes: Routes = [
         },
         {
           path : 'staff_complaints',
-          component : ComplaintsComponent,
-          loadChildren: () => ComplaintsModule
+          loadChildren : '../complaints/complaints.module#ComplaintsModule'
         },
         {
           path : 'staff_profile',

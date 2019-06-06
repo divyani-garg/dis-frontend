@@ -12,6 +12,9 @@ import { HodRoutingModule } from './hod/hod-routing.module';
 
 
 const routes: Routes = [
+  {
+    path : '', redirectTo : 'login', pathMatch : 'full'
+  },
   { path: 'forgot-password',
      component: ForgotPasswordComponent
   },
@@ -26,7 +29,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: LoginComponent
+    redirectTo : 'login',
+    pathMatch : 'full'
+  },
+  {
+    path : 'login',
+    component : LoginComponent
   }
 ];
 

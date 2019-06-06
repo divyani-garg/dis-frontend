@@ -3,8 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { FacultyComponent } from './faculty/faculty.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { StudentRoutingModule } from './student/student-routing.module';
 import { HomeRoutingModule } from './home/home-routing.module';
 import { DocumentsComponent } from './documents/documents.component';
 import { AboutComponent } from '../about/about/about.component';
@@ -14,8 +12,10 @@ import { MydutiesModule } from '../myduties/myduties.module';
 import { MydutiesComponent } from '../myduties/myduties/myduties.component';
 import { InfrastructureModule } from '../infrastructure/infrastructure.module';
 import { InfrastructureOutletComponent } from '../infrastructure/infrastructure-outlet/infrastructure-outlet.component';
-import { ComplaintsComponent } from '../complaints/complaints/complaints.component';
-import { ComplaintsModule } from '../complaints/complaints.module';
+import { ProfileComponent } from '../conventional/profile/profile.component';
+import { StudentComponent } from '../hod/student/student.component';
+import { HodModule } from '../hod/hod.module';
+import { TimetableComponent } from '../hod/timetable/timetable.component';
 
 const routes: Routes = [
   {
@@ -44,9 +44,9 @@ const routes: Routes = [
         path : 'documents',
         component : DocumentsComponent
       },
-      
       {
         path : 'profile',
+        component : ProfileComponent,
         loadChildren: () => ConventionalModule 
       },
       {
@@ -56,19 +56,24 @@ const routes: Routes = [
       },
       {
         path : 'complaints',
-        component:ComplaintsComponent,
-        loadChildren:()=> ComplaintsModule
+        loadChildren : '../complaints/complaints.module#ComplaintsModule'
       },
       {
-        path : '**',
-        component : PageNotFoundComponent
+        path : 'students',
+        component : StudentComponent,
+        loadChildren:()  => HodModule
+      },
+      {
+        path: 'timetable',
+        component: TimetableComponent,
+        loadChildren:()  => HodModule
       },
      ]
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes), HomeRoutingModule, StudentRoutingModule,
+  imports: [RouterModule.forChild(routes), HomeRoutingModule
    ],
   exports: [RouterModule]
 })

@@ -1,7 +1,6 @@
 import { ComputerclubComponent } from './computerclub/computerclub.component';
 import { StaffComponent } from './staff/staff.component';
 import { MagazineComponent } from './magazine/magazine.component';
-import { LibraryComponent } from './library/library.component';
 import { OverviewComponent } from './overview/overview.component';
 import { AboutComponent } from './about/about.component';
 import { NgModule } from '@angular/core';
@@ -23,7 +22,7 @@ export const routes: Routes = [
   },
   {
     path: 'library',
-    component: LibraryComponent
+    loadChildren : './library/library.module#LibraryModule'
   },
   {
     path: 'magazine',
@@ -36,7 +35,8 @@ export const routes: Routes = [
   {
     path: 'computerclub',
     component: ComputerclubComponent
-  }
+  },
+ 
 
 ];
 

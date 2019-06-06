@@ -22,12 +22,12 @@ export class PiechartComponent implements OnInit {
           {label: '% Present',
               fill: true,
               backgroundColor: [
-                  '#ff0000',
-                  '#009900'],
+                  '#e20404',
+                  '#09ba09'],
               data: [30, 70],
   // Notice the borderColor
-              borderColor:['#ff0000',
-              '#009900'],
+              borderColor:['#e20404',
+              '#09ba09'],
               borderWidth: [1,1]
           }
       ]

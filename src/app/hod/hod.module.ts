@@ -18,6 +18,7 @@ import { ToDoComponent } from './to-do/to-do.component';
 import { CalendarComponent } from '../miscellaneous/calendar/calendar.component';
 import { FooterModule } from './footer/footer.module';
 import { MeetingsComponent } from './meetings/meetings.component';
+import { ConventionalModule } from '../conventional/conventional.module';
 import { InfrastructureModule } from '../infrastructure/infrastructure.module';
 
 @NgModule({
@@ -26,8 +27,9 @@ import { InfrastructureModule } from '../infrastructure/infrastructure.module';
     HodRoutingModule,
     InfrastructureModule,
     MiscellaneousModule,
-    FooterModule
-  ],
+    FooterModule,
+    ConventionalModule,
+    ],
   declarations: [
      HomeComponent,
      AdministrationComponent, 
@@ -44,7 +46,8 @@ import { InfrastructureModule } from '../infrastructure/infrastructure.module';
      MeetingsComponent],
      providers: [CalendarComponent],
      exports:[
-       NavigationComponent
+      
+       StudentComponent
      ]
  
 })

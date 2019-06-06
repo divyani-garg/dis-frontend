@@ -6,18 +6,20 @@ import { AdministrationComponent } from './administration/administration.compone
 import { FacultyComponent } from './faculty/faculty.component';
 import { RequestsComponent } from './requests/requests.component';
 import { TimetableComponent } from './timetable/timetable.component';
-import { AlertsComponent } from './alerts/alerts.component';
 import { StudentComponent } from './student/student.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { ToDoComponent } from './to-do/to-do.component';
 import { AboutModule } from '../about/about.module';
 import { AboutComponent } from '../about/about/about.component';
 import { GalleryComponent } from './footer/gallery/gallery.component';
-import { FooterModule } from './footer/footer.module';
 import { MeetingsComponent } from './meetings/meetings.component';
 import { InfrastructureOutletComponent } from '../infrastructure/infrastructure-outlet/infrastructure-outlet.component';
 import { InfrastructureModule } from '../infrastructure/infrastructure.module';
 import { Component } from 'fullcalendar';
+import { ProfileComponent } from '../conventional/profile/profile.component';
+import { ConventionalModule } from '../conventional/conventional.module';
+import { MydutiesModule } from '../myduties/myduties.module';
+import { MydutiesComponent } from '../myduties/myduties/myduties.component';
 
 const routes: Routes = [
   { path: 'head',
@@ -49,8 +51,9 @@ const routes: Routes = [
         component: ToDoComponent
       },
       {
-        path: 'hod_tasks',
-        component: AdministrationComponent
+        path: 'my_duties',
+        component: MydutiesComponent,
+        loadChildren:()=> MydutiesModule
       },
       {
         path: 'faculty',
@@ -70,17 +73,23 @@ const routes: Routes = [
         component: TimetableComponent
       },
       {
-        path: 'alerts',
-        component: AlertsComponent
-      },
-      {
         path: 'gallery',
         component: GalleryComponent
       },
       {
         path: 'meetings',
         component: MeetingsComponent
-      }
+      },
+      {
+        path :'complaints',
+        //component:ComplaintsComponent,
+        loadChildren : '../complaints/complaints.module#ComplaintsModule'
+      },
+      {
+        path : 'profile',
+        component : ProfileComponent,
+        loadChildren: () => ConventionalModule 
+      },
     ]
   }
 ];

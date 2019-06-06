@@ -8,4 +8,6 @@
 @import "assets/css/bootstrap-select.css";
 //@import "assets/css/dataTables.min.css";
 @import "assets/css/bootstrap-select.css";
-@import "assets/css/bootstrap-theme.min.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }

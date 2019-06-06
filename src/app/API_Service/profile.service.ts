@@ -1,56 +1,101 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+};
 @Injectable({
   providedIn: 'root'
 })
+
 export class ProfileService {
 
   
-  private baseUrl="http://localhost:8081";
+  private baseUrl="http://localhost:8080/dis/user";
   constructor(private http: HttpClient) { }
-  getProfileInfo():Observable<any>{
-    return this.http.get(`${this.baseUrl}/staffBasicProfile`);
+ 
+  getProfileInfo(id, userType):Observable<any>{
+     return this.http.get(`${this.baseUrl}/staffBasicProfile?id=${id}&userType=${userType}`);
   }
 
-  getWorkExperienceInfo():Observable<any>{
-    return this.http.get(`${this.baseUrl}/userWorkExperience`);
+  getStudentProfileInfo(id,userType):Observable<any>{
+    return this.http.get(`${this.baseUrl}/studentBasicProfile?id=${id}&userType=${userType}`);
+  }
+  getWorkExperienceInfo(id):Observable<any>{
+    return this.http.get(`${this.baseUrl}/userWorkExperience?id=${id}`);
   }
 
-  getUserQualificationInfo():Observable<any>{
-    return this.http.get(`${this.baseUrl}/userQualification`);
+  getUserQualificationInfo(id):Observable<any>{
+    return this.http.get(`${this.baseUrl}/userQualification?id=${id}`);
   }
 
-  getUserResearchWorkInfo():Observable<any>{
-    return this.http.get(`${this.baseUrl}/userResearchWork`);
+  getUserResearchWorkInfo(id):Observable<any>{
+    return this.http.get(`${this.baseUrl}/userResearchWork?id=${id}`);
   }
 
-  getUserInternshipInfo():Observable<any>{
-    return this.http.get(`${this.baseUrl}/userInternship`);
+  getUserInternshipInfo(id):Observable<any>{
+    return this.http.get(`${this.baseUrl}/userInternship?id=${id}`);
   }
 
-  getUserProjectInfo():Observable<any>{
-    return this.http.get(`${this.baseUrl}/userProject`);
+  getUserProjectInfo(id):Observable<any>{
+    return this.http.get(`${this.baseUrl}/userProject?id=${id}`);
   }
 
-  getUserCompetitiveExamInfo():Observable<any>{
-    return this.http.get(`${this.baseUrl}/userCompetitiveExams`);
+  getUserCompetitiveExamInfo(id):Observable<any>{
+    return this.http.get(`${this.baseUrl}/userCompetitiveExams?id=${id}`);
   }
 
-  getUserCulturalActivityInfo():Observable<any>{
-    return this.http.get(`${this.baseUrl}/userCulturalActivityAchievements`);
+  getUserCulturalActivityInfo(id):Observable<any>{
+    return this.http.get(`${this.baseUrl}/userCulturalActivityAchievements?id=${id}`);
   }
 
-  getUserTechnicalActivityInfo():Observable<any>{
-    return this.http.get(`${this.baseUrl}/userTechnicalActivity`);
+  getUserTechnicalActivityInfo(id):Observable<any>{
+    return this.http.get(`${this.baseUrl}/userTechnicalActivity?id=${id}`);
   }
 
-  getUserAddressInfo():Observable<any>{
-    return this.http.get(`${this.baseUrl}/userAddress`);
+  getUserAddressInfo(id):Observable<any>{
+    return this.http.get(`${this.baseUrl}/userAddress?id=${id}`);
   }
 
   getFacultyStaffList():Observable<any>{
     return this.http.get(`${this.baseUrl}/facultyData`);
+  }
+  getStaffList():Observable<any>{
+    return this.http.get(`${this.baseUrl}/staffData`);
+  }
+
+  //add service
+  editStaffProfile(info : any):Observable<any>{
+    return this.http.put(`${this.baseUrl}/editStaffBasicProfile`,info,httpOptions);
+  }
+  editStudentProfile(info : any):Observable<any>{
+    return this.http.put(`${this.baseUrl}/editStudentBasicProfile`,info,httpOptions);
+  }
+  editUserAddress(info : any):Observable<any>{
+    return this.http.put(`${this.baseUrl}/editUserAddress`,info,httpOptions);
+  }
+  editWorkExperience(info : any):Observable<any>{
+    return this.http.put(`${this.baseUrl}/editUserWorkExperience`,info,httpOptions);
+  }
+  editPublication(info : any):Observable<any>{
+    return this.http.put(`${this.baseUrl}/editUserResearchWork`,info,httpOptions);
+  }
+  editInternship(info : any):Observable<any>{
+    return this.http.put(`${this.baseUrl}/editUserInternship`,info,httpOptions);
+  }
+  editCompetitive(info : any):Observable<any>{
+    return this.http.put(`${this.baseUrl}/editUserCompetitiveExams`,info,httpOptions);
+  }
+  editProjects(info : any):Observable<any>{
+    return this.http.put(`${this.baseUrl}/editUserProjec`,info,httpOptions);
+  }
+  editTechnical(info : any):Observable<any>{
+    return this.http.put(`${this.baseUrl}/editUserTechnicalActivity`,info,httpOptions);
+  } 
+  editCultural(info : any):Observable<any>{
+    return this.http.put(`${this.baseUrl}/editUserCulturalActivityAchievements`,info,httpOptions);
+  }
+  editEducation(info : any):Observable<any>{
+    return this.http.put(`${this.baseUrl}/editUserQualification`,info,httpOptions);
   }
  }

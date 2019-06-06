@@ -5,42 +5,49 @@ import { TotalComplaintsComponent } from './total-complaints/total-complaints.co
 import { ResolvedComplaintsComponent } from './resolved-complaints/resolved-complaints.component';
 import { SideNavigationComponent } from './side-navigation/side-navigation.component';
 import { MyComplaintsComponent } from './my-complaints/my-complaints.component';
-
+var route : string = 'remaining_complaints';
+if(localStorage.getItem('userType') === 'student'){
+  route = 'mycomplaints'
+ }
+ else{
+   route = 'remaining_complaints'
+ }
+//student can see only mycomplaints we need to put authgurad for other complaints
 const routes: Routes = [
-  
-      
-          {
+  {
             path : '',
-            component : RemainingComplaintsComponent
-          },
-          {
-            path : 'remaining_complaints',
-            component : RemainingComplaintsComponent
-          },
-          {
-            path  : 'total_complaints',
-            component : TotalComplaintsComponent
-          },
-          {
-            path : 'resolved_complaints',
-            component : ResolvedComplaintsComponent
-          },
-          {
-            path : 'side_navigation',
-            component : SideNavigationComponent
-          },
-          {
-            path : 'mycomplaints',
-            component : MyComplaintsComponent
+            component : SideNavigationComponent,
+            children : [
+              {
+                path : '',
+                redirectTo : route,
+                pathMatch : 'full'
+              },
+              {
+                path : 'remaining_complaints',
+                component : RemainingComplaintsComponent
+              },
+              {
+                path  : 'total_complaints',
+                component : TotalComplaintsComponent
+              },
+              {
+                path : 'resolved_complaints',
+                component : ResolvedComplaintsComponent
+              },
+              {
+                path : 'mycomplaints',
+                component : MyComplaintsComponent
+              }
+            
+            ]
           }
-        
-      
-    
-  
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ComplaintsRoutingModule { }
+export class ComplaintsRoutingModule { 
+
+}

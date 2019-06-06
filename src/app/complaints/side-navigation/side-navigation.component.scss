@@ -1,131 +1,20 @@
 .top-buffer {
-    margin-top: 10px;
-  }
-
-  .icon {
-    font-size: 25px;
-    color: #1488CC;
-  }
-
-  .icon:hover {
-    color: #f46404;
-  }
-
-  .request-resources {
-    text-decoration: none;
-
-  
-  }
-
-  .request-resources:hover {
-    text-decoration: none;
-  }
-
-  .inline {
-    display: inline-block;
-    margin-right: 10px;
-  }
-
-  .ul-float-rigth {
-    text-align: right;
-  }
-
-  .add-complaint {
-    font-size: 18px;
-    text-decoration: none;
-    color: #0085cc;
-  }
-
-  .add-complaint:hover {
-    text-decoration: none;
-    color: #f46404;
-  }
-
-  .float {
-    float: right;
-  }
-
-  .complaint-meter {
-    text-decoration-line: none;
-    color: #1488CC;
-  }
-
-  .complaint-meter:hover {
-    text-decoration: none;
-    color: #f46404;
-  }
-
-  .model-head {
-    color: white;
-    background: #1488CC;
-  }
-
-  .button-Reset {
-    margin-bottom: 20px;
-  }
-
-  .pink-border {
-    border: 1px solid pink;
-  }
-
-  .form-actions {
-
-    background-color: transparent;
-    text-align: center;
-
-  }
-  .dropdown-pull-right {
-float: right !important;
-right: 0;
-left: auto;
+  margin-bottom: 10px;
+} 
+.complaint-meter {
+  padding-top: 7px;
+ padding-bottom: 7px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background: linear-gradient(to top, #2B32B2, #1488CC);
+  color:white;
+  margin-bottom:10px;
 }
-
-.dropdown-pull-right>.dropdown-menu {
-right: 0;
-left: auto;
-}
-
-
-  .button-width {
-    width: 78px;
-  }
-
-  .btnClear {
-    display: inline-block;
-    vertical-align: top;
-
-  }
-
-  .link {
-    text-decoration: none;
-  }
-
-  .link:hover {
-    color: #f46404;
-  }
-
-  .inline-ul:li {
-    display: inline;
-  }
-
-  ul {
-    display: flex;
-    list-style: none;
-
-  }
-
-  .complaint-rem {
-    font-size: 17px;
-    color: #ff6a65;
-  }
-
-  .complaint-rem:hover {
-    color: #58c365;
-  }
-  .modal-header{
-    background-color:rgb(4, 58, 87);
-    color:white;
-    margin:0%;
-    
-  }
+.modal-header{
+  background-color:rgb(4, 58, 87);
+  color:white;
+  margin:0%;
   
+}
+.request-resources{
+  text-decoration: none;
+ }

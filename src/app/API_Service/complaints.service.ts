@@ -1,13 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { HttpHeaders } from '@angular/common/http';
+import { Urls } from '../urls/urls';
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class ComplaintsService {
-
-  private baseUrl="http://localhost:8083";
+  urls = new Urls();
+  private mainUrl = this.urls.mainurl;
+  // private baseUrl = mainurl+'/dis/administrationn'
+  private baseUrl="http://localhost:8080/dis/administration";
   constructor(private http: HttpClient) { }
 
   getRemainingCleanlinessComplaint():Observable<any>{
@@ -144,8 +151,71 @@ export class ComplaintsService {
     return this.http.get(`${this.baseUrl}/getMyStudentComplaints`);
   }
 
-  public AddACleanlinessComplaint(AddACleanlinessComplaint : Object):Observable<any>{
-    return this.http.post(`${this.baseUrl}/addCleanlinessComplaint`,AddACleanlinessComplaint,{ responseType : 'text'});
+
+
+
+  // add complaints (post services)
+  addACleanlinessComplaint(info : any):Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}/addCleanlinessComplaint`,info,httpOptions);
+  }
+  addOtherComplaint (info : any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/addOtherComplaint`, info, httpOptions)
+  }
+  addLeComplaint(info :any):Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}/addLEComplaint`,info,httpOptions);
+  }
+  addStudentComplaint(info: any):Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}/addStudentComplaint`,info,httpOptions);
+  }
+  addFacultyComplaint(info : any):Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}/addFacultyComplaint`,info,httpOptions);
+  }
+  
+  addCWNComplaint(info : any):Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}/addCWNComplaint`,info,httpOptions);
   }
 
+  addEccwComplaint(info : any):Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}/addECCWComplaint`,info,httpOptions);
+  }
+
+  addEmrsCompaint(info : any):Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}/addEMRSComplaint`,info,httpOptions);
+  }
+
+  addTelephoneComplaint(info : any):Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}/addTelephoneComplaint`,info,httpOptions);
+  }
+
+  
+  //get complaints counts
+  getRemainingComplaintCount():Observable<any>{
+    return this.http.get(`${this.baseUrl}/getRemainingComplaintsCount`);
+  }
+  getResolvedComplaintCount():Observable<any>{
+    return this.http.get(`${this.baseUrl}/getResolvedComplaintsCount`);
+  }
+  getTotalComplaintCount():Observable<any>{
+    return this.http.get(`${this.baseUrl}/getTotalComplaintsCount`);
+  }
+  getMyComplaintCount():Observable<any>{
+    return this.http.get(`${this.baseUrl}/getMyComplaintsCount`);
+  }
+
+  //get permission 
+  getPermissions():Observable<any>{
+    return this.http.get(`${this.baseUrl}/addComplaintPermission`);
+  }
+  getLocation():Observable<any>{
+    return this.http.get('http://localhost:8080/dis/infrastructure/getLocationDropDown');
+  }
+
+  //add faculty resource
+  addFacultyResource(info : any):Observable<any>{
+    return this.http.post('http://localhost:8080/dis/administration/addFacultyResourceRequest',info,httpOptions);
+  }
+
+  editComplaints(info : any):Observable<any>{
+    return this.http.put(`${this.baseUrl}/editComplaint`,info,httpOptions);
+  }
 }

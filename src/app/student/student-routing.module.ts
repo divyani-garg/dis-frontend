@@ -7,13 +7,13 @@ import { HomeComponent } from './home/home.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { GradesComponent } from './grades/grades.component';
-import { ComplaintsComponent } from './complaints/complaints.component';
 import { AssignmentsComponent } from './assignments/assignments.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { LoginComponent } from '../authentication/login/login.component';
 import { InfrastructureModule } from '../infrastructure/infrastructure.module';
 import { InfrastructureOutletComponent } from '../infrastructure/infrastructure-outlet/infrastructure-outlet.component';
+import { MyComplaintsComponent } from '../complaints/my-complaints/my-complaints.component';
 
 const routes: Routes = [
   { path: 'student',
@@ -50,8 +50,8 @@ const routes: Routes = [
         component: GradesComponent,
       },
       {
-        path: 'student_complaints',
-        component: ComplaintsComponent
+        path : 'student_complaints',
+        loadChildren : '../complaints/complaints.module#ComplaintsModule'  
       },
       {
         path: 'student_assignments',
@@ -64,7 +64,8 @@ const routes: Routes = [
       {
         path: 'student_profile',
         component: ProfileComponent
-      }
+      },
+     
     ]
   }
 ];

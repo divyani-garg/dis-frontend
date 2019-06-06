@@ -1,11 +1,11 @@
 export class AddACleanlinessComplaint{
     location : string;
-    levelOfDustiness: number;
-    detail : string;
-    constructor(location : string,levelOfDustiness:number,detail:string)
+    levelOfDust: number;
+    details : string;
+    constructor(location : string,levelOfDust:number,details:string)
     {
         this.location=location;
-        this.levelOfDustiness=levelOfDustiness;
-        this.detail=detail;
+        this.levelOfDust=levelOfDust;
+        this.details=details;
     }
 }

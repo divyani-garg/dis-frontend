@@ -61,6 +61,8 @@ export class LoginComponent implements OnInit {
     this.authService.validateUser().subscribe(
       tempData => {
         this.router.navigateByUrl('/' + tempData);
+        console.log(tempData);
+        localStorage.setItem('userType',tempData);
       }
     );
   }

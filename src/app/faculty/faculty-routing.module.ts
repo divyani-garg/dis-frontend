@@ -44,7 +44,6 @@ const routes: Routes = [
         path : 'documents',
         component : DocumentsComponent
       },
-      
       {
         path : 'profile',
         loadChildren: () => ConventionalModule 

@@ -1,0 +1,34 @@
+.mat-column-No{
+    flex: 0 0 25% !important;
+    min-width: 60px !important;
+  
+  }
+  table {
+    width: 100%;
+  }
+  .table:hover {
+    background-color: rgb(247, 240, 240);
+    cursor: pointer;
+  }
+  .table:active{
+    background-color: rgb(172, 167, 167);
+    transition: 3ms;
+  }
+  .modal-header{
+    background-color:rgb(4, 58, 87);
+    color:white;
+    margin:0%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.btn{
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.btnWidth{
+  width:120px;
+ 
+}
+.btn-success{
+  background-color: #1ba94c;
+  color: white;
+}
